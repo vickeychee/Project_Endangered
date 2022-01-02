@@ -5,6 +5,7 @@
   "main": "app.js",
   "dependencies": {
     "aframe-extras": "^6.1.1",
+    "aframe-gradient-sky": "^1.0.4",
     "express": "^4.17.1",
     "socket.io": "^4.0.0"
   },
