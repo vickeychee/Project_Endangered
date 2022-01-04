@@ -23,12 +23,16 @@
     
 </head>
 
-<a-scene id="scene" physics="restitution: 0; debug:false; shadow=autoUpdate: false" rain="count:100; splashBounce:0.5; splashGravity: 9.8*0.5; dropHeight:0.25; opacity:1; dropRadius:0.1; height: 100; color: white; splash: false; width:50">
+<a-scene id="scene" physics="restitution: 0; debug:false; shadow=autoUpdate: false" rain="count:0; splashBounce:0.5; splashGravity: 9.8*0.5; dropHeight:0.25; opacity:1; dropRadius:0.1; height: 100; color: white; splash: false; width:50">
 
     <!-- Default lighting injected by A-Frame. -->
     
     <a-entity light="type: ambient; color: #dcd3d3; intensity:0.99" ></a-entity>
-    <a-entity id = "light" light="type: directional; color: #FFF; intensity: 0.3; castShadow: true; shadowRadius: 5.550" position="-0.541 8.007 3.540"></a-entity>
+    <a-entity id = "light_spot"
+              light="type: point; color: #FFF; intensity: 0.23; castShadow: true; shadowRadius: 2.5"
+              position="-1.246 16.753 -4.678">
+    </a-entity>
+
 
     <!--<a-entity light="type:spot; intensity:1.4; castShadow:true; shadowBias:-0.0005; angle:40; penumbra:0.3;" position="0 1 0" rotation="0 0 0"></a-entity>-->
 
@@ -36,7 +40,7 @@
         <a-asset-item id="character-obj" response-type="arraybuffer" src="/assets/character.glb"></a-asset-item>   
         <a-asset-item id="cubeTest-obj" response-type="arraybuffer" src="/assets/cube_test.glb"></a-asset-item>  
         <a-asset-item id="seal-obj" crossorigin="anonymous" src="/assets/seal.glb"></a-asset-item>  
-        <a-asset-item id="environment-obj" crossorigin="anonymous" src="/assets/environment.glb"></a-asset-item> 
+        <a-asset-item id="environment-obj" crossorigin="anonymous" src="/assets/environment-present.glb"></a-asset-item> 
         <a-asset-item id="polarBear-obj" crossorigin="anonymous" src="/assets/polarBear.glb"></a-asset-item>  
         <img id="sky" src="/assets/stars.png">
     </a-assets>
@@ -48,11 +52,11 @@
         
     <a-ocean
         id = 'river'
-        position='-10 -0.320 -18.143'
+        position='-9.2 -0.534 -15'
         rotation = '-90.000 0 0'
-        scale='3.82 33.3 12.5'
+        scale='3.82 38.67 12.5'
         color ="#0FAEBF"
-        ocean="opacity:  0.9;  depth:  1;  density: 10;  amplitude:  0.000005;  amplitudeVariance:  0.025;  speed:  2.120;  speedVariance:  1.070">
+        ocean="opacity:0.9;  depth:1;  density: 10;  amplitude:0.000005;  amplitudeVariance:0.01;  speed:2.1;  speedVariance:1.070">
     </a-ocean> 
 
    <a-entity
@@ -94,7 +98,7 @@
                   rotation="-90 0 0"
                   geometry="primitive:cylinder; radius:0.12; height:0.1;"
                   material="color:rgb(255, 100, 100)"
-                  animation__click="property:position; from: -0.59 -0.3 -0.04; to: -0.59 -0.3  0.0099; startEvents:click; dur:300"
+                  animation__click="property:position; from: -0.59 -0.3 -0.04; to: -0.59 -0.3  0.0099; startEvents:click; dur:100"
                   shadow="cast:false; receive:true;">
         </a-entity>        
         <a-entity id ="button2"
@@ -104,7 +108,7 @@
                   rotation="-90 0 0"
                   geometry="primitive:cylinder; radius:0.12; height:0.1;"
                   material="color:rgb(255, 100, 100)"
-                  animation__click="property:position; from: 0.043 -0.3 -0.04; to: 0.043 -0.3 0.0099; startEvents:click; dur:300"
+                  animation__click="property:position; from: 0.043 -0.3 -0.04; to: 0.043 -0.3 0.0099; startEvents:click; dur:100"
                   shadow="cast:false; receive:true;">
         </a-entity>
         <a-entity id ="button3"
@@ -114,7 +118,7 @@
                   rotation="-90 0 0"
                   geometry="primitive:cylinder; radius:0.12; height:0.1;"
                   material="color:rgb(255, 100, 100)"
-                  animation__click="property:position; from: 0.643 -0.3 -0.04; to: 0.643 -0.3 0.0099; startEvents:click; dur:300"
+                  animation__click="property:position; from: 0.643 -0.3 -0.04; to: 0.643 -0.3 0.0099; startEvents:click; dur:100"
                   shadow="cast:false; receive:true;">
         </a-entity> 
     </a-entity>
@@ -173,7 +177,7 @@
         id="seal5"
         seal-task
         class="interactive"
-        position="-1.56 -0.101 -9.668"
+        position="-0.89 -0.222 -9.668"
         rotation = "0 234 0"
         scale= " 1.8 1.8 1.8"
         gltf-model="#seal-obj"
@@ -186,7 +190,7 @@
         id="seal6"
         seal-task
         class="interactive"
-        position="0.327 -0.101 -10.4"
+        position="1 -0.228 -10.4"
         rotation = "0 53.820 0"
         scale= " 1.8 1.8 1.8"
         gltf-model="#seal-obj"
@@ -194,6 +198,42 @@
         shadow="cast:true; receive:false;">
     </a-entity>
 
+    <a-entity
+        id="seal7"
+        seal-task
+        class="interactive"
+        position="-13.76 -0.101 -30.78"
+        rotation = "0 207 0"
+        scale= "2.3 2.3 2.3"
+        gltf-model="#seal-obj"
+        visible="false"
+        shadow="cast:true; receive:false;">
+    </a-entity>
+
+    <a-entity
+        id="seal8"
+        seal-task
+        class="interactive"
+        position="-13.76 -0.101 -30.78"
+        rotation = "0 207 0"
+        scale= "2.3 2.3 2.3"
+        gltf-model="#seal-obj"
+        visible="false"
+        shadow="cast:true; receive:false;">
+    </a-entity>
+
+
+    <a-entity
+        id="seal9"
+        seal-task
+        class="interactive"
+        position="-13.76 -0.101 -30.78"
+        rotation = "0 207 0"
+        scale= "2.3 2.3 2.3"
+        gltf-model="#seal-obj"
+        visible="false"
+        shadow="cast:true; receive:false;">
+    </a-entity>
 
     
     <a-entity
@@ -205,7 +245,6 @@
         gltf-model="#polarBear-obj"
         shadow="cast:true; receive:false;">
     </a-entity>
-
 
         
     <a-entity
@@ -222,12 +261,73 @@
     <a-entity
         id="polarBear3"
         class="interactive"
-        position="-2.87 0 -4.6"
+        position="-2.09 0 -4.182"
         rotation = "0 -119.740 0"
         scale= " 1 1 1 "
         gltf-model="#polarBear-obj"
         shadow="cast:true; receive:false;">
     </a-entity>
+
+    <a-entity
+        id="polarBear4"
+        class="interactive"
+        position="-7.480 0 -6.507"
+        rotation = "0 -87.360 0"
+        scale= " 1 1 1 "
+        gltf-model="#polarBear-obj"
+        shadow="cast:true; receive:false;"
+        visible="false">
+    </a-entity>
+
+    <a-entity
+        id="polarBear5"
+        class="interactive"
+        position="4.743 0 -10.368"
+        rotation = "0 -219.540 0"
+        scale= " 1 1 1 "
+        gltf-model="#polarBear-obj"
+        shadow="cast:true; receive:false;"
+        visible="false">
+    </a-entity>
+
+    <a-entity
+        id="polarBear6"
+        class="interactive"
+        position="5.634 0 -8.508"
+        rotation = "0 -59.180 0"
+        scale= " 0.7 0.7 0.7 "
+        gltf-model="#polarBear-obj"
+        shadow="cast:true; receive:false;"
+        visible="false">
+    </a-entity>
+
+    
+    <a-entity
+        id="polarBear7"
+        class="interactive"
+        position="-6.145 0 -3.742"
+        rotation = "0 -134.310 0"
+        scale= " 0.7 0.7 0.7 "
+        gltf-model="#polarBear-obj"
+        shadow="cast:true; receive:false;"
+        visible="false">
+    </a-entity>
+
+    
+    <a-entity
+        id="polarBear8"
+        class="interactive"
+        position="6.111 0 1.607"
+        rotation = "0 -59.180 0"
+        scale= " 1 1 1 "
+        gltf-model="#polarBear-obj"
+        shadow="cast:true; receive:false;"
+        visible="false">
+    </a-entity>
+
+
+
+
 
    <!-- <a-box
         id="box"
