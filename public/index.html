@@ -42,6 +42,12 @@
         <a-asset-item id="seal-obj" crossorigin="anonymous" src="/assets/seal.glb"></a-asset-item>  
         <a-asset-item id="environment-obj" crossorigin="anonymous" src="/assets/environment-present.glb"></a-asset-item> 
         <a-asset-item id="polarBear-obj" crossorigin="anonymous" src="/assets/polarBear.glb"></a-asset-item>  
+        <a-asset-item id="ice1-obj" crossorigin="anonymous" src="/assets/ice1.glb"></a-asset-item> 
+        <a-asset-item id="ice2-obj" crossorigin="anonymous" src="/assets/ice2.glb"></a-asset-item> 
+        <a-asset-item id="ice3-obj" crossorigin="anonymous" src="/assets/ice3.glb"></a-asset-item> 
+        <a-asset-item id="ice4-obj" crossorigin="anonymous" src="/assets/ice4.glb"></a-asset-item> 
+        <a-asset-item id="ice5-obj" crossorigin="anonymous" src="/assets/ice5.glb"></a-asset-item> 
+        <a-asset-item id="ice6-obj" crossorigin="anonymous" src="/assets/ice6.glb"></a-asset-item> 
         <img id="sky" src="/assets/stars.png">
     </a-assets>
 
@@ -324,6 +330,86 @@
         shadow="cast:true; receive:false;"
         visible="false">
     </a-entity>
+
+    <a-cylinder
+        id="cylinder_red"
+        seal-task
+        class="interactive"
+        position="6.938 -0.027 -12.333"
+        rotation="0 44.170 0"
+        scale="2.030 1.5 1.5"
+        radius="0.5"
+        height="0.05"
+        color="#ff6565"
+        visible='true'>
+    </a-cylinder>
+
+    <a-entity
+        id="ice1"
+        class="interactive"
+        position="-0.752 0.089 -24.021"
+        rotation = "0 682.040 0"
+        scale= " 1 1 1 "
+        gltf-model="#ice1-obj"
+        shadow="cast:true; receive:false;"
+        visible="false">
+    </a-entity>
+
+    <a-entity
+        id="ice2"
+        class="interactive"
+        position="5.717 0.089 -6.845"
+        rotation = "0 -132.510 0"
+        scale= " 1 1 1 "
+        gltf-model="#ice2-obj"
+        shadow="cast:true; receive:false;"
+        visible="false">
+    </a-entity>
+
+    <a-entity
+        id="ice3"
+        class="interactive"
+        position="0.472 0.089 -20.440"
+        rotation = "0 274.450 0"
+        scale= " 1 1 1 "
+        gltf-model="#ice3-obj"
+        shadow="cast:true; receive:false;"
+        visible="false">
+    </a-entity>
+
+    <a-entity
+        id="ice4"
+        class="interactive"
+        position="1.627 0.089 -4.283"
+        rotation = "0 180 0"
+        scale= " 1 1 1 "
+        gltf-model="#ice4-obj"
+        shadow="cast:true; receive:false;"
+        visible="false">
+    </a-entity>
+
+    <a-entity
+        id="ice5"
+        class="interactive"
+        position="-12.820 0.089 -0.823"
+        rotation = "0 180 0"
+        scale= " 1 1 1 "
+        gltf-model="#ice5-obj"
+        shadow="cast:true; receive:false;"
+        visible="false">
+    </a-entity>
+
+    <a-entity
+        id="ice6"
+        class="interactive"
+        position="16.874 0.089 -21.018"
+        rotation = "0 227.710 0"
+        scale= " 1 1 1 "
+        gltf-model="#ice6-obj"
+        shadow="cast:true; receive:false;"
+        visible="false">
+    </a-entity>
+
 
 
 

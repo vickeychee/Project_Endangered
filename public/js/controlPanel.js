@@ -178,9 +178,6 @@ AFRAME.registerComponent('control-panel',{
 
         light.setAttribute('position', {x:-1.246, y:16.753, z:-4.678});
 
-
-
-
         
     });
 

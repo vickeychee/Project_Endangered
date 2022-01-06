@@ -2,8 +2,12 @@ AFRAME.registerComponent('seal-task',{
 
     init:function(){
 
-   
-    console.log("seals");
+    this.tick = AFRAME.utils.throttleTick(this.tick, 1000, this);
+
+    bool_sealtask = false;
+
+    
+    //setting this to false for now to reduce memory usage
    
     seal1 = document.querySelector('#seal1');
     seal2 = document.querySelector('#seal2');
@@ -12,43 +16,91 @@ AFRAME.registerComponent('seal-task',{
     seal5 = document.querySelector('#seal5');
     seal6 = document.querySelector('#seal6');
 
+    ice1 = document.querySelector('#ice1');
+    ice2 = document.querySelector('#ice2');
+    ice3 = document.querySelector('#ice3');
+    ice4 = document.querySelector('#ice4');
+    ice5 = document.querySelector('#ice5');
+    ice6 = document.querySelector('#ice6');
+
     sealCounter = 0;
-    seal1.addEventListener('click', ()=>{
 
-        seal1.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
-        sealCounter++;
 
-    });
+    },
 
-    seal2.addEventListener('click', ()=>{
+    tick: function(){
 
-        seal2.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
-        sealCounter++;
-    });
+        player = document.querySelector('#player');   
+        circle = document.querySelector('#cylinder_red');
 
-    seal3.addEventListener('click', ()=>{
+        playerPos = player.getAttribute('position');
+        circlePos = circle.getAttribute('position');
 
-        seal3.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
-        sealCounter++;
-    });
+        xPlayer = ((playerPos.x - circlePos.x)**2);
+        yPlayer = ((playerPos.y - circlePos.y)**2);
+        zPlayer = ((playerPos.z - circlePos.z)**2);
+        playerSum = xPlayer + yPlayer + zPlayer;
+        distance = Math.sqrt(playerSum);
 
-    seal4.addEventListener('click', ()=>{
+        //console.log(distance);
 
-        seal4.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
-        sealCounter++;
-    });
+        if (distance < 1.8){
 
-    seal5.addEventListener('click', ()=>{
 
-        seal5.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
-        sealCounter++;
-    });
+            bool_sealtask = true;
 
-    seal6.addEventListener('click', ()=>{
 
-        seal6.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
-        sealCounter++;
-    });
+        }
+
+
+        if (bool_sealtask == true){
+
+            ice1.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
+            ice2.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
+            ice3.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
+            ice4.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
+            ice5.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
+            ice6.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
+
+            seal1.addEventListener('click', ()=>{
+    
+                seal1.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
+                sealCounter++;
+    
+            });
+    
+            seal2.addEventListener('click', ()=>{
+    
+                seal2.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
+                sealCounter++;
+            });
+    
+            seal3.addEventListener('click', ()=>{
+    
+                seal3.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
+                sealCounter++;
+            });
+    
+            seal4.addEventListener('click', ()=>{
+    
+                seal4.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
+                sealCounter++;
+            });
+    
+            seal5.addEventListener('click', ()=>{
+    
+                seal5.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
+                sealCounter++;
+            });
+    
+            seal6.addEventListener('click', ()=>{
+    
+                seal6.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
+                sealCounter++;
+            });
+    
+        }
+ 
 
     }
 
