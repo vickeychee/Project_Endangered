@@ -12,6 +12,7 @@ AFRAME.registerComponent('control-panel',{
 
     scene = document.querySelector('#scene'); 
     controlPanel = document.querySelector('#control_panel'); 
+    circle = document.querySelector('#cylinder_red');
 
 
     seal1 = document.querySelector('#seal1');
@@ -35,13 +36,16 @@ AFRAME.registerComponent('control-panel',{
 
 
     past = false;
-    present = false;
+    present = true;
     future = false;
+
 
     
 
    
     buttonPast.addEventListener('click', ()=>{
+
+        present = false;
 
         enviroModel.setAttribute('gltf-model', "/assets/environment-past.glb");
         scene.setAttribute('animation', {property:'rain.count', from:0, to:150, dur: 100, enabled:true});
@@ -67,6 +71,8 @@ AFRAME.registerComponent('control-panel',{
         seal7.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
         seal8.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
         seal9.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
+
+        circle.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
 
         controlPanel.setAttribute('position', {x:1.149, y: 0.66, z:-3.7});
         controlPanel.setAttribute('rotation', {x:-30, y:-18, z:0});
@@ -116,6 +122,8 @@ AFRAME.registerComponent('control-panel',{
 
     buttonPresent.addEventListener('click', ()=>{
 
+        present = true;
+
         
         enviroModel.setAttribute('gltf-model', "/assets/environment-present.glb");
 
@@ -157,6 +165,8 @@ AFRAME.registerComponent('control-panel',{
         seal6.setAttribute('position', {x:1, y:-0.228, z:-10.400});
         seal6.setAttribute('rotation', {x:0, y:53.820, z:0});
 
+        circle.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
+
         polarBear1.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
         polarBear2.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
         polarBear3.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
@@ -183,12 +193,17 @@ AFRAME.registerComponent('control-panel',{
 
     buttonFuture.addEventListener('click', ()=>{
 
+        present = false;
+
         enviroModel.setAttribute('gltf-model', "/assets/environment-future.glb");
         scene.setAttribute('animation', {property:'rain.count', from:0, to:0, dur: 100, enabled:true});
         river.setAttribute('position', {x:-9.2, y: -1.14, z:-15});
         player.setAttribute('position', {x:2.8, y:1.6, z:8});
         controlPanel.setAttribute('position', {x:6.39, y:0.615, z:3.9});
         controlPanel.setAttribute('rotation', {x:-30, y:-26, z:0});
+
+
+        circle.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
 
         polarBear2.setAttribute('position', {x:-3, y:-0.7, z:-12.53});
         polarBear2.setAttribute('scale', {x:2, y:2, z:2});

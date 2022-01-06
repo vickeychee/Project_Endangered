@@ -53,7 +53,7 @@ AFRAME.registerComponent('seal-task',{
         }
 
 
-        if (bool_sealtask == true){
+        if (bool_sealtask == true && present == true){
 
             ice1.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
             ice2.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
