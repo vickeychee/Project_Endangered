@@ -15,6 +15,7 @@
     <script src="https://rawgit.com/takahirox/aframe-rain/master/build/aframe-rain.min.js"></script>
 
 
+
     <!--Custom Components-->
     <script src="js/pickup.js"></script>
     <script src="js/sealTask.js"></script>
@@ -22,19 +23,9 @@
     <script src="js/interaction.js"></script>
     
 </head>
+<body>
 
 <a-scene id="scene" physics="restitution: 0; debug:false; shadow=autoUpdate: false" rain="count:0; splashBounce:0.5; splashGravity: 9.8*0.5; dropHeight:0.25; opacity:1; dropRadius:0.1; height: 100; color: white; splash: false; width:50">
-
-    <!-- Default lighting injected by A-Frame. -->
-    
-    <a-entity light="type: ambient; color: #dcd3d3; intensity:0.99" ></a-entity>
-    <a-entity id = "light_spot"
-              light="type: point; color: #FFF; intensity: 0.23; castShadow: true; shadowRadius: 2.5"
-              position="-1.246 16.753 -4.678">
-    </a-entity>
-
-
-    <!--<a-entity light="type:spot; intensity:1.4; castShadow:true; shadowBias:-0.0005; angle:40; penumbra:0.3;" position="0 1 0" rotation="0 0 0"></a-entity>-->
 
     <a-assets timeout = "10000">
         <a-asset-item id="character-obj" response-type="arraybuffer" src="/assets/character.glb"></a-asset-item>   
@@ -48,14 +39,47 @@
         <a-asset-item id="ice4-obj" crossorigin="anonymous" src="/assets/ice4.glb"></a-asset-item> 
         <a-asset-item id="ice5-obj" crossorigin="anonymous" src="/assets/ice5.glb"></a-asset-item> 
         <a-asset-item id="ice6-obj" crossorigin="anonymous" src="/assets/ice6.glb"></a-asset-item> 
+        <a-asset-item id="navPresent-obj" response-type="arraybuffer" src="/assets/nav-present/nav-present.gltf"></a-asset-item>     
+        <a-asset-item id="navPast-obj" response-type="arraybuffer" src="/assets/nav-past/nav-past.gltf"></a-asset-item>   
+        <a-asset-item id="navFuture-obj" response-type="arraybuffer" src="/assets/nav-future/nav-future.gltf"></a-asset-item>   
         <img id="sky" src="/assets/stars.png">
     </a-assets>
 
-
-    <a-entity id ="player" camera wasd-controls='acceleration: 100' look-controls position="0 1.6 0"> 
-        <a-entity cursor="rayOrigin:mouse;" raycaster="far:20; interval:200; objects:.interactive"></a-entity>
+    
+    <a-entity light="type: ambient; color: #dcd3d3; intensity:0.99" ></a-entity>
+    <a-entity id = "light_spot"
+              light="type: point; color: #FFF; intensity: 0.23; castShadow: true; shadowRadius: 2.5"
+              position="-1.246 16.753 -4.678">
     </a-entity>
-        
+
+
+    <a-entity id="player" movement-controls="speed:0.2; constrainToNavMesh: true;" position="0 1.3 0">
+        <a-entity
+            id = "player2"
+            camera
+            wasd-controls='acceleration: 10'
+            look-controls>
+            <a-entity
+                id = "player-details"
+                collision-filter="group: mouse"
+                cursor="rayOrigin:mouse;"
+                raycaster="far:20; interval:200; objects:.interactive"
+            ></a-entity> 
+        </a-entity>
+    </a-entity>
+
+    <a-entity>
+        <a-entity
+            id ="nav_mesh"
+            scale='1 1 1'
+            position = '-2.806 1.3 -9'
+            rotation = '0 180 0'
+            gltf-model='#navPresent-obj'
+            nav-mesh
+            visible='false'
+        ></a-entity>
+    </a-entity>
+      
     <a-ocean
         id = 'river'
         position='-9.2 -0.534 -15'
@@ -351,7 +375,6 @@
         rotation = "0 682.040 0"
         scale= " 1 1 1 "
         gltf-model="#ice1-obj"
-        shadow="cast:true; receive:false;"
         visible="false">
     </a-entity>
 
@@ -362,7 +385,6 @@
         rotation = "0 -132.510 0"
         scale= " 1 1 1 "
         gltf-model="#ice2-obj"
-        shadow="cast:true; receive:false;"
         visible="false">
     </a-entity>
 
@@ -373,7 +395,6 @@
         rotation = "0 274.450 0"
         scale= " 1 1 1 "
         gltf-model="#ice3-obj"
-        shadow="cast:true; receive:false;"
         visible="false">
     </a-entity>
 
@@ -384,7 +405,6 @@
         rotation = "0 180 0"
         scale= " 1 1 1 "
         gltf-model="#ice4-obj"
-        shadow="cast:true; receive:false;"
         visible="false">
     </a-entity>
 
@@ -395,7 +415,6 @@
         rotation = "0 180 0"
         scale= " 1 1 1 "
         gltf-model="#ice5-obj"
-        shadow="cast:true; receive:false;"
         visible="false">
     </a-entity>
 
@@ -406,7 +425,6 @@
         rotation = "0 227.710 0"
         scale= " 1 1 1 "
         gltf-model="#ice6-obj"
-        shadow="cast:true; receive:false;"
         visible="false">
     </a-entity>
 
@@ -530,3 +548,5 @@
 
 
 </a-scene>
+</body>
+</html>

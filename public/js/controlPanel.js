@@ -1,3 +1,5 @@
+//const navMesh = require("aframe-extras/src/pathfinding/nav-mesh");
+
 AFRAME.registerComponent('control-panel',{
 
     init:function(){
@@ -6,6 +8,7 @@ AFRAME.registerComponent('control-panel',{
     buttonPresent = document.querySelector('#button2');
     buttonFuture = document.querySelector('#button3');
     enviroModel = document.querySelector('#environment_model'); 
+    navMesh = document.querySelector('#nav_mesh'); 
     water = document.querySelector('#river'); 
     player = document.querySelector('#player'); 
     light = document.querySelector('#light_spot'); 
@@ -38,16 +41,15 @@ AFRAME.registerComponent('control-panel',{
     past = false;
     present = true;
     future = false;
-
-
-    
-
    
     buttonPast.addEventListener('click', ()=>{
 
         present = false;
 
         enviroModel.setAttribute('gltf-model', "/assets/environment-past.glb");
+        navMesh.setAttribute('gltf-model', "/assets/nav-past/nav-past.gltf");
+        navMesh.setAttribute('position',  {x:-2.806, y:1.3, z:-9});
+
         scene.setAttribute('animation', {property:'rain.count', from:0, to:150, dur: 100, enabled:true});
         river.setAttribute('position', {x:-9.2, y: -0.534, z:-15});
         player.setAttribute('position', {x:-2, y:1.6, z:0});
@@ -126,7 +128,8 @@ AFRAME.registerComponent('control-panel',{
 
         
         enviroModel.setAttribute('gltf-model', "/assets/environment-present.glb");
-
+        navMesh.setAttribute('gltf-model', "/assets/nav-present/nav-present.gltf");
+        navMesh.setAttribute('position',  {x:-2.567, y:1.3, z:-8.683});
         scene.setAttribute('animation', {property:'rain.count', from:0, to:0, dur: 100, enabled:true});
 
         river.setAttribute('position', {x:-9.2, y: -0.534, z:-15});
@@ -196,6 +199,9 @@ AFRAME.registerComponent('control-panel',{
         present = false;
 
         enviroModel.setAttribute('gltf-model', "/assets/environment-future.glb");
+        navMesh.setAttribute('gltf-model', "/assets/nav-future/nav-future.gltf");
+        navMesh.setAttribute('position',  {x:0.365, y:-3, z:-5.543});
+
         scene.setAttribute('animation', {property:'rain.count', from:0, to:0, dur: 100, enabled:true});
         river.setAttribute('position', {x:-9.2, y: -1.14, z:-15});
         player.setAttribute('position', {x:2.8, y:1.6, z:8});
