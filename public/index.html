@@ -43,7 +43,16 @@
         <a-asset-item id="navPast-obj" response-type="arraybuffer" src="/assets/nav-past/nav-past.gltf"></a-asset-item>   
         <a-asset-item id="navFuture-obj" response-type="arraybuffer" src="/assets/nav-future/nav-future.gltf"></a-asset-item>   
         <img id="sky" src="/assets/stars.png">
+
+        <audio id="wind_sound" src="/assets/audio/arctic/wind.mp3"></audio>
+        <audio id="river_sound" src="/assets/audio/arctic/water.mp3"></audio>
+        <audio id="piano_sound" src="/assets/audio/arctic/piano.mp3"></audio>
+        <audio id="click_sound" src="/assets/audio/arctic/click.mp3"></audio>
     </a-assets>
+
+    <a-entity sound="src:#piano_sound; autoplay:true; loop:true; volume:2;" position="0 10 -8.23"></a-entity>
+    <a-entity sound="src:#wind_sound; autoplay:true; loop:true; volume:2;"  position="0 10 -8.23"></a-entity>
+    
 
     
     <a-entity light="type: ambient; color: #dcd3d3; intensity:0.99" ></a-entity>
@@ -86,6 +95,7 @@
         rotation = '-90.000 0 0'
         scale='3.82 38.67 12.5'
         color ="#0FAEBF"
+        sound = "src:#river_sound; autoplay:true; loop:true; volume: 3;"
         ocean="opacity:0.9;  depth:1;  density: 10;  amplitude:0.000005;  amplitudeVariance:0.01;  speed:2.1;  speedVariance:1.070">
     </a-ocean> 
 

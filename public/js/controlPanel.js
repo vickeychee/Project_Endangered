@@ -43,6 +43,7 @@ AFRAME.registerComponent('control-panel',{
     future = false;
    
     buttonPast.addEventListener('click', ()=>{
+        click.play();
 
         present = false;
 
@@ -123,6 +124,7 @@ AFRAME.registerComponent('control-panel',{
     });
 
     buttonPresent.addEventListener('click', ()=>{
+        click.play();
 
         present = true;
 
@@ -195,6 +197,7 @@ AFRAME.registerComponent('control-panel',{
     });
 
     buttonFuture.addEventListener('click', ()=>{
+        click.play();
 
         present = false;
 

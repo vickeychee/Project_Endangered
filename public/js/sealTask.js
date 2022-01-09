@@ -29,6 +29,11 @@ function checkSeals() {
         player.setAttribute('position', {x:7, y:1.6, z:-12});
         player.setAttribute('rotation', {x:-2.635, y:40.42, z:0});
 
+        player.setAttribute('movement-controls', {enabled:true});
+        player2.setAttribute('wasd-controls', {enabled:true});
+
+    } else if (sealCounter > 100){
+        //pop up here
     }
                     
 
@@ -60,8 +65,12 @@ AFRAME.registerComponent('seal-task',{
     ice5 = document.querySelector('#ice5');
     ice6 = document.querySelector('#ice6');
 
-    player = document.querySelector('#player');   
+    player = document.querySelector('#player');
+    player2 =  document.querySelector('#player2');   
     circle = document.querySelector('#cylinder_red');
+
+    click = document.querySelector('#click_sound');
+
 
     sealCounter = 0;
         
@@ -99,55 +108,83 @@ AFRAME.registerComponent('seal-task',{
         
         player.setAttribute('position', {x:1.16, y:1.6, z:-27.8});
 
+
     });
 
     seal1.addEventListener('click', ()=>{
 
-        seal1.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
-        sealCounter+=1;
-        checkSeals();
+        if (bool_sealtask == true){
+
+            click.play();
+
+            if (sealCounter <100){
+                seal1.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
+                sealCounter+=1;
+            } 
+            checkSeals();
+    
+        }
+
 
     });
 
     seal2.addEventListener('click', ()=>{
 
-        seal2.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
-        sealCounter+=1;
-        checkSeals();
+        if (bool_sealtask == true){
+
+            click.play();
+            
+            if (sealCounter <100){
+                seal2.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
+                sealCounter+=1;
+            } 
+            checkSeals();
+        }
+
     });
 
     seal3.addEventListener('click', ()=>{
+        if (bool_sealtask == true){
 
-        seal3.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
-        sealCounter+=1;
-        checkSeals();
+            seal3.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
+            sealCounter+=1;
+            checkSeals();
+            click.play();
+        }
     });
 
     seal4.addEventListener('click', ()=>{
 
-        seal4.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
-        sealCounter+=1;
-        checkSeals();
+        if (bool_sealtask == true){
+
+            seal4.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
+            sealCounter+=1;
+            checkSeals();
+            click.play();
+        }
     });
 
     seal5.addEventListener('click', ()=>{
 
-        seal5.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
-        sealCounter+=1;
-        checkSeals();
+        if (bool_sealtask == true){
+
+            seal5.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
+            sealCounter+=1;
+            checkSeals();
+            click.play();
+        }
     });
 
     seal6.addEventListener('click', ()=>{
 
-        seal6.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
-        sealCounter+=1;
-        checkSeals();
+        if (bool_sealtask == true){
+
+            seal6.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
+            sealCounter+=1;
+            checkSeals();
+            click.play();
+        }
     });
-
-
-
-
-
 
     },
 
@@ -163,7 +200,7 @@ AFRAME.registerComponent('seal-task',{
         playerSum = xPlayer + yPlayer + zPlayer;
         distance = Math.sqrt(playerSum);
 
-        console.log(playerPos);
+        //console.log(playerPos);
         //console.log(playerRot);
 
         if (distance < 1.8){
@@ -176,6 +213,8 @@ AFRAME.registerComponent('seal-task',{
 
             if (sealCounter < 60){
 
+                player.setAttribute('movement-controls', {enabled:false});
+                player2.setAttribute('wasd-controls', {enabled:false});
                 ice1.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
                 ice2.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
                 ice3.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
@@ -200,6 +239,8 @@ AFRAME.registerComponent('seal-task',{
         
                 seal6.setAttribute('position', {x:-13.011, y:-1.244, z:-11.887});
                 seal6.setAttribute('rotation', {x:13.000, y:35.140, z:0});
+
+
 
             }
 
