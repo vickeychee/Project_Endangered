@@ -14,549 +14,512 @@
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
     <script src="https://rawgit.com/takahirox/aframe-rain/master/build/aframe-rain.min.js"></script>
 
-
-
     <!--Custom Components-->
     <script src="js/pickup.js"></script>
     <script src="js/sealTask.js"></script>
     <script src="js/controlPanel.js"></script>
-    <script src="js/interaction.js"></script>
+
+    <!--Styles-->
+    <link rel="stylesheet" href="/css/arctic_stylesheet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    
     
 </head>
 <body>
 
-<a-scene id="scene" physics="restitution: 0; debug:false; shadow=autoUpdate: false" rain="count:0; splashBounce:0.5; splashGravity: 9.8*0.5; dropHeight:0.25; opacity:1; dropRadius:0.1; height: 100; color: white; splash: false; width:50">
 
-    <a-assets timeout = "10000">
-        <a-asset-item id="character-obj" response-type="arraybuffer" src="/assets/character.glb"></a-asset-item>   
-        <a-asset-item id="cubeTest-obj" response-type="arraybuffer" src="/assets/cube_test.glb"></a-asset-item>  
-        <a-asset-item id="seal-obj" crossorigin="anonymous" src="/assets/seal.glb"></a-asset-item>  
-        <a-asset-item id="environment-obj" crossorigin="anonymous" src="/assets/environment-present.glb"></a-asset-item> 
-        <a-asset-item id="polarBear-obj" crossorigin="anonymous" src="/assets/polarBear.glb"></a-asset-item>  
-        <a-asset-item id="ice1-obj" crossorigin="anonymous" src="/assets/ice1.glb"></a-asset-item> 
-        <a-asset-item id="ice2-obj" crossorigin="anonymous" src="/assets/ice2.glb"></a-asset-item> 
-        <a-asset-item id="ice3-obj" crossorigin="anonymous" src="/assets/ice3.glb"></a-asset-item> 
-        <a-asset-item id="ice4-obj" crossorigin="anonymous" src="/assets/ice4.glb"></a-asset-item> 
-        <a-asset-item id="ice5-obj" crossorigin="anonymous" src="/assets/ice5.glb"></a-asset-item> 
-        <a-asset-item id="ice6-obj" crossorigin="anonymous" src="/assets/ice6.glb"></a-asset-item> 
-        <a-asset-item id="navPresent-obj" response-type="arraybuffer" src="/assets/nav-present/nav-present.gltf"></a-asset-item>     
-        <a-asset-item id="navPast-obj" response-type="arraybuffer" src="/assets/nav-past/nav-past.gltf"></a-asset-item>   
-        <a-asset-item id="navFuture-obj" response-type="arraybuffer" src="/assets/nav-future/nav-future.gltf"></a-asset-item>   
-        <img id="sky" src="/assets/stars.png">
+    <!--User Interface-->
 
-        <audio id="wind_sound" src="/assets/audio/arctic/wind.mp3"></audio>
-        <audio id="river_sound" src="/assets/audio/arctic/water.mp3"></audio>
-        <audio id="piano_sound" src="/assets/audio/arctic/piano.mp3"></audio>
-        <audio id="click_sound" src="/assets/audio/arctic/click.mp3"></audio>
-    </a-assets>
+    <div id= "Title_Arctic_Center">
+        <img id="Title_Arctic_ID" src="/imgs/arctic_title.png">
+    </div>
 
-    <a-entity sound="src:#piano_sound; autoplay:true; loop:true; volume:2;" position="0 10 -8.23"></a-entity>
-    <a-entity sound="src:#wind_sound; autoplay:true; loop:true; volume:2;"  position="0 10 -8.23"></a-entity>
-    
+    <div id= "Button_Arctic_Instructions">
+        <button class="Button" id= "Button_Arctic_Instructions_ID"><img></button>
+    </div>
 
-    
-    <a-entity light="type: ambient; color: #dcd3d3; intensity:0.99" ></a-entity>
-    <a-entity id = "light_spot"
-              light="type: point; color: #FFF; intensity: 0.23; castShadow: true; shadowRadius: 2.5"
-              position="-1.246 16.753 -4.678">
-    </a-entity>
+    <div id= "Button_Arctic_Settings">
+        <button class="Button" id= "Button_Arctic_Settings_ID"><img></button>
+    </div>
+
+    <div id= "Button_Arctic_Reset">
+        <button class="Button" id= "Button_Arctic_Reset_ID"><img></button>
+    </div>
+
+    <div id= "Button_Arctic_Exit">
+        <button class="Button" id= "Button_Arctic_Exit_ID"><img></button>
+    </div>
+
+    <div id= "Round_Title_Center">
+        <h1 id ="Round_Title_ID">Round 1</h1>
+    </div>
+
+    <div id= "Round_Text_Center">
+        <h2 id ="Round_Text_ID">Collect all of the seals!</h2>
+    </div>
+    <div class="wrapper">
+        <div class="subtask-circular-progress sub-progress-bar_transition">
+          <div class="inner"></div>
+          <div class="number">100%</div>
+          <div class="circle">
+            <div class="bar_transition left">
+              <div class="sub-progress"></div>
+            </div>
+            <div class="bar_transition right">
+              <div class="sub-progress"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex buttons">
+        <button type="button" class="btn btn-success add" >+</button>
+        <button type="button" class="btn btn-success remove ms-4">-</button>
+        <button type="button" class="btn btn-success reload ms-4" data-completed="" data-total="" data-modulo="" data-toggle="">reload</button>
+      </div>
+
+    <a-scene id="scene" physics="restitution: 0; debug:false; shadow=autoUpdate: false" rain="count:0; splashBounce:0.5; splashGravity: 9.8*0.5; dropHeight:0.25; opacity:1; dropRadius:0.1; height: 100; color: white; splash: false; width:50">
+
+        <a-assets timeout = "10000">
+        
+            <!--Envrionment Assets-->
+            <a-asset-item id="seal-obj" crossorigin="anonymous" src="/assets/seal.glb"></a-asset-item>  
+            <a-asset-item id="environment-obj" crossorigin="anonymous" src="/assets/environment-present.glb"></a-asset-item> 
+            <a-asset-item id="polarBear-obj" crossorigin="anonymous" src="/assets/polarBear.glb"></a-asset-item>  
+            <a-asset-item id="ice1-obj" crossorigin="anonymous" src="/assets/ice1.glb"></a-asset-item> 
+            <a-asset-item id="ice2-obj" crossorigin="anonymous" src="/assets/ice2.glb"></a-asset-item> 
+            <a-asset-item id="ice3-obj" crossorigin="anonymous" src="/assets/ice3.glb"></a-asset-item> 
+            <a-asset-item id="ice4-obj" crossorigin="anonymous" src="/assets/ice4.glb"></a-asset-item> 
+            <a-asset-item id="ice5-obj" crossorigin="anonymous" src="/assets/ice5.glb"></a-asset-item> 
+            <a-asset-item id="ice6-obj" crossorigin="anonymous" src="/assets/ice6.glb"></a-asset-item> 
+            <a-asset-item id="navPresent-obj" response-type="arraybuffer" src="/assets/nav-present/nav-present.gltf"></a-asset-item>     
+            <a-asset-item id="navPast-obj" response-type="arraybuffer" src="/assets/nav-past/nav-past.gltf"></a-asset-item>   
+            <a-asset-item id="navFuture-obj" response-type="arraybuffer" src="/assets/nav-future/nav-future.gltf"></a-asset-item>   
+            <img id="sky" src="/assets/stars.png">
+
+            <!--Audio Assets-->
+            <audio id="wind_sound" src="/assets/audio/arctic/wind.mp3"></audio>
+            <audio id="river_sound" src="/assets/audio/arctic/water.mp3"></audio>
+            <audio id="piano_sound" src="/assets/audio/arctic/piano.mp3"></audio>
+            <audio id="click_sound" src="/assets/audio/arctic/click.mp3"></audio>
+
+        </a-assets>
 
 
-    <a-entity id="player" movement-controls="speed:0.2; constrainToNavMesh: true;" position="0 1.3 0">
-        <a-entity
-            id = "player2"
-            camera
-            wasd-controls='acceleration: 10'
-            look-controls>
+        <!--Ambient Sounds-->
+        <a-entity sound="src:#piano_sound; autoplay:true; loop:true; volume:2;" position="0 10 -8.23"></a-entity>
+        <a-entity sound="src:#wind_sound; autoplay:true; loop:true; volume:2;"  position="0 10 -8.23"></a-entity>
+        
+
+        <!--Lighting-->
+        <a-entity light="type: ambient; color: #dcd3d3; intensity:0.99" ></a-entity>
+        <a-entity id = "light_spot"
+                light="type: point; color: #FFF; intensity: 0.23; castShadow: true; shadowRadius: 2.5"
+                position="-1.246 16.753 -4.678">
+        </a-entity>
+
+        <!--Player Controls-->
+        <a-entity id="player" movement-controls="speed:0.2; constrainToNavMesh: true;" position="0 1.3 0">
             <a-entity
-                id = "player-details"
-                collision-filter="group: mouse"
-                cursor="rayOrigin:mouse;"
-                raycaster="far:20; interval:200; objects:.interactive"
-            ></a-entity> 
+                id = "player2"
+                camera
+                wasd-controls='acceleration: 10'
+                look-controls>
+                <a-entity
+                    id = "player-details"
+                    collision-filter="group: mouse"
+                    cursor="rayOrigin:mouse;"
+                    raycaster="far:20; interval:200; objects:.interactive"
+                ></a-entity> 
+            </a-entity>
         </a-entity>
-    </a-entity>
 
-    <a-entity>
+        <!--Nav Mesh-->
+        <a-entity>
+            <a-entity
+                id ="nav_mesh"
+                scale='1 1 1'
+                position = '-2.806 1.3 -9'
+                rotation = '0 180 0'
+                gltf-model='#navPresent-obj'
+                nav-mesh
+                visible='false'
+            ></a-entity>
+        </a-entity>
+        
+
+        <!--Environment Models-->
+    <a-entity
+            id ="environment"
+            environment="preset: default; groundColor: #445; grid:none; ground:none; lighting:none; skyType:gradient; skyColor:#006f85; horizonColor:#fff">
+        </a-entity>
+
         <a-entity
-            id ="nav_mesh"
-            scale='1 1 1'
-            position = '-2.806 1.3 -9'
-            rotation = '0 180 0'
-            gltf-model='#navPresent-obj'
-            nav-mesh
-            visible='false'
-        ></a-entity>
-    </a-entity>
-      
-    <a-ocean
-        id = 'river'
-        position='-9.2 -0.534 -15'
-        rotation = '-90.000 0 0'
-        scale='3.82 38.67 12.5'
-        color ="#0FAEBF"
-        sound = "src:#river_sound; autoplay:true; loop:true; volume: 3;"
-        ocean="opacity:0.9;  depth:1;  density: 10;  amplitude:0.000005;  amplitudeVariance:0.01;  speed:2.1;  speedVariance:1.070">
-    </a-ocean> 
-
-   <a-entity
-        id ="environment"
-        environment="preset: default; groundColor: #445; grid:none; ground:none; lighting:none; skyType:gradient; skyColor:#006f85; horizonColor:#fff">
-    </a-entity>
-   
-   <a-sky src="#sky" scale="0.3 0.3 0.3" color="#fffff" opacity ="0.5" blending="additive" material = "alphaTest: 0.48;"></a-sky>
-
-   
-
-    <a-entity
-        id="environment_model"
-        class="interactive"
-        position="-2.806 0.009 -9"
-        rotation="0 180 0"
-        scale= " 1 1 1"
-        gltf-model="#environment-obj"
-        shadow="cast:false; receive:true;">
-    </a-entity>
-
-
-    <a-entity id="control_panel" position="-7.132 0.66 -6" rotation="-30 42 0" scale="1 1 1">
-        
-        <a-entity text="value:Control the environment by clicking the buttons in the control panel; 
-        align:center; color:black; lineHeight:55; font:roboto; width:2; anchor:left; baseline:top; wrapCount:30;" position="-0.97 0.53 -0.032" ></a-entity>
-        <a-entity text="value:Past; 
-        align:left; color:#464444; lineHeight:55; font:roboto; width:2; anchor:left; baseline:top; wrapCount:30;" position="-0.712 0.066 -0.029" ></a-entity>
-        <a-entity text="value:Present; 
-        align:left; color:#464444; lineHeight:55; font:roboto; width:2; anchor:left; baseline:top; wrapCount:30;" position="-0.175 0.066 -0.029" ></a-entity>
-        <a-entity text="value:Future; 
-        align:left; color:#464444; lineHeight:55; font:roboto; width:2; anchor:left; baseline:top; wrapCount:30;" position="0.45 0.066 -0.029" ></a-entity>
-        
-        <a-entity geometry="primitive:box; width:2.27; height:1.4; depth:0.15;" material="color:white;" position="0 0 -0.11" shadow></a-entity>
-        <a-entity id ="button1"
-                  control-panel
-                  class ="interactive"
-                  position="-0.59 -0.3  0.0099"
-                  rotation="-90 0 0"
-                  geometry="primitive:cylinder; radius:0.12; height:0.1;"
-                  material="color:rgb(255, 100, 100)"
-                  animation__click="property:position; from: -0.59 -0.3 -0.04; to: -0.59 -0.3  0.0099; startEvents:click; dur:100"
-                  shadow="cast:false; receive:true;">
-        </a-entity>        
-        <a-entity id ="button2"
-                  control-panel
-                  class ="interactive"
-                  position="0.043 -0.3 0.0099"
-                  rotation="-90 0 0"
-                  geometry="primitive:cylinder; radius:0.12; height:0.1;"
-                  material="color:rgb(255, 100, 100)"
-                  animation__click="property:position; from: 0.043 -0.3 -0.04; to: 0.043 -0.3 0.0099; startEvents:click; dur:100"
-                  shadow="cast:false; receive:true;">
+            id="environment_model"
+            class="interactive"
+            position="-2.806 0.009 -9"
+            rotation="0 180 0"
+            scale= " 1 1 1"
+            gltf-model="#environment-obj"
+            shadow="cast:false; receive:true;">
         </a-entity>
-        <a-entity id ="button3"
-                  control-panel
-                  class ="interactive"
-                  position="0.643 -0.3 0.0099"
-                  rotation="-90 0 0"
-                  geometry="primitive:cylinder; radius:0.12; height:0.1;"
-                  material="color:rgb(255, 100, 100)"
-                  animation__click="property:position; from: 0.643 -0.3 -0.04; to: 0.643 -0.3 0.0099; startEvents:click; dur:100"
-                  shadow="cast:false; receive:true;">
-        </a-entity> 
-    </a-entity>
 
-    <a-entity
-        id="seal1"
-        seal-task
-        class="interactive"
-        position="-13.76 -0.101 -30.78"
-        rotation = "0 207 0"
-        scale= "2.3 2.3 2.3"
-        gltf-model="#seal-obj"
-        visible="true"
-        shadow="cast:true; receive:false;">
-    </a-entity>
+    <a-sky src="#sky" scale="0.3 0.3 0.3" color="#fffff" opacity ="0.5" blending="additive" material = "alphaTest: 0.48;"></a-sky>
 
-    <a-entity
-        id="seal2"
-        seal-task
-        class="interactive"
-        position="6.012 -0.132 -24.854"
-        rotation = "-13.280 127.8 0"
-        scale= " 1.8 1.8 1.8"
-        gltf-model="#seal-obj"
-        visible="true"
-        shadow="cast:true; receive:false;">
-    </a-entity>
-
-    <a-entity
-        id="seal3"
-        seal-task
-        class="interactive"
-        position="-21.809 0.017 -15.807"
-        rotation = "-13.36 246.120 0"
-        scale= " 2 2 2"
-        gltf-model="#seal-obj"
-        visible="true"
-        shadow="cast:true; receive:false;">
-    </a-entity>
-
-    
-    <a-entity
-        id="seal4"
-        seal-task
-        class="interactive"
-        position="10.73 0.08 -16.5"
-        rotation = "-21.82 109.9 -12.78"
-        scale= " 1.8 1.8 1.8"
-        gltf-model="#seal-obj"
-        visible="true"
-        shadow="cast:true; receive:false;">
-    </a-entity>
-
-    
-    <a-entity
-        id="seal5"
-        seal-task
-        class="interactive"
-        position="-0.89 -0.222 -9.668"
-        rotation = "0 234 0"
-        scale= " 1.8 1.8 1.8"
-        gltf-model="#seal-obj"
-        visible="true"
-        shadow="cast:true; receive:false;">
-    </a-entity>
+    <a-ocean
+            id = 'river'
+            position='-9.2 -0.534 -15'
+            rotation = '-90.000 0 0'
+            scale='3.82 38.67 12.5'
+            color ="#0FAEBF"
+            sound = "src:#river_sound; autoplay:true; loop:true; volume: 3;"
+            ocean="opacity:0.9;  depth:1;  density: 10;  amplitude:0.000005;  amplitudeVariance:0.01;  speed:2.1;  speedVariance:1.070">
+        </a-ocean> 
 
 
-    <a-entity
-        id="seal6"
-        seal-task
-        class="interactive"
-        position="1 -0.228 -10.4"
-        rotation = "0 53.820 0"
-        scale= " 1.8 1.8 1.8"
-        gltf-model="#seal-obj"
-        visible="true"
-        shadow="cast:true; receive:false;">
-    </a-entity>
+        <!--Control Panel-->
 
-    <a-entity
-        id="seal7"
-        seal-task
-        class="interactive"
-        position="-13.76 -0.101 -30.78"
-        rotation = "0 207 0"
-        scale= "2.3 2.3 2.3"
-        gltf-model="#seal-obj"
-        visible="false"
-        shadow="cast:true; receive:false;">
-    </a-entity>
+        <a-entity id="control_panel" position="-7.132 0.66 -6" rotation="-30 42 0" scale="1 1 1">
+            
+            <a-entity text="value:Control the environment by clicking the buttons in the control panel; 
+            align:center; color:black; lineHeight:55; font:roboto; width:2; anchor:left; baseline:top; wrapCount:30;" position="-0.97 0.53 -0.032" ></a-entity>
+            <a-entity text="value:Past; 
+            align:left; color:#464444; lineHeight:55; font:roboto; width:2; anchor:left; baseline:top; wrapCount:30;" position="-0.712 0.066 -0.029" ></a-entity>
+            <a-entity text="value:Present; 
+            align:left; color:#464444; lineHeight:55; font:roboto; width:2; anchor:left; baseline:top; wrapCount:30;" position="-0.175 0.066 -0.029" ></a-entity>
+            <a-entity text="value:Future; 
+            align:left; color:#464444; lineHeight:55; font:roboto; width:2; anchor:left; baseline:top; wrapCount:30;" position="0.45 0.066 -0.029" ></a-entity>
+            
+            <a-entity geometry="primitive:box; width:2.27; height:1.4; depth:0.15;" material="color:white;" position="0 0 -0.11" shadow></a-entity>
+            <a-entity id ="button1"
+                    control-panel
+                    class ="interactive"
+                    position="-0.59 -0.3  0.0099"
+                    rotation="-90 0 0"
+                    geometry="primitive:cylinder; radius:0.12; height:0.1;"
+                    material="color:rgb(255, 100, 100)"
+                    animation__click="property:position; from: -0.59 -0.3 -0.04; to: -0.59 -0.3  0.0099; startEvents:click; dur:100"
+                    shadow="cast:false; receive:true;">
+            </a-entity>        
+            <a-entity id ="button2"
+                    control-panel
+                    class ="interactive"
+                    position="0.043 -0.3 0.0099"
+                    rotation="-90 0 0"
+                    geometry="primitive:cylinder; radius:0.12; height:0.1;"
+                    material="color:rgb(255, 100, 100)"
+                    animation__click="property:position; from: 0.043 -0.3 -0.04; to: 0.043 -0.3 0.0099; startEvents:click; dur:100"
+                    shadow="cast:false; receive:true;">
+            </a-entity>
+            <a-entity id ="button3"
+                    control-panel
+                    class ="interactive"
+                    position="0.643 -0.3 0.0099"
+                    rotation="-90 0 0"
+                    geometry="primitive:cylinder; radius:0.12; height:0.1;"
+                    material="color:rgb(255, 100, 100)"
+                    animation__click="property:position; from: 0.643 -0.3 -0.04; to: 0.643 -0.3 0.0099; startEvents:click; dur:100"
+                    shadow="cast:false; receive:true;">
+            </a-entity> 
+        </a-entity>
 
-    <a-entity
-        id="seal8"
-        seal-task
-        class="interactive"
-        position="-13.76 -0.101 -30.78"
-        rotation = "0 207 0"
-        scale= "2.3 2.3 2.3"
-        gltf-model="#seal-obj"
-        visible="false"
-        shadow="cast:true; receive:false;">
-    </a-entity>
 
+        <!--Seals-->
+        <a-entity
+            id="seal1"
+            seal-task
+            class="interactive"
+            position="-13.76 -0.101 -30.78"
+            rotation = "0 207 0"
+            scale= "2.3 2.3 2.3"
+            gltf-model="#seal-obj"
+            visible="true"
+            shadow="cast:true; receive:false;">
+        </a-entity>
 
-    <a-entity
-        id="seal9"
-        seal-task
-        class="interactive"
-        position="-13.76 -0.101 -30.78"
-        rotation = "0 207 0"
-        scale= "2.3 2.3 2.3"
-        gltf-model="#seal-obj"
-        visible="false"
-        shadow="cast:true; receive:false;">
-    </a-entity>
+        <a-entity
+            id="seal2"
+            seal-task
+            class="interactive"
+            position="6.012 -0.132 -24.854"
+            rotation = "-13.280 127.8 0"
+            scale= " 1.8 1.8 1.8"
+            gltf-model="#seal-obj"
+            visible="true"
+            shadow="cast:true; receive:false;">
+        </a-entity>
 
-    
-    <a-entity
-        id="polarBear1"
-        class="interactive"
-        position="2.97 0 -3.31"
-        rotation = "0 25 0"
-        scale= " 0.7 0.7 0.7"
-        gltf-model="#polarBear-obj"
-        shadow="cast:true; receive:false;">
-    </a-entity>
+        <a-entity
+            id="seal3"
+            seal-task
+            class="interactive"
+            position="-21.809 0.017 -15.807"
+            rotation = "-13.36 246.120 0"
+            scale= " 2 2 2"
+            gltf-model="#seal-obj"
+            visible="true"
+            shadow="cast:true; receive:false;">
+        </a-entity>
 
         
-    <a-entity
-        id="polarBear2"
-        class="interactive"
-        position="2.4 0 -4.2"
-        rotation = "0 25 0"
-        scale= " 1 1 1 "
-        gltf-model="#polarBear-obj"
-        shadow="cast:true; receive:false;">
-    </a-entity>
+        <a-entity
+            id="seal4"
+            seal-task
+            class="interactive"
+            position="10.73 0.08 -16.5"
+            rotation = "-21.82 109.9 -12.78"
+            scale= " 1.8 1.8 1.8"
+            gltf-model="#seal-obj"
+            visible="true"
+            shadow="cast:true; receive:false;">
+        </a-entity>
 
         
-    <a-entity
-        id="polarBear3"
-        class="interactive"
-        position="-2.09 0 -4.182"
-        rotation = "0 -119.740 0"
-        scale= " 1 1 1 "
-        gltf-model="#polarBear-obj"
-        shadow="cast:true; receive:false;">
-    </a-entity>
-
-    <a-entity
-        id="polarBear4"
-        class="interactive"
-        position="-7.480 0 -6.507"
-        rotation = "0 -87.360 0"
-        scale= " 1 1 1 "
-        gltf-model="#polarBear-obj"
-        shadow="cast:true; receive:false;"
-        visible="false">
-    </a-entity>
-
-    <a-entity
-        id="polarBear5"
-        class="interactive"
-        position="4.743 0 -10.368"
-        rotation = "0 -219.540 0"
-        scale= " 1 1 1 "
-        gltf-model="#polarBear-obj"
-        shadow="cast:true; receive:false;"
-        visible="false">
-    </a-entity>
-
-    <a-entity
-        id="polarBear6"
-        class="interactive"
-        position="5.634 0 -8.508"
-        rotation = "0 -59.180 0"
-        scale= " 0.7 0.7 0.7 "
-        gltf-model="#polarBear-obj"
-        shadow="cast:true; receive:false;"
-        visible="false">
-    </a-entity>
-
-    
-    <a-entity
-        id="polarBear7"
-        class="interactive"
-        position="-6.145 0 -3.742"
-        rotation = "0 -134.310 0"
-        scale= " 0.7 0.7 0.7 "
-        gltf-model="#polarBear-obj"
-        shadow="cast:true; receive:false;"
-        visible="false">
-    </a-entity>
-
-    
-    <a-entity
-        id="polarBear8"
-        class="interactive"
-        position="6.111 0 1.607"
-        rotation = "0 -59.180 0"
-        scale= " 1 1 1 "
-        gltf-model="#polarBear-obj"
-        shadow="cast:true; receive:false;"
-        visible="false">
-    </a-entity>
-
-    <a-cylinder
-        id="cylinder_red"
-        seal-task
-        class="interactive"
-        position="6.938 -0.027 -12.333"
-        rotation="0 44.170 0"
-        scale="2.030 1.5 1.5"
-        radius="0.5"
-        height="0.05"
-        color="#ff6565"
-        visible='true'>
-    </a-cylinder>
-
-    <a-entity
-        id="ice1"
-        class="interactive"
-        position="-0.752 0.089 -24.021"
-        rotation = "0 682.040 0"
-        scale= " 1 1 1 "
-        gltf-model="#ice1-obj"
-        visible="false">
-    </a-entity>
-
-    <a-entity
-        id="ice2"
-        class="interactive"
-        position="5.717 0.089 -6.845"
-        rotation = "0 -132.510 0"
-        scale= " 1 1 1 "
-        gltf-model="#ice2-obj"
-        visible="false">
-    </a-entity>
-
-    <a-entity
-        id="ice3"
-        class="interactive"
-        position="0.472 0.089 -20.440"
-        rotation = "0 274.450 0"
-        scale= " 1 1 1 "
-        gltf-model="#ice3-obj"
-        visible="false">
-    </a-entity>
-
-    <a-entity
-        id="ice4"
-        class="interactive"
-        position="1.627 0.089 -4.283"
-        rotation = "0 180 0"
-        scale= " 1 1 1 "
-        gltf-model="#ice4-obj"
-        visible="false">
-    </a-entity>
-
-    <a-entity
-        id="ice5"
-        class="interactive"
-        position="-12.820 0.089 -0.823"
-        rotation = "0 180 0"
-        scale= " 1 1 1 "
-        gltf-model="#ice5-obj"
-        visible="false">
-    </a-entity>
-
-    <a-entity
-        id="ice6"
-        class="interactive"
-        position="16.874 0.089 -21.018"
-        rotation = "0 227.710 0"
-        scale= " 1 1 1 "
-        gltf-model="#ice6-obj"
-        visible="false">
-    </a-entity>
+        <a-entity
+            id="seal5"
+            seal-task
+            class="interactive"
+            position="-0.89 -0.222 -9.668"
+            rotation = "0 234 0"
+            scale= " 1.8 1.8 1.8"
+            gltf-model="#seal-obj"
+            visible="true"
+            shadow="cast:true; receive:false;">
+        </a-entity>
 
 
+        <a-entity
+            id="seal6"
+            seal-task
+            class="interactive"
+            position="1 -0.228 -10.4"
+            rotation = "0 53.820 0"
+            scale= " 1.8 1.8 1.8"
+            gltf-model="#seal-obj"
+            visible="true"
+            shadow="cast:true; receive:false;">
+        </a-entity>
+
+        <a-entity
+            id="seal7"
+            seal-task
+            class="interactive"
+            position="-13.76 -0.101 -30.78"
+            rotation = "0 207 0"
+            scale= "2.3 2.3 2.3"
+            gltf-model="#seal-obj"
+            visible="false"
+            shadow="cast:true; receive:false;">
+        </a-entity>
+
+        <a-entity
+            id="seal8"
+            seal-task
+            class="interactive"
+            position="-13.76 -0.101 -30.78"
+            rotation = "0 207 0"
+            scale= "2.3 2.3 2.3"
+            gltf-model="#seal-obj"
+            visible="false"
+            shadow="cast:true; receive:false;">
+        </a-entity>
 
 
+        <a-entity
+            id="seal9"
+            seal-task
+            class="interactive"
+            position="-13.76 -0.101 -30.78"
+            rotation = "0 207 0"
+            scale= "2.3 2.3 2.3"
+            gltf-model="#seal-obj"
+            visible="false"
+            shadow="cast:true; receive:false;">
+        </a-entity>
+
+        <!--Polar Bears-->
+        <a-entity
+            id="polarBear1"
+            class="interactive"
+            position="2.97 0 -3.31"
+            rotation = "0 25 0"
+            scale= " 0.7 0.7 0.7"
+            gltf-model="#polarBear-obj"
+            shadow="cast:true; receive:false;">
+        </a-entity>
+
+        <a-entity
+            id="polarBear2"
+            class="interactive"
+            position="2.4 0 -4.2"
+            rotation = "0 25 0"
+            scale= " 1 1 1 "
+            gltf-model="#polarBear-obj"
+            shadow="cast:true; receive:false;">
+        </a-entity>
+
+        <a-entity
+            id="polarBear3"
+            class="interactive"
+            position="-2.09 0 -4.182"
+            rotation = "0 -119.740 0"
+            scale= " 1 1 1 "
+            gltf-model="#polarBear-obj"
+            shadow="cast:true; receive:false;">
+        </a-entity>
+
+        <a-entity
+            id="polarBear4"
+            class="interactive"
+            position="-7.480 0 -6.507"
+            rotation = "0 -87.360 0"
+            scale= " 1 1 1 "
+            gltf-model="#polarBear-obj"
+            shadow="cast:true; receive:false;"
+            visible="false">
+        </a-entity>
+
+        <a-entity
+            id="polarBear5"
+            class="interactive"
+            position="4.743 0 -10.368"
+            rotation = "0 -219.540 0"
+            scale= " 1 1 1 "
+            gltf-model="#polarBear-obj"
+            shadow="cast:true; receive:false;"
+            visible="false">
+        </a-entity>
+
+        <a-entity
+            id="polarBear6"
+            class="interactive"
+            position="5.634 0 -8.508"
+            rotation = "0 -59.180 0"
+            scale= " 0.7 0.7 0.7 "
+            gltf-model="#polarBear-obj"
+            shadow="cast:true; receive:false;"
+            visible="false">
+        </a-entity>
+
+        
+        <a-entity
+            id="polarBear7"
+            class="interactive"
+            position="-6.145 0 -3.742"
+            rotation = "0 -134.310 0"
+            scale= " 0.7 0.7 0.7 "
+            gltf-model="#polarBear-obj"
+            shadow="cast:true; receive:false;"
+            visible="false">
+        </a-entity>
+
+        
+        <a-entity
+            id="polarBear8"
+            class="interactive"
+            position="6.111 0 1.607"
+            rotation = "0 -59.180 0"
+            scale= " 1 1 1 "
+            gltf-model="#polarBear-obj"
+            shadow="cast:true; receive:false;"
+            visible="false">
+        </a-entity>
+
+        <!--Cylinder on Ground-->
+        <a-cylinder
+            id="cylinder_red"
+            seal-task
+            class="interactive"
+            position="6.938 -0.027 -12.333"
+            rotation="0 44.170 0"
+            scale="2.030 1.5 1.5"
+            radius="0.5"
+            height="0.05"
+            color="#ff6565"
+            visible='true'>
+        </a-cylinder>
+
+        <!--Ice islands-->
+        <a-entity
+            id="ice1"
+            class="interactive"
+            position="-0.752 0.089 -24.021"
+            rotation = "0 682.040 0"
+            scale= " 1 1 1 "
+            gltf-model="#ice1-obj"
+            visible="false">
+        </a-entity>
+
+        <a-entity
+            id="ice2"
+            class="interactive"
+            position="5.717 0.089 -6.845"
+            rotation = "0 -132.510 0"
+            scale= " 1 1 1 "
+            gltf-model="#ice2-obj"
+            visible="false">
+        </a-entity>
+
+        <a-entity
+            id="ice3"
+            class="interactive"
+            position="0.472 0.089 -20.440"
+            rotation = "0 274.450 0"
+            scale= " 1 1 1 "
+            gltf-model="#ice3-obj"
+            visible="false">
+        </a-entity>
+
+        <a-entity
+            id="ice4"
+            class="interactive"
+            position="1.627 0.089 -4.283"
+            rotation = "0 180 0"
+            scale= " 1 1 1 "
+            gltf-model="#ice4-obj"
+            visible="false">
+        </a-entity>
+
+        <a-entity
+            id="ice5"
+            class="interactive"
+            position="-12.820 0.089 -0.823"
+            rotation = "0 180 0"
+            scale= " 1 1 1 "
+            gltf-model="#ice5-obj"
+            visible="false">
+        </a-entity>
+
+        <a-entity
+            id="ice6"
+            class="interactive"
+            position="16.874 0.089 -21.018"
+            rotation = "0 227.710 0"
+            scale= " 1 1 1 "
+            gltf-model="#ice6-obj"
+            visible="false">
+        </a-entity>
 
 
-   <!-- <a-box
-        id="box"
-        pickup
-        class="interactive"
-        body="type:dynamic; mass:5; shape:box;"
-        position="2.45 0.5 -4.2"
-        rotation="0 45 0"
-        color="#4CC3D9"
-        shadow>
-    </a-box>-->
+        <!--Physics Plane-->
+        <!--<a-plane
+            id="plane"
+            static-body
+            position="0 -0.04 -4"
+            rotation="-90 0 0"
+            scale="2 2 2"
+            width="30"
+            height="15"
+            color="#b3edff"
+            visible="false"
+            shadow="cast:false; receive:true;"> 
+        </a-plane>-->
 
 
-     <!--<a-entity id ="buttons" class="interactive" interactions position="4.1 1.6 -3.5" geometry="primitive:cylinder; radius:0.15; height:0.2;" material="color:rgb(255, 100, 100)"
-                animation__mouseenter="property:material.color; type:color; to:rgb(255, 0, 0); startEvents:mouseenter; dur:200"
-                animation__mouseleave="property:material.color; type:color; to:rgb(255, 100, 100); startEvents:mouseleave; dur:200"
-                animation__click="property:position; from: 4.1 1.5 -3.5; to: 4.1 1.6 -3.5; startEvents:click; dur:300" shadow>
-    </a-entity>
-
-    <a-entity id ="stand" position="4.1 0.74 -3.5" rotation="0 0 90" geometry="primitive:box; width:1.6; depth:0.6; height:0.6;" material="color:white" shadow></a-entity> -->
-    
-
-    <!--<a-box
-        id="box_clear"
-        interactions
-        class="interactive"
-        position="-7 0.5 -3"
-        rotation="0 45 0"
-        color="#b57eff"
-        visible='true'
-        shadow>
-    </a-box>
-
-    <a-cylinder
-        id="cylinder_clear"
-        interactions
-        class="interactive"
-        position="-5 0.75 -3"
-        radius="0.5"
-        height="1.5"
-        color="#a7f489"
-        visible='true'
-        shadow>
-    </a-cylinder>
-
-
-    <a-sphere
-        id="sphere_clear"
-        interactions
-        class="interactive"
-        position="-6 1.25 -5"
-        radius="1.25"
-        color="#ff8c37"
-        visible='true'
-        shadow>
-
-    </a-sphere>
-
-
-
-
-    <a-sphere
-        id="sphere"
-        pickup
-        class="interactive"
-        body="type:dynamic; mass:5; shape:sphere;"
-        position="0 1.25 -5"
-        radius="1.25"
-        color="#EF2D5E"
-        shadow>
-    
-    </a-sphere>
-
-    <a-cylinder
-        id="cylinder"
-        pickup
-        class="interactive"
-        body="type:dynamic; mass:5; shape:cylinder;"
-        position="1 0.75 -3"
-        radius="0.5"
-        height="1.5"
-        color="#FFC65D"
-        shadow>
-    </a-cylinder>  -->
-
-    <!--
-    <a-entity
-        id="character"
-        position="0 0 0"
-        scale= " 0.00256 0.00256 0.00256"
-        gltf-model="#character-obj"
-    ></a-entity>
-
-    <a-entity
-        id="cube_test"
-        position="0 0 0"
-        gltf-model="#cubeTest-obj"
-    ></a-entity> -->
-
-    <a-plane
-        id="plane"
-        static-body
-        position="0 -0.04 -4"
-        rotation="-90 0 0"
-        scale="2 2 2"
-        width="30"
-        height="15"
-        color="#b3edff"
-        visible="false"
-        shadow="cast:false; receive:true;"> 
-    </a-plane>
-
-  
-
-
-</a-scene>
+    </a-scene>
 </body>
 </html>
