@@ -56,6 +56,9 @@ AFRAME.registerComponent('control-panel',{
         player.setAttribute('position', {x:-2, y:1.6, z:0});
         light.setAttribute('position', {x:-1.246, y:16.753, z:3.015});
 
+        sign1.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
+        sign2.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
+
         polarBear1.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
         polarBear2.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
         polarBear3.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
@@ -129,6 +132,9 @@ AFRAME.registerComponent('control-panel',{
         present = true;
 
         
+        sign1.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
+        sign2.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
+        
         enviroModel.setAttribute('gltf-model', "/assets/environment-present.glb");
         navMesh.setAttribute('gltf-model', "/assets/nav-present/nav-present.gltf");
         navMesh.setAttribute('position',  {x:-2.567, y:1.3, z:-8.683});
@@ -200,6 +206,10 @@ AFRAME.registerComponent('control-panel',{
         click.play();
 
         present = false;
+
+        
+        sign1.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
+        sign2.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
 
         enviroModel.setAttribute('gltf-model', "/assets/environment-future.glb");
         navMesh.setAttribute('gltf-model', "/assets/nav-future/nav-future.gltf");

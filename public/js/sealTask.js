@@ -37,14 +37,186 @@ function checkSeals() {
     } else if (sealCounter > 100){
         //popup here
         bool_sealtask = false;
+        sealTick = false;
     }
 }
 
+
+  
+function updateSubtaskProgressBar(subs_completed, total_subs, progress_bar_transition, toggle, mod, reload_btn) {
+  var left_side = $(".sub-progress-bar_transition .circle .left .sub-progress");
+  var right_side = $(".sub-progress-bar_transition .circle .right .sub-progress");
+
+  progress = subs_completed / total_subs * 360;
+  transition = 500;
+  delay = transition / 2;
+  rot_reminder = 0;
+
+  if (progress < 180) {
     
-                    
+    rot_right = 0;
+
+    right_side.css({
+      'transform': 'rotate(' + rot_right + 'deg)'
+    });
+
+    rot_left = progress
+
+    rot_reminder = 180 - rot_left
+  
+    if (rot_reminder != 0 && mod != 0 && toggle == 0) {
+
+      progress_bar_transition.css({
+        'transition': 'all ' + delay / 1000 + 's ease-in'
+      });
+
+      setTimeout(function () {
+        progress_bar_transition.css({
+          'transition': 'all ' + delay / 1000 + 's ease-out'
+        });
+        left_side.css({
+
+          'transform': 'rotate(' + rot_left + 'deg)'
+        });
+      }, delay);
+
+      toggle = 1 - toggle
+      reload_btn.data('toggle', toggle)
+
+    } else {
+      progress_bar_transition.css({
+        'transition': 'all ' + transition / 1000 + 's ease-in-out'
+      });
+      left_side.css({
+        'transform': 'rotate(' + rot_left + 'deg)'
+      });
+
+    }
+
+  } else {
+
+    rot_left = 180;
+
+    left_side.css({
+      'transform': 'rotate(' + rot_left + 'deg)'
+    });
+
+    rot_right = progress - 180;
+
+    rot_reminder = rot_right
+
+    if (rot_reminder != 0 && mod != 0 && toggle == 1) {
+      
+      progress_bar_transition.css({
+        'transition': 'all ' + delay / 1000 + 's ease-in'
+      });
+
+      setTimeout(function () {
+        progress_bar_transition.css({
+          'transition': 'all ' + delay / 1000 + 's ease-out'
+        });
+        right_side.css({
+
+          'transform': 'rotate(' + rot_right + 'deg)'
+        });
+      }, delay);
+
+      toggle = 1 - toggle
+      reload_btn.data('toggle', toggle)
+
+    } else {
+      progress_bar_transition.css({
+        'transition': 'all ' + transition / 1000 + 's ease-in-out'
+      });
+      right_side.css({
+        'transform': 'rotate(' + rot_right + 'deg)'
+      });
+    }
+  }
+}
+
+function setSubtaskProgressBar(subs_completed, total_subs, bar_transition) {
+
+  modulo = 0;
+  current_progress = 0;
+  
+  var left_side = $(".sub-progress-bar_transition .circle .left .sub-progress");
+  var right_side = $(".sub-progress-bar_transition .circle .right .sub-progress");
+
+  modulo = total_subs%2
+  current_progress = subs_completed / total_subs * 360;
+
+  var reload = $('.reload')
+  reload.data('completed', subs_completed)
+  reload.data('total', total_subs)
+  reload.data('modulo', modulo)
 
 
+  if (current_progress < 180) {
 
+    rot_left = current_progress
+    rot_right = 0
+
+    left_side.css({
+      'transform': 'rotate(' + rot_left + 'deg)'
+    });
+
+    reload.data('toggle', 1)
+
+  } else {
+
+    rot_left = 180
+    rot_right = current_progress - 180
+
+    left_side.css({
+      'transform': 'rotate(' + rot_left + 'deg)'
+    });
+
+    right_side.css({
+      'transform': 'rotate(' + rot_right + 'deg)'
+    });
+
+    reload.data('toggle', 0)
+
+  }
+
+  bar_transition.css({
+    'transition': 'none'
+  });
+}
+
+function addProgress(){
+    subs_completed += Math.round(0.1 * 10) / 10
+
+    fixed = Math.round(subs_completed.toFixed(1))
+
+    $('.number').html(fixed + '/' + total_subs)
+
+    reload = $('.reload')
+    reload.data('completed', subs_completed)
+    modulo = reload.data('modulo')
+    toggle = reload.data('toggle')
+    total = reload.data('total')
+
+    updateSubtaskProgressBar(fixed, total, bar_transition, toggle, modulo, reload)
+}
+
+
+function resetProgress(total_subs){
+    subs_completed = 0
+
+    fixed = Math.round(subs_completed.toFixed(1))
+    console.log(fixed)
+
+    $('.number').html(fixed + '/' + total_subs)
+    bar_transition = $('.circle .bar_transition .sub-progress')
+
+    setSubtaskProgressBar(subs_completed, total_subs, bar_transition)
+    updateSubtaskProgressBar(fixed, total, bar_transition, toggle, modulo, reload)
+}
+
+
+  
 
 AFRAME.registerComponent('seal-task',{
 
@@ -53,13 +225,14 @@ AFRAME.registerComponent('seal-task',{
     this.tick = AFRAME.utils.throttleTick(this.tick, 1000, this);
 
     bool_sealtask = false;
+    round1 = false;
+    sealTick = false;
 
 
-    
 $(document).ready(function () {
   
-    subs_completed = 0;
-    total_subs = 6;
+    subs_completed = 0
+    total_subs = 6
   
     bar_transition = $('.circle .bar_transition .sub-progress')
     
@@ -67,35 +240,11 @@ $(document).ready(function () {
     number.html(subs_completed + '/' + total_subs)
   
     setSubtaskProgressBar(subs_completed, total_subs, bar_transition)
-  
-  
-    $(document).on('click', '.add', function () {
 
-      subs_completed += 1/10
 
-      $('.number').html(subs_completed + '/' + total_subs)
-  
-      reload = $('.reload')
-      reload.data('completed', subs_completed)
-      modulo = reload.data('modulo')
-      toggle = reload.data('toggle')
-      total = reload.data('total')
-  
-      updateSubtaskProgressBar(subs_completed, total, bar_transition, toggle, modulo, reload)
-    })
-  
-    
-
-  
   });
-       
-  
-      
-      
 
-    
 
-    
     //setting this to false for now to reduce memory usage
    
     seal1 = document.querySelector('#seal1');
@@ -115,13 +264,17 @@ $(document).ready(function () {
     player = document.querySelector('#player');
     player2 =  document.querySelector('#player2');   
     circle = document.querySelector('#cylinder_red');
+    sign1 = document.querySelector('#sign1');
+    sign2 = document.querySelector('#sign2');
 
     click = document.querySelector('#click_sound');
-
     roundTitle = document.getElementById('Round_Title_ID');
+    progressCircle = document.getElementById('Progress_Circle_ID');
 
 
     sealCounter = 0;
+
+    console.log(sealCounter);
         
     ice1.addEventListener('click', ()=>{
         
@@ -168,6 +321,7 @@ $(document).ready(function () {
 
             if (sealCounter <100){
                 seal1.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
+                addProgress();
             } 
             sealCounter+=1;
             checkSeals();
@@ -185,6 +339,7 @@ $(document).ready(function () {
             
             if (sealCounter <100){
                 seal2.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
+                addProgress();
             } 
             sealCounter+=1;
             checkSeals();
@@ -196,6 +351,7 @@ $(document).ready(function () {
         if (bool_sealtask == true){
 
             seal3.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
+            addProgress();
             sealCounter+=1;
             checkSeals();
             click.play();
@@ -207,6 +363,7 @@ $(document).ready(function () {
         if (bool_sealtask == true){
 
             seal4.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
+            addProgress();
             sealCounter+=1;
             checkSeals();
             click.play();
@@ -218,6 +375,7 @@ $(document).ready(function () {
         if (bool_sealtask == true){
 
             seal5.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
+            addProgress();
             sealCounter+=1;
             checkSeals();
             click.play();
@@ -229,6 +387,7 @@ $(document).ready(function () {
         if (bool_sealtask == true){
 
             seal6.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
+            addProgress();
             sealCounter+=1;
             checkSeals();
             click.play();
@@ -239,30 +398,43 @@ $(document).ready(function () {
 
     tick: function(){
 
-        playerPos = player.getAttribute('position');
-        playerRot = player.getAttribute('rotation');
-        circlePos = circle.getAttribute('position');
+      playerPos = player.getAttribute('position');
+      playerRot = player.getAttribute('rotation');
+      circlePos = circle.getAttribute('position');
 
-        xPlayer = ((playerPos.x - circlePos.x)**2);
-        yPlayer = ((playerPos.y - circlePos.y)**2);
-        zPlayer = ((playerPos.z - circlePos.z)**2);
-        playerSum = xPlayer + yPlayer + zPlayer;
-        distance = Math.sqrt(playerSum);
+      xPlayer = ((playerPos.x - circlePos.x)**2);
+      yPlayer = ((playerPos.y - circlePos.y)**2);
+      zPlayer = ((playerPos.z - circlePos.z)**2);
+      playerSum = xPlayer + yPlayer + zPlayer;
+      distance = Math.sqrt(playerSum);
+
+      if (distance < 1.8){
+
+        bool_sealtask = true;
+        sealTick = true;
+
+    }
+
+
+      if(sealTick){
+
+        if (subs_completed >= 5.9){
+            resetProgress(4);
+            total_subs = 4;
+            round1 = true;
+        }
+        if(subs_completed >= 4 && round1 == true){
+            resetProgress(2);
+            total_subs = 2;
+        }
 
             
-        //console.log(bool_sealtask);
-        //console.log(sealCounter);
-
-
+        //console.log("subs_completed" + subs_completed);
+        console.log(sealCounter);
 
         //console.log(playerPos);
         //console.log(playerRot);
 
-        if (distance < 1.8){
-
-            bool_sealtask = true;
-
-        }
 
         if (bool_sealtask == true && present == true){
 
@@ -272,6 +444,10 @@ $(document).ready(function () {
             Button_Arctic_Exit_ID.style.display = "block";
             Round_Title_ID.style.display = "block";
             Round_Text_ID.style.display = "block";
+            progressCircle.style.display = "block";
+
+            sign1.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
+            sign2.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
 
             if (sealCounter < 60){
 
@@ -316,158 +492,18 @@ $(document).ready(function () {
             Button_Arctic_Reset_ID.style.display = "none";
             Round_Title_ID.style.display = "none";
             Round_Text_ID.style.display = "none";
+            progressCircle.style.display = "none";
         }
     
  
 
     }
 
+  }
+
 
 
 });
 
-
-  
-function updateSubtaskProgressBar(subs_completed, total_subs, progress_bar_transition, toggle, mod, reload_btn) {
-    var left_side = $(".sub-progress-bar_transition .circle .left .sub-progress");
-    var right_side = $(".sub-progress-bar_transition .circle .right .sub-progress");
-  
-    progress = subs_completed / total_subs * 360;
-    transition = 500;
-    delay = transition / 2;
-    rot_reminder = 0;
-  
-    if (progress < 180) {
-      
-      rot_right = 0;
-  
-      right_side.css({
-        'transform': 'rotate(' + rot_right + 'deg)'
-      });
-  
-      rot_left = progress
-  
-      rot_reminder = 180 - rot_left
-    
-      if (rot_reminder != 0 && mod != 0 && toggle == 0) {
-  
-        progress_bar_transition.css({
-          'transition': 'all ' + delay / 1000 + 's ease-in'
-        });
-  
-        setTimeout(function () {
-          progress_bar_transition.css({
-            'transition': 'all ' + delay / 1000 + 's ease-out'
-          });
-          left_side.css({
-  
-            'transform': 'rotate(' + rot_left + 'deg)'
-          });
-        }, delay);
-  
-        toggle = 1 - toggle
-        reload_btn.data('toggle', toggle)
-  
-      } else {
-        progress_bar_transition.css({
-          'transition': 'all ' + transition / 1000 + 's ease-in-out'
-        });
-        left_side.css({
-          'transform': 'rotate(' + rot_left + 'deg)'
-        });
-  
-      }
-  
-    } else {
-  
-      rot_left = 180;
-  
-      left_side.css({
-        'transform': 'rotate(' + rot_left + 'deg)'
-      });
-  
-      rot_right = progress - 180;
-  
-      rot_reminder = rot_right
-  
-      if (rot_reminder != 0 && mod != 0 && toggle == 1) {
-        
-        progress_bar_transition.css({
-          'transition': 'all ' + delay / 1000 + 's ease-in'
-        });
-  
-        setTimeout(function () {
-          progress_bar_transition.css({
-            'transition': 'all ' + delay / 1000 + 's ease-out'
-          });
-          right_side.css({
-  
-            'transform': 'rotate(' + rot_right + 'deg)'
-          });
-        }, delay);
-  
-        toggle = 1 - toggle
-        reload_btn.data('toggle', toggle)
-  
-      } else {
-        progress_bar_transition.css({
-          'transition': 'all ' + transition / 1000 + 's ease-in-out'
-        });
-        right_side.css({
-          'transform': 'rotate(' + rot_right + 'deg)'
-        });
-      }
-    }
-  }
-  
-  function setSubtaskProgressBar(subs_completed, total_subs, bar_transition) {
-  
-    modulo = 0;
-    current_progress = 0;
-    
-    var left_side = $(".sub-progress-bar_transition .circle .left .sub-progress");
-    var right_side = $(".sub-progress-bar_transition .circle .right .sub-progress");
-  
-    modulo = total_subs%2
-    current_progress = subs_completed / total_subs * 360;
-  
-    var reload = $('.reload')
-    reload.data('completed', subs_completed)
-    reload.data('total', total_subs)
-    reload.data('modulo', modulo)
-  
-  
-    if (current_progress < 180) {
-  
-      rot_left = current_progress
-      rot_right = 0
-  
-      left_side.css({
-        'transform': 'rotate(' + rot_left + 'deg)'
-      });
-  
-      reload.data('toggle', 1)
-  
-    } else {
-  
-      rot_left = 180
-      rot_right = current_progress - 180
-  
-      left_side.css({
-        'transform': 'rotate(' + rot_left + 'deg)'
-      });
-  
-      right_side.css({
-        'transform': 'rotate(' + rot_right + 'deg)'
-      });
-  
-      reload.data('toggle', 0)
-  
-    }
-  
-    bar_transition.css({
-      'transition': 'none'
-    });
-  }
   
   

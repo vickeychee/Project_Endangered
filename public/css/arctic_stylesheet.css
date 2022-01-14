@@ -139,17 +139,34 @@
 
     }
 
-    body{
-        background-color: #333;
-    }
+    /*https://stackoverflow.com/questions/68256289/round-progress-bar-css-js*/
+
     
     .subtask-circular-progress {
         position: absolute;
         left: 50%;
-        top: 40%;
+        top: 85%;
         height: 100px;
         width: 100px;
+        border-radius: 100%;
+        box-shadow: 3px 8px 15px rgba(0, 0, 0, 0.2);
+        z-index: 999999;
+        display:none;
     }
+
+        
+    .subtask-circular-progress .outer{
+        position: absolute;
+        z-index: 3;
+        top: 50%;
+        left: 50%;
+        height: 110px;
+        width: 110px;
+        margin: -55px 0 0 -55px;
+        border-radius: 100%;
+        background: #F8F8F8;
+    }
+
     
     .subtask-circular-progress .inner {
         position: absolute;
@@ -160,7 +177,7 @@
         width: 80px;
         margin: -40px 0 0 -40px;
         border-radius: 100%;
-        background: #454545;
+        background: #F8F8F8;
     }
     
     .subtask-circular-progress .number {
@@ -169,16 +186,18 @@
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 10;
-        font-size: 15px;
-        font-weight: 500;
-        color: white;
+        font-size: 26px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        text-align: center;
+        color: #013440;
     }
     
     .subtask-circular-progress .bar_transition {
         position: absolute;
         height: 100%;
         width: 100%;
-        background: #fff;
+        background: #E5E5E5;
         -webkit-border-radius: 100%;
         border-radius: 100%;
         clip: rect(0px, 100px, 100px, 50px);
@@ -192,7 +211,7 @@
         -webkit-border-radius: 100%;
         border-radius: 100%;
         clip: rect(0px, 50px, 100px, 0px);
-        background: #4158d0;
+        background: #2D6C73;
         transition: all 0.5s ease-in-out;
         z-index: 6;
     }
@@ -212,9 +231,17 @@
         transform: rotate(0deg);
     }
     
-    .buttons{
+    .button{
+        display:none;
+    }
+
+    .a-enter-ar, .a-enter-vr {
+        font-family: sans-serif,monospace;
+        font-size: 13px;
+        width: 100%;
+        font-weight: 200;
+        line-height: 16px;
         position: absolute;
-        left: 50%;
-        top: 60%;
-        z-index: 999999;
+        right: 20px;
+        bottom: 52px;
     }
