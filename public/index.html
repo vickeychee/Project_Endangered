@@ -5,6 +5,7 @@
     <title>Project Endangered</title>
     <meta name="description" content="Project Endagered WebVR">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
 
     <!--External Components-->
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
@@ -35,7 +36,18 @@
 
     <!--User Interface-->
 
-   <div id= "Title_Arctic_Center">
+    <div class="flex-parent">
+        <div class="flex-child"><img id="Title_Arctic_ID" src="/imgs/arctic_title.png"></div>
+            <div class="flex-grandchild">
+                <div class="flex-grandchild1"><button class="Button" id= "Button_Arctic_Instructions_ID"><img></button></div>
+                <div class="flex-grandchild2"><button class="Button" id= "Button_Arctic_Settings_ID"><img></button></div>
+                <div class="flex-grandchild3"><button class="Button" id= "Button_Arctic_Reset_ID"><img></button></div>
+                <div class="flex-grandchild4"><button class="Button" id= "Button_Arctic_Exit_ID"><img></button></div>
+            </div>
+        </div>
+      </div>
+
+   <!--<div id= "Title_Arctic_Center">
         <img id="Title_Arctic_ID" src="/imgs/arctic_title.png">
     </div>
 
@@ -61,7 +73,7 @@
 
     <div id= "Round_Text_Center">
         <h2 id ="Round_Text_ID">Collect all of the seals!</h2>
-    </div>--> 
+    </div>
     <div class="wrapper">
         <div id= "Progress_Circle_ID" class="subtask-circular-progress sub-progress-bar_transition">
         <div class="outer"></div>
@@ -81,7 +93,7 @@
         <button type="button" class="btn btn-success add" >+</button>
         <button type="button" class="btn btn-success remove ms-4">-</button>
         <button type="button" class="btn btn-success reload ms-4" data-completed="" data-total="" data-modulo="" data-toggle="">reload</button>
-      </div>
+      </div>-->
 
     <a-scene id="scene" physics="restitution: 0; debug:false; shadow=autoUpdate: false" rain="count:0; splashBounce:0.5; splashGravity: 9.8*0.5; dropHeight:0.25; opacity:1; dropRadius:0.1; height: 100; color: white; splash: false; width:50">
 

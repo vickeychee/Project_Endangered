@@ -1,4 +1,108 @@
-#Title_Arctic_Center{
+.flex-parent {
+    display: inline-flex;
+    position: absolute;
+    z-index: 999999;
+    color: #fff;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3rem;
+  }
+  
+  .flex-child {
+    flex: 1 1 100%;
+    margin-left: 3rem;
+  }
+  
+  .flex-child-container {
+    display: flex;
+    flex-flow: row nowrap;
+    position: absolute;
+    top: 0;
+    left: 0px;
+    justify-content: flex-end;
+  }
+  .flex-grandchild {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: auto;
+    margin-right: 2rem;
+  }
+
+  .flex-grandchild1, .flex-grandchild2,.flex-grandchild3,.flex-grandchild4 {
+    margin-right: 1rem;
+  }
+
+
+  .Button {
+    background-color: #F8F8F8;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0;
+    cursor: pointer;
+    border: 0.25rem solid;
+    border-color:#F8F8F8;
+  }
+
+  .Button:hover{
+    background-color: #e0e5e6;
+    border-color:#e0e5e6;
+  }
+
+  .Button:active{
+    border: 0.25rem solid black;
+    border-color: #28A0D3;
+  }
+
+  #Button_Arctic_Instructions_ID {
+      background-image: url("/imgs/arctic_button_instructions.png");
+      background-repeat: no-repeat;
+      background-position:center;
+      padding-left: 33px;
+      border-radius: 50%;
+      z-index: 999999;
+      box-shadow: 3px 8px 15px rgba(0, 0, 0, 0.2);
+    }
+
+
+    #Button_Arctic_Settings_ID {
+        background-image: url("/imgs/arctic_button_settings.png");
+        background-repeat: no-repeat;
+        background-position:center;
+        padding-left: 33px;
+        border-radius: 50%;
+        z-index: 999999;
+        box-shadow: 3px 8px 15px rgba(0, 0, 0, 0.2);
+      }
+
+
+    #Button_Arctic_Reset_ID {
+        background-image: url("/imgs/arctic_button_reset.png");
+        background-repeat: no-repeat;
+        background-position:center;
+        padding-left: 33px;
+        border-radius: 50%;
+        z-index: 999999;
+        box-shadow: 3px 8px 15px rgba(0, 0, 0, 0.2);
+    }  
+    
+    #Button_Arctic_Exit_ID {
+        background-image: url("/imgs/arctic_button_exit.png");
+        background-repeat: no-repeat;
+        background-position:center;
+        padding-left: 33px;
+        border-radius: 50%;
+        z-index: 999999;
+        box-shadow: 3px 8px 15px rgba(0, 0, 0, 0.2);
+    } 
+
+/*#Title_Arctic_Center{
     margin: 0;
     position: absolute;
     top: 50%;
@@ -139,7 +243,7 @@
 
     }
 
-    /*https://stackoverflow.com/questions/68256289/round-progress-bar-css-js*/
+    https://stackoverflow.com/questions/68256289/round-progress-bar-css-js
 
     
     .subtask-circular-progress {
@@ -245,3 +349,5 @@
         right: 20px;
         bottom: 52px;
     }
+
+    */
