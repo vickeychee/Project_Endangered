@@ -2,10 +2,14 @@ AFRAME.registerComponent('user-interface',{
 
     init:function(){
 
-        console.log("running script");
+       //helpButton = document.getElementById('Button_Arctic_Instructions_ID');
+
+
+        // helpButton.addEventListener('click', ()=>{
+            
+    
+       // });
 
     }
-
-
 
 });
