@@ -1,4 +1,67 @@
-//const navMesh = require("aframe-extras/src/pathfinding/nav-mesh");
+function scaleAnimation(){
+
+    polarBear1.addEventListener('mouseenter', ()=>{
+        if (present == true){
+            polarBear1.setAttribute('animation', {property:'scale', to: {x:0.73, y:0.73, z:0.73}, dur: 200});
+        }
+    });
+
+    polarBear1.addEventListener('mouseleave', ()=>{
+        if (present == true){
+            polarBear1.setAttribute('animation', {property:'scale',to:{x:0.7, y:0.7, z:0.7}, dur: 200});
+        }
+    });
+
+    polarBear2.addEventListener('mouseenter', ()=>{
+        if (present == true){
+            polarBear2.setAttribute('animation', {property:'scale', to: {x:1.03, y:1.03, z:1.03}, dur: 200});
+        }
+    });
+
+    polarBear2.addEventListener('mouseleave', ()=>{
+        if (present == true){
+            polarBear2.setAttribute('animation', {property:'scale', to: {x:1, y:1, z:1}, dur: 200});
+        }
+    });
+
+    polarBear3.addEventListener('mouseenter', ()=>{
+        if (present == true){
+            polarBear3.setAttribute('animation', {property:'scale', to: {x:1.03, y:1.03, z:1.03}, dur: 200});
+        }
+    });
+
+    polarBear3.addEventListener('mouseleave', ()=>{
+        if (present == true){
+            polarBear3.setAttribute('animation', {property:'scale', to: {x:1, y:1, z:1}, dur: 200});
+        }
+    });
+
+
+    seal5.addEventListener('mouseenter', ()=>{
+        if (present == true && bool_sealtask == false){
+            seal5.setAttribute('animation', {property:'scale', to: {x:1.9, y:1.9, z:1.9}, dur: 200});
+        }
+    });
+
+    seal5.addEventListener('mouseleave', ()=>{
+        if (present == true && bool_sealtask == false){
+            seal5.setAttribute('animation', {property:'scale', to: {x:1.8, y:1.8, z:1.8}, dur: 200});
+        }
+    });
+
+    seal6.addEventListener('mouseenter', ()=>{
+        if (present == true && bool_sealtask == false){
+            seal6.setAttribute('animation', {property:'scale', to: {x:1.9, y:1.9, z:1.9}, dur: 200});
+        }
+    });
+
+    seal6.addEventListener('mouseleave', ()=>{
+        if (present == true && bool_sealtask == false){
+            seal6.setAttribute('animation', {property:'scale', to: {x:1.8, y:1.8, z:1.8}, dur: 200});
+        }  
+    });
+
+}
 
 AFRAME.registerComponent('control-panel',{
 
@@ -16,6 +79,7 @@ AFRAME.registerComponent('control-panel',{
     scene = document.querySelector('#scene'); 
     controlPanel = document.querySelector('#control_panel'); 
     circle = document.querySelector('#cylinder_red');
+    title = document.getElementById('Title_Arctic_ID');
 
 
     seal1 = document.querySelector('#seal1');
@@ -41,11 +105,17 @@ AFRAME.registerComponent('control-panel',{
     past = false;
     present = true;
     future = false;
+
+
+    scaleAnimation();
+
    
     buttonPast.addEventListener('click', ()=>{
         click.play();
 
         present = false;
+
+        title.src="/imgs/arctic_title_past.png";
 
         enviroModel.setAttribute('gltf-model', "/assets/environment-past.glb");
         navMesh.setAttribute('gltf-model', "/assets/nav-past/nav-past.gltf");
@@ -57,7 +127,9 @@ AFRAME.registerComponent('control-panel',{
         light.setAttribute('position', {x:-1.246, y:16.753, z:3.015});
 
         sign1.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
-        sign2.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
+
+        sign2.setAttribute('position', {x:3.771, y: 0, z:-2.502});
+        sign2.setAttribute('rotation', {x:0, y:-32.040, z:0});
 
         polarBear1.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
         polarBear2.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
@@ -130,10 +202,13 @@ AFRAME.registerComponent('control-panel',{
         click.play();
 
         present = true;
-
         
+        title.src="/imgs/arctic_title_present.png";
         sign1.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
         sign2.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
+
+        sign2.setAttribute('position', {x:-4.925, y: 0, z:-8.198});
+        sign2.setAttribute('rotation', {x:0, y:35.020, z:0});
         
         enviroModel.setAttribute('gltf-model', "/assets/environment-present.glb");
         navMesh.setAttribute('gltf-model', "/assets/nav-present/nav-present.gltf");
@@ -199,6 +274,8 @@ AFRAME.registerComponent('control-panel',{
 
         light.setAttribute('position', {x:-1.246, y:16.753, z:-4.678});
 
+       // polarBear1.setAttribute('animation', {property:'scale', from: {x:0.7, y:0.7, z:0.7}, to: {x:0.73, y:0.73, z:0.73}, dur: 200, , enabled:true});
+
         
     });
 
@@ -207,9 +284,10 @@ AFRAME.registerComponent('control-panel',{
 
         present = false;
 
-        
+        title.src="/imgs/arctic_title_future.png";
         sign1.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
-        sign2.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
+        sign2.setAttribute('position', {x:8.792, y:0.112, z:5.477});
+        sign2.setAttribute('rotation', {x:0, y:-38.800, z:0});
 
         enviroModel.setAttribute('gltf-model', "/assets/environment-future.glb");
         navMesh.setAttribute('gltf-model', "/assets/nav-future/nav-future.gltf");

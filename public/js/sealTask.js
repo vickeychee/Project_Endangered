@@ -3,6 +3,7 @@ function checkSeals() {
     if (sealCounter == 60){
 
         roundTitle.innerHTML = "Round 2";
+        title.src="/imgs/arctic_title_present.png";
         ice3.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
         ice4.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
 
@@ -18,6 +19,7 @@ function checkSeals() {
     } else if (sealCounter == 100){
 
         roundTitle.innerHTML = "Round 3";
+        title.src="/imgs/arctic_title_future.png";
         ice1.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
         ice2.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
         ice5.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
@@ -37,12 +39,15 @@ function checkSeals() {
     } else if (sealCounter > 100){
         //popup here
         bool_sealtask = false;
-        sealTick = false;
+
+        sealCounter = 0;
+        round1 = false;
+        sealTaskCounter +=1;
+        title.src="/imgs/arctic_title_present.png";
     }
 }
 
 
-  
 function updateSubtaskProgressBar(subs_completed, total_subs, progress_bar_transition, toggle, mod, reload_btn) {
   var left_side = $(".sub-progress-bar_transition .circle .left .sub-progress");
   var right_side = $(".sub-progress-bar_transition .circle .right .sub-progress");
@@ -206,17 +211,160 @@ function resetProgress(total_subs){
     subs_completed = 0
 
     fixed = Math.round(subs_completed.toFixed(1))
-    console.log(fixed)
 
     $('.number').html(fixed + '/' + total_subs)
     bar_transition = $('.circle .bar_transition .sub-progress')
+
+    reload = $('.reload')
+    reload.data('completed', subs_completed)
+    modulo = reload.data('modulo')
+    toggle = reload.data('toggle')
+    total = reload.data('total')
 
     setSubtaskProgressBar(subs_completed, total_subs, bar_transition)
     updateSubtaskProgressBar(fixed, total, bar_transition, toggle, modulo, reload)
 }
 
+function resetSealTask(){
 
-  
+  seal1.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
+  seal2.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
+  seal3.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
+  seal4.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
+  seal5.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
+  seal6.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
+  ice1.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
+  ice2.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
+  ice3.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
+  ice4.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
+  ice5.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
+  ice6.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
+
+  seal1.setAttribute('position', {x:-13.111, y:-1.370, z:-18.840});
+  seal1.setAttribute('rotation', {x:13.140, y:301.950, z:0});
+  seal2.setAttribute('position', {x:-7.588, y:-1.164, z:-24.854});
+  seal2.setAttribute('rotation', {x:13.140, y:197.950, z:0});
+  seal3.setAttribute('position', {x:-2.869, y:-1.293, z:-21.171});
+  seal3.setAttribute('rotation', {x:13, y:300.060, z:0});
+  seal4.setAttribute('position', {x:4.226, y:-1.303, z:-21.171});
+  seal4.setAttribute('rotation', {x:13.350, y:30.800, z:0});
+  seal5.setAttribute('position', {x:-0.054, y:-1.113, z:-15.820});
+  seal5.setAttribute('rotation', {x:13.570, y:216.610, z:0});
+  seal6.setAttribute('position', {x:-13.011, y:-1.244, z:-11.887});
+  seal6.setAttribute('rotation', {x:13.000, y:35.140, z:0});
+
+  roundTitle.innerHTML = "Round 1";
+  player.setAttribute('position', {x:7, y:1.6, z:-12});
+
+  round1 = false;
+
+  subs_completed = 0;
+  sealCounter = 0;
+
+
+
+}
+
+function exitSealTask(){
+  player.setAttribute('position', {x:7.77, y:1.6, z:-9.68});
+  title.src="/imgs/arctic_title_present.png";
+
+  ice1.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
+  ice2.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
+  ice3.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
+  ice4.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
+  ice5.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
+  ice6.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
+  seal1.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
+  seal2.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
+  seal3.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
+  seal4.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
+  seal5.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
+  seal6.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
+  seal7.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
+  seal8.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
+  seal9.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
+
+  seal1.setAttribute('position', {x:-13.760, y:-0.101, z:-30.780});
+  seal1.setAttribute('rotation', {x:0, y:207.000, z:0});
+  seal2.setAttribute('position', {x:6.012, y:-0.132, z:-24.854});
+  seal2.setAttribute('rotation', {x:-13.280, y:127.800, z:0});
+  seal3.setAttribute('position', {x:-21.809, y:0.007, z:-15.807});
+  seal3.setAttribute('rotation', {x:-13.360, y:246.100, z:0});
+  seal4.setAttribute('position', {x:10.730, y:0.080, z:-16.500});
+  seal4.setAttribute('rotation', {x:-21.820, y:109.900, z:-12.790});
+  seal5.setAttribute('position', {x:-0.890, y:-0.212, z:-9.668});
+  seal5.setAttribute('rotation', {x:0, y:234.000, z:0});
+  seal6.setAttribute('position', {x:1, y:-0.228, z:-10.400});
+  seal6.setAttribute('rotation', {x:0, y:53.820, z:0});
+
+  player.setAttribute('movement-controls', {enabled:true});
+  player2.setAttribute('wasd-controls', {enabled:true});
+
+  bool_sealtask = false;
+
+  sealCounter = 0;
+  round1 = false;
+  sealTaskCounter =0;
+  roundTitle.innerHTML = "Round 1";
+  subs_completed = 0;
+
+}
+/*
+function scaleSeals(){
+
+seal1.addEventListener('mouseenter', ()=>{
+    if (present == true && bool_sealtask == true ){
+        seal1.setAttribute('animation', {property:'scale', to: {x:2.4, y:2.4, z:2.4}, dur: 200});
+    }
+});
+
+seal1.addEventListener('mouseleave', ()=>{
+  if (present == true && bool_sealtask == true ){
+        seal1.setAttribute('animation', {property:'scale', to: {x:2.3, y:2.3, z:2.3}, dur: 200});
+    }
+});
+
+seal2.addEventListener('mouseenter', ()=>{
+  if (present == true && bool_sealtask == true ){
+      seal2.setAttribute('animation', {property:'scale', to: {x:1.9, y:1.9, z:1.9}, dur: 200});
+  }
+});
+
+seal2.addEventListener('mouseleave', ()=>{
+  if (present == true && bool_sealtask == true ){
+      seal2.setAttribute('animation', {property:'scale', to: {x:1.8, y:1.8, z:1.8}, dur: 200});
+  }
+});
+
+seal3.addEventListener('mouseenter', ()=>{
+  if (present == true && bool_sealtask == true ){
+        seal3.setAttribute('animation', {property:'scale', to: {x:2.1, y:2.1, z:2.1}, dur: 200});
+    }
+});
+
+seal3.addEventListener('mouseleave', ()=>{
+  if (present == true && bool_sealtask == true ){
+        seal3.setAttribute('animation', {property:'scale', to: {x:2.0, y:2.0, z:2.0}, dur: 200});
+    }  
+});
+
+seal4.addEventListener('mouseenter', ()=>{
+  if (present == true && bool_sealtask == true ){
+      seal4.setAttribute('animation', {property:'scale', to: {x:1.9, y:1.9, z:1.9}, dur: 200});
+  }
+});
+
+seal4.addEventListener('mouseleave', ()=>{
+  if (present == true && bool_sealtask == true ){
+      seal4.setAttribute('animation', {property:'scale', to: {x:1.8, y:1.8, z:1.8}, dur: 200});
+  }
+});
+
+}
+*/
+
+
 
 AFRAME.registerComponent('seal-task',{
 
@@ -227,9 +375,11 @@ AFRAME.registerComponent('seal-task',{
     bool_sealtask = false;
     round1 = false;
     sealTick = false;
+    sealTaskCounter = 0;
+ 
 
 
-$(document).ready(function () {
+  $(document).ready(function () {
   
     subs_completed = 0
     total_subs = 6
@@ -244,8 +394,6 @@ $(document).ready(function () {
 
   });
 
-
-    //setting this to false for now to reduce memory usage
    
     seal1 = document.querySelector('#seal1');
     seal2 = document.querySelector('#seal2');
@@ -270,11 +418,29 @@ $(document).ready(function () {
     click = document.querySelector('#click_sound');
     roundTitle = document.getElementById('Round_Title_ID');
     progressCircle = document.getElementById('Progress_Circle_ID');
+    resetButton = document.getElementById('Button_Arctic_Reset_ID');
+    exitButton = document.getElementById('Button_Arctic_Exit_ID');
 
 
     sealCounter = 0;
 
-    console.log(sealCounter);
+
+    resetButton.addEventListener('click', ()=>{
+        
+      resetSealTask();
+
+    });
+
+    exitButton.addEventListener('click', ()=>{
+        exitSealTask();
+        Button_Arctic_Reset_ID.style.display = "none";
+        Button_Arctic_Exit_ID.style.display = "none";
+        Round_Title_ID.style.display = "none";
+        Round_Text_ID.style.display = "none";
+        progressCircle.style.display = "none";
+        sealTick = false;
+
+    });
         
     ice1.addEventListener('click', ()=>{
         
@@ -398,6 +564,8 @@ $(document).ready(function () {
 
     tick: function(){
 
+      if (sealTaskCounter < 1){
+
       playerPos = player.getAttribute('position');
       playerRot = player.getAttribute('rotation');
       circlePos = circle.getAttribute('position');
@@ -413,11 +581,17 @@ $(document).ready(function () {
         bool_sealtask = true;
         sealTick = true;
 
-    }
+     }
 
+    }
 
       if(sealTick){
 
+
+        if(subs_completed == 0  && round1 == false){
+          resetProgress(6);
+          total_subs = 6;
+        }
         if (subs_completed >= 5.9){
             resetProgress(4);
             total_subs = 4;
@@ -428,31 +602,24 @@ $(document).ready(function () {
             total_subs = 2;
         }
 
-            
-        //console.log("subs_completed" + subs_completed);
-        console.log(sealCounter);
-
-        //console.log(playerPos);
-        //console.log(playerRot);
-
-
+  
         if (bool_sealtask == true && present == true){
 
-            Button_Arctic_Settings_ID.style.left = "1640px";
-            Button_Arctic_Instructions_ID.style.left = "1560px";
-            Button_Arctic_Reset_ID.style.display = "block";
-            Button_Arctic_Exit_ID.style.display = "block";
-            Round_Title_ID.style.display = "block";
-            Round_Text_ID.style.display = "block";
-            progressCircle.style.display = "block";
+          Button_Arctic_Reset_ID.style.display = "block";
+          Button_Arctic_Exit_ID.style.display = "block";
+          Round_Title_ID.style.display = "block";
+          Round_Text_ID.style.display = "block";
+          progressCircle.style.display = "block";
 
-            sign1.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
-            sign2.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
 
             if (sealCounter < 60){
 
+
                 player.setAttribute('movement-controls', {enabled:false});
                 player2.setAttribute('wasd-controls', {enabled:false});
+
+                title.src="/imgs/arctic_title_past.png";
+
                 ice1.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
                 ice2.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
                 ice3.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
@@ -487,12 +654,12 @@ $(document).ready(function () {
 
         if (bool_sealtask == false && present == true){
 
-            Button_Arctic_Settings_ID.style.left = "1800px";
-            Button_Arctic_Instructions_ID.style.left = "1720px";
             Button_Arctic_Reset_ID.style.display = "none";
+            Button_Arctic_Exit_ID.style.display = "none";
             Round_Title_ID.style.display = "none";
             Round_Text_ID.style.display = "none";
             progressCircle.style.display = "none";
+            sealTick = false;
         }
     
  

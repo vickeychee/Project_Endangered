@@ -83,6 +83,7 @@
 
 
     #Button_Arctic_Reset_ID {
+        display: none;
         background-image: url("/imgs/arctic_button_reset.png");
         background-repeat: no-repeat;
         background-position:center;
@@ -93,6 +94,7 @@
     }  
     
     #Button_Arctic_Exit_ID {
+        display: none;
         background-image: url("/imgs/arctic_button_exit.png");
         background-repeat: no-repeat;
         background-position:center;
@@ -101,6 +103,157 @@
         z-index: 999999;
         box-shadow: 3px 8px 15px rgba(0, 0, 0, 0.2);
     } 
+
+
+    #Round_Title_Center{
+        background-size: cover;
+        position: relative;
+        height: 15%;
+        top: 5%;
+        max-width: 300px;
+        z-index: 999999;
+        margin-left: auto;
+        margin-right: auto;
+        
+    }
+
+    #Round_Text_Center{
+        background-size: cover;
+        position: relative;
+        height: 5%;
+        top: -5%;
+        z-index: 999999;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+
+        
+    }
+      
+   #Round_Title_ID{
+        display: none;
+        color: #F8F8F8;
+        font-size: 36px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        text-align: center;
+        z-index: 999999;
+        text-shadow: 5px 3px 2px rgba(0, 0, 0, 0.2);
+        position: absolute;
+        left:0;
+        right:0;
+        margin:0px auto;
+
+    }
+      
+   #Round_Text_ID{
+        display: none;
+        color: #F8F8F8;
+        font-size: 24px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        text-align: center;
+        z-index: 999999;
+        text-shadow: 5px 3px 2px rgba(0, 0, 0, 0.2);
+        position: absolute;
+        left:0;
+        right:0;
+        margin:0px auto;
+
+
+    }
+    .subtask-circular-progress {
+        position: absolute;
+        left: 48%;
+        top: 85%;
+        height: 100px;
+        width: 100px;
+        border-radius: 100%;
+        box-shadow: 3px 8px 15px rgba(0, 0, 0, 0.2);
+        z-index: 999999;
+        display:none;
+    }
+
+        
+    .subtask-circular-progress .outer{
+        position: absolute;
+        z-index: 3;
+        top: 50%;
+        left: 50%;
+        height: 110px;
+        width: 110px;
+        margin: -55px 0 0 -55px;
+        border-radius: 100%;
+        background: #F8F8F8;
+    }
+
+    
+    .subtask-circular-progress .inner {
+        position: absolute;
+        z-index: 6;
+        top: 50%;
+        left: 50%;
+        height: 80px;
+        width: 80px;
+        margin: -40px 0 0 -40px;
+        border-radius: 100%;
+        background: #F8F8F8;
+    }
+    
+    .subtask-circular-progress .number {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+        font-size: 26px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        text-align: center;
+        color: #013440;
+    }
+    
+    .subtask-circular-progress .bar_transition {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: #E5E5E5;
+        -webkit-border-radius: 100%;
+        border-radius: 100%;
+        clip: rect(0px, 100px, 100px, 50px);
+        z-index: 3;
+    }
+    
+    .circle .bar_transition .sub-progress {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        -webkit-border-radius: 100%;
+        border-radius: 100%;
+        clip: rect(0px, 50px, 100px, 0px);
+        background: #2D6C73;
+        transition: all 0.5s ease-in-out;
+        z-index: 6;
+    }
+    
+    .circle .left .sub-progress {
+        transform: rotate(0deg);
+    }
+    
+    
+    .circle .right {
+        transform: rotate(180deg);
+        z-index: 3;
+    
+    }
+    
+    .circle .right .sub-progress {
+        transform: rotate(0deg);
+    }
+    
+    .button{
+        display:none;
+    }
 
 /*#Title_Arctic_Center{
     margin: 0;

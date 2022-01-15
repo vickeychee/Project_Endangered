@@ -37,7 +37,7 @@
     <!--User Interface-->
 
     <div class="flex-parent">
-        <div class="flex-child"><img id="Title_Arctic_ID" src="/imgs/arctic_title.png"></div>
+        <div class="flex-child"><img id="Title_Arctic_ID" src="/imgs/arctic_title_present.png"></div>
             <div class="flex-grandchild">
                 <div class="flex-grandchild1"><button class="Button" id= "Button_Arctic_Instructions_ID"><img></button></div>
                 <div class="flex-grandchild2"><button class="Button" id= "Button_Arctic_Settings_ID"><img></button></div>
@@ -47,38 +47,19 @@
         </div>
       </div>
 
-   <!--<div id= "Title_Arctic_Center">
-        <img id="Title_Arctic_ID" src="/imgs/arctic_title.png">
-    </div>
-
-    <div id= "Button_Arctic_Instructions">
-        <button class="Button" id= "Button_Arctic_Instructions_ID"><img></button>
-    </div>
-
-    <div id= "Button_Arctic_Settings">
-        <button class="Button" id= "Button_Arctic_Settings_ID"><img></button>
-    </div>
-
-   <div id= "Button_Arctic_Reset">
-        <button class="Button" id= "Button_Arctic_Reset_ID"><img></button>
-    </div>
-
-    <div id= "Button_Arctic_Exit">
-        <button class="Button" id= "Button_Arctic_Exit_ID"><img></button>
-    </div>
-
-    <div id= "Round_Title_Center">
+      <div id= "Round_Title_Center">
         <h1 id ="Round_Title_ID">Round 1</h1>
     </div>
 
     <div id= "Round_Text_Center">
         <h2 id ="Round_Text_ID">Collect all of the seals!</h2>
     </div>
+
     <div class="wrapper">
         <div id= "Progress_Circle_ID" class="subtask-circular-progress sub-progress-bar_transition">
         <div class="outer"></div>
           <div class="inner"></div>
-          <div class="number">100%</div>
+          <div class="number">0/6</div>
           <div class="circle">
             <div class="bar_transition left">
               <div class="sub-progress"></div>
@@ -93,7 +74,8 @@
         <button type="button" class="btn btn-success add" >+</button>
         <button type="button" class="btn btn-success remove ms-4">-</button>
         <button type="button" class="btn btn-success reload ms-4" data-completed="" data-total="" data-modulo="" data-toggle="">reload</button>
-      </div>-->
+      </div>
+
 
     <a-scene id="scene" physics="restitution: 0; debug:false; shadow=autoUpdate: false" rain="count:0; splashBounce:0.5; splashGravity: 9.8*0.5; dropHeight:0.25; opacity:1; dropRadius:0.1; height: 100; color: white; splash: false; width:50">
 
@@ -196,6 +178,9 @@
             ocean="opacity:0.9;  depth:1;  density: 10;  amplitude:0.000005;  amplitudeVariance:0.01;  speed:2.1;  speedVariance:1.070">
         </a-ocean> 
 
+
+        <a-entity user-interface></a-entity>
+        
 
         <!--Control Panel-->
 
@@ -519,7 +504,9 @@
             rotation = "0 682.040 0"
             scale= " 1 1 1 "
             gltf-model="#ice1-obj"
-            visible="false">
+            visible="false"
+            animation__mouseenter="property:position; to: -0.752 0.13 -24.021; startEvents:mouseenter; dur:200"
+            animation__mouseleave="property:position; to: -0.752 0.089 -24.021; startEvents:mouseleave; dur:200">
         </a-entity>
 
         <a-entity
@@ -529,7 +516,9 @@
             rotation = "0 -132.510 0"
             scale= " 1 1 1 "
             gltf-model="#ice2-obj"
-            visible="false">
+            visible="false"
+            animation__mouseenter="property:position; to: 5.717  0.13 -6.845; startEvents:mouseenter; dur:200"
+            animation__mouseleave="property:position; to: 5.717 0.089 -6.845; startEvents:mouseleave; dur:200">
         </a-entity>
 
         <a-entity
@@ -539,7 +528,9 @@
             rotation = "0 274.450 0"
             scale= " 1 1 1 "
             gltf-model="#ice3-obj"
-            visible="false">
+            visible="false"
+            animation__mouseenter="property:position; to: 0.472 0.13 -20.440; startEvents:mouseenter; dur:200"
+            animation__mouseleave="property:position; to: 0.472 0.089 -20.440; startEvents:mouseleave; dur:200">
         </a-entity>
 
         <a-entity
@@ -549,7 +540,9 @@
             rotation = "0 180 0"
             scale= " 1 1 1 "
             gltf-model="#ice4-obj"
-            visible="false">
+            visible="false"
+            animation__mouseenter="property:position; to: 1.627 0.13 -4.283; startEvents:mouseenter; dur:200"
+            animation__mouseleave="property:position; to: 1.627 0.089 -4.283; startEvents:mouseleave; dur:200">
         </a-entity>
 
         <a-entity
@@ -559,7 +552,8 @@
             rotation = "0 180 0"
             scale= " 1 1 1 "
             gltf-model="#ice5-obj"
-            visible="false">
+            animation__mouseenter="property:position; to: -12.820 0.13 -0.823; startEvents:mouseenter; dur:200"
+            animation__mouseleave="property:position; to: -12.820 0.089 -0.823; startEvents:mouseleave; dur:200">
         </a-entity>
 
         <a-entity
@@ -569,7 +563,9 @@
             rotation = "0 227.710 0"
             scale= " 1 1 1 "
             gltf-model="#ice6-obj"
-            visible="false">
+            visible="false"
+            animation__mouseenter="property:position; to: 16.874 0.13 -21.018; startEvents:mouseenter; dur:200"
+            animation__mouseleave="property:position; to: 16.874 0.089 -21.018; startEvents:mouseleave; dur:200">
         </a-entity>
 
 
