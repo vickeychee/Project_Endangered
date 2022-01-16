@@ -166,7 +166,7 @@
 
     
     #Screen_Overlay_ID{
-        display: block;
+        display: none;
         position: fixed; 
         top: 0; bottom: 0; left: 0; right: 0;
         width: 100%;
@@ -177,9 +177,181 @@
         text-align: center;
     }
 
+    #Settings-Text{
+        margin-bottom:0.7rem;
+    }
+
+
+    .Settings-container{
+        
+        display: none;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+
+    }
+
+    .Settings-parent{
+
+        display: flex;
+        position: relative;
+        z-index: 9999999;
+        color: #fff;
+        width: 22%;
+        top:30%;
+        left:0;
+        margin: 0;
+        background: #F8F8F8;
+        flex-direction: column;
+        border-radius: 50px;
+        box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+        padding-left:6rem;
+        padding-right:6rem;
+        padding-bottom: 2rem;
+        padding-top: 2rem;
+        
+
+        
+
+
+    }
+
+    .Settings-parent2{
+
+        display: flex;
+        position: relative;
+        z-index: 9999999;
+        flex-direction: column;
+        text-align: center;
+        margin: 0;
+        flex-wrap: wrap;
+        color: #013440;
+
+
+    }
+
+    .Settings-child{
+         justify-content: center;
+         text-align: center;
+         color: #013440;
+
+    }
+
+    .Settings-child2{
+
+        display: flex;
+        position: relative;
+        z-index: 9999999;
+        flex-direction: row;
+        text-align: center;
+        margin: 0;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding-bottom: 0.75rem;
+        padding-top: 0.8rem;
+
+
+
+    }
+
+    .Settings-child3{
+
+        display: flex;
+        position: relative;
+
+        font-family: 'Poppins', sans-serif;
+    }
+    
+
+    .Settings-child4{
+
+        display: flex;
+        position: relative;
+        margin-left: auto;
+
+
+    }
+
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 50px;
+        height: 20px;
+      }
+      
+      .switch input { 
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+      
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #bababa;
+        -webkit-transition: .4s;
+        transition: .4s;
+
+      }
+      
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 0px;
+        bottom: -3px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+        box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+
+      }
+
+
+      
+      input:checked + .slider {
+        background-color: #bac7ca;
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+        
+      }
+      
+      input:focus + .slider {
+        box-shadow: 0 0 1px #bac7ca;
+
+
+      }
+      
+      
+      input:checked + .slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+        background-color: #013440;
+      }
+      
+      /* Rounded sliders */
+      .slider.round {
+        border-radius: 34px;
+
+      }
+      
+      .slider.round:before {
+        border-radius: 50%;
+
+      }
+
+
+
+
     .Help-container{
         
-        display: flex;
+        display: none;
         align-items: center;
         justify-content: center;
         min-height: 100vh;
@@ -192,7 +364,7 @@
         position: relative;
         z-index: 9999999;
         color: #fff;
-        width: 60%;
+        width: 53%;
         top:30%;
         left:0;
         margin: 0;
@@ -200,8 +372,8 @@
         flex-direction: column;
         border-radius: 50px;
         box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
-        padding-left:4rem;
-        padding-right:4rem;
+        padding-left:4.5rem;
+        padding-right:4.5rem;
         padding-bottom: 2rem;
         padding-top: 2rem;
 
@@ -218,9 +390,15 @@
         
     }
 
+    .Popup-Exit{
+        align-items: flex-end;
+        justify-content: flex-end;
+        margin-left: auto;
+    }
+
     .Popup-title{
         font-size: 48px;
-        font-weight: 600;
+        font-weight: 700;
         padding-bottom: 0.7rem;
     }
 
@@ -292,6 +470,46 @@
         border-style:solid;
         border-width: 1px;  
         border-color: #013440;
+    }
+    
+
+    .Popup-Button{
+        background-color: #F8F8F8;
+        border: 0.25rem solid #F8F8F8;
+        padding: 1rem;
+        margin-right: -3.5rem;
+    }
+
+    .Popup-Button:hover{
+
+        background-color: #e0e5e6;
+        border-color:#e0e5e6;
+
+    }
+
+
+    .Popup-Button:active{
+        border: 0.25rem solid black;
+        border-color: #28A0D3;
+        background-color: #F8F8F8;
+    }
+
+
+    #Help_Exit_Button_ID{
+        background-image: url("/imgs/arctic_button_exit.png");
+        background-repeat: no-repeat;
+        background-position:center;
+        border-radius: 50%;
+
+    }
+
+    #Settings_Exit_Button_ID{
+        background-image: url("/imgs/arctic_button_exit.png");
+        background-repeat: no-repeat;
+        background-position:center;
+        border-radius: 50%;
+        margin-right: -5.5rem;
+
     }
 
 

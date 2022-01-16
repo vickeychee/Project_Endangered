@@ -366,6 +366,8 @@ seal4.addEventListener('mouseleave', ()=>{
 
 
 
+
+
 AFRAME.registerComponent('seal-task',{
 
     init:function(){
@@ -393,6 +395,7 @@ AFRAME.registerComponent('seal-task',{
 
 
   });
+
 
    
     seal1 = document.querySelector('#seal1');
@@ -563,6 +566,7 @@ AFRAME.registerComponent('seal-task',{
     },
 
     tick: function(){
+
 
       if (sealTaskCounter < 1){
 
