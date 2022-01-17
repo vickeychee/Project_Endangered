@@ -13,13 +13,13 @@ function scaleAnimation(){
     });
 
     polarBear2.addEventListener('mouseenter', ()=>{
-        if (present == true){
+        if (present == true || future == true){
             polarBear2.setAttribute('animation', {property:'scale', to: {x:1.03, y:1.03, z:1.03}, dur: 200});
         }
     });
 
     polarBear2.addEventListener('mouseleave', ()=>{
-        if (present == true){
+        if (present == true || future == true ){
             polarBear2.setAttribute('animation', {property:'scale', to: {x:1, y:1, z:1}, dur: 200});
         }
     });
@@ -63,6 +63,48 @@ function scaleAnimation(){
 
 }
 
+/*function factPopup(){
+    polarBear1.addEventListener('click', ()=>{
+
+        if (present == true){
+            factUI.style.display = "flex";
+            Screen_Overlay_ID.style.display = "block";
+            factTitle.innerHTML = "Marine Animals";
+            factText.innerHTML ="The polar bear is the only bear classified as a marine animal. This is because they spend most of their time on sea ice, and depend on the ocean for food.";
+        }
+
+        
+    });   
+
+    polarBear2.addEventListener('click', ()=>{
+
+        if (present == true){
+            factUI.style.display = "flex";
+            Screen_Overlay_ID.style.display = "block";
+            factTitle.innerHTML = "Marine Animals";
+            factText.innerHTML ="The polar bear is the only bear classified as a marine animal. This is because they spend most of their time on sea ice, and depend on the ocean for food.";
+        }
+
+        if (future == true){
+            factUI.style.display = "flex";
+            Screen_Overlay_ID.style.display = "block";
+            factTitle.innerHTML = "Threats";
+            factText.innerHTML ="The loss of sea ice due to climate change is the biggest threat to the polar bear population. Other threats to polar bears include human violence, pollution, and industrial development.";
+          
+        }
+    }); 
+
+    polarBear3.addEventListener('click', ()=>{
+
+        if (present == true){
+            factUI.style.display = "flex";
+            Screen_Overlay_ID.style.display = "block";
+            factTitle.innerHTML = "Great Swimmers";
+            factText.innerHTML ="Polar bears can swim non-stop for many days. They need to do this to travel between pieces of sea ice. They can also swim up to 10 kilometers an hour.";
+        }
+    }); 
+}*/
+
 AFRAME.registerComponent('control-panel',{
 
     init:function(){
@@ -80,6 +122,9 @@ AFRAME.registerComponent('control-panel',{
     controlPanel = document.querySelector('#control_panel'); 
     circle = document.querySelector('#cylinder_red');
     title = document.getElementById('Title_Arctic_ID');
+
+    startText1 = document.querySelector('#start_text1');
+    startText2 = document.querySelector('#start_text2');
 
 
     seal1 = document.querySelector('#seal1');
@@ -108,12 +153,15 @@ AFRAME.registerComponent('control-panel',{
 
 
     scaleAnimation();
+    //factPopup();
 
    
     buttonPast.addEventListener('click', ()=>{
         click.play();
 
         present = false;
+        future = false;
+        past = true;
 
         title.src="/imgs/arctic_title_past.png";
 
@@ -130,6 +178,9 @@ AFRAME.registerComponent('control-panel',{
 
         sign2.setAttribute('position', {x:3.771, y: 0, z:-2.502});
         sign2.setAttribute('rotation', {x:0, y:-32.040, z:0});
+
+        startText1.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
+        startText2.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
 
         polarBear1.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
         polarBear2.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
@@ -195,6 +246,13 @@ AFRAME.registerComponent('control-panel',{
         seal9.setAttribute('position', {x:-17.436, y:-0.276, z:-7.149});
         seal9.setAttribute('rotation', {x:0, y:303.100, z:0});
 
+        infoUI.style.display = "flex";
+        Screen_Overlay_ID.style.display = "block";
+
+        infoTitle.innerHTML ="The Past";
+        infoText.innerHTML ="In the past, the Arctic environment was thriving, with a large number of polar bears and Arctic seals living there. Because of the large number of seals, polar bears were able to easily get their food, making them strong and healthy!";
+        infoButton.innerHTML ="EXPLORE";
+
 
     });
 
@@ -202,6 +260,8 @@ AFRAME.registerComponent('control-panel',{
         click.play();
 
         present = true;
+        future = false;
+        past = false;
         
         title.src="/imgs/arctic_title_present.png";
         sign1.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
@@ -209,6 +269,9 @@ AFRAME.registerComponent('control-panel',{
 
         sign2.setAttribute('position', {x:-4.925, y: 0, z:-8.198});
         sign2.setAttribute('rotation', {x:0, y:35.020, z:0});
+
+        startText1.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
+        startText2.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
         
         enviroModel.setAttribute('gltf-model', "/assets/environment-present.glb");
         navMesh.setAttribute('gltf-model', "/assets/nav-present/nav-present.gltf");
@@ -274,20 +337,33 @@ AFRAME.registerComponent('control-panel',{
 
         light.setAttribute('position', {x:-1.246, y:16.753, z:-4.678});
 
-       // polarBear1.setAttribute('animation', {property:'scale', from: {x:0.7, y:0.7, z:0.7}, to: {x:0.73, y:0.73, z:0.73}, dur: 200, , enabled:true});
+        infoUI.style.display = "flex";
+        Screen_Overlay_ID.style.display = "block";
 
+        infoTitle.innerHTML ="The Present";
+        infoText.innerHTML ="The present-day Arctic environment is at risk. Climate change has caused the Arctic to heat up at twice the spead, causing the ice to melt. This makes it harder for polar bears and other animals to get food, because they rely on the ice to move around. Because of this, the Arctic has begun changing. There are less polar bears, arctic seals, and ice in the Arctic now.";
+        infoButton.innerHTML ="EXPLORE";
+
+
+    
         
     });
 
     buttonFuture.addEventListener('click', ()=>{
+        
         click.play();
 
         present = false;
+        future = true;
+        past = false;
 
         title.src="/imgs/arctic_title_future.png";
         sign1.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
         sign2.setAttribute('position', {x:8.792, y:0.112, z:5.477});
         sign2.setAttribute('rotation', {x:0, y:-38.800, z:0});
+
+        startText1.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
+        startText2.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
 
         enviroModel.setAttribute('gltf-model', "/assets/environment-future.glb");
         navMesh.setAttribute('gltf-model', "/assets/nav-future/nav-future.gltf");
@@ -296,6 +372,8 @@ AFRAME.registerComponent('control-panel',{
         scene.setAttribute('animation', {property:'rain.count', from:0, to:0, dur: 100, enabled:true});
         river.setAttribute('position', {x:-9.2, y: -1.14, z:-15});
         player.setAttribute('position', {x:2.8, y:1.6, z:8});
+
+        console.log(playerPos);
         controlPanel.setAttribute('position', {x:6.39, y:0.615, z:3.9});
         controlPanel.setAttribute('rotation', {x:-30, y:-26, z:0});
 
@@ -327,6 +405,13 @@ AFRAME.registerComponent('control-panel',{
         seal9.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
 
         light.setAttribute('position', {x:-1.425, y:16.753, z:1.711});
+
+        infoUI.style.display = "flex";
+        Screen_Overlay_ID.style.display = "block";
+
+        infoTitle.innerHTML ="The Future";
+        infoText.innerHTML ="The future Arctic environment will be very different than it is today. If climate change continues, the ice will continue to melt and polar bears and other animals will not be able to get food. This would mean an empty, iceless land. Unless we change our ways and save the polar bear population, the polar bear will become extinct in the future.";
+        infoButton.innerHTML ="EXPLORE";
 
     
     });

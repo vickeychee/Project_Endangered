@@ -10,11 +10,78 @@ AFRAME.registerComponent('user-interface',{
        settingsButton =document.getElementById('Button_Arctic_Settings_ID'); 
        settingsExitButton =  document.getElementById('Settings_Exit_Button_ID');
 
+
+       sealsPopup = document.getElementById('Seals_Popup_ID');
+       sealsButton = document.getElementById('Seals_Button_ID');
+       sealsExit = document.getElementById('Seals_Exit_Button_ID');
+
+       infoButton = document.getElementById('Info_Button_ID');
+
        musicToggle =  document.getElementById('Music-Toggle');
+       soundToggle = document.getElementById('Sound-Toggle');
 
        pianoSound = document.querySelector('#piano_music');
        windSound = document.querySelector('#wind_sound');
 
+       river = document.querySelector('#river');
+
+       infoTitle = document.getElementById('Info_Title_ID');
+       infoText = document.getElementById('Info_Text_ID');
+       infoButton = document.getElementById('Info_Button_ID');
+       infoUI = document.getElementById('Info_Popup_ID');
+
+       
+       sealInfoTitle = document.getElementById('Info_Seal_Title_ID');
+       sealInfotext = document.getElementById('Info_Seal_Text_ID');
+       sealInfoButton = document.getElementById('Info_Seal_Button_ID');
+       sealInfoUI = document.getElementById('Info_Seal_Popup_ID');
+
+
+       //factTitle = document.getElementById('Fact_Title_ID');
+       //factText = document.getElementById('Fact_Text_ID');
+       //factExitButton = document.getElementById('Fact_Exit_Button_ID');
+       //factUI = document.getElementById('Fact_Popup_ID');
+
+
+
+       begin = false;
+       exit = false;
+
+      // factExitButton.addEventListener('click', ()=>{
+
+        //Screen_Overlay_ID.style.display = "none";
+        //factUI.style.display = "none";
+
+        //});
+       
+       sealInfoButton.addEventListener('click', ()=>{
+
+        Screen_Overlay_ID.style.display = "none";
+        sealInfoUI.style.display = "none";
+ 
+        });
+
+       sealsExit.addEventListener('click', ()=>{
+
+        sealsPopup.style.display = "none";
+        Screen_Overlay_ID.style.display = "none";
+        exit = true;
+        exitSealTask();
+
+        });
+
+        sealsButton.addEventListener('click', ()=>{
+
+            begin = true;
+    
+        });
+       
+       infoButton.addEventListener('click', ()=>{
+
+        Screen_Overlay_ID.style.display = "none";
+        infoUI.style.display = "none";
+        
+        });
 
 
         helpButton.addEventListener('click', ()=>{
@@ -50,14 +117,28 @@ AFRAME.registerComponent('user-interface',{
 
     tick: function(){
 
-        console.log(pianoSound.sound);
 
-        if(musicToggle == false){
+        if(musicToggle.checked == false){
 
-            pianoSound.setAttribute('sound.volume',{to:0});
+            pianoSound.setAttribute('sound', 'volume', 0)
+
+
 
         }else{
 
+            pianoSound.setAttribute('sound', 'volume', 2)
+        }
+
+        if(soundToggle.checked == false){
+
+            windSound.setAttribute('sound', 'volume', 0)
+            river.setAttribute('sound', 'volume', 0)
+
+
+        }else{
+
+            windSound.setAttribute('sound', 'volume', 2)
+            river.setAttribute('sound', 'volume', 2)
         }
 
 

@@ -2,8 +2,17 @@ function checkSeals() {
 
     if (sealCounter == 60){
 
+      sealInfoUI.style.display = "flex";
+      Screen_Overlay_ID.style.display = "block";
+
+      
+      sealInfoButton.addEventListener('click', ()=>{
+        checkProgressBar();
         roundTitle.innerHTML = "Round 2";
         title.src="/imgs/arctic_title_present.png";
+      });
+
+
         ice3.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
         ice4.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
 
@@ -16,10 +25,23 @@ function checkSeals() {
         player.setAttribute('rotation', {x:-2.635, y:40.42, z:0});
 
 
+
+
     } else if (sealCounter == 100){
 
+      sealInfoUI.style.display = "flex";
+      Screen_Overlay_ID.style.display = "block";
+
+      sealInfotext.innerHTML = "You were able to collect all of the seals again! But did you notice how it was a bit harder this time because there were less icebergs? This is how it is for polars today. It has become much more difficult for them to get food.";
+
+
+      sealInfoButton.addEventListener('click', ()=>{
+        checkProgressBar();
         roundTitle.innerHTML = "Round 3";
         title.src="/imgs/arctic_title_future.png";
+
+      });
+
         ice1.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
         ice2.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
         ice5.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
@@ -37,14 +59,63 @@ function checkSeals() {
 
 
     } else if (sealCounter > 100){
-        //popup here
-        bool_sealtask = false;
 
-        sealCounter = 0;
-        round1 = false;
-        sealTaskCounter +=1;
-        title.src="/imgs/arctic_title_present.png";
+        sealInfoUI.style.display = "flex";
+        Screen_Overlay_ID.style.display = "block";
+        sealInfoTitle.innerHTML = "Oh No!";
+        sealInfotext.innerHTML = "You weren’t able to collect all of the seals this time! Did you notice how it was impossible this time because there was no icebergs? This is how hard it will be for polar bears to get food in the future. If the polar bears cannot get food, they will eventually become extinct.";
+        sealInfoButton.innerHTML ="END ACTIVITY";
+
+        sealInfoButton.addEventListener('click', ()=>{
+          
+
+            bool_sealtask = false;
+
+            sealCounter = 0;
+            round1 = false;
+            sealTaskCounter +=1;
+            title.src="/imgs/arctic_title_present.png";
+
+            seal1.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
+            seal2.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
+            seal3.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
+            seal4.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
+            seal5.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
+            seal6.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
+
+            seal1.setAttribute('position', {x:-13.760, y:-0.101, z:-30.780});
+            seal1.setAttribute('rotation', {x:0, y:207.000, z:0});
+            seal2.setAttribute('position', {x:6.012, y:-0.132, z:-24.854});
+            seal2.setAttribute('rotation', {x:-13.280, y:127.800, z:0});
+            seal3.setAttribute('position', {x:-21.809, y:0.007, z:-15.807});
+            seal3.setAttribute('rotation', {x:-13.360, y:246.100, z:0});
+            seal4.setAttribute('position', {x:10.730, y:0.080, z:-16.500});
+            seal4.setAttribute('rotation', {x:-21.820, y:109.900, z:-12.790});
+            seal5.setAttribute('position', {x:-0.890, y:-0.212, z:-9.668});
+            seal5.setAttribute('rotation', {x:0, y:234.000, z:0});
+            seal6.setAttribute('position', {x:1, y:-0.228, z:-10.400});
+            seal6.setAttribute('rotation', {x:0, y:53.820, z:0});
+
+      
+          });
+
     }
+}
+
+function checkProgressBar(){
+  if(subs_completed == 0  && round1 == false){
+    resetProgress(6);
+    total_subs = 6;
+  }
+  if (subs_completed >= 5.9){
+      resetProgress(4);
+      total_subs = 4;
+      round1 = true;
+  }
+  if(subs_completed >= 4 && round1 == true){
+      resetProgress(2);
+      total_subs = 2;
+  }
 }
 
 
@@ -281,9 +352,6 @@ function exitSealTask(){
   seal4.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
   seal5.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
   seal6.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
-  seal7.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
-  seal8.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
-  seal9.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
 
   seal1.setAttribute('position', {x:-13.760, y:-0.101, z:-30.780});
   seal1.setAttribute('rotation', {x:0, y:207.000, z:0});
@@ -308,6 +376,9 @@ function exitSealTask(){
   sealTaskCounter =0;
   roundTitle.innerHTML = "Round 1";
   subs_completed = 0;
+
+  exit = false;
+  begin =false;
 
 }
 /*
@@ -585,37 +656,31 @@ AFRAME.registerComponent('seal-task',{
         bool_sealtask = true;
         sealTick = true;
 
+
      }
 
     }
 
       if(sealTick){
 
-
-        if(subs_completed == 0  && round1 == false){
-          resetProgress(6);
-          total_subs = 6;
-        }
-        if (subs_completed >= 5.9){
-            resetProgress(4);
-            total_subs = 4;
-            round1 = true;
-        }
-        if(subs_completed >= 4 && round1 == true){
-            resetProgress(2);
-            total_subs = 2;
-        }
-
-  
         if (bool_sealtask == true && present == true){
 
-          Button_Arctic_Reset_ID.style.display = "block";
-          Button_Arctic_Exit_ID.style.display = "block";
-          Round_Title_ID.style.display = "block";
-          Round_Text_ID.style.display = "block";
-          progressCircle.style.display = "block";
 
+          if (begin == false && exit == false){
+            sealsPopup.style.display = "flex";
+            Screen_Overlay_ID.style.display = "block";
 
+          }else if (begin == true && sealCounter < 60 ){
+            sealsPopup.style.display = "none";
+            Screen_Overlay_ID.style.display = "none";
+            Button_Arctic_Reset_ID.style.display = "block";
+            Button_Arctic_Exit_ID.style.display = "block";
+            Round_Title_ID.style.display = "block";
+            Round_Text_ID.style.display = "block";
+            progressCircle.style.display = "block";
+          }
+
+      
             if (sealCounter < 60){
 
 

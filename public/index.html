@@ -82,6 +82,29 @@
 
     </div>
 
+    <div class="Seals-container" id="Seals_Popup_ID">
+        <div class="Seals-parent">
+          <div class="Seals-child Popup-Exit"><button class="Popup-Button" id= "Seals_Exit_Button_ID"></button></div>
+          <div class="Seals-child Popup-title">Collect the Seals</div>
+          <div class="Seals-child Popup-text">Seals are the polar bears main source of food. As the ice melts it becomes harder for the polar bears to get food. Try to use the ice to collect all of the seals each round!</div>
+          <div class="Seals-child "><hr id="line"></div>
+          <div class="Seals-child Popup-subtitle">Instructions</div>
+          <div class="Seals-child Popup-text">Click on the icebergs to move to them.</div>
+          <div class="Seals-child Popup-text">Get close to a seal and click on the seal to collect it.</div>
+          <div class="Seals-child Popup-text">Collect all the seals to complete the round!</div>
+          <div class="Seals-child"><button class="Info-Button" id="Seals_Button_ID">BEGIN</button></div>
+          </div>
+      </div>
+
+
+      <div class="Info-seal-container" id="Info_Seal_Popup_ID">
+        <div class="Info-seal-parent">
+            <div class="Info-child Popup-title" id="Info_Seal_Title_ID">Good Job!</div>
+            <div class="Info-child Popup-text" id="Info_Seal_Text_ID">You were able to collect all of the seals! Did you notice how easy it was to move around because of all the icebergs? This is how easy it used to be for polar bears to get food in the past.</div>
+            <div class="Info-child"><button class="Info-Button" id="Info_Seal_Button_ID">CONTINUE</button></div>
+        </div>
+    </div>
+
 
       <div class="Help-container" id="Help_Popup_ID">
       <div class="Help-parent">
@@ -102,6 +125,24 @@
         <div class="Help-child"><b><u>Credits</u></b></div>
         </div>
     </div>
+
+   <!-- <div class="Fact-container" id="Fact_Popup_ID">
+        <div class="Fact-parent">
+            <div class="Fact-child Popup-Exit"><button class="Popup-Button" id= "Fact_Exit_Button_ID"></button></div>
+            <div class="Fact-child Popup-title" id="Fact_Title_ID"></div>
+            <div class="Fact-child Popup-text" id="Fact_Text_ID"></div>
+        </div>
+    </div>-->
+
+    <div class="Info-container" id="Info_Popup_ID">
+        <div class="Info-parent">
+            <div class="Info-child Popup-title" id="Info_Title_ID">The Present</div>
+            <div class="Info-child Popup-text" id="Info_Text_ID">The present-day Arctic environment is at risk. Climate change has caused the Arctic to heat up at twice the spead, causing the ice to melt. This makes it harder for polar bears and other animals to get food, because they rely on the ice to move around. Because of this, the Arctic has begun changing. There are less polar bears, arctic seals, and ice in the Arctic now.</div>
+            <div class="Info-child"><button class="Info-Button" id="Info_Button_ID">EXPLORE</button></div>
+        </div>
+    </div>
+    
+
 
       <div id= "Round_Title_Center">
         <h1 id ="Round_Title_ID">Round 1</h1>
@@ -611,6 +652,7 @@
             rotation = "0 180 0"
             scale= " 1 1 1 "
             gltf-model="#ice5-obj"
+            visible="false"
             animation__mouseenter="property:position; to: -12.820 0.13 -0.823; startEvents:mouseenter; dur:200"
             animation__mouseleave="property:position; to: -12.820 0.089 -0.823; startEvents:mouseleave; dur:200">
         </a-entity>
