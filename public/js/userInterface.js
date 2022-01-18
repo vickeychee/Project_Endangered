@@ -37,22 +37,22 @@ AFRAME.registerComponent('user-interface',{
        sealInfoUI = document.getElementById('Info_Seal_Popup_ID');
 
 
-       //factTitle = document.getElementById('Fact_Title_ID');
-       //factText = document.getElementById('Fact_Text_ID');
-       //factExitButton = document.getElementById('Fact_Exit_Button_ID');
-       //factUI = document.getElementById('Fact_Popup_ID');
+       factTitle = document.getElementById('Fact_Title_ID');
+       factText = document.getElementById('Fact_Text_ID');
+       factExitButton = document.getElementById('Fact_Exit_Button_ID');
+       factUI = document.getElementById('Fact_Popup_ID');
 
 
 
        begin = false;
        exit = false;
 
-      // factExitButton.addEventListener('click', ()=>{
+       factExitButton.addEventListener('click', ()=>{
 
-        //Screen_Overlay_ID.style.display = "none";
-        //factUI.style.display = "none";
+        Screen_Overlay_ID.style.display = "none";
+        factUI.style.display = "none";
 
-        //});
+        });
        
        sealInfoButton.addEventListener('click', ()=>{
 
@@ -80,6 +80,8 @@ AFRAME.registerComponent('user-interface',{
 
         Screen_Overlay_ID.style.display = "none";
         infoUI.style.display = "none";
+
+
         
         });
 

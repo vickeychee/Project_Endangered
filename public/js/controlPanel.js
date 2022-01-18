@@ -63,7 +63,7 @@ function scaleAnimation(){
 
 }
 
-/*function factPopup(){
+function factPopup(){
     polarBear1.addEventListener('click', ()=>{
 
         if (present == true){
@@ -71,8 +71,14 @@ function scaleAnimation(){
             Screen_Overlay_ID.style.display = "block";
             factTitle.innerHTML = "Marine Animals";
             factText.innerHTML ="The polar bear is the only bear classified as a marine animal. This is because they spend most of their time on sea ice, and depend on the ocean for food.";
-        }
+        
+        } else if(past == true){
+            factUI.style.display = "flex";
+            Screen_Overlay_ID.style.display = "block";
+            factTitle.innerHTML = "Cubs";
+            factText.innerHTML ="Polar bears cubs are usually born in December. When they are born, they are blind, toothless, and covered in soft white fur. Because of this, they complete depend on their mothers.";
 
+        }
         
     });   
 
@@ -81,15 +87,20 @@ function scaleAnimation(){
         if (present == true){
             factUI.style.display = "flex";
             Screen_Overlay_ID.style.display = "block";
-            factTitle.innerHTML = "Marine Animals";
-            factText.innerHTML ="The polar bear is the only bear classified as a marine animal. This is because they spend most of their time on sea ice, and depend on the ocean for food.";
-        }
-
-        if (future == true){
+            factTitle.innerHTML = "Really Big!";
+            factText.innerHTML ="The polar bear is the largest living carnivor on land. Adult males can weight more than 800 pounds and stand over 2.5 meters long.";
+        
+        } else if(future == true){
             factUI.style.display = "flex";
             Screen_Overlay_ID.style.display = "block";
             factTitle.innerHTML = "Threats";
             factText.innerHTML ="The loss of sea ice due to climate change is the biggest threat to the polar bear population. Other threats to polar bears include human violence, pollution, and industrial development.";
+          
+        }else if(past == true){
+            factUI.style.display = "flex";
+            Screen_Overlay_ID.style.display = "block";
+            factTitle.innerHTML = "Favourite Food";
+            factText.innerHTML ="Seals are the polar bear’s favourite food. This is because polar bears rely on the high-fat content that seals have.";
           
         }
     }); 
@@ -101,9 +112,31 @@ function scaleAnimation(){
             Screen_Overlay_ID.style.display = "block";
             factTitle.innerHTML = "Great Swimmers";
             factText.innerHTML ="Polar bears can swim non-stop for many days. They need to do this to travel between pieces of sea ice. They can also swim up to 10 kilometers an hour.";
+       
+        }
+        
+    }); 
+
+    polarBear4.addEventListener('click', ()=>{
+
+        if (past == true){
+            factUI.style.display = "flex";
+            Screen_Overlay_ID.style.display = "block";
+            factTitle.innerHTML = "Hunting";
+            factText.innerHTML ="Although polar bears are strong swimmers, they are not quick enough to catch seals in the water. Instead, polar bears catch seals from sea ice platform.";
         }
     }); 
-}*/
+
+    polarBear7.addEventListener('click', ()=>{
+
+        if (past == true){
+            factUI.style.display = "flex";
+            Screen_Overlay_ID.style.display = "block";
+            factTitle.innerHTML = "Sense of Smell";
+            factText.innerHTML ="Polar bears have a great sense of smell. They use smell to find their favourite foods, like seals. Their noses are so strong that they can smell food up to 16 kilometers away.";
+        }
+    }); 
+}
 
 AFRAME.registerComponent('control-panel',{
 
@@ -153,7 +186,7 @@ AFRAME.registerComponent('control-panel',{
 
 
     scaleAnimation();
-    //factPopup();
+    factPopup();
 
    
     buttonPast.addEventListener('click', ()=>{
@@ -373,7 +406,6 @@ AFRAME.registerComponent('control-panel',{
         river.setAttribute('position', {x:-9.2, y: -1.14, z:-15});
         player.setAttribute('position', {x:2.8, y:1.6, z:8});
 
-        console.log(playerPos);
         controlPanel.setAttribute('position', {x:6.39, y:0.615, z:3.9});
         controlPanel.setAttribute('rotation', {x:-30, y:-26, z:0});
 

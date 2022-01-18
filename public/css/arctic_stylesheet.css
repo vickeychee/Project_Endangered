@@ -376,6 +376,19 @@
 
     }
 
+    .Info-seal-child{
+        flex: 1 1 100%;
+        color: #013440;
+        text-align: center;
+        font-family: 'Poppins', sans-serif;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0.3rem;
+
+    }
+        
+        
+
 
     .Info-container{
         
@@ -449,6 +462,7 @@
     }
 
 
+
     .Fact-container{
         
         display: none;
@@ -458,8 +472,8 @@
 
     }
 
-    .Fact-parent{
 
+    .Fact-parent{
         display: flex;
         position: relative;
         z-index: 9999999;
@@ -487,10 +501,10 @@
         justify-content: center;
         align-items: center;
         margin-top: 0.3rem;
-        z-index: 9999999;
         
         
     }
+
 
     #Fact_Exit_Button_ID{
 
