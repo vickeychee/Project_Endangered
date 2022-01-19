@@ -46,9 +46,6 @@
                 <div class="flex-grandchild4"><button class="Button" id= "Button_Arctic_Exit_ID"><img></button></div>
             </div>
         </div>
-      </div>
-
-
 
 
       <div class="Settings-container" id="Settings_Popup_ID">
@@ -84,8 +81,6 @@
           </div>
     </div>
 
-
-    
 
     <div class="Seals-container" id="Seals_Popup_ID">
         <div class="Seals-parent">
@@ -124,7 +119,7 @@
 
 
 
-    <div class="Info-container" id="Info_Popup_ID">
+   <div class="Info-container" id="Info_Popup_ID">
         <div class="Info-parent">
             <div class="Info-child Popup-title" id="Info_Title_ID">The Present</div>
             <div class="Info-child Popup-text" id="Info_Text_ID">The present-day Arctic environment is at risk. Climate change has caused the Arctic to heat up at twice the spead, causing the ice to melt. This makes it harder for polar bears and other animals to get food, because they rely on the ice to move around. Because of this, the Arctic has begun changing. There are less polar bears, arctic seals, and ice in the Arctic now.</div>
@@ -132,24 +127,15 @@
         </div>
     </div>
 
-
-    
-    <div class="Info-seal-container" id="Info_Seal_Popup_ID">
-        <div class="Info-seal-parent">
-            <div class="Info-seal-child Popup-title" id="Info_Seal_Title_ID">Good Job!</div>
-            <div class="Info-seal-child Popup-text" id="Info_Seal_Text_ID">You were able to collect all of the seals! Did you notice how easy it was to move around because of all the icebergs? This is how easy it used to be for polar bears to get food in the past.</div>
-            <div class="Info-seal-child"><button class="Info-Button" id="Info_Seal_Button_ID">CONTINUE</button></div>
-        </div>
-    </div>
-
-   
-   <div class="Fact-container" id="Fact_Popup_ID">
+    <div class="Fact-container" id="Fact_Popup_ID">
         <div class="Fact-parent">
             <div class="Fact-child Popup-Exit"><button class="Popup-Button" id="Fact_Exit_Button_ID"></button></div>
             <div class="Fact-child Popup-title" id="Fact_Title_ID">Marine Animals</div>
             <div class="Fact-child Popup-text" id="Fact_Text_ID">The polar bear is the only bear classified as a marine animal. This is because they spend most of their time on sea ice, and depend on the ocean for food.</div>
+            <div class="Fact-child"><button class="Info-Button" id="Info_Seal_Button_ID">CONTINUE</button></div>
         </div>
     </div>
+
     
     <div id= "Round_Title_Center">
         <h1 id ="Round_Title_ID">Round 1</h1>
@@ -174,17 +160,15 @@
           </div>
         </div>
       </div>
+
       <div class="d-flex buttons">
         <button type="button" class="btn btn-success add" >+</button>
         <button type="button" class="btn btn-success remove ms-4">-</button>
         <button type="button" class="btn btn-success reload ms-4" data-completed="" data-total="" data-modulo="" data-toggle="">reload</button>
       </div>
 
-      
 
       <div id="Screen_Overlay_ID"></div>
-
-
 
 
     <a-scene id="scene" physics="restitution: 0; debug:false; shadow=autoUpdate: false" rain="count:0; splashBounce:0.5; splashGravity: 9.8*0.5; dropHeight:0.25; opacity:1; dropRadius:0.1; height: 100; color: white; splash: false; width:50">
@@ -207,7 +191,7 @@
             <a-asset-item id="sign-obj" crossorigin="anonymous" src="/assets/sign.glb"></a-asset-item> 
             <a-asset-item id="pad-obj" crossorigin="anonymous" src="/assets/pad.glb"></a-asset-item> 
             <a-asset-item id="control-obj" crossorigin="anonymous" src="/assets/control-panel.glb"></a-asset-item> 
-            <img id="sky" src="/assets/stars.png">
+            <img id="sky" src="/assets/stars.png"> 
 
             <!--Audio Assets-->
             <audio id="wind_sound" src="/assets/audio/arctic/wind.mp3"></audio>

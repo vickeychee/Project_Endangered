@@ -2,8 +2,15 @@ function checkSeals() {
 
     if (sealCounter == 60){
 
-      sealInfoUI.style.display = "flex";
+
+      sealInfoButton.style.display ="inline-flex";
+      factExitButton.style.display  = "none";
+      factUI.style.display = "flex";
       Screen_Overlay_ID.style.display = "block";
+
+      factTitle.innerHTML ="Good Job!";
+      factText.innerHTML = "You were able to collect all of the seals! Did you notice how easy it was to move around because of all the icebergs? This is how easy it used to be for polar bears to get food in the past.";
+      sealInfoButton.innerHTML ="CONTINUE";
 
       
       sealInfoButton.addEventListener('click', ()=>{
@@ -29,11 +36,12 @@ function checkSeals() {
 
     } else if (sealCounter == 100){
 
-      sealInfoUI.style.display = "flex";
+      factUI.style.display = "inline-flex";
       Screen_Overlay_ID.style.display = "block";
 
-      sealInfotext.innerHTML = "You were able to collect all of the seals again! But did you notice how it was a bit harder this time because there were less icebergs? This is how it is for polars today. It has become much more difficult for them to get food.";
-
+      factTitle.innerHTML ="Good Job!";
+      factText.innerHTML = "You were able to collect all of the seals again! But did you notice how it was a bit harder this time because there were less icebergs? This is how it is for polars today. It has become much more difficult for them to get food.";
+      sealInfoButton.innerHTML ="CONTINUE";
 
       sealInfoButton.addEventListener('click', ()=>{
         checkProgressBar();
@@ -60,13 +68,16 @@ function checkSeals() {
 
     } else if (sealCounter > 100){
 
-        sealInfoUI.style.display = "flex";
+        factUI.style.display = "inline-flex";
         Screen_Overlay_ID.style.display = "block";
-        sealInfoTitle.innerHTML = "Oh No!";
-        sealInfotext.innerHTML = "You weren’t able to collect all of the seals this time! Did you notice how it was impossible this time because there was no icebergs? This is how hard it will be for polar bears to get food in the future. If the polar bears cannot get food, they will eventually become extinct.";
+        factTitle.innerHTML = "Oh No!";
+        factText.innerHTML = "You weren’t able to collect all of the seals this time! Did you notice how it was impossible this time because there was no icebergs? This is how hard it will be for polar bears to get food in the future. If the polar bears cannot get food, they will eventually become extinct.";
         sealInfoButton.innerHTML ="END ACTIVITY";
 
         sealInfoButton.addEventListener('click', ()=>{
+
+          sealInfoButton.style.display ="none";
+          factExitButton.style.display  = "inline-flex";
           
 
             bool_sealtask = false;
@@ -379,6 +390,10 @@ function exitSealTask(){
 
   exit = false;
   begin =false;
+
+  
+  sealInfoButton.style.display ="none";
+  factExitButton.style.display  = "inline-flex";
 
 }
 /*

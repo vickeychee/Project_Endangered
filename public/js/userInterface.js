@@ -30,12 +30,8 @@ AFRAME.registerComponent('user-interface',{
        infoButton = document.getElementById('Info_Button_ID');
        infoUI = document.getElementById('Info_Popup_ID');
 
-       
-       sealInfoTitle = document.getElementById('Info_Seal_Title_ID');
-       sealInfotext = document.getElementById('Info_Seal_Text_ID');
-       sealInfoButton = document.getElementById('Info_Seal_Button_ID');
-       sealInfoUI = document.getElementById('Info_Seal_Popup_ID');
-
+      sealInfoButton = document.getElementById('Info_Seal_Button_ID');
+    
 
        factTitle = document.getElementById('Fact_Title_ID');
        factText = document.getElementById('Fact_Text_ID');
@@ -57,7 +53,7 @@ AFRAME.registerComponent('user-interface',{
        sealInfoButton.addEventListener('click', ()=>{
 
         Screen_Overlay_ID.style.display = "none";
-        sealInfoUI.style.display = "none";
+        factUI.style.display = "none";
  
         });
 

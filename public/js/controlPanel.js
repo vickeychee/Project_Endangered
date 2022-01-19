@@ -190,6 +190,8 @@ AFRAME.registerComponent('control-panel',{
 
    
     buttonPast.addEventListener('click', ()=>{
+
+        
         click.play();
 
         present = false;
@@ -285,6 +287,7 @@ AFRAME.registerComponent('control-panel',{
         infoTitle.innerHTML ="The Past";
         infoText.innerHTML ="In the past, the Arctic environment was thriving, with a large number of polar bears and Arctic seals living there. Because of the large number of seals, polar bears were able to easily get their food, making them strong and healthy!";
         infoButton.innerHTML ="EXPLORE";
+
 
 
     });
