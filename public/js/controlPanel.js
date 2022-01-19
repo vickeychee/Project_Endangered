@@ -96,12 +96,6 @@ function factPopup(){
             factTitle.innerHTML = "Threats";
             factText.innerHTML ="The loss of sea ice due to climate change is the biggest threat to the polar bear population. Other threats to polar bears include human violence, pollution, and industrial development.";
           
-        }else if(past == true){
-            factUI.style.display = "flex";
-            Screen_Overlay_ID.style.display = "block";
-            factTitle.innerHTML = "Favourite Food";
-            factText.innerHTML ="Seals are the polar bear’s favourite food. This is because polar bears rely on the high-fat content that seals have.";
-          
         }
     }); 
 
@@ -117,15 +111,6 @@ function factPopup(){
         
     }); 
 
-    polarBear4.addEventListener('click', ()=>{
-
-        if (past == true){
-            factUI.style.display = "flex";
-            Screen_Overlay_ID.style.display = "block";
-            factTitle.innerHTML = "Hunting";
-            factText.innerHTML ="Although polar bears are strong swimmers, they are not quick enough to catch seals in the water. Instead, polar bears catch seals from sea ice platform.";
-        }
-    }); 
 
     polarBear7.addEventListener('click', ()=>{
 
@@ -136,6 +121,28 @@ function factPopup(){
             factText.innerHTML ="Polar bears have a great sense of smell. They use smell to find their favourite foods, like seals. Their noses are so strong that they can smell food up to 16 kilometers away.";
         }
     }); 
+
+    seal5.addEventListener('click', ()=>{
+
+        if (present == true && bool_sealtask == false){
+            factUI.style.display = "flex";
+            Screen_Overlay_ID.style.display = "block";
+            factTitle.innerHTML = "Hunting";
+            factText.innerHTML ="Although polar bears are strong swimmers, they are not quick enough to catch seals in the water. Instead, polar bears catch seals from sea ice platform.";
+        }
+    }); 
+
+    seal6.addEventListener('click', ()=>{
+
+        if (present == true && bool_sealtask == false){
+        factUI.style.display = "flex";
+        Screen_Overlay_ID.style.display = "block";
+        factTitle.innerHTML = "Favourite Food";
+        factText.innerHTML ="Seals are the polar bear’s favourite food. This is because polar bears rely on the high-fat content that seals have.";
+      
+         }
+    }); 
+
 }
 
 AFRAME.registerComponent('control-panel',{

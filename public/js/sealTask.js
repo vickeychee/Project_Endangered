@@ -21,7 +21,7 @@ function checkSeals() {
 
 
         ice3.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
-        ice4.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
+        ice4.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});z
 
         seal1.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
         seal2.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
