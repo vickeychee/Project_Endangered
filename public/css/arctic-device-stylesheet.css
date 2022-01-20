@@ -1,0 +1,132 @@
+.container{
+    padding-top: 6%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.parent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #F8F8F8;
+    width: 30%;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    padding-bottom: 3.5rem;
+    border-radius: 50px;
+}
+
+.child{
+    margin-top: 2.9rem;
+
+}
+
+#logo{
+    margin:2.75rem;
+}
+
+#copyright{  
+
+    padding-top: 16.5%;    
+    padding-left: 88%;
+
+}
+
+a{
+    text-decoration: none;
+}
+
+body {
+    background-image: url("/imgs/arctic_background_blur.png");
+    background-repeat: no-repeat;
+    background-color: #ADCEE5;
+    background-position: 50%;
+  }
+
+
+
+h1 {
+    margin:0;
+    color: #013440;
+    font-size: 36px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    padding-bottom: 0.35rem;
+}
+
+p {
+
+    color: #013440;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    margin-top: -0.5rem;
+
+}
+
+
+
+.orange-button1{
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    background-color: #FFAF81;
+    color: #013440;
+    border: 0.25rem solid #FFAF81;
+    padding-left: 2.75rem;
+    padding-right: 2.75rem;
+    padding-top: 0.45rem;
+    padding-bottom:0.45rem;
+    border-radius: 2rem;
+    text-align: center;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+
+}
+
+.orange-button2{
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    background-color: #FFAF81;
+    color: #013440;
+    border: 0.25rem solid #FFAF81;
+    padding-left: 3.2rem;
+    padding-right: 3.2rem;
+    padding-top: 0.45rem;
+    padding-bottom:0.45rem;
+    border-radius: 2rem;
+    text-align: center;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+
+}
+
+.orange-button3{
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    background-color: #FFAF81;
+    color: #013440;
+    border: 0.25rem solid #FFAF81;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0.45rem;
+    padding-bottom:0.45rem;
+    border-radius: 2rem;
+    text-align: center;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+
+}
+.orange-button1:hover, .orange-button2:hover, .orange-button3:hover{
+    background-color: #ffbf9a;
+    border-color: #ffbf9a;
+}
+
+
+.orange-button1:active,.orange-button2:active, .orange-button3:active{
+    background-color: #FFAF81;
+    border-color: #28A0D3;
+}

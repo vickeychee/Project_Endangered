@@ -1,0 +1,84 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    margin:2.75rem;
+}
+
+#logo{
+    padding-bottom: 1rem;
+}
+
+#copyright{  
+
+padding-top: 26%;    
+padding-left: 88%;
+
+}
+a{
+    text-decoration: none;
+}
+
+body {
+    background-image: url("/imgs/arctic_background.png");
+    background-repeat: no-repeat;
+    background-color: #ADCEE5;
+    background-position: 50%;
+  }
+
+h2 {
+    color: #013440;
+    font-size: 24px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    margin-bottom: -0.75rem;
+}
+
+
+h1 {
+margin:0;
+    color: #013440;
+    font-size: 72px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+
+p {
+    margin-top: 1rem;
+    color: #013440;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    width:36%;
+    padding-bottom: 1.5rem;
+}
+
+.orange-button{
+    margin-top: 1.5rem;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    background-color: #FFAF81;
+    color: #013440;
+    border: 0.25rem solid #FFAF81;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top: 0.5rem;
+    padding-bottom:0.5rem;
+    border-radius: 2rem;
+    text-align: center;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+
+}
+
+.orange-button:hover{
+    background-color: #ffbf9a;
+    border-color: #ffbf9a;
+}
+
+
+.orange-button:active{
+    background-color: #FFAF81;
+    border-color: #28A0D3;
+}
+
+

@@ -3,6 +3,8 @@ function checkSeals() {
     if (sealCounter == 60){
 
 
+
+      playerDetails.setAttribute('raycaster', 'far', 10);
       sealInfoButton.style.display ="inline-flex";
       factExitButton.style.display  = "none";
       factUI.style.display = "flex";
@@ -21,7 +23,7 @@ function checkSeals() {
 
 
         ice3.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
-        ice4.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});z
+        ice4.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
 
         seal1.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
         seal2.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
@@ -73,6 +75,7 @@ function checkSeals() {
         factTitle.innerHTML = "Oh No!";
         factText.innerHTML = "You weren’t able to collect all of the seals this time! Did you notice how it was impossible this time because there was no icebergs? This is how hard it will be for polar bears to get food in the future. If the polar bears cannot get food, they will eventually become extinct.";
         sealInfoButton.innerHTML ="END ACTIVITY";
+        
 
         sealInfoButton.addEventListener('click', ()=>{
 
@@ -86,6 +89,8 @@ function checkSeals() {
             round1 = false;
             sealTaskCounter +=1;
             title.src="/imgs/arctic_title_present.png";
+
+            playerDetails.setAttribute('raycaster', 'far', 20);
 
             seal1.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
             seal2.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
@@ -343,6 +348,7 @@ function resetSealTask(){
   subs_completed = 0;
   sealCounter = 0;
 
+  playerDetails.setAttribute('raycaster', 'far', 12);
 
 
 }
@@ -394,6 +400,8 @@ function exitSealTask(){
   
   sealInfoButton.style.display ="none";
   factExitButton.style.display  = "inline-flex";
+
+  playerDetails.setAttribute('raycaster', 'far', 20);
 
 }
 /*
@@ -464,6 +472,11 @@ AFRAME.registerComponent('seal-task',{
     round1 = false;
     sealTick = false;
     sealTaskCounter = 0;
+
+    
+    playerDetails = document.querySelector('#player-details');
+
+
  
 
 
@@ -698,6 +711,8 @@ AFRAME.registerComponent('seal-task',{
       
             if (sealCounter < 60){
 
+
+              playerDetails.setAttribute('raycaster', 'far', 12);
 
                 player.setAttribute('movement-controls', {enabled:false});
                 player2.setAttribute('wasd-controls', {enabled:false});
