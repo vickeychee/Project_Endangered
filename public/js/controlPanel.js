@@ -13,15 +13,28 @@ function scaleAnimation(){
     });
 
     polarBear2.addEventListener('mouseenter', ()=>{
-        if (present == true || future == true){
-            polarBear2.setAttribute('animation', {property:'scale', to: {x:1.03, y:1.03, z:1.03}, dur: 200});
+        if (present == true){
+
+            //polarBear2.setAttribute("transform", "scale(1.03)");
+          polarBear2.setAttribute('animation', {property:'scale', to: {x:1.03, y:1.03, z:1.03}, dur: 200});
+
+        } else if (future == true){
+           // polarBear2.setAttribute('scale', {x:2.03, y:2.03, z:2.03});
+
+          // polarBear2.setAttribute('animation', {property:'scale', to: {x:2.1, y:2.1, z:2.1}, dur: 200});
         }
     });
 
     polarBear2.addEventListener('mouseleave', ()=>{
-        if (present == true || future == true ){
-            polarBear2.setAttribute('animation', {property:'scale', to: {x:1, y:1, z:1}, dur: 200});
-        }
+        if (present == true ){
+
+           polarBear2.setAttribute('animation', {property:'scale', to: {x:1, y:1, z:1}, dur: 200});
+
+
+        }  else if (future == true){
+             //polarBear2.setAttribute('scale', {x:2, y:2, z:2});
+            //polarBear2.setAttribute('animation', {property:'scale', to: {x:2, y:2, z:2}, dur: 200});
+            }
     });
 
     polarBear3.addEventListener('mouseenter', ()=>{
