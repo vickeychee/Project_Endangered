@@ -38,10 +38,19 @@ AFRAME.registerComponent('user-interface',{
        factExitButton = document.getElementById('Fact_Exit_Button_ID');
        factUI = document.getElementById('Fact_Popup_ID');
 
+       voiceUI = document.getElementById('Voice_Popup_ID');
+       voiceExitButton = document.getElementById('Voice_Exit_Button_ID');
+
 
 
        begin = false;
        exit = false;
+
+       voiceExitButton.addEventListener('click', ()=>{
+
+        voiceUI .style.display = "none";
+
+        });
 
        factExitButton.addEventListener('click', ()=>{
 

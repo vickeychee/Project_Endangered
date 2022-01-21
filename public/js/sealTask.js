@@ -7,7 +7,7 @@ function checkSeals() {
       playerDetails.setAttribute('raycaster', 'far', 10);
       sealInfoButton.style.display ="inline-flex";
       factExitButton.style.display  = "none";
-      factUI.style.display = "flex";
+      factUI.style.display = "inline-flex";
       Screen_Overlay_ID.style.display = "block";
 
       factTitle.innerHTML ="Good Job!";

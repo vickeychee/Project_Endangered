@@ -20,155 +20,35 @@
     <script src="js/sealTask.js"></script>
     <script src="js/controlPanel.js"></script>
     <script src="js/userInterface.js"></script>
+    <script src="js/loading.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script> 
+    function load_page(){
+        qr=new XMLHttpRequest();
+        qr.open('get','arctic-UI.html');
+        qr.send();
+        qr.onload=function(){includedContent.innerHTML=qr.responseText}
+        };load_page();
+
+        </script> 
 
     <!--Styles-->
     <link rel="stylesheet" href="/css/arctic_stylesheet.css">
+    <link rel="stylesheet" href="/css/arctic_loading_animation.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
 
     
     
 </head>
 <body>
 
-    <!--User Interface-->
-
-        <div class="flex-parent">
-            <div class="flex-child"><img id="Title_Arctic_ID" src="/imgs/arctic_title_present.png"></div>
-                <div class="flex-grandchild">
-                    <div class="flex-grandchild1"><button class="Button" id= "Button_Arctic_Instructions_ID"><img></button></div>
-                    <div class="flex-grandchild2"><button class="Button" id= "Button_Arctic_Settings_ID"><img></button></div>
-                    <div class="flex-grandchild3"><button class="Button" id= "Button_Arctic_Reset_ID"><img></button></div>
-                    <div class="flex-grandchild4"><button class="Button" id= "Button_Arctic_Exit_ID"><img></button></div>
-                </div>
-            </div>
-    
-      <div class="Settings-container" id="Settings_Popup_ID">
-          <div class="Settings-parent">
-              <div class="Settings-child Popup-Exit"><button class="Popup-Button" id= "Settings_Exit_Button_ID"></button></div>
-              <div class="Settings-child Popup-title" id="Settings-Text">Settings</div>
-              <div class="Settings-parent2">
-                    <div class="Settings-child2">
-                        <div class="Settings-child3 Popup-text">Music</div>
-                        <div class="Settings-child4 Popup-text">
-                            <label class="switch">
-                            <input type="checkbox" checked id="Music-Toggle">
-                            <span class="slider round"></span>
-                            </label></div>
-                    </div>
-                    <div class="Settings-child2">
-                        <div class="Settings-child3 Popup-text">Sound Effects</div>
-                        <div class="Settings-child4 Popup-text">
-                            <label class="switch">
-                            <input type="checkbox" checked id="Sound-Toggle">
-                            <span class="slider round"></span>
-                          </label></div>
-                    </div>
-                    <div class="Settings-child2 Popup-text">
-                        <div class="Settings-child3 Popup-text">Voice Over</div>
-                        <div class="Settings-child4 Popup-text">
-                            <label class="switch">
-                            <input type="checkbox" id="Voice-Toggle">
-                            <span class="slider round"></span>
-                          </label></div>
-                    </div>
-                </div>
-          </div>
-    </div>
-
-
-    <div class="Seals-container" id="Seals_Popup_ID">
-        <div class="Seals-parent">
-          <div class="Seals-child Popup-Exit"><button class="Popup-Button" id= "Seals_Exit_Button_ID"></button></div>
-          <div class="Seals-child Popup-title">Collect the Seals</div>
-          <div class="Seals-child Popup-text">Seals are the polar bears main source of food. As the ice melts it becomes harder for the polar bears to get food. Try to use the ice to collect all of the seals each round!</div>
-          <div class="Seals-child "><hr id="line"></div>
-          <div class="Seals-child Popup-subtitle">Instructions</div>
-          <div class="Seals-child Popup-text">Click on the icebergs to move to them.</div>
-          <div class="Seals-child Popup-text">Get close to a seal and click on the seal to collect it.</div>
-          <div class="Seals-child Popup-text">Collect all the seals to complete the round!</div>
-          <div class="Seals-child"><button class="Info-Button" id="Seals_Button_ID">BEGIN</button></div>
-          </div>
-      </div>
-
-
-      <div class="Help-container" id="Help_Popup_ID">
-      <div class="Help-parent">
-        <div class="Help-child Popup-Exit"><button class="Popup-Button" id= "Help_Exit_Button_ID"></button></div>
-        <div class="Help-child Popup-title">Help</div>
-        <div class="Help-child Popup-text">Explore the Arctic, home to the polar bear. Interact with the animals, and complete the activites to learn more about polar bears and how they have become endangered.</div>
-        <div class="Help-child "><hr id="line"></div>
-        <div class="Help-child Popup-subtitle">Controls</div>
-            <div class="Help-parent2">
-            <div class="Help-child2 Popup-text" id="Keys_ID"> <p>Use the <b>arrow</b> or <b>WASD</b> keys to move around.</p>
-                <div class="Help-image"><img id="Help_Keys_Image" src="imgs/arctic_help_keys.png"></div>
-            </div>
-            <div class="Help-child2 Popup-text" id="Mouse_ID"> <p><b>Left click</b> on objects to interect with them.</p>
-                <div class="Help-image"><img id="Help_Mouse_Image" src="imgs/arctic_help_mouse.png"></div>
-            </div>
-        </div>
-        <div class="Help-child"><b><u>Learn More</u></b></div>
-        <div class="Help-child"><b><u>Credits</u></b></div>
-        </div>
-    </div>
-
-
-
-   <div class="Info-container" id="Info_Popup_ID">
-        <div class="Info-parent">
-            <div class="Info-child Popup-title" id="Info_Title_ID">The Present</div>
-            <div class="Info-child Popup-text" id="Info_Text_ID">The present-day Arctic environment is at risk. Climate change has caused the Arctic to heat up at twice the spead, causing the ice to melt. This makes it harder for polar bears and other animals to get food, because they rely on the ice to move around. Because of this, the Arctic has begun changing. There are less polar bears, arctic seals, and ice in the Arctic now.</div>
-            <div class="Info-child"><button class="Info-Button" id="Info_Button_ID">EXPLORE</button></div>
-        </div>
-    </div>
-
-    <div class="Fact-container" id="Fact_Popup_ID">
-        <div class="Fact-parent">
-            <div class="Fact-child Popup-Exit"><button class="Popup-Button" id="Fact_Exit_Button_ID"></button></div>
-            <div class="Fact-child Popup-title" id="Fact_Title_ID">Marine Animals</div>
-            <div class="Fact-child Popup-text" id="Fact_Text_ID">The polar bear is the only bear classified as a marine animal. This is because they spend most of their time on sea ice, and depend on the ocean for food.</div>
-            <div class="Fact-child"><button class="Info-Button" id="Info_Seal_Button_ID">CONTINUE</button></div>
-        </div>
-    </div>
-
-    
-    <div id= "Round_Title_Center">
-        <h1 id ="Round_Title_ID">Round 1</h1>
-    </div>
-
-    <div id= "Round_Text_Center">
-        <h2 id ="Round_Text_ID">Collect all of the seals!</h2>
-    </div>
-
-    <div class="wrapper">
-        <div id= "Progress_Circle_ID" class="subtask-circular-progress sub-progress-bar_transition">
-        <div class="outer"></div>
-          <div class="inner"></div>
-          <div class="number">0/6</div>
-          <div class="circle">
-            <div class="bar_transition left">
-              <div class="sub-progress"></div>
-            </div>
-            <div class="bar_transition right">
-              <div class="sub-progress"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="d-flex buttons">
-        <button type="button" class="btn btn-success add" >+</button>
-        <button type="button" class="btn btn-success remove ms-4">-</button>
-        <button type="button" class="btn btn-success reload ms-4" data-completed="" data-total="" data-modulo="" data-toggle="">reload</button>
-      </div>
-
-
-      <div id="Screen_Overlay_ID"></div>
-
-
+    <div id="includedContent"></div>
     <a-scene id="scene" physics="restitution: 0; debug:false; shadow=autoUpdate: false" rain="count:0; splashBounce:0.5; splashGravity: 9.8*0.5; dropHeight:0.25; opacity:1; dropRadius:0.1; height: 100; color: white; splash: false; width:50">
 
         <a-assets timeout = "10000">
