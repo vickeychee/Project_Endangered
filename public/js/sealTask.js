@@ -348,6 +348,8 @@ function resetSealTask(){
   subs_completed = 0;
   sealCounter = 0;
 
+  checkProgressBar();
+
   playerDetails.setAttribute('raycaster', 'far', 12);
 
 

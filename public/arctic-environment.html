@@ -25,11 +25,28 @@
 
     <script> 
     function load_page(){
+
+        //console.log(deviceChoice);
+
+        //console.log('hello');
+
+        deviceChoice = 0;
+        deviceChoice= (localStorage.getItem("device"));
+        console.log(deviceChoice);
+
+
         qr=new XMLHttpRequest();
-        qr.open('get','arctic-UI.html');
+
+        if (deviceChoice == 1){
+            qr.open('get','arctic-UI-desktop.html');
+        } else if(deviceChoice == 2){
+            qr.open('get','arctic-UI-mobile.html');
+        }
         qr.send();
         qr.onload=function(){includedContent.innerHTML=qr.responseText}
         };load_page();
+
+    
 
         </script> 
 
