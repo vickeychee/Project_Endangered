@@ -20,7 +20,6 @@
     <script src="js/sealTask.js"></script>
     <script src="js/controlPanel.js"></script>
     <script src="js/userInterface.js"></script>
-    <script src="js/loading.js"></script>
 
     <!--Styles-->
     <link rel="stylesheet" href="/css/arctic_stylesheet.css">
@@ -37,10 +36,6 @@
 <body>
 
     <!--User Interface-->
-
-    <div id="user-gesture-overlay">
-        <div class= "center"><img id="loading-animation" src="/imgs/arctic_loading.gif"></div>
-    </div>
 
         <div class="flex-parent">
             <div class="flex-child"><img id="Title_Arctic_ID" src="/imgs/arctic_title_present.png"></div>
@@ -179,6 +174,13 @@
         </div>
     </div>
       <div id="Screen_Overlay_ID"></div>
+
+      <div id="user-gesture-overlay">
+        <div class= "center">
+            <button id="user-gesture-button" onclick="startExperience();">Enter</button>
+            <img id="loading-animation" src="/imgs/arctic_loading.gif">
+        </div>
+    </div>
 
 </body>
 </html>
