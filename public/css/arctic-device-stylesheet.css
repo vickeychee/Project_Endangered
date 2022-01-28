@@ -1,8 +1,10 @@
 .container{
-    padding-top: 6%;
+
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    min-height: 50vh;
 
 
 }
@@ -27,25 +29,42 @@
 
 #logo{
     margin:2.75rem;
-
+    width: 16.875rem;
+    height:1.8125rem;
 }
+
 
 #copyright{  
-
-    padding-top: 16.5%;    
-    padding-left: 88%;
+    color: #013440;
+    font-size: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    margin-top: auto;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    align-self: flex-end;
+    margin-right:2rem;
 
 }
+
 
 a{
     text-decoration: none;
 }
 
-body {
+
+  body {
     background-image: url("/imgs/arctic_background_blur.png");
     background-repeat: no-repeat;
     background-color: #ADCEE5;
     background-position: 50%;
+    background-position-x: center;
+    background-size: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-position: bottom 0px right 50%;
+    overflow: hidden;
   }
 
 
@@ -160,15 +179,42 @@ p {
     }
 
     #logo{
-        display: flex;
-        justify-content: center;
+        margin-top:2.75rem;
+        margin-bottom:2.75rem;
+        margin-left:0rem;
+        margin-right:0rem;
+        padding-bottom: 1.5rem;
+        width: 12.5rem;
+        height:1.3125rem;
+        align-self: center;
+    
     }
 
-    #copyright{  
-        padding-top: 6rem;    
-        padding-left: 0;
+    #logo-pos{
+        align-self: center;
+    }
+    body {
+        background-image: url("/imgs/arctic_background_blur.png");
+        background-repeat: no-repeat;
+        background-color: #ADCEE5;
+        background-position: 50%;
+        background-position-x: center;
+        background-size: 325%;
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        min-height: 100vh;
+        background-position: bottom 0px right 50%;
+      }
     
+      #copyright{  
+        color: #013440;
+        font-size: 12px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        margin-top: auto;
+        padding-top: 1rem;
+        padding-bottom: 9rem;
+        align-self: center;
+        margin-right:0rem;
     }
 }

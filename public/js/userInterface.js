@@ -86,6 +86,8 @@ AFRAME.registerComponent('user-interface',{
         Screen_Overlay_ID.style.display = "none";
         infoUI.style.display = "none";
 
+        
+        present_sound.pause();
 
         
         });

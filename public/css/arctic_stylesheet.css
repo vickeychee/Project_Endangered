@@ -439,20 +439,13 @@
     }
 
 
+    #Tooltip-Image{
+        width:233.5px;
+        height:111.5px;
+        z-index: 9999;
+    }
 
-       
-      #arrow {
-        content: " ";
-        position: absolute;
-        right: 45px;
-        top: -15px;
-        border-top: none;
-        border-right: 15px solid transparent;
-        border-left: 15px solid transparent;
-        border-bottom: 15px solid #F8F8F8;
-        z-index: 99999999;
 
-      }
 
 
     .Voice-container{
@@ -460,26 +453,31 @@
         align-items: center;
         justify-content: flex-end;
         z-index: 99999999;
-        margin-top: 1rem;
-        margin-right: 3rem;
+        margin-top: 0rem;
+        margin-right: 2.8rem;
+
     }
 
 
     .Voice-parent{
+        background-image:url("/imgs/arctic_tooltip.png");
+        background-repeat: no-repeat;
+        background-size: 233.5px, 111.5px;
+        background-position: center;
         display: flex;
         position: relative;
         z-index: 9999;
-        color: #fff;
-        width: 13%;
+        width:233.5px;
+        height:111.5px;
         left:0;
         margin: 0;
-        background: #F8F8F8;
         flex-direction: column;
-        border-radius: 25px;
-        box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
         padding-left:1.5rem;
         padding-right:0rem;
         padding-bottom: 1rem;
+
+    
+
 
  
 
@@ -506,6 +504,7 @@
         font-size: 18px;
         font-weight: 600;
         color: #013440;
+        margin-top: -0.25rem;
     }
 
     #Voice_Exit_Button_ID{
@@ -515,6 +514,7 @@
         background-repeat: no-repeat;
         background-position:center;
         border-radius: 50%;
+        margin-top: 0.5rem;
         margin-right: 1rem;
         background-size: 2rem;
     }
@@ -1378,6 +1378,64 @@
       #Button_Arctic_Exit_ID{
           margin-right: 1.5rem;
       }
+
+      .Voice-container{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        z-index: 99999999;
+        margin-top: -1.5rem;
+        margin-right: 1.5rem;
+
+    }
+
+
+    .Voice-parent{
+        background-image:url("/imgs/arctic_tooltip_mobile.png");
+        background-repeat: no-repeat;
+        background-size: 214.5px, 93.5px;
+        background-position: center;
+        display: flex;
+        position: relative;
+        z-index: 9999;
+        width:214.5px;
+        height:93.5px;
+        left:0;
+        margin: 0;
+        flex-direction: column;
+        padding-left:1.5rem;
+        padding-right:0rem;
+        padding-bottom: 1rem;
+
+    }
+
+
+    .Voice-text{
+        font-size: 16px;
+        font-weight: 400;
+        color: #013440;
+    }
+
+    .Voice-title{
+        font-size: 16px;
+        font-weight: 600;
+        color: #013440;
+        margin-top: -0.25rem;
+    }
+
+    #Voice_Exit_Button_ID{
+
+        display:inline-flex;
+        background-image: url("/imgs/arctic_button_exit.png");
+        background-repeat: no-repeat;
+        background-position:center;
+        border-radius: 50%;
+        margin-top: 0.2rem;
+        margin-right: 1rem;
+        background-size: 2rem;
+    }
+
+
     
 
 
