@@ -1,3 +1,9 @@
+function PopupTimer() {
+    document.getElementById("Voice_Popup_ID").style.display="none";
+    console.log("cut");
+  }
+
+
 AFRAME.registerComponent('user-interface',{
 
     init:function(){
@@ -45,6 +51,7 @@ AFRAME.registerComponent('user-interface',{
 
        begin = false;
        exit = false;
+
 
        voiceExitButton.addEventListener('click', ()=>{
 
@@ -121,6 +128,8 @@ AFRAME.registerComponent('user-interface',{
             Settings_Popup_ID.style.display = "none";
             
         });
+
+        setInterval(PopupTimer, 30000);
 
     },
 

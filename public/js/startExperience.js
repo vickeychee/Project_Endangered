@@ -2,7 +2,7 @@ AFRAME.registerComponent('start-experience',{
     init: function() {
         console.log('scene loaded');
 
-        document.querySelector('#user-gesture-button').style.display = 'block';
+        document.querySelector('#continue-container').style.display = 'flex';
         document.querySelector('#loading-animation').style.display = 'none';
     }
   });
