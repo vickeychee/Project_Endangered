@@ -1,4 +1,11 @@
 
+#Title_Arctic_ID{
+    width:16.125rem;
+    height:6rem;
+}
+
+
+
 .flex-parent {
     display: inline-flex;
     position: absolute;
@@ -65,6 +72,7 @@
       border-radius: 50%;
       z-index: 999999;
       box-shadow: 3px 8px 15px rgba(0, 0, 0, 0.2);
+      background-size: 2rem;
     }
 
 
@@ -76,6 +84,7 @@
         border-radius: 50%;
         z-index: 999999;
         box-shadow: 3px 8px 15px rgba(0, 0, 0, 0.2);
+        background-size: 2rem;
       }
 
 
@@ -88,6 +97,7 @@
         border-radius: 50%;
         z-index: 999999;
         box-shadow: 3px 8px 15px rgba(0, 0, 0, 0.2);
+        background-size: 2rem;
     }  
     
     #Button_Arctic_Exit_ID {
@@ -99,6 +109,7 @@
         border-radius: 50%;
         z-index: 999999;
         box-shadow: 3px 8px 15px rgba(0, 0, 0, 0.2);
+        background-size: 2rem;
     } 
 
 
@@ -505,6 +516,7 @@
         background-position:center;
         border-radius: 50%;
         margin-right: 1rem;
+        background-size: 2rem;
     }
 
 
@@ -561,6 +573,7 @@
         background-position:center;
         border-radius: 50%;
         margin-right: -6rem;
+        background-size: 2rem;
     }
 
 
@@ -613,6 +626,7 @@
         background-position:center;
         border-radius: 50%;
         padding-right: 2rem;
+        background-size: 2rem;
 
     }
 
@@ -791,6 +805,7 @@
         background-repeat: no-repeat;
         background-position:center;
         border-radius: 50%;
+        background-size: 2rem;
 
     }
 
@@ -800,6 +815,7 @@
         background-position:center;
         border-radius: 50%;
         margin-right: -5.5rem;
+        background-size: 2rem;
 
     }
 
@@ -1010,7 +1026,8 @@
         }
 
         #Title_Arctic_ID{
-            height:35%;
+            width:12.75rem;
+            height:4.75rem;
         }
 
         .flex-parent {
@@ -1337,7 +1354,7 @@
         background-color: #F8F8F8;
         border: none;
         color: white;
-        padding: 7px;
+        padding: 4px;
         text-align: center;
         text-decoration: none;
         display: inline-block;
@@ -1346,7 +1363,24 @@
         border: 0.25rem solid;
         border-color:#F8F8F8;
       }
+
+
+      #Button_Arctic_Instructions_ID,#Button_Arctic_Settings_ID,#Button_Arctic_Reset_ID,#Button_Arctic_Exit_ID, #Voice_Exit_Button_ID,
+      #Fact_Exit_Button_ID,#Seals_Exit_Button_ID,#Help_Exit_Button_ID,#Settings_Exit_Button_ID{
+          background-size: 1.5rem;
+      }
+
+      #Button_Arctic_Instructions_ID,#Button_Arctic_Settings_ID,#Button_Arctic_Reset_ID,#Button_Arctic_Exit_ID{
+
+        padding-left: 28px;
+      }
+
+      #Button_Arctic_Exit_ID{
+          margin-right: 1.5rem;
+      }
     
+
+
         
         
 }
