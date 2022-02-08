@@ -1,27 +1,9 @@
-.container{
-    padding-top: 6%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-
-}
-
-.parent{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #F8F8F8;
-    width: 30%;
-    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
-    padding: 2rem;
-    padding-bottom: 3.5rem;
-    border-radius: 50px;
-}
 
 .child{
-    margin-top: 2.5rem;
+    margin-top: 1rem;
+    display: flex;
+    align-self: center;
+    
 
 }
 
@@ -137,11 +119,11 @@ p {
     background: #F8F8F8;
     flex-direction: column;
     border-radius: 50px;
-    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
     padding-left:5rem;
     padding-right:5rem;
     padding-bottom: 3rem;
     padding-top: 2.5rem;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
 
 }
 
@@ -172,7 +154,7 @@ p {
     font-size: 18px;
     font-weight: 400;
     color: #013440;
-    padding-bottom: 0.7rem;
+    padding-bottom: 0.3rem;
 }
 
 .Popup-subtitle{
@@ -221,8 +203,13 @@ p {
     padding-left: 2rem;
 }
 
+#Mouse2_ID{
+    margin-top: -0.6rem;
+}
+
 #Help_Keys_Image{
-    padding-top: 0.7rem;
+    padding-top: 4rem;
+    padding-bottom: 1.5rem;
 
 }
 
@@ -232,3 +219,98 @@ p {
     border-color: #013440;
 }
 
+@media screen and (max-width: 1818px){
+
+    #Help_Keys_Image{
+        padding-top: 0;
+        padding-bottom: 3rem;
+    
+    }
+
+    #Keys_ID{
+        padding-right: 3rem;
+    }
+    
+    #Mouse_ID{
+        padding-left: 3rem;
+    }
+
+    
+.Help-parent2{
+    display: flex;
+    position: relative;
+    z-index: 9999999;
+    flex-direction: row;
+    text-align: center;
+    margin: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 1rem;
+
+}
+
+.Help-parent{
+
+    display: flex;
+    position: relative;
+    z-index: 9999999;
+    color: #fff;
+    width: 70%;
+    left:0;
+    margin: 0;
+    background: #F8F8F8;
+    flex-direction: column;
+    border-radius: 50px;
+    padding-left:5rem;
+    padding-right:5rem;
+    padding-bottom: 3rem;
+    padding-top: 2.5rem;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+}
+}
+
+@media screen and (max-width: 1272px){
+
+    #Keys_ID{
+        padding-right: 2.5rem;
+    }
+    
+    #Mouse_ID{
+        padding-left: 2.5rem;
+    }
+
+}
+
+@media screen and (max-width: 1249px){
+
+    body{
+        overflow: scroll;
+      }
+      
+
+    #Keys_ID{
+        padding-right: 0rem;
+    }
+    
+    #Mouse_ID{
+        padding-left: 0rem;
+    }
+
+    .Help-parent2{
+        display: flex;
+        position: relative;
+        z-index: 9999999;
+        flex-direction: column;
+        text-align: center;
+        margin: 0;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-bottom: 1rem;
+
+    }
+
+
+
+
+
+}

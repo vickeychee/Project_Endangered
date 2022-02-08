@@ -82,11 +82,6 @@ p {
 }
 
 
-.orange-button:active{
-    background-color: #FFAF81;
-    border-color: #28A0D3;
-}
-
 #copyright{  
     color: #013440;
     font-size: 12px;

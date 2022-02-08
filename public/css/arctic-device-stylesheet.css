@@ -147,11 +147,6 @@ p {
 }
 
 
-.orange-button1:active,.orange-button2:active, .orange-button3:active{
-    background-color: #FFAF81;
-    border-color: #28A0D3;
-}
-
 
 @media only screen and (max-width: 600px)
 {

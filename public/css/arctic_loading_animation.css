@@ -1,3 +1,5 @@
+
+
 #user-gesture-overlay {
     position: fixed;
     display: flex;
@@ -52,10 +54,6 @@
   }
 
 
-  #user-gesture-button:active{
-    background-color: #FFAF81;
-    border-color: #28A0D3;
-  }
 
   .continue-text{
     text-align: center;
