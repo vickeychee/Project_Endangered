@@ -116,6 +116,104 @@
     } 
 
 
+    #Button_Arctic_Instructions_ID .tooltiptext_help {
+        visibility: hidden;
+        background-color: #013440;
+        text-align: center;
+        border-radius: 7px;
+        padding: 5px 12px;
+        color: #f8f8f8;
+        font-size: 14px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        text-align: center;
+        
+        /* Position the tooltip */
+        position: absolute;
+        top:5.3rem;
+        margin-left: -40px;
+
+      }
+      
+      #Button_Arctic_Instructions_ID:hover .tooltiptext_help {
+        visibility: visible;
+      }
+
+      #Button_Arctic_Settings_ID .tooltiptext_settings {
+        visibility: hidden;
+        background-color: #013440;
+        text-align: center;
+        border-radius: 7px;
+        padding: 5px 12px;
+        color: #f8f8f8;
+        font-size: 14px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        text-align: center;
+        
+        /* Position the tooltip */
+        position: absolute;
+        top:5.3rem;
+        margin-left: -53px;
+
+      }
+      
+      #Button_Arctic_Settings_ID:hover .tooltiptext_settings {
+        visibility: visible;
+      }
+
+      #Button_Arctic_Reset_ID .tooltiptext_reset {
+        visibility: hidden;
+        background-color: #013440;
+        text-align: center;
+        border-radius: 7px;
+        padding: 5px 12px;
+        color: #f8f8f8;
+        font-size: 14px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        text-align: center;
+        
+        /* Position the tooltip */
+        position: absolute;
+        top:5.3rem;
+        margin-left: -44px;
+
+      }
+      
+      #Button_Arctic_Reset_ID:hover .tooltiptext_reset {
+        visibility: visible;
+      }
+
+
+      
+      #Button_Arctic_Exit_ID .tooltiptext_exit {
+        visibility: hidden;
+        background-color: #013440;
+        text-align: center;
+        border-radius: 7px;
+        padding: 5px 12px;
+        color: #f8f8f8;
+        font-size: 14px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        text-align: center;
+        
+        /* Position the tooltip */
+        position: absolute;
+        top:5.3rem;
+        margin-left: -35px;
+
+      }
+      
+      #Button_Arctic_Exit_ID:hover .tooltiptext_exit {
+        visibility: visible;
+      }
+
+
+
+
+
     #Round_Title_Center{
         background-size: cover;
         position: relative;
@@ -150,15 +248,27 @@
         font-weight: 600;
         text-align: center;
         z-index: 999999;
-        text-shadow: 5px 3px 2px rgba(0, 0, 0, 0.2);
+        text-shadow: 5px 3px 6px rgba(0, 0, 0, 0.2),
+        -1.5px -1.5px 0 #2f6673,
+        0   -1.5px 0 #2f6673,
+        1.5px -1.5px 0 #2f6673,
+        1.5px  0   0 #2f6673,
+        1.5px  1.5px 0 #2f6673,
+        0    1.5px 0 #2f6673,
+       -1.5px  1.5px 0 #2f6673,
+       -1.5px  0   0 #2f6673;
         position: absolute;
         left:0;
         right:0;
         margin:0px auto;
         padding-top: 2.5rem;
 
+        
+        
 
     }
+
+    
       
    #Round_Text_ID{
         display: none;
@@ -168,7 +278,15 @@
         font-weight: 600;
         text-align: center;
         z-index: 999999;
-        text-shadow: 5px 3px 2px rgba(0, 0, 0, 0.2);
+        text-shadow: 5px 3px 6px rgba(0, 0, 0, 0.2),
+        -1.5px -1.5px 0 #2f6673,
+        0   -1.5px 0 #2f6673,
+        1.5px -1.5px 0 #2f6673,
+        1.5px  0   0 #2f6673,
+        1.5px  1.5px 0 #2f6673,
+        0    1.5px 0 #2f6673,
+       -1.5px  1.5px 0 #2f6673,
+       -1.5px  0   0 #2f6673;
         position: absolute;
         left:0;
         right:0;
@@ -1439,7 +1557,15 @@
         font-weight: 600;
         text-align: center;
         z-index: 999999;
-        text-shadow: 5px 3px 2px rgba(0, 0, 0, 0.2);
+        text-shadow: 5px 3px 6px rgba(0, 0, 0, 0.2),
+        -1px -1px 0 #2f6673,
+         0   -1px 0 #2f6673,
+         1px -1px 0 #2f6673,
+         1px  0   0 #2f6673,
+         1px  1px 0 #2f6673,
+         0    1px 0 #2f6673,
+        -1px  1px 0 #2f6673,
+        -1px  0   0 #2f6673;
         position: absolute;
         left:0;
         right:0;
@@ -1457,7 +1583,15 @@
         font-weight: 600;
         text-align: center;
         z-index: 999999;
-        text-shadow: 5px 3px 2px rgba(0, 0, 0, 0.2);
+        text-shadow: 5px 3px 6px rgba(0, 0, 0, 0.2),
+        -1px -1px 0 #2f6673,
+         0   -1px 0 #2f6673,
+         1px -1px 0 #2f6673,
+         1px  0   0 #2f6673,
+         1px  1px 0 #2f6673,
+         0    1px 0 #2f6673,
+        -1px  1px 0 #2f6673,
+        -1px  0   0 #2f6673;
         position: absolute;
         left:0;
         right:0;

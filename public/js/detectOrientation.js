@@ -11,8 +11,8 @@ AFRAME.registerComponent('detect-orientation',{
 
 tick: function(){
 
-    console.log(window.screen.orientation.angle);
-    console.log(navigator.maxTouchPoints);
+   // console.log(window.screen.orientation.angle);
+  //  console.log(navigator.maxTouchPoints);
 
 
     if (window.screen.orientation.angle === 0 && navigator.maxTouchPoints === 1){

@@ -12,7 +12,7 @@ AFRAME.registerComponent('start-experience',{
       document.querySelector('#user-gesture-overlay').style.display = 'none';
 
     
-      document.querySelector('#rotate_portrait_ID2').style.display = 'block';
+     // document.querySelector('#rotate_portrait_ID2').style.display = 'block';
 
 
       //start any/all ambient sounds
