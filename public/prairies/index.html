@@ -10,6 +10,7 @@
     <!--New environment setup-->
 
     <!--External Components-->
+
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
     <script src="https://unpkg.com/aframe-physics-extras@0.1.2/dist/aframe-physics-extras.min.js"></script>
@@ -18,12 +19,40 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 
+    <link rel="stylesheet" href="/css/prairies_stylesheet.css">
+
+
     <script src="js/pickup.js"></script>
     <script src="js/startExperience.js"></script>
     <script src="js/bucketTask.js"></script>
+
+
+
+    <script> 
+        function load_page(){
+    
+           // deviceChoice = 1;
+            //deviceChoice= (localStorage.getItem("device"));
+            //console.log(deviceChoice);
+    
+    
+            qr=new XMLHttpRequest();
+    
+           // if (deviceChoice == 1){
+                qr.open('get','prairies-UI-desktop.html');
+            //} else if(deviceChoice == 2){
+               // qr.open('get','prairies-UI-mobile.html');
+           // }
+            qr.send();
+            qr.onload=function(){includedContent.innerHTML=qr.responseText}
+            };load_page();
+    
+        </script> 
     
 </head>
 <body>
+
+    <div id="includedContent"></div>
     <a-scene start-experience renderer="gammaOutput: true;" shadow="type: pcfsoft" vr-mode-ui="enabled: true" id="scene" physics="restitution: 0; debug:false; shadow=autoUpdate: false">
 
         <a-assets timeout = "10000">
@@ -38,6 +67,7 @@
             <a-asset-item id="sign-obj" crossorigin="anonymous" src="/assets/sign.glb"></a-asset-item> 
             <a-asset-item id="crane-obj" crossorigin="anonymous" src="/assets/crane.glb"></a-asset-item> 
             <a-asset-item id="craneGroup-obj" crossorigin="anonymous" src="/assets/crane_group.glb"></a-asset-item>
+            <a-asset-item id="nav-mesh-obj" crossorigin="anonymous" src="/assets/nav-mesh/nav_mesh.gltf"></a-asset-item>
 
 
             <!--Audio Assets-->
@@ -77,6 +107,21 @@
                 ></a-entity> 
             </a-entity>
         </a-entity>
+
+
+
+    <a-entity>
+        <a-entity
+            id ="nav_mesh"
+            scale='1 1 1'
+            position = '0.442 1.3 -4.969'
+            rotation = '0 171.220 0'
+            gltf-model='#nav-mesh-obj'
+            nav-mesh
+            visible='false'
+        ></a-entity>
+    </a-entity>
+        
 
 
         <!--Environment Models-->
