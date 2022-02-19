@@ -10,6 +10,8 @@ AFRAME.registerComponent('bucket-task',{
     allCrops = document.querySelectorAll('.crop');
     circle = document.querySelector('#pad');
     lily = document.querySelector('#lily');
+    craneGroup = document.querySelector('#crane_group');
+
 
     waterCounter = 0;
     bucketFull_Bool = false;
@@ -36,13 +38,16 @@ AFRAME.registerComponent('bucket-task',{
            if(waterCounter === 1){
             water.setAttribute('position', {x:1.521, y:-0.611, z: -13.578});
             lily.setAttribute('position', {x: 0.442, y:-0.349, z: -4.969});
+            craneGroup.setAttribute('position', {x: 0.442, y:-0.249, z: -4.969});
            }
            else if(waterCounter === 2){
-            water.setAttribute('position', {x:1.521, y:-1.060, z: -13.578});
-            lily.setAttribute('position', {x: 0.442, y:-0.826, z: -4.969});
+            water.setAttribute('position', {x:1.521, y:-1.386, z: -13.578});
+            lily.setAttribute('position', {x: 0.442, y:-1.110, z: -4.969});
+            craneGroup.setAttribute('position', {x: 0.442, y:-1.039, z: -4.969});
           }else if (waterCounter === 3){
             water.setAttribute('position', {x:1.521, y:-2.040, z: -13.578});
             lily.setAttribute('position', {x: 0.442, y:-4.378, z: -4.969});
+            craneGroup.setAttribute('position', {x: 0.442, y:-3.272, z: -4.969});
           }
             
         }
