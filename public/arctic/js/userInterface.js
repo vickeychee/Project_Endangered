@@ -55,7 +55,7 @@ AFRAME.registerComponent('user-interface',{
 
        voiceExitButton.addEventListener('click', ()=>{
 
-        voiceUI .style.display = "none";
+        voiceUI.style.display = "none";
 
         });
 

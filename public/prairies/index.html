@@ -25,6 +25,8 @@
     <script src="js/pickup.js"></script>
     <script src="js/startExperience.js"></script>
     <script src="js/bucketTask.js"></script>
+    <script src="js/userInterface.js"></script>
+    <script src="js/factTask.js"></script>
 
 
 
@@ -121,6 +123,8 @@
             visible='false'
         ></a-entity>
     </a-entity>
+
+    <a-entity user-interface></a-entity>
         
 
 
@@ -156,6 +160,7 @@
         </a-entity>
 
         <a-entity
+            fact-task
             id="crane1"
             class="interactive"
             position="2.081 0 -4.475"
@@ -167,37 +172,31 @@
             animation__mouseleave="property:scale; to: 1 1 1; startEvents:mouseleave; dur:200">
          </a-entity>
 
-         <a-entity id="crane2"
-                    class="interactive"
-                    position="2.4392 0 -3.811"
-                    rotation="0 196.29 0"
-                    scale="0.75 0.75 0.75"
-                    gltf-model="/assets/crane.glb"
-                    shadow="receive: false"
-                    animation__mouseenter="property: scale; to: 0.78 0.78 0.78; startEvents: mouseenter; dur: 200"
-                    animation__mouseleave="property: scale; to: 0.75 0.75 0.75; startEvents: mouseleave; dur: 200">
-        </a-entity>
         
-        <a-entity id="crane3"
-                class="interactive"
-                position="-1.34072 0 -3.88052"
-                rotation="0 21.7 0"
-                scale=""
-                gltf-model="/assets/crane.glb"
-                shadow="receive: false"
-                animation__mouseenter="property: scale; to: 1.05 1.05 1.05; startEvents: mouseenter; dur: 200"
-                animation__mouseleave="property: scale; to: 1 1 1; startEvents: mouseleave; dur: 200">
+        <a-entity
+            fact-task
+            id="crane2"
+            class="interactive"
+            position="-1.34072 0 -3.88052"
+            rotation="0 21.7 0"
+            scale=""
+            gltf-model="/assets/crane.glb"
+            shadow="receive: false"
+            animation__mouseenter="property: scale; to: 1.05 1.05 1.05; startEvents: mouseenter; dur: 200"
+            animation__mouseleave="property: scale; to: 1 1 1; startEvents: mouseleave; dur: 200">
         </a-entity>
 
-        <a-entity id="crane4"
-                class="interactive"
-                position="-1.80301 0 -3.26395"
-                rotation="0 9.53 0"
-                scale="0.5 0.5 0.5"
-                gltf-model="/assets/crane.glb"
-                shadow="receive: false"
-                animation__mouseenter="property: scale; to: 0.55 0.55 0.55; startEvents: mouseenter; dur: 200"
-                animation__mouseleave="property: scale; to: 0.5 0.5 0.5; startEvents: mouseleave; dur: 200">
+        <a-entity
+            fact-task
+            id="crane3"
+            class="interactive"
+            position="-1.80301 0 -3.26395"
+            rotation="0 9.53 0"
+            scale="0.5 0.5 0.5"
+            gltf-model="/assets/crane.glb"
+            shadow="receive: false"
+            animation__mouseenter="property: scale; to: 0.55 0.55 0.55; startEvents: mouseenter; dur: 200"
+            animation__mouseleave="property: scale; to: 0.5 0.5 0.5; startEvents: mouseleave; dur: 200">
         </a-entity>
 
 
@@ -333,6 +332,7 @@
      </a-entity>
 
      <a-entity
+        fact-task
         id="gun"
         class="interactive"
         position="12.33582 0.06 -14.83141"
