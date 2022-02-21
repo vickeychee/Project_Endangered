@@ -18,6 +18,12 @@ AFRAME.registerComponent('user-interface',{
        voiceUI = document.getElementById('Voice_Popup_ID');
        voiceExitButton = document.getElementById('Voice_Exit_Button_ID');
 
+       bucketPopup = document.getElementById('Bucket_Popup_ID');
+       bucketButton = document.getElementById('Bucket_Button_ID');
+       bucketExit = document.getElementById('Bucket_Exit_Button_ID');
+
+       infoButton = document.getElementById('Info_Button_ID');
+       infoUI = document.getElementById('Info_Popup_ID');
 
 
        infoButton = document.getElementById('Info_Button_ID');
@@ -71,6 +77,37 @@ AFRAME.registerComponent('user-interface',{
 
             Screen_Overlay_ID.style.display = "none";
             Settings_Popup_ID.style.display = "none";
+            
+        });
+
+
+        bucketExit.addEventListener('click', ()=>{
+
+            Screen_Overlay_ID.style.display = "none";
+            bucketPopup.style.display = "none";
+            player.setAttribute('position', {x: -0.804, y:1.3, z: 1.57});
+            checkDistance_Bool = true;
+            
+        });
+
+        bucketButton.addEventListener('click', ()=>{
+
+            Screen_Overlay_ID.style.display = "none";
+            bucketPopup.style.display = "none";
+            bucketTask = true;
+            
+
+            
+        });
+
+
+        infoButton.addEventListener('click', ()=>{
+
+            Screen_Overlay_ID.style.display = "none";
+            infoUI.style.display = "none";
+            exitBucket();
+    
+    
             
         });
 

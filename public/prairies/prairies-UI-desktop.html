@@ -24,6 +24,7 @@
     <script src="js/bucketTask.js"></script>
     <script src="js/userInterface.js"></script>
     <script src="js/factTask.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
 <body>
@@ -116,45 +117,22 @@
 
       <div id="Screen_Overlay_ID"></div>
 
-    <!--<div class="Seals-container" id="Seals_Popup_ID">
-        <div class="Seals-parent">
-          <div class="Seals-child Popup-Exit"><button class="Popup-Button" id= "Seals_Exit_Button_ID"></button></div>
-          <div class="Seals-child Popup-title">Collect the Seals</div>
-          <div class="Seals-child Popup-text">Seals are the polar bears main source of food. As the ice melts it becomes harder for the polar bears to get food. Try to use the ice to collect all of the seals each round!</div>
-          <div class="Seals-child "><hr id="line"></div>
-          <div class="Seals-child Popup-subtitle">Instructions</div>
-          <div class="Seals-child Popup-text">Click on the icebergs to move to them.</div>
-          <div class="Seals-child Popup-text">Get close to a seal and click on the seal to collect it.</div>
-          <div class="Seals-child Popup-text">Collect all the seals to complete the round!</div>
-          <div class="Seals-child"><button class="Info-Button" id="Seals_Button_ID">BEGIN</button></div>
+    <div class="Bucket-container" id="Bucket_Popup_ID">
+        <div class="Bucket-parent">
+          <div class="Bucket-child Popup-Exit"><button class="Popup-Button" id= "Bucket_Exit_Button_ID"></button></div>
+          <div class="Bucket-child Popup-title">Water the Crops</div>
+          <div class="Bucket-child Popup-text">Ponds and marshes are an important part of the whooping crane’s habitat. As humans build more buildings and farms these marshes become drained. Water the crops on the farm to see how it effects the environment!</div>
+          <div class="Bucket-child "><hr id="line"></div>
+          <div class="Bucket-child Popup-subtitle">Instructions</div>
+          <div class="Bucket-child Popup-text">Click on the bucket to pick it up. </div>
+          <div class="Bucket-child Popup-text">Click on the pond to fill the bucket with water.</div>
+          <div class="Bucket-child Popup-text">Find the crops and click on them to water them.</div>
+          <div class="Bucket-child"><button class="Info-Button" id="Bucket_Button_ID">BEGIN</button></div>
           </div>
       </div>
 
 
-
-
-
-
-  <div class="Info-container" id="Info_Popup_ID">
-        <div class="Info-parent">
-            <div class="Info-child Popup-title" id="Info_Title_ID">The Present</div>
-            <div class="Info-child Popup-text" id="Info_Text_ID">The present-day Arctic environment is at risk. Climate change has caused the Arctic to heat up at twice the spead, causing the ice to melt. This makes it harder for polar bears and other animals to get food, because they rely on the ice to move around. Because of this, the Arctic has begun changing. There are less polar bears, arctic seals, and ice in the Arctic now.</div>
-            <div class="Info-child"><button class="Info-Button" id="Info_Button_ID">EXPLORE</button></div>
-        </div>
-    </div>
-
-
-
-    
-    <div id= "Round_Title_Center">
-        <h1><text class="outer_stroke" id ="Round_Title_ID">Round 1</text></h1>
-    </div>
-
-    <div id= "Round_Text_Center">
-        <h2 id ="Round_Text_ID">Collect all of the seals!</h2>
-    </div>
-
-    <div class="wrapper">
+      <div class="wrapper">
         <div id= "Progress_Circle_ID" class="subtask-circular-progress sub-progress-bar_transition">
         <div class="outer"></div>
           <div class="inner"></div>
@@ -175,6 +153,40 @@
         <button type="button" class="btn btn-success remove ms-4">-</button>
         <button type="button" class="btn btn-success reload ms-4" data-completed="" data-total="" data-modulo="" data-toggle="">reload</button>
       </div>
+
+
+      <div class="Info-container" id="Info_Popup_ID">
+        <div class="Info-parent">
+            <div class="Info-child Popup-title" id="Info_Title_ID">Oh No!</div>
+            <div class="Info-child Popup-text" id="Info_Text_ID">You weren’t able to water all of the crops because the pond ran out of water! Did you notice how the pond became more drained every time? This is what happens in the wet prairies as more buildings and farms are built there. This destroys the whooping cranes home, leaving them with no where to live. If whooping cranes do not have a home, they will eventually become extinct.</div>
+            <div class="Info-child"><button class="Info-Button" id="Info_Button_ID">END ACTIVITY</button></div>
+        </div>
+    </div>
+
+
+
+
+<!--
+
+  <div class="Info-container" id="Info_Popup_ID">
+        <div class="Info-parent">
+            <div class="Info-child Popup-title" id="Info_Title_ID">The Present</div>
+            <div class="Info-child Popup-text" id="Info_Text_ID">The present-day Arctic environment is at risk. Climate change has caused the Arctic to heat up at twice the spead, causing the ice to melt. This makes it harder for polar bears and other animals to get food, because they rely on the ice to move around. Because of this, the Arctic has begun changing. There are less polar bears, arctic seals, and ice in the Arctic now.</div>
+            <div class="Info-child"><button class="Info-Button" id="Info_Button_ID">EXPLORE</button></div>
+        </div>
+    </div>
+
+
+
+    
+    <div id= "Round_Title_Center">
+        <h1><text class="outer_stroke" id ="Round_Title_ID">Round 1</text></h1>
+    </div>
+
+    <div id= "Round_Text_Center">
+        <h2 id ="Round_Text_ID">Collect all of the seals!</h2>
+    </div>
+
 
       <div id="Screen_Overlay_ID"></div>
 

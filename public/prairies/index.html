@@ -27,6 +27,7 @@
     <script src="js/bucketTask.js"></script>
     <script src="js/userInterface.js"></script>
     <script src="js/factTask.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
 
@@ -55,7 +56,7 @@
 <body>
 
     <div id="includedContent"></div>
-    <a-scene start-experience renderer="gammaOutput: true;" shadow="type: pcfsoft" vr-mode-ui="enabled: true" id="scene" physics="restitution: 0; debug:false; shadow=autoUpdate: false">
+    <a-scene start-experience renderer="gammaOutput: true;" shadow="type: pcfsoft" vr-mode-ui="enabled: false" id="scene" physics="restitution: 0; debug:false; shadow=autoUpdate: false">
 
         <a-assets timeout = "10000">
         
@@ -105,7 +106,7 @@
                     id = "player-details"
                     collision-filter="group: mouse"
                     cursor="rayOrigin:mouse;"
-                    raycaster="far:20; interval:200; objects:.interactive"
+                    raycaster="far:5; interval:200; objects:.interactive"
                 ></a-entity> 
             </a-entity>
         </a-entity>
@@ -358,7 +359,7 @@
         bucket-task
         id = 'river'
         class="interactive"
-        position='1.521 -0.277 -13.578'
+        position='1.471 -0.277 -14.118'
         rotation = '-90.000 0 0'
         scale='2.540 15.910 12.510'
         color ="#06454c"
