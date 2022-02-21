@@ -78,14 +78,20 @@
             <audio id="music_sound" src="/assets/audio/music.mp3" preload="auto"></audio>
             <audio id="marsh_sound" src="/assets/audio/marsh.mp3" preload="auto"></audio>
             <audio id="click_sound" src="/assets/audio/click.mp3" preload="auto"></audio>
+            <audio id="splash_sound" src="/assets/audio/splash.mp3" preload="auto"></audio>
+            <audio id="gun_sound" src="/assets/audio/gun.mp3" preload="auto"></audio>
+            <audio id="pickup_sound" src="/assets/audio/pickup.mp3" preload="auto"></audio>
+            
  
 
         </a-assets>
 
   <!--Ambient Sounds-->
-  <a-entity class="ambient-music" id ="marsh" sound="src:#marsh_sound; autoplay:true; loop:true; volume:6;" position="0 10 -2.751"></a-entity>
-  <a-entity class="ambient-music" id ="music" sound="src:#music_sound; autoplay:true; loop:true; volume:3;" position="0 10 -2.751"></a-entity>
-  
+  <a-entity class="ambient-music" id ="marsh" sound="src:#marsh_sound; autoplay:false; loop:true; volume:6;" position="0 10 -2.751"></a-entity>
+  <a-entity class="ambient-music" id ="music" sound="src:#music_sound; autoplay:false; loop:true; volume:3;" position="0 10 -2.751"></a-entity>
+ <!-- <a-entity id ="splash" sound="src:#splash_sound; autoplay:false; loop:false; volume:1;"></a-entity>-->
+
+
 
     <!--Lighting-->
 
@@ -327,9 +333,7 @@
          rotation="0 0 0"
          scale= " 1 1 1"
          gltf-model="#target-obj"
-         shadow="cast:true; receive:false;"
-         animation__mouseenter="property:scale; to: 1.1 1.1 1.1; startEvents:mouseenter; dur:200"
-         animation__mouseleave="property:scale; to: 1 1 1; startEvents:mouseleave; dur:200">
+         shadow="cast:true; receive:false;">
      </a-entity>
 
      <a-entity
@@ -358,13 +362,12 @@
     <a-ocean
         bucket-task
         id = 'river'
-        class="interactive"
+        class="interactive ambient-music"
         position='1.471 -0.277 -14.118'
         rotation = '-90.000 0 0'
         scale='2.540 15.910 12.510'
         color ="#06454c"
-        class="ambient-music"
-        sound = "src:#water_sound; autoplay:true; loop:true; volume: 7;"
+        sound = "src:#water_sound; autoplay:false; loop:true; volume: 7;"
         ocean="opacity:0.9;  depth:1.1dw;  density: 10;  amplitude:0.000004;  amplitudeVariance:0.003;  speed:1;  speedVariance:0.9">
     </a-ocean> 
 

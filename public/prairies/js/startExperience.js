@@ -2,17 +2,16 @@ AFRAME.registerComponent('start-experience',{
     init: function() {
         console.log('scene loaded');
 
-       // document.querySelector('#continue-container').style.display = 'flex';
-        //document.querySelector('#loading-animation').style.display = 'none';
+        document.querySelector('#continue-container').style.display = 'flex';
+        document.querySelector('#loading-animation').style.display = 'none';
     }
   });
 
   const startExperience = function(){
       //hide user gesture overlay
-      //document.querySelector('#user-gesture-overlay').style.display = 'none';
-
+      document.querySelector('#user-gesture-overlay').style.display = 'none';
     
-     // document.querySelector('#rotate_portrait_ID2').style.display = 'block';
+      //document.querySelector('#rotate_portrait_ID2').style.display = 'block';
 
 
      console.log("loaded");

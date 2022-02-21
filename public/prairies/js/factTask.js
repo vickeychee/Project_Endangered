@@ -19,6 +19,7 @@ AFRAME.registerComponent('fact-task',{
             factUI.style.display = "flex";
             Screen_Overlay_ID.style.display = "none";
             factUI.style.display = "none";
+            clickSound.play();
       
         });
 
@@ -32,6 +33,7 @@ AFRAME.registerComponent('fact-task',{
             factTitle.innerHTML ="Big Bird!";
             factText.innerHTML = "The whooping crane is the tallest bird in North America. This bird can be up to 5 feet tall, with a wingspan of 7 feet.";
       
+            clickSound.play();
         });
 
         crane2.addEventListener('click', ()=>{
@@ -42,6 +44,7 @@ AFRAME.registerComponent('fact-task',{
             factTitle.innerHTML ="Super Rare";
             factText.innerHTML = "The world has 15 crane species. Out of all of these cranes, the whooping crane is the rarest one! This is mainly due to how small the population is due to it being endangered.";
       
+            clickSound.play();
         });
 
         crane3.addEventListener('click', ()=>{
@@ -52,6 +55,7 @@ AFRAME.registerComponent('fact-task',{
             factTitle.innerHTML ="Last Natural Population";
             factText.innerHTML = "The last natural population of whooping cranes migrates from western Canada to Texas. All other whooping crane populations have been reintroduced through conservation efforts.";
       
+            clickSound.play();
         });
 
         gun.addEventListener('click', ()=>{
@@ -62,6 +66,8 @@ AFRAME.registerComponent('fact-task',{
             factTitle.innerHTML ="Hunting Dangers";
             factText.innerHTML = "One of the major threats to whooping cranes is hunting. In the past, the whooping crane was hunted for its meat and feathers, which were used as decorations on hats and clothing. Now that the whooping crane is protected, they can no longer be hunted. However, accidental shootings are still a huge issue.";
       
+            clickSound.play();
+            gunSound.play();
         });
 
 

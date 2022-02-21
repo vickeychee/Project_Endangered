@@ -26,26 +26,52 @@ AFRAME.registerComponent('user-interface',{
        infoUI = document.getElementById('Info_Popup_ID');
 
 
-       infoButton = document.getElementById('Info_Button_ID');
+       resetButton = document.getElementById('Button_Reset_ID');
+       exitButton = document.getElementById('Button_Exit_ID');
 
        musicToggle =  document.getElementById('Music-Toggle');
        soundToggle = document.getElementById('Sound-Toggle');
 
-      // pianoSound = document.querySelector('#piano_music');
-      // windSound = document.querySelector('#wind_sound');
+       marshSound = document.querySelector('#marsh');
+       riverSound = document.querySelector('#river');
+       musicSound = document.querySelector('#music');
+       clickSound = document.querySelector('#click_sound');
 
+       splashSound = document.querySelector('#splash_sound');
+       gunSound = document.querySelector('#gun_sound');
+       pickupSound = document.querySelector('#pickup_sound');
 
-      console.log("user");
-
+       pickupSound.volume = 0.3;
+       splashSound.volume = 0.3;
+       gunSound.volume = 0.8;
+       clickSound.volume = 1;
 
        begin = false;
        exit = false;
+
+
+       resetButton.addEventListener('click', ()=>{
+        
+        resetBucketTask();
+        clickSound.play();
+  
+      });
+
+      exitButton.addEventListener('click', ()=>{
+        
+        exitBucket();
+        player.setAttribute('position', {x: -0.804, y:1.3, z: 1.57});
+        clickSound.play();
+  
+      });
+
 
 
        
        voiceExitButton.addEventListener('click', ()=>{
 
         voiceUI.style.display = "none";
+        clickSound.play();
 
         });
 
@@ -53,6 +79,7 @@ AFRAME.registerComponent('user-interface',{
 
         Screen_Overlay_ID.style.display = "block";
         Help_Popup_ID.style.display = "flex";
+        clickSound.play();
 
         
         });
@@ -61,6 +88,7 @@ AFRAME.registerComponent('user-interface',{
 
             Screen_Overlay_ID.style.display = "none";
             Help_Popup_ID.style.display = "none";
+            clickSound.play();
             
         });
 
@@ -69,6 +97,7 @@ AFRAME.registerComponent('user-interface',{
 
             Screen_Overlay_ID.style.display = "block";
             Settings_Popup_ID.style.display = "flex";
+            clickSound.play();
 
         });
 
@@ -77,6 +106,7 @@ AFRAME.registerComponent('user-interface',{
 
             Screen_Overlay_ID.style.display = "none";
             Settings_Popup_ID.style.display = "none";
+            clickSound.play();
             
         });
 
@@ -87,6 +117,7 @@ AFRAME.registerComponent('user-interface',{
             bucketPopup.style.display = "none";
             player.setAttribute('position', {x: -0.804, y:1.3, z: 1.57});
             checkDistance_Bool = true;
+            clickSound.play();
             
         });
 
@@ -95,6 +126,7 @@ AFRAME.registerComponent('user-interface',{
             Screen_Overlay_ID.style.display = "none";
             bucketPopup.style.display = "none";
             bucketTask = true;
+            clickSound.play();
             
 
             
@@ -106,6 +138,7 @@ AFRAME.registerComponent('user-interface',{
             Screen_Overlay_ID.style.display = "none";
             infoUI.style.display = "none";
             exitBucket();
+            clickSound.play();
     
     
             
@@ -115,58 +148,45 @@ AFRAME.registerComponent('user-interface',{
         setInterval(PopupTimer, 30000);
 
 
-       /*voiceExitButton.addEventListener('click', ()=>{
-
-        voiceUI .style.display = "none";
-
-        });
-
-       factExitButton.addEventListener('click', ()=>{
-
-        Screen_Overlay_ID.style.display = "none";
-        factUI.style.display = "none";
-
-        });
-       
-       sealInfoButton.addEventListener('click', ()=>{
-
-        Screen_Overlay_ID.style.display = "none";
-        factUI.style.display = "none";
- 
-        });
-
-       sealsExit.addEventListener('click', ()=>{
-
-        sealsPopup.style.display = "none";
-        Screen_Overlay_ID.style.display = "none";
-        exit = true;
-        exitSealTask();
-
-        });
-
-        sealsButton.addEventListener('click', ()=>{
-
-            begin = true;
-    
-        });
-       
-       infoButton.addEventListener('click', ()=>{
-
-        Screen_Overlay_ID.style.display = "none";
-        infoUI.style.display = "none";
-
-        
-        present_sound.pause();
-
-        
-        });
-
-*/
-
     },
 
     tick: function(){
 
+
+        if(musicToggle.checked == false){
+
+            musicSound.setAttribute('sound', 'volume', 0)
+
+
+
+        }else{
+
+            musicSound.setAttribute('sound', 'volume', 2)
+        }
+
+        if(soundToggle.checked == false){
+
+            marshSound.setAttribute('sound', 'volume', 0)
+            riverSound.setAttribute('sound', 'volume', 0)
+
+                    
+            pickupSound.volume = 0;
+            splashSound.volume = 0;
+            gunSound.volume = 0;
+            clickSound.volume = 0;
+
+
+        }else{
+
+            marshSound.setAttribute('sound', 'volume', 2)
+            riverSound.setAttribute('sound', 'volume', 2)
+
+            
+            pickupSound.volume = 0.3;
+            splashSound.volume = 0.3;
+            gunSound.volume = 0.8;
+            clickSound.volume = 1;
+        }
 
 
     }

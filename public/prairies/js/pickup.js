@@ -26,6 +26,8 @@ AFRAME.registerComponent('pickup', {
                 context.el.setAttribute('position', {x:0.5, y:-0.3, z:-0.75});
                 context.el.removeAttribute('dynamic-body');
 
+                pickupSound.play();
+
 
             }
             if (context.data.pickedup === true && increment === 2) { //drop
@@ -35,6 +37,7 @@ AFRAME.registerComponent('pickup', {
                 context.el.setAttribute('dynamic-body', 'mass:5;');
                 increment = 0;
                 objectSelectedID = null;
+                pickupSound.play();
                 
     
             }

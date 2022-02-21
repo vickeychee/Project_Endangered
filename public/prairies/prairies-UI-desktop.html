@@ -18,6 +18,7 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/prairies_stylesheet.css">
+    <link rel="stylesheet" href="/css/prairies_loading_animation.css">
 
     <script src="js/pickup.js"></script>
     <script src="js/startExperience.js"></script>
@@ -162,6 +163,23 @@
             <div class="Info-child"><button class="Info-Button" id="Info_Button_ID">END ACTIVITY</button></div>
         </div>
     </div>
+
+    
+    <div id="user-gesture-overlay">
+        <div class= "center">
+            <img id="loading-animation" src="/imgs/prairies_loading.gif">
+        </div>
+
+
+        <div id="continue-container">
+            <div class ="continue-parent">
+                <div class="continue-child"><img id="continue-bear" src="imgs/prairies_cranehead.png"></div>
+                <div class="continue-child continue-text">The arctic is ready for you to explore!</div>
+                <div class="continue-child"><button id="user-gesture-button" onclick="startExperience();">BEGIN</button></div>
+            </div>
+        </div>
+    </div>
+
 
 
 

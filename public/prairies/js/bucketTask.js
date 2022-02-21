@@ -190,6 +190,35 @@
     bucketTask = false;
 
     playerDetails.setAttribute('raycaster', 'far', 5);
+
+    bucket.setAttribute('gltf-model', "/assets/bucket_empty.glb");
+    
+    bucketFull_Bool = false;
+
+    checkDistance_Bool = true;
+  }
+
+  function resetBucketTask(){
+
+    waterCounter = 0;
+    subs_completed = 0;
+
+    water.setAttribute('position', {x:1.521, y:-0.277, z: -13.578});
+    lily.setAttribute('position', {x: 0.442, y:0.009, z: -4.969});
+    craneGroup.setAttribute('position', {x: 0.442, y:0.009, z: -4.969});
+
+    bucket.setAttribute('gltf-model', "/assets/bucket_empty.glb");
+
+    playerDetails.setAttribute('raycaster', 'far', 5);
+
+    bucketFull_Bool = false;
+
+    player.setAttribute('position', {x: -0.804, y:1.3, z: 1.57});
+      
+    $('.number').html(subs_completed + '/' + total_subs)
+
+    updateSubtaskProgressBar(subs_completed, total, bar_transition, toggle, modulo, reload)
+
   }
 
 
@@ -244,6 +273,7 @@ AFRAME.registerComponent('bucket-task',{
                 if(bucketFull_Bool === false && bucketThreeTimes === false){
                      waterCounter +=1;
                      bucket.setAttribute('gltf-model', "/assets/bucket_full.glb");
+                     splashSound.play();
                 }
      
                 bucketFull_Bool = true;
@@ -274,6 +304,7 @@ AFRAME.registerComponent('bucket-task',{
      
                    Screen_Overlay_ID.style.display = "block";
                    infoUI.style.display = "flex";
+                   clickSound.play();
                }
                
      
@@ -289,9 +320,12 @@ AFRAME.registerComponent('bucket-task',{
 
         allCropsElem.addEventListener('click', ()=>{
 
+            clickSound.play();
+
     
             if(objectSelectedID === "bucket" && bucketFull_Bool === true){
                 bucket.setAttribute('gltf-model', "/assets/bucket_empty.glb");
+
 
                 
                 if(waterCounter <= 4){
@@ -331,16 +365,26 @@ AFRAME.registerComponent('bucket-task',{
     
             if (distance < 1.6){
 
-                console.log("collided");
                 checkDistance_Bool = false;
                 document.getElementById("Voice_Popup_ID").style.display="none";
                 bucketPopup.style.display = "flex";
                 Screen_Overlay_ID.style.display = "block";
+                subs_completed = 0;
+                $('.number').html(subs_completed + '/' + total_subs)
+
+                reload = $('.reload')
+                reload.data('completed', subs_completed)
+                modulo = reload.data('modulo')
+                toggle = reload.data('toggle')
+                total = reload.data('total')
+
+                updateSubtaskProgressBar(subs_completed, total, bar_transition, toggle, modulo, reload)
     
              }
         }
 
         if(bucketTask){
+            
 
             bucket.classList.add('interactive');
 
