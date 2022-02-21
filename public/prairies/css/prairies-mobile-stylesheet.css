@@ -8,7 +8,7 @@
 }
 
 #copyright{  
-    color: #013440;
+    color: #F8F8F8;
     font-size: 12px;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
@@ -24,9 +24,9 @@ a{
     text-decoration: none;
 }
 body {
-    background-image: url("/imgs/arctic_background_blur.png");
+    background-image: url("/imgs/prairies_background_blur.png");
     background-repeat: no-repeat;
-    background-color: #ADCEE5;
+    background-color: #F0C3B7;
     background-position: 50%;
     background-position-x: center;
     background-size: 100%;
@@ -64,9 +64,9 @@ p {
     font-size: 18px;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    background-color: #FFAF81;
+    background-color: #CBEBB2;
     color: #013440;
-    border: 0.25rem solid #FFAF81;
+    border: 0.25rem solid #CBEBB2;
     padding-left: 3rem;
     padding-right: 3rem;
     padding-top: 0.5rem;
@@ -78,8 +78,8 @@ p {
 }
 
 .orange-button:hover{
-    background-color: #ffbf9a;
-    border-color: #ffbf9a;
+    background-color: #d5efc1;
+    border-color: #d5efc1;
 }
 
 
@@ -159,9 +159,9 @@ p {
 
 
     body {
-        background-image: url("/imgs/arctic_background_blur.png");
+        background-image: url("/imgs/prairies_background_blur.png");
         background-repeat: no-repeat;
-        background-color: #ADCEE5;
+        background-color: #F0C3B7;
         background-position: 50%;
         background-position-x: center;
         background-size: 325%;
@@ -172,7 +172,7 @@ p {
       }
     
       #copyright{  
-        color: #013440;
+        color: #F8F8F8;
         font-size: 12px;
         font-family: 'Poppins', sans-serif;
         font-weight: 400;
