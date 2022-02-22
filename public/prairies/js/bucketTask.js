@@ -189,7 +189,7 @@
     subs_completed = 0;
     bucketTask = false;
 
-    playerDetails.setAttribute('raycaster', 'far', 5);
+    playerDetails.setAttribute('raycaster', 'far', 8);
 
     bucket.setAttribute('gltf-model', "/assets/bucket_empty.glb");
     
@@ -209,7 +209,7 @@
 
     bucket.setAttribute('gltf-model', "/assets/bucket_empty.glb");
 
-    playerDetails.setAttribute('raycaster', 'far', 5);
+    playerDetails.setAttribute('raycaster', 'far', 8);
 
     bucketFull_Bool = false;
 
