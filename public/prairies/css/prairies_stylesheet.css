@@ -1006,6 +1006,11 @@
     @media only screen and (max-height: 480px)
     {
 
+        div{
+            -webkit-overflow-scrolling:touch;
+        }
+
+
 
         #Info_Title_ID{
             margin-top: 4rem;
@@ -1092,8 +1097,8 @@
             margin-top: -1rem;
         }
     
-        .Popup-text{
-            font-size: 16px;
+        .Popup-text2{
+            font-size: 10px;
             font-weight: 400;
             color: #013440;
             padding-bottom: 0.25rem;
@@ -1222,9 +1227,6 @@
 
         }
 
-        div{
-            -webkit-overflow-scrolling:touch;
-        }
 
         .Help-parent{
 
