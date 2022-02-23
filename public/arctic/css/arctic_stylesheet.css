@@ -5,8 +5,6 @@
 
 }*/
 
-
-
 #Title_Arctic_ID{
     width:16.125rem;
     height:6rem;
@@ -782,6 +780,7 @@
         font-weight: 400;
         color: #013440;
         padding-bottom: 0.7rem;
+        font-family: 'Poppins', sans-serif;
     }
 
     .Popup-subtitle{
@@ -1104,7 +1103,7 @@
 
 
         /*mobile portrait*/
-   @media screen 
+   /*@media screen 
     and (orientation: portrait) 
     {
 
@@ -1140,7 +1139,7 @@
           }
 
 
-    }
+    }*/
 
 
 
@@ -1150,16 +1149,16 @@
     and (max-device-width: 480px)
     and (-webkit-min-device-pixel-ratio: 2)
     and (orientation: landscape)*/
-    @media only screen and (max-height: 480px) and (orientation: landscape)
+    @media only screen and (max-height: 480px)
     {
 
-        #rotate_portrait_ID {
+       /* #rotate_portrait_ID {
             display: none;
         }
 
         #rotate_portrait_ID2{
             display: none;
-        }
+        }*/
 
         .Info-container{
         

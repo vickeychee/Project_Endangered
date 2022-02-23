@@ -57,7 +57,7 @@ AFRAME.registerComponent('user-interface',{
 
         voiceUI.style.display = "none";
 
-        });
+      });
 
        factExitButton.addEventListener('click', ()=>{
 

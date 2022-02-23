@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Project Endangered</title>
+    <meta name="description" content="Project Endagered WebVR">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" viewport-fit=cover>
+
+
+    <!--External Components-->
+
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="https://unpkg.com/aframe-physics-extras@0.1.2/dist/aframe-physics-extras.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.2.0/dist/aframe-environment-component.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+
+
+
+   <!--<script> 
+        function load_page(){
+    
+            deviceChoice = 0;
+            deviceChoice= (localStorage.getItem("device"));
+            console.log(deviceChoice);
+    
+    
+            qr=new XMLHttpRequest();
+    
+            if (deviceChoice == 1){
+                qr.open('get','prairies-UI-desktop.html');
+            } else if(deviceChoice == 2){
+                qr.open('get','prairies-UI-mobile.html');
+            }
+            qr.send();
+            qr.onload=function(){includedContent.innerHTML=qr.responseText}
+            };load_page();
+    
+        </script> --> 
+    
+</head>
+<body>
+    <a-scene renderer="gammaOutput: true;" shadow="type: pcfsoft" vr-mode-ui="enabled: false" id="scene" shadow="autoUpdate: false" >
+
+        <a-assets timeout = "10000">
+        
+            <!--Envrionment Assets-->
+            <a-asset-item id="environment-obj" crossorigin="anonymous" src="/assets/grassland_environment.glb"></a-asset-item> 
+            <a-asset-item id="road-obj" crossorigin="anonymous" src="/assets/road.glb"></a-asset-item> 
+            <a-asset-item id="apartment-obj" crossorigin="anonymous" src="/assets/apartment.glb"></a-asset-item> 
+            <a-asset-item id="factory-obj" crossorigin="anonymous" src="/assets/factory.glb"></a-asset-item> 
+            <a-asset-item id="panel-obj" crossorigin="anonymous" src="/assets/control_panel.glb"></a-asset-item> 
+
+
+        </a-assets>
+
+    <!--Lighting-->
+
+    <a-entity light="type: ambient; color: #c7f0cf; intensity: 0.71"></a-entity>
+    <a-entity id="light_spot" light="type: point; color: #ffffff; intensity: 0.3; castShadow: true; shadowRadius: 2.52; shadowCameraFov: 92.680" position="-8.859 37.604 -19.138">
+    </a-entity>
+
+
+        <!--Player Controls-->
+        <a-entity id="player" movement-controls="speed:0.2; constrainToNavMesh: true;" position="1.07 1.3 1.37">
+            <a-entity
+                id = "player2"
+                camera="fov:70"
+                wasd-controls='acceleration: 10'
+                look-controls>
+                <a-entity
+                    id = "player-details"
+                    collision-filter="group: mouse"
+                    cursor="rayOrigin:mouse;"
+                    raycaster="far:8; interval:200; objects:.interactive"
+                ></a-entity> 
+            </a-entity>
+        </a-entity>
+
+
+        <!--Environment Models-->
+    <a-entity
+            id ="environment"
+            environment="preset: default; groundColor: #445; grid:none; ground:none; lighting:none; skyType:gradient; skyColor:#24bdff; horizonColor:#dffafb; fog:0">
+        </a-entity>
+
+        <a-entity
+            id="environment_model"
+            position="-8.189 0.009 -3.842"
+            rotation="0 101.580 0"
+            scale= " 1 1 1"
+            gltf-model="#environment-obj"
+            shadow="cast:true; receive:true;">
+        </a-entity>
+
+        <a-entity
+            id="apartment"
+            position="-8.189 0.009 -3.842"
+            rotation="0 101.580 0"
+            scale= " 1 1 1"
+            gltf-model="#apartment-obj"
+            shadow="cast:true; receive:false;"
+            visible='true'>
+        </a-entity>
+
+        <a-entity
+            id="road"
+            position="-8.189 0.009 -3.842"
+            rotation="0 101.580 0"
+            scale= " 1 1 1"
+            gltf-model="#road-obj"
+            shadow="cast:true; receive:false;"
+            visible='true'>
+        </a-entity>
+
+
+        
+
+       <a-entity
+            id="factory"
+            position="-8.189 0.009 -3.842"
+            rotation="0 101.580 0"
+            scale= " 1 1 1"
+            gltf-model="#factory-obj"
+            shadow="cast:true; receive:false;"
+            visible='true'>
+    </a-entity>
+
+
+    <a-ocean
+    id = 'river'
+    class="interactive ambient-music"
+    position='-4.595 -0.159 -3.531'
+    rotation = '-90.000 11.460 0'
+    scale='3.870 43.170 12.500'
+    color ="#074b54"
+    sound = "src:#water_sound; autoplay:false; loop:true; volume: 7;"
+    ocean="opacity:0.9;  depth:1.1dw;  density: 10;  amplitude:0.000004;  amplitudeVariance:0.003;  speed:1;  speedVariance:0.9">
+</a-ocean> 
+
+
+        
+    </a-scene>
+</body>
+</html>

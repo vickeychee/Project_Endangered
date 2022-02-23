@@ -1,0 +1,247 @@
+
+#logo{
+    padding-bottom: 1rem;
+    width: 16.875rem;
+    height:1.8125rem;
+    margin: 2.75rem;
+
+}
+
+#copyright{  
+    color: #F8F8F8;
+    font-size: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    margin-top: auto;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    align-self: flex-end;
+    margin-right:2rem;
+
+}
+
+a{
+    text-decoration: none;
+}
+body {
+    background-image: url("/imgs/prairies_background_blur.png");
+    background-repeat: no-repeat;
+    background-color: #F0C3B7;
+    background-position: 50%;
+    background-position-x: center;
+    background-size: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-position: bottom 0px right 50%;
+    overflow: hidden;
+  }
+
+
+
+
+h1 {
+    margin:0;
+    color: #013440;
+    font-size: 36px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+
+p {
+
+    color: #013440;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    margin-top: -0.5rem;
+
+}
+
+
+
+.orange-button{
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    background-color: #F1BEDC;
+    color: #013440;
+    border: 0.25rem solid #F1BEDC;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top: 0.5rem;
+    padding-bottom:0.5rem;
+    border-radius: 2rem;
+    text-align: center;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+
+}
+
+.orange-button:hover{
+    background-color: #f4cbe3;
+    border-color: #f4cbe3;
+}
+
+
+
+.Help-container{
+        
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1rem;
+
+}
+
+.Help-parent{
+
+    display: flex;
+    position: relative;
+    z-index: 9999999;
+    color: #fff;
+    width: 47%;
+    left:0;
+    margin: 0;
+    background: #F8F8F8;
+    flex-direction: column;
+    border-radius: 50px;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+    padding-left:5rem;
+    padding-right:5rem;
+    padding-bottom: 3rem;
+    padding-top: 2.5rem;
+
+}
+
+.Help-child{
+    flex: 1 1 100%;
+    color: #013440;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+.Popup-title{
+    font-size: 48px;
+    font-weight: 700;
+    padding-bottom: 0.7rem;
+}
+
+.Popup-text{
+    font-size: 18px;
+    font-weight: 400;
+    color: #013440;
+    padding-bottom: 0.7rem;
+}
+
+.Popup-subtitle{
+    font-size: 24px;
+    font-weight: 600;
+    color: #013440;
+    padding-bottom: 1rem;
+    padding-top: 0.75rem;
+}
+
+
+
+#line{
+    border-style:solid;
+    border-width: 1px;  
+    border-color: #013440;
+}
+
+
+@media only screen and (max-width: 600px)
+{
+
+
+    body {
+        background-image: url("/imgs/prairies_background_blur.png");
+        background-repeat: no-repeat;
+        background-color: #F0C3B7;
+        background-position: 50%;
+        background-position-x: center;
+        background-size: 325%;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background-position: bottom 0px right 50%;
+      }
+    
+      #copyright{  
+        color: #F8F8F8;
+        font-size: 12px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        margin-top: auto;
+        padding-top: 1rem;
+        padding-bottom: 9rem;
+        align-self: center;
+        margin-right:0rem;
+    }
+
+    .Popup-title{
+        font-size: 24px;
+        font-weight: 700;
+        padding-bottom: 0.7rem;
+    }
+    
+    .Popup-text{
+        font-size: 16px;
+        font-weight: 400;
+        color: #013440;
+        padding-bottom: 0.3rem;
+    }
+    
+    .Popup-subtitle{
+        font-size: 18px;
+        font-weight: 600;
+        color: #013440;
+        padding-bottom: 1rem;
+        padding-top: 0.75rem;
+    }
+
+    .Help-container{
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 0rem;
+    
+    }
+    .Help-parent{
+
+        display: flex;
+        position: relative;
+        z-index: 9999999;
+        color: #fff;
+        width: 80%;
+        left:0;
+        margin: 0;
+        background: #F8F8F8;
+        flex-direction: column;
+        border-radius: 50px;
+        box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+        padding-left:1.5rem;
+        padding-right:1.5rem;
+        padding-bottom: 3rem;
+        padding-top: 2rem;
+    
+    }
+
+    #logo{
+        padding-bottom: 0rem;
+        margin-bottom: 2rem1;
+        width: 12.5rem;
+        height:1.3125rem;
+    }
+    #logo-pos{
+        align-self: center;
+    }
+    
+
+    
+}
