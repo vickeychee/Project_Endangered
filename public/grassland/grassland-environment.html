@@ -25,6 +25,7 @@
     <script src="js/controlPanel.js"></script>
     <script src="js/userInterface.js"></script>
     <script src="js/startExperience.js"></script>
+    <script src="js/factTask.js"></script>
 
 
 
@@ -63,6 +64,7 @@
             <a-asset-item id="factory-obj" crossorigin="anonymous" src="/assets/factory.glb"></a-asset-item> 
             <a-asset-item id="panel-obj" crossorigin="anonymous" src="/assets/control_panel.glb"></a-asset-item> 
             <a-asset-item id="sign-obj" crossorigin="anonymous" src="/assets/sign.glb"></a-asset-item> 
+            <a-asset-item id="elephant-obj" crossorigin="anonymous" src="/assets/elephant.glb"></a-asset-item>
 
             <audio id="wind_sound" src="/assets/audio/wind.mp3" preload="auto"></audio>
             <audio id="music_sound" src="/assets/audio/music.mp3" preload="auto"></audio>
@@ -91,7 +93,7 @@
 
 
         <!--Player Controls-->
-        <a-entity id="player" movement-controls="speed:0.2; constrainToNavMesh: true;" position="1.07 1.3 1.37">
+        <a-entity id="player" movement-controls="speed:0.2; constrainToNavMesh: true;" position="1.07 1.7 1.37">
             <a-entity
                 id = "player2"
                 camera="fov:70"
@@ -125,7 +127,7 @@
         </a-entity>
 
         <a-entity
-        control-panel
+            control-panel
             id="apartment"
             position="-8.189 0.009 -3.842"
             rotation="0 101.580 0"
@@ -156,11 +158,62 @@
             visible='false'>
     </a-entity>
 
-    <a-entity id="sign"
-                position="-2.97364 0 -2.12991"
-                rotation="0 44.55 0"
-                gltf-model="/assets/sign.glb"
-                shadow="receive: false">
+
+    <a-entity
+        fact-task
+        id="elephant1"
+        class="interactive"
+        position="-0.10575 0.15339 -6.074"
+        rotation="0 140.07 0"
+        gltf-model="/assets/elephant.glb"
+        shadow="receive: false"
+        scale="0.6 0.6 0.6"
+        animation__mouseenter="property:scale; to: 0.65 0.65 0.65; startEvents:mouseenter; dur:200"
+        animation__mouseleave="property:scale; to: 0.6 0.6 0.6; startEvents:mouseleave; dur:200">
+    </a-entity>
+
+    <a-entity
+        id="elephant2"
+        class="interactive"
+        position="1.81135 0.12853 -3.23238"
+        rotation="0 42.03 0"
+        gltf-model="/assets/elephant.glb"
+        shadow="receive: false"
+        scale="0.4 0.4 0.4"
+        animation__mouseenter="property:scale; to: 0.45 0.45 0.45; startEvents:mouseenter; dur:200"
+        animation__mouseleave="property:scale; to: 0.4 0.4 0.4; startEvents:mouseleave; dur:200">
+    </a-entity>
+
+    <a-entity
+        id="elephant3"
+        class="interactive"
+        position="-15.13995 0.167 -3.35672"
+        rotation="0 159.35 0"
+        gltf-model="/assets/elephant.glb"
+        shadow="receive: false"
+        scale="0.8 0.8 0.8"
+        animation__mouseenter="property:scale; to: 0.85 0.85 0.85; startEvents:mouseenter; dur:200"
+        animation__mouseleave="property:scale; to: 0.8 0.8 0.8; startEvents:mouseleave; dur:200">
+    </a-entity>
+
+    <a-entity
+        id="elephant4"
+        class="interactive"
+        position="-13.83427 0.167 -2.10703"
+        rotation="0 -123.59 0"
+        gltf-model="/assets/elephant.glb"
+        shadow="receive: false"
+        scale="0.4 0.4 0.4"
+        animation__mouseenter="property:scale; to: 0.45 0.45 0.45; startEvents:mouseenter; dur:200"
+        animation__mouseleave="property:scale; to: 0.4 0.4 0.4; startEvents:mouseleave; dur:200">
+    </a-entity>
+
+    <a-entity
+        id="sign"
+        position="-2.97364 0 -2.12991"
+        rotation="0 44.55 0"
+        gltf-model="/assets/sign.glb"
+        shadow="receive: false">
     </a-entity>
 
 

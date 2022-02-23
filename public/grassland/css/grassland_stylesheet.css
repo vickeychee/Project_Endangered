@@ -633,3 +633,60 @@
         border-color:#e0e5e6;
 
     }
+
+
+    .Fact-container{
+        
+        display: none;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        z-index: 99999999;
+
+    }
+
+
+    .Fact-parent{
+        display: flex;
+        position: relative;
+        z-index: 9999999;
+        color: #fff;
+        width: 39%;
+        top:30%;
+        left:0;
+        margin: 0;
+        background: #F8F8F8;
+        flex-direction: column;
+        border-radius: 50px;
+        box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+        padding-left:6rem;
+        padding-right:6rem;
+        padding-bottom: 2.5rem;
+        padding-top: 1.25rem;
+
+    }
+
+    .Fact-child{
+        flex: 1 1 100%;
+        color: #013440;
+        text-align: center;
+        font-family: 'Poppins', sans-serif;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0.3rem;
+        z-index: 999999;
+    
+    }
+
+
+    #Fact_Exit_Button_ID{
+
+        display:inline-flex;
+        background-image: url("/imgs/button_exit.png");
+        background-repeat: no-repeat;
+        background-position:center;
+        border-radius: 50%;
+        margin-right: -6rem;
+        background-size: 2rem;
+    }
+   
