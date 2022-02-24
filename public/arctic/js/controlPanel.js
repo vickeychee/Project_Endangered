@@ -181,6 +181,9 @@ AFRAME.registerComponent('control-panel',{
     startText1 = document.querySelector('#start_text1');
     startText2 = document.querySelector('#start_text2');
 
+   tooltip1 = document.querySelector('#tooltip1');
+    tooltip2 = document.querySelector('#tooltip2');
+
 
     seal1 = document.querySelector('#seal1');
     seal2 = document.querySelector('#seal2');
@@ -238,6 +241,11 @@ AFRAME.registerComponent('control-panel',{
 
         startText1.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
         startText2.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
+
+
+        
+        tooltip1.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
+        tooltip2.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
 
         polarBear1.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
         polarBear2.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
@@ -331,6 +339,10 @@ AFRAME.registerComponent('control-panel',{
 
         startText1.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
         startText2.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
+
+        
+        tooltip1.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
+        tooltip2.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
         
         enviroModel.setAttribute('gltf-model', "/assets/environment-present.glb");
         navMesh.setAttribute('gltf-model', "/assets/nav-present/nav-present.gltf");
@@ -426,6 +438,9 @@ AFRAME.registerComponent('control-panel',{
 
         startText1.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
         startText2.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
+        
+        tooltip1.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
+        tooltip2.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
 
         enviroModel.setAttribute('gltf-model', "/assets/environment-future.glb");
         navMesh.setAttribute('gltf-model', "/assets/nav-future/nav-future.gltf");

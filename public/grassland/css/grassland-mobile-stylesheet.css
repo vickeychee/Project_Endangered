@@ -24,9 +24,9 @@ a{
     text-decoration: none;
 }
 body {
-    background-image: url("/imgs/prairies_background_blur.png");
+    background-image: url("/imgs/grassland_background_blur.png");
     background-repeat: no-repeat;
-    background-color: #F0C3B7;
+    background-color: #a4d2d2;
     background-position: 50%;
     background-position-x: center;
     background-size: 100%;
@@ -159,9 +159,9 @@ p {
 
 
     body {
-        background-image: url("/imgs/prairies_background_blur.png");
+        background-image: url("/imgs/grassland_background_blur.png");
         background-repeat: no-repeat;
-        background-color: #F0C3B7;
+        background-color: #a4d2d2;
         background-position: 50%;
         background-position-x: center;
         background-size: 325%;

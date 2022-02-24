@@ -32,17 +32,17 @@
    <script> 
         function load_page(){
     
-            deviceChoice = 1;
-            //deviceChoice= (localStorage.getItem("device"));
-            //console.log(deviceChoice);
+            deviceChoice = 0;
+            deviceChoice= (localStorage.getItem("device"));
+            console.log(deviceChoice);
     
     
             qr=new XMLHttpRequest();
     
             if (deviceChoice == 1){
                 qr.open('get','grassland-UI-desktop.html');
-           // } else if(deviceChoice == 2){
-              //  qr.open('get','prairies-UI-mobile.html');
+            } else if(deviceChoice == 2){
+                qr.open('get','grassland-UI-mobile.html');
             }
             qr.send();
             qr.onload=function(){includedContent.innerHTML=qr.responseText}
@@ -65,6 +65,8 @@
             <a-asset-item id="panel-obj" crossorigin="anonymous" src="/assets/control_panel.glb"></a-asset-item> 
             <a-asset-item id="sign-obj" crossorigin="anonymous" src="/assets/sign.glb"></a-asset-item> 
             <a-asset-item id="elephant-obj" crossorigin="anonymous" src="/assets/elephant.glb"></a-asset-item>
+            <a-asset-item id="tooltip-obj" crossorigin="anonymous" src="/assets/tooltip.glb"></a-asset-item>
+            <a-asset-item id="nav-mesh-obj" crossorigin="anonymous" src="/assets/nav-mesh/nav_mesh.gltf"></a-asset-item>
 
             <audio id="wind_sound" src="/assets/audio/wind.mp3" preload="auto"></audio>
             <audio id="music_sound" src="/assets/audio/music.mp3" preload="auto"></audio>
@@ -92,23 +94,36 @@
     </a-entity>
 
 
-        <!--Player Controls-->
-        <a-entity id="player" movement-controls="speed:0.2; constrainToNavMesh: true;" position="1.07 1.7 1.37">
+    <!--Player Controls-->
+    <a-entity id="player" movement-controls="speed:0.2; constrainToNavMesh: true;" position="1.07 1.7 1.37">
+        <a-entity
+            id = "player2"
+            camera="fov:70"
+            wasd-controls='acceleration: 10'
+            look-controls>
             <a-entity
-                id = "player2"
-                camera="fov:70"
-                wasd-controls='acceleration: 10'
-                look-controls>
-                <a-entity
-                    id = "player-details"
-                    collision-filter="group: mouse"
-                    cursor="rayOrigin:mouse;"
-                    raycaster="far:8; interval:200; objects:.interactive"
-                ></a-entity> 
-            </a-entity>
+                id = "player-details"
+                collision-filter="group: mouse"
+                cursor="rayOrigin:mouse;"
+                raycaster="far:10; interval:200; objects:.interactive"
+            ></a-entity> 
         </a-entity>
+    </a-entity>
 
-        <a-entity user-interface></a-entity>
+
+    <a-entity>
+        <a-entity
+            id ="nav_mesh"
+            scale='1 1 1'
+            position = '-8.189 1.7 -3.842'
+            rotation="0 101.580 0"
+            gltf-model='#nav-mesh-obj'
+            nav-mesh
+            visible='true'
+        ></a-entity>
+    </a-entity>
+
+    <a-entity user-interface></a-entity>
 
 
         <!--Environment Models-->
@@ -158,6 +173,25 @@
             visible='false'>
     </a-entity>
 
+
+    <a-entity id="tooltip1" position="1.89149 1.39562 -3.18076" rotation="0 -3.57 0" scale="0.7 0.7 0.7" shadow="cast:true; receive:false;">
+
+        <a-entity id="tooltup-text1" text="value: Click me to learn a fact; align: center; color: #001d24; lineHeight: 54.49; font: /assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.42; baseline: top; wrapCount: 7.41; side: double" rotation="" position="-0.00023 0.19395 0.02442">
+        </a-entity>
+
+        <a-entity id="tooltip-box1" position="0 -0.63939 0" rotation="" scale="0.5 0.5 0.5" gltf-model="/assets/tooltip.glb">
+        </a-entity>
+</a-entity>
+
+
+<a-entity id="tooltip2" position="-13.95456 1.53136 -2.07267" rotation="0 107.39 0" scale="0.7 0.7 0.7"  shadow="cast:true; receive:false;">
+
+    <a-entity id="tooltup-text2" text="value: Click me to learn a fact; align: center; color: #001d24; lineHeight: 54.49; font: /assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.42; baseline: top; wrapCount: 7.41; side: double" rotation="" position="-0.00023 0.19395 0.02442">
+    </a-entity>
+
+    <a-entity id="tooltip-box2" position="0 -0.63939 0" rotation="" scale="0.5 0.5 0.5" gltf-model="/assets/tooltip.glb">
+    </a-entity>
+</a-entity>
 
     <a-entity
         fact-task

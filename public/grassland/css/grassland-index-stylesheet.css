@@ -17,9 +17,9 @@ a{
 
 body {
     display: flex;
-    background-image: url("/imgs/prairies_background.png");
+    background-image: url("/imgs/grassland_background.png");
     background-repeat: no-repeat;
-    background-color: #F0C3B7;
+    background-color: #a9d6d4;
     background-position: 50%;
     background-position-x: center;
     background-size: 100%;
@@ -83,7 +83,7 @@ p {
 
 
 #copyright{  
-    color: #F8F8F8;
+    color: #013440;
     font-size: 12px;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
@@ -168,9 +168,9 @@ p {
 }
 
 body {
-    background-image: url("/imgs/prairies_background.png");
+    background-image: url("/imgs/grassland_background.png");
     background-repeat: no-repeat;
-    background-color: #F0C3B7;
+    background-color: #a9d6d4;
     background-position: 50%;
     background-position-x: center;
     background-size: 325%;
@@ -181,7 +181,7 @@ body {
   }
 
   #copyright{  
-    color: #F8F8F8;
+    color: #013440;
     font-size: 12px;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;

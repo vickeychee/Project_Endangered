@@ -20,7 +20,6 @@
     <script src="js/controlPanel.js"></script>
     <script src="js/userInterface.js"></script>
     <script src="js/startExperience.js"></script>
-    <script src="js/detectOrientation.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script> 
@@ -80,6 +79,7 @@
             <a-asset-item id="sign-obj" crossorigin="anonymous" src="/assets/sign.glb"></a-asset-item> 
             <a-asset-item id="pad-obj" crossorigin="anonymous" src="/assets/pad.glb"></a-asset-item> 
             <a-asset-item id="control-obj" crossorigin="anonymous" src="/assets/control-panel.glb"></a-asset-item> 
+            <a-asset-item id="tooltip-obj" crossorigin="anonymous" src="/assets/tooltip.glb"></a-asset-item>
             <img id="sky" src="/assets/stars.png"> 
 
             <!--Audio Assets-->
@@ -135,6 +135,25 @@
                 visible='false'
             ></a-entity>
         </a-entity>
+
+
+        
+    <a-entity id="tooltip1" position="2.719 1.457 -3.574" rotation="0 -11.470 0" scale="0.7 0.7 0.7" shadow="cast:true; receive:false;">
+        <a-entity id="tooltup-text1" text="value: Click me to learn a fact; align: center; color: #001d24; lineHeight: 54.49; font: /assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.42; baseline: top; wrapCount: 7.41; side: double" rotation="" position="-0.00023 0.19395 0.02442">
+        </a-entity>
+        <a-entity id="tooltip-box1" position="0 -0.63939 0" rotation="" scale="0.5 0.5 0.5" gltf-model="/assets/tooltip.glb">
+        </a-entity>
+    </a-entity>
+
+    <a-entity id="tooltip2" position="-0.012 1.030 -9.936" rotation="0 0 0" scale="0.7 0.7 0.7" shadow="cast:true; receive:false;">
+        <a-entity id="tooltup-text2" text="value: Click me to learn a fact; align: center; color: #001d24; lineHeight: 54.49; font: /assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.42; baseline: top; wrapCount: 7.41; side: double" rotation="" position="-0.00023 0.19395 0.02442">
+        </a-entity>
+        <a-entity id="tooltip-box2" position="0 -0.63939 0" rotation="" scale="0.5 0.5 0.5" gltf-model="/assets/tooltip.glb">
+        </a-entity>
+    </a-entity>
+
+
+
         
 
         <!--Environment Models-->
@@ -168,10 +187,6 @@
 
 
         <a-entity user-interface></a-entity>
-        <a-entity detect-orientation></a-entity>
-        
-        
-
         <!--Control Panel-->
 
         <a-entity id="control_panel" position="-7.132 0.66 -6" rotation="-30 42 0" scale="1 1 1">
