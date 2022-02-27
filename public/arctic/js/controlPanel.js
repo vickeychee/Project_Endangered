@@ -223,10 +223,10 @@ AFRAME.registerComponent('control-panel',{
         future = false;
         past = true;
 
-        title.src="/imgs/arctic_title_past.png";
+        title.src="./css/imgs/arctic_title_past.png";
 
-        enviroModel.setAttribute('gltf-model', "/assets/environment-past.glb");
-        navMesh.setAttribute('gltf-model', "/assets/nav-past/nav-past.gltf");
+        enviroModel.setAttribute('gltf-model', "./assets/environment-past.glb");
+        navMesh.setAttribute('gltf-model', "./assets/nav-past/nav-past.gltf");
         navMesh.setAttribute('position',  {x:-2.806, y:1.3, z:-9});
 
         scene.setAttribute('animation', {property:'rain.count', from:0, to:150, dur: 100, enabled:true});
@@ -330,7 +330,7 @@ AFRAME.registerComponent('control-panel',{
         future = false;
         past = false;
         
-        title.src="/imgs/arctic_title_present.png";
+        title.src=".css//imgs/arctic_title_present.png";
         sign1.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
         sign2.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
 
@@ -344,8 +344,8 @@ AFRAME.registerComponent('control-panel',{
         tooltip1.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
         tooltip2.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
         
-        enviroModel.setAttribute('gltf-model', "/assets/environment-present.glb");
-        navMesh.setAttribute('gltf-model', "/assets/nav-present/nav-present.gltf");
+        enviroModel.setAttribute('gltf-model', "./assets/environment-present.glb");
+        navMesh.setAttribute('gltf-model', "./assets/nav-present/nav-present.gltf");
         navMesh.setAttribute('position',  {x:-2.567, y:1.3, z:-8.683});
         scene.setAttribute('animation', {property:'rain.count', from:0, to:0, dur: 100, enabled:true});
 
@@ -431,7 +431,7 @@ AFRAME.registerComponent('control-panel',{
         future = true;
         past = false;
 
-        title.src="/imgs/arctic_title_future.png";
+        title.src="./css/imgs/arctic_title_future.png";
         sign1.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
         sign2.setAttribute('position', {x:8.792, y:0.112, z:5.477});
         sign2.setAttribute('rotation', {x:0, y:-38.800, z:0});
@@ -442,8 +442,8 @@ AFRAME.registerComponent('control-panel',{
         tooltip1.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
         tooltip2.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
 
-        enviroModel.setAttribute('gltf-model', "/assets/environment-future.glb");
-        navMesh.setAttribute('gltf-model', "/assets/nav-future/nav-future.gltf");
+        enviroModel.setAttribute('gltf-model', "./assets/environment-future.glb");
+        navMesh.setAttribute('gltf-model', "./assets/nav-future/nav-future.gltf");
         navMesh.setAttribute('position',  {x:0.365, y:-3, z:-5.543});
 
         scene.setAttribute('animation', {property:'rain.count', from:0, to:0, dur: 100, enabled:true});
