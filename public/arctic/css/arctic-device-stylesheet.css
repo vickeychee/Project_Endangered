@@ -54,7 +54,7 @@ a{
 
 
   body {
-    background-image: url("/imgs/arctic_background_blur.png");
+    background-image: url("./imgs/arctic_background_blur.png");
     background-repeat: no-repeat;
     background-color: #ADCEE5;
     background-position: 50%;
@@ -189,7 +189,7 @@ p {
         align-self: center;
     }
     body {
-        background-image: url("/imgs/arctic_background_blur.png");
+        background-image: url("./imgs/arctic_background_blur.png");
         background-repeat: no-repeat;
         background-color: #ADCEE5;
         background-position: 50%;

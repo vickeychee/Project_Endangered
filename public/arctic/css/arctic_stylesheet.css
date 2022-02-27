@@ -66,7 +66,7 @@
 
 
   #Button_Arctic_Instructions_ID {
-      background-image: url("/imgs/arctic_button_instructions.png");
+      background-image: url("./imgs/arctic_button_instructions.png");
       background-repeat: no-repeat;
       background-position:center;
       padding-left: 33px;
@@ -78,7 +78,7 @@
 
 
     #Button_Arctic_Settings_ID {
-        background-image: url("/imgs/arctic_button_settings.png");
+        background-image: url("./imgs/arctic_button_settings.png");
         background-repeat: no-repeat;
         background-position:center;
         padding-left: 33px;
@@ -91,7 +91,7 @@
 
     #Button_Arctic_Reset_ID {
         display: none;
-        background-image: url("/imgs/arctic_button_reset.png");
+        background-image: url("./imgs/arctic_button_reset.png");
         background-repeat: no-repeat;
         background-position:center;
         padding-left: 33px;
@@ -103,7 +103,7 @@
     
     #Button_Arctic_Exit_ID {
         display: none;
-        background-image: url("/imgs/arctic_button_exit.png");
+        background-image: url("./imgs/arctic_button_exit.png");
         background-repeat: no-repeat;
         background-position:center;
         padding-left: 33px;
@@ -557,7 +557,7 @@
 
 
     .Voice-parent{
-        background-image:url("/imgs/arctic_tooltip.png");
+        background-image:url("./imgs/arctic_tooltip.png");
         background-repeat: no-repeat;
         background-size: 233.5px, 111.5px;
         background-position: center;
@@ -602,7 +602,7 @@
     #Voice_Exit_Button_ID{
 
         display:inline-flex;
-        background-image: url("/imgs/arctic_button_exit.png");
+        background-image: url("./imgs/arctic_button_exit.png");
         background-repeat: no-repeat;
         background-position:center;
         border-radius: 50%;
@@ -660,7 +660,7 @@
     #Fact_Exit_Button_ID{
 
         display:inline-flex;
-        background-image: url("/imgs/arctic_button_exit.png");
+        background-image: url("./imgs/arctic_button_exit.png");
         background-repeat: no-repeat;
         background-position:center;
         border-radius: 50%;
@@ -713,7 +713,7 @@
 
     #Seals_Exit_Button_ID{
 
-        background-image: url("/imgs/arctic_button_exit.png");
+        background-image: url("./imgs/arctic_button_exit.png");
         background-repeat: no-repeat;
         background-position:center;
         border-radius: 50%;
@@ -885,7 +885,7 @@
 
 
     #Help_Exit_Button_ID{
-        background-image: url("/imgs/arctic_button_exit.png");
+        background-image: url("./imgs/arctic_button_exit.png");
         background-repeat: no-repeat;
         background-position:center;
         border-radius: 50%;
@@ -894,7 +894,7 @@
     }
 
     #Settings_Exit_Button_ID{
-        background-image: url("/imgs/arctic_button_exit.png");
+        background-image: url("./imgs/arctic_button_exit.png");
         background-repeat: no-repeat;
         background-position:center;
         border-radius: 50%;
@@ -1339,7 +1339,7 @@
         }
 
         #Settings_Exit_Button_ID{
-            background-image: url("/imgs/arctic_button_exit.png");
+            background-image: url("./imgs/arctic_button_exit.png");
             background-repeat: no-repeat;
             background-position:center;
             border-radius: 50%;
@@ -1403,7 +1403,7 @@
         }
 
         #Help_Exit_Button_ID{
-            background-image: url("/imgs/arctic_button_exit.png");
+            background-image: url("./imgs/arctic_button_exit.png");
             background-repeat: no-repeat;
             background-position:center;
             border-radius: 50%;
@@ -1501,7 +1501,7 @@
 
     #Seals_Exit_Button_ID{
 
-        background-image: url("/imgs/arctic_button_exit.png");
+        background-image: url("./imgs/arctic_button_exit.png");
         background-repeat: no-repeat;
         background-position:center;
         border-radius: 50%;
@@ -1639,7 +1639,7 @@
 
 
     .Voice-parent{
-        background-image:url("/imgs/arctic_tooltip_mobile.png");
+        background-image:url("./imgs/arctic_tooltip_mobile.png");
         background-repeat: no-repeat;
         background-size: 214.5px, 93.5px;
         background-position: center;
@@ -1674,7 +1674,7 @@
     #Voice_Exit_Button_ID{
 
         display:inline-flex;
-        background-image: url("/imgs/arctic_button_exit.png");
+        background-image: url("./imgs/arctic_button_exit.png");
         background-repeat: no-repeat;
         background-position:center;
         border-radius: 50%;
