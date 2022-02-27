@@ -18,7 +18,7 @@ function checkSeals() {
       sealInfoButton.addEventListener('click', ()=>{
         checkProgressBar();
         roundTitle.innerHTML = "Round 2";
-        title.src="./imgs/arctic_title_present.png";
+        title.src="./css/imgs/arctic_title_present.png";
       });
 
 
@@ -48,7 +48,7 @@ function checkSeals() {
       sealInfoButton.addEventListener('click', ()=>{
         checkProgressBar();
         roundTitle.innerHTML = "Round 3";
-        title.src="./imgs/arctic_title_future.png";
+        title.src="./css/imgs/arctic_title_future.png";
 
       });
 
@@ -88,7 +88,7 @@ function checkSeals() {
             sealCounter = 0;
             round1 = false;
             sealTaskCounter +=1;
-            title.src="./imgs/arctic_title_present.png";
+            title.src="./css/imgs/arctic_title_present.png";
 
             playerDetails.setAttribute('raycaster', 'far', 20);
 
@@ -357,7 +357,7 @@ function resetSealTask(){
 
 function exitSealTask(){
   player.setAttribute('position', {x:7.77, y:1.6, z:-9.68});
-  title.src="./imgs/arctic_title_present.png";
+  title.src="./css/imgs/arctic_title_present.png";
 
   ice1.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
   ice2.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
@@ -719,7 +719,7 @@ AFRAME.registerComponent('seal-task',{
                 player.setAttribute('movement-controls', {enabled:false});
                 player2.setAttribute('wasd-controls', {enabled:false});
 
-                title.src="./imgs/arctic_title_past.png";
+                title.src="./css/imgs/arctic_title_past.png";
 
                 ice1.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
                 ice2.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
