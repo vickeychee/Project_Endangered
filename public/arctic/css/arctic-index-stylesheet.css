@@ -16,7 +16,7 @@ a{
 }
 
 body {
-    background-image: url("/imgs/arctic_background.png");
+    background-image: url("/public/arctic/imgs/arctic_background.png");
     background-repeat: no-repeat;
     background-color: #ADCEE5;
     background-position: 50%;
