@@ -16,74 +16,94 @@
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="/css/grassland_loading_animation.css">
 
 
 
-   <!--<script> 
-        function load_page(){
+    <script src="js/startExperience.js"></script>
+
+    <div id="user-gesture-overlay">
+        <div class= "center">
+            <img id="loading-animation" src="/imgs/elephant_loading.gif">
+        </div>
     
-            deviceChoice = 0;
-            deviceChoice= (localStorage.getItem("device"));
-            console.log(deviceChoice);
     
+        <div id="continue-container">
+            <div class ="continue-parent">
+                <div class="continue-child"><img id="continue-bear" src="imgs/grassland_elephanthead.png"></div>
+                <div class="continue-child continue-text">The grasslands are ready for you to explore!</div>
+                <div class="continue-child"><button id="user-gesture-button" onclick="startExperience();">BEGIN</button></div>
+            </div>
+        </div>
+    </div>
     
-            qr=new XMLHttpRequest();
-    
-            if (deviceChoice == 1){
-                qr.open('get','prairies-UI-desktop.html');
-            } else if(deviceChoice == 2){
-                qr.open('get','prairies-UI-mobile.html');
-            }
-            qr.send();
-            qr.onload=function(){includedContent.innerHTML=qr.responseText}
-            };load_page();
-    
-        </script> --> 
+
+
     
 </head>
 <body>
-    <a-scene renderer="gammaOutput: true;" shadow="type: pcfsoft" vr-mode-ui="enabled: false" id="scene" shadow="autoUpdate: false" >
+    <a-scene start-experience renderer="gammaOutput: true;" shadow="type: pcfsoft" vr-mode-ui="enabled: true" id="scene" shadow="autoUpdate: false" >
 
         <a-assets timeout = "10000">
         
             <!--Envrionment Assets-->
             <a-asset-item id="environment-obj" crossorigin="anonymous" src="/assets/grassland_environment.glb"></a-asset-item> 
-            <a-asset-item id="road-obj" crossorigin="anonymous" src="/assets/road.glb"></a-asset-item> 
-            <a-asset-item id="apartment-obj" crossorigin="anonymous" src="/assets/apartment.glb"></a-asset-item> 
-            <a-asset-item id="factory-obj" crossorigin="anonymous" src="/assets/factory.glb"></a-asset-item> 
-            <a-asset-item id="panel-obj" crossorigin="anonymous" src="/assets/control_panel.glb"></a-asset-item> 
+            <a-asset-item id="elephant-obj" crossorigin="anonymous" src="/assets/elephant.glb"></a-asset-item>
+            <a-asset-item id="nav-mesh-obj" crossorigin="anonymous" src="/assets/nav-mesh/nav_mesh.gltf"></a-asset-item>
+            <audio id="wind_sound" src="/assets/audio/wind.mp3" preload="auto"></audio>
+            <audio id="music_sound" src="/assets/audio/music.mp3" preload="auto"></audio>
+            <audio id="bird_sound" src="/assets/audio/birds.mp3" preload="auto"></audio>
 
-
+            
         </a-assets>
+
+
+    <!--Ambient Sounds-->
+    <a-entity class="ambient-music" id ="wind" sound="src:#wind_sound; autoplay:false; loop:true; volume:6;" position="0 10 -2.751"></a-entity>
+    <a-entity class="ambient-music" id ="music" sound="src:#music_sound; autoplay:false; loop:true; volume:3;" position="0 10 -2.751"></a-entity>
+    <a-entity class="ambient-music" id ="bird" sound="src:#bird_sound; autoplay:false; loop:true; volume:2;" position="0 10 -2.751"></a-entity>
 
     <!--Lighting-->
 
     <a-entity light="type: ambient; color: #c7f0cf; intensity: 0.71"></a-entity>
-    <a-entity id="light_spot" light="type: point; color: #ffffff; intensity: 0.3; castShadow: true; shadowRadius: 2.52; shadowCameraFov: 92.680" position="-8.859 37.604 -19.138">
+    <a-entity id="light_spot" light="type: point; color: #ffffff; intensity: 0.35; castShadow: true; shadowRadius: 2.52; shadowCameraFov: 92.68" position="2.35795 46.834 -21.19545">
     </a-entity>
 
 
-        <!--Player Controls-->
-        <a-entity id="player" movement-controls="speed:0.2; constrainToNavMesh: true;" position="1.07 1.3 1.37">
+    <!--Player Controls-->
+    <a-entity id="player" movement-controls="speed:0.2; constrainToNavMesh: true;" position="1.07 0.7 1.37">
+        <a-entity
+            id = "player2"
+            camera="fov:70"
+            wasd-controls='acceleration: 10'
+            look-controls>
             <a-entity
-                id = "player2"
-                camera="fov:70"
-                wasd-controls='acceleration: 10'
-                look-controls>
-                <a-entity
-                    id = "player-details"
-                    collision-filter="group: mouse"
-                    cursor="rayOrigin:mouse;"
-                    raycaster="far:8; interval:200; objects:.interactive"
-                ></a-entity> 
-            </a-entity>
+                id = "player-details"
+                collision-filter="group: mouse"
+                cursor="rayOrigin:mouse;"
+                raycaster="far:10; interval:200; objects:.interactive"
+            ></a-entity> 
         </a-entity>
+    </a-entity>
+
+
+    <a-entity>
+        <a-entity
+            id ="nav_mesh"
+            scale='1 1 1'
+            position = '-8.189 0.7 -3.842'
+            rotation="0 101.580 0"
+            gltf-model='#nav-mesh-obj'
+            nav-mesh
+            visible='false'
+        ></a-entity>
+    </a-entity>
 
 
         <!--Environment Models-->
     <a-entity
             id ="environment"
-            environment="preset: default; groundColor: #445; grid:none; ground:none; lighting:none; skyType:gradient; skyColor:#24bdff; horizonColor:#dffafb; fog:0">
+            environment="preset: default; groundColor: #445; grid:none; ground:none; lighting:none; skyType:gradient; skyColor:#61d0ff; horizonColor:#edfcfd; fog:0">
         </a-entity>
 
         <a-entity
@@ -95,50 +115,56 @@
             shadow="cast:true; receive:true;">
         </a-entity>
 
-        <a-entity
-            id="apartment"
-            position="-8.189 0.009 -3.842"
-            rotation="0 101.580 0"
-            scale= " 1 1 1"
-            gltf-model="#apartment-obj"
-            shadow="cast:true; receive:false;"
-            visible='true'>
-        </a-entity>
 
-        <a-entity
-            id="road"
-            position="-8.189 0.009 -3.842"
-            rotation="0 101.580 0"
-            scale= " 1 1 1"
-            gltf-model="#road-obj"
-            shadow="cast:true; receive:false;"
-            visible='true'>
-        </a-entity>
+    <a-entity
+        class="interactive"
+        position="-0.10575 0.15339 -6.074"
+        rotation="0 140.07 0"
+        gltf-model="/assets/elephant.glb"
+        shadow="receive: false"
+        scale="0.6 0.6 0.6">
+    </a-entity>
 
+    <a-entity
+        id="elephant2"
+        class="interactive"
+        position="1.81135 0.12853 -3.23238"
+        rotation="0 42.03 0"
+        gltf-model="/assets/elephant.glb"
+        shadow="receive: false"
+        scale="0.4 0.4 0.4">
+    </a-entity>
 
-        
+    <a-entity
+        id="elephant3"
+        class="interactive"
+        position="-15.13995 0.167 -3.35672"
+        rotation="0 159.35 0"
+        gltf-model="/assets/elephant.glb"
+        shadow="receive: false"
+        scale="0.8 0.8 0.8">
+    </a-entity>
 
-       <a-entity
-            id="factory"
-            position="-8.189 0.009 -3.842"
-            rotation="0 101.580 0"
-            scale= " 1 1 1"
-            gltf-model="#factory-obj"
-            shadow="cast:true; receive:false;"
-            visible='true'>
+    <a-entity
+        id="elephant4"
+        class="interactive"
+        position="-13.83427 0.167 -2.10703"
+        rotation="0 -123.59 0"
+        gltf-model="/assets/elephant.glb"
+        shadow="receive: false"
+        scale="0.4 0.4 0.4">
     </a-entity>
 
 
     <a-ocean
-    id = 'river'
-    class="interactive ambient-music"
-    position='-4.595 -0.159 -3.531'
-    rotation = '-90.000 11.460 0'
-    scale='3.870 43.170 12.500'
-    color ="#074b54"
-    sound = "src:#water_sound; autoplay:false; loop:true; volume: 7;"
-    ocean="opacity:0.9;  depth:1.1dw;  density: 10;  amplitude:0.000004;  amplitudeVariance:0.003;  speed:1;  speedVariance:0.9">
-</a-ocean> 
+        id = 'river'
+        class="interactive"
+        position='-4.595 -0.159 -3.531'
+        rotation = '-90.000 11.460 0'
+        scale='3.870 43.170 12.500'
+        color ="#074b54"
+        ocean="opacity:0.9;  depth:1.1dw;  density: 10;  amplitude:0.000004;  amplitudeVariance:0.003;  speed:1;  speedVariance:0.9">
+    </a-ocean> 
 
 
         

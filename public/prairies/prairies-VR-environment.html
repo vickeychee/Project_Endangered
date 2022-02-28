@@ -18,6 +18,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
     <script src="js/startExperience.js"></script>
+    <link rel="stylesheet" href="/css/prairies_loading_animation.css">
+
+        
+    <div id="user-gesture-overlay">
+        <div class= "center">
+            <img id="loading-animation" src="/imgs/prairies_loading.gif">
+        </div>
+
+
+        <div id="continue-container">
+            <div class ="continue-parent">
+                <div class="continue-child"><img id="continue-bear" src="imgs/prairies_cranehead.png"></div>
+                <div class="continue-child continue-text">The wet prairies is ready for you to explore!</div>
+                <div class="continue-child"><button id="user-gesture-button" onclick="startExperience();">BEGIN</button></div>
+            </div>
+        </div>
+    </div>
+
     
 </head>
 <body>
@@ -34,13 +52,14 @@
             <a-asset-item id="gun-obj" crossorigin="anonymous" src="/assets/gun.glb"></a-asset-item> 
             <a-asset-item id="sign-obj" crossorigin="anonymous" src="/assets/sign.glb"></a-asset-item> 
             <a-asset-item id="crane-obj" crossorigin="anonymous" src="/assets/crane.glb"></a-asset-item> 
+            <a-asset-item id="craneGroup-obj" crossorigin="anonymous" src="/assets/crane_group.glb"></a-asset-item>
+            <a-asset-item id="nav-mesh-obj" crossorigin="anonymous" src="/assets/nav-mesh/nav_mesh.gltf"></a-asset-item>
 
 
             <!--Audio Assets-->
             <audio id="water_sound" src="/assets/audio/water.mp3" preload="auto"></audio>
             <audio id="music_sound" src="/assets/audio/music.mp3" preload="auto"></audio>
             <audio id="marsh_sound" src="/assets/audio/marsh.mp3" preload="auto"></audio>
-            <audio id="click_sound" src="/assets/audio/click.mp3" preload="auto"></audio>
  
 
         </a-assets>
@@ -59,7 +78,7 @@
 
 
         <!--Player Controls-->
-        <a-entity id="player" movement-controls="speed:0.2; constrainToNavMesh: true;" position="0 1.3 2.7">
+        <a-entity id="player" movement-controls="speed:0.2; constrainToNavMesh: true;" position="0 0.4 2.7">
             <a-entity
                 id = "player2"
                 camera="fov:70"
@@ -72,6 +91,19 @@
                     raycaster="far:20; interval:200; objects:.interactive"
                 ></a-entity> 
             </a-entity>
+        </a-entity>
+
+
+        <a-entity>
+            <a-entity
+                id ="nav_mesh"
+                scale='1 1 1'
+                position = '0.442 0.4 -4.969'
+                rotation = '0 171.220 0'
+                gltf-model='#nav-mesh-obj'
+                nav-mesh
+                visible='false'
+            ></a-entity>
         </a-entity>
 
 
@@ -90,6 +122,16 @@
             shadow="cast:true; receive:true;">
         </a-entity>
 
+        
+        <a-entity
+            id="crane_group"
+            position="0.442 0.009 -4.969"
+            rotation="0 171.220 0"
+            scale= " 1 1 1"
+            gltf-model="#craneGroup-obj"
+            shadow="cast:true; receive:true;">
+        </a-entity>
+
 
         <a-entity
             id="crane1"
@@ -98,9 +140,7 @@
             rotation="0 201 0"
             scale= " 1 1 1"
             gltf-model="#crane-obj"
-            shadow="cast:true; receive:false;"
-            animation__mouseenter="property:scale; to: 1.05 1.05 1.05; startEvents:mouseenter; dur:200"
-            animation__mouseleave="property:scale; to: 1 1 1; startEvents:mouseleave; dur:200">
+            shadow="cast:true; receive:false;">
          </a-entity>
 
          <a-entity id="crane2"
@@ -109,9 +149,7 @@
                     rotation="0 196.29 0"
                     scale="0.75 0.75 0.75"
                     gltf-model="/assets/crane.glb"
-                    shadow="receive: false"
-                    animation__mouseenter="property: scale; to: 0.78 0.78 0.78; startEvents: mouseenter; dur: 200"
-                    animation__mouseleave="property: scale; to: 0.75 0.75 0.75; startEvents: mouseleave; dur: 200">
+                    shadow="receive: false">
         </a-entity>
         
         <a-entity id="crane3"
@@ -120,9 +158,7 @@
                 rotation="0 21.7 0"
                 scale=""
                 gltf-model="/assets/crane.glb"
-                shadow="receive: false"
-                animation__mouseenter="property: scale; to: 1.05 1.05 1.05; startEvents: mouseenter; dur: 200"
-                animation__mouseleave="property: scale; to: 1 1 1; startEvents: mouseleave; dur: 200">
+                shadow="receive: false">
         </a-entity>
 
         <a-entity id="crane4"
@@ -131,9 +167,7 @@
                 rotation="0 9.53 0"
                 scale="0.5 0.5 0.5"
                 gltf-model="/assets/crane.glb"
-                shadow="receive: false"
-                animation__mouseenter="property: scale; to: 0.78 0.78 0.78; startEvents: mouseenter; dur: 200"
-                animation__mouseleave="property: scale; to: 0.75 0.75 0.75; startEvents: mouseleave; dur: 200">
+                shadow="receive: false">
         </a-entity>
 
 
@@ -145,9 +179,7 @@
             rotation="0 0 0"
             scale= " 1 1 1"
             gltf-model="#crop-obj"
-            shadow="cast:true; receive:false;"
-            animation__mouseenter="property:scale; to: 1.1 1.1 1.1; startEvents:mouseenter; dur:200"
-            animation__mouseleave="property:scale; to: 1 1 1; startEvents:mouseleave; dur:200">
+            shadow="cast:true; receive:false;">
         </a-entity>
 
         <a-entity
@@ -157,9 +189,7 @@
             rotation="0 -34.680 0"
             scale= "1 1 1"
             gltf-model="#crop-obj"
-            shadow="cast:true; receive:false;"
-            animation__mouseenter="property:scale; to: 1.1 1.1 1.1; startEvents:mouseenter; dur:200"
-            animation__mouseleave="property:scale; to: 1 1 1; startEvents:mouseleave; dur:200">
+            shadow="cast:true; receive:false;">
          </a-entity>
 
         <a-entity
@@ -169,9 +199,7 @@
             rotation="0 0 0"
             scale= " 1 1 1"
             gltf-model="#crop-obj"
-            shadow="cast:true; receive:false;"
-            animation__mouseenter="property:scale; to: 1.1 1.1 1.1; startEvents:mouseenter; dur:200"
-            animation__mouseleave="property:scale; to: 1 1 1; startEvents:mouseleave; dur:200">
+            shadow="cast:true; receive:false;">
         </a-entity>
 
         <a-entity
@@ -181,9 +209,7 @@
             rotation="0 -31.550 0"
             scale= " 1 1 1"
             gltf-model="#crop-obj"
-            shadow="cast:true; receive:false;"
-            animation__mouseenter="property:scale; to: 1.1 1.1 1.1; startEvents:mouseenter; dur:200"
-            animation__mouseleave="property:scale; to: 1 1 1; startEvents:mouseleave; dur:200">
+            shadow="cast:true; receive:false;">
         </a-entity>
 
 
@@ -194,9 +220,7 @@
             rotation="0 22.440 0"
             scale= " 1 1 1"
             gltf-model="#crop-obj"
-            shadow="cast:true; receive:false;"
-            animation__mouseenter="property:scale; to: 1.1 1.1 1.1; startEvents:mouseenter; dur:200"
-            animation__mouseleave="property:scale; to: 1 1 1; startEvents:mouseleave; dur:200">
+            shadow="cast:true; receive:false;">
          </a-entity>
 
         <a-entity
@@ -206,9 +230,7 @@
             rotation="0 -32.240 0"
             scale= " 1 1 1"
             gltf-model="#crop-obj"
-            shadow="cast:true; receive:false;"
-            animation__mouseenter="property:scale; to: 1.1 1.1 1.1; startEvents:mouseenter; dur:200"
-            animation__mouseleave="property:scale; to: 1 1 1; startEvents:mouseleave; dur:200">
+            shadow="cast:true; receive:false;">
         </a-entity>
 
     <a-entity

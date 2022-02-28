@@ -252,17 +252,6 @@
         <a-entity id="start_text2" text="value: START; align: center; color: #013440; lineHeight: 54.46; font: ./assets/fonts/Poppins-SemiBold-msdf.json; negate: false; width: 4.63; baseline: top; wrapCount: 29.62; side: double" rotation="-90 -32.808 73.37297524445322" position="7.03434 0.17592 -12.23413">
         </a-entity>
 
-            <!--<a-entity
-                id="cylinder_red"
-                class="interactive"
-                position="6.938 0 -12.333"
-                rotation = "0 0 0"
-                scale= " 1.5 1.5 1.5 "
-                gltf-model="#pad-obj"
-                shadow="cast:true; receive:false;"
-                visible="true">
-            </a-entity>-->
-
             <!--Cylinder on Ground-->
         <a-cylinder
             id="cylinder_red"
@@ -278,27 +267,27 @@
             visible='true'>
         </a-cylinder>
 
-            <a-entity
-                id="sign1"
-                class="interactive"
-                position="9.477 0 -13.571"
-                rotation = "0 -30.670 0"
-                scale= " 1 1 1 "
-                gltf-model="#sign-obj"
-                shadow="cast:true; receive:false;"
-                visible="true">
-            </a-entity>
+        <a-entity
+            id="sign1"
+            class="interactive"
+            position="9.477 0 -13.571"
+            rotation = "0 -30.670 0"
+            scale= " 1 1 1 "
+            gltf-model="#sign-obj"
+            shadow="cast:true; receive:false;"
+            visible="true">
+        </a-entity>
 
-            <a-entity
-                id="sign2"
-                class="interactive"
-                position="-4.925 0 -8.198"
-                rotation = "0 35.020 0"
-                scale= " 1 1 1 "
-                gltf-model="#sign-obj"
-                shadow="cast:true; receive:false;"
-                visible="true">
-            </a-entity>
+        <a-entity
+            id="sign2"
+            class="interactive"
+            position="-4.925 0 -8.198"
+            rotation = "0 35.020 0"
+            scale= " 1 1 1 "
+            gltf-model="#sign-obj"
+            shadow="cast:true; receive:false;"
+            visible="true">
+        </a-entity>
 
         <!--Seals-->
         <a-entity
@@ -574,21 +563,6 @@
             animation__mouseenter="property:position; to: 16.874 0.13 -21.018; startEvents:mouseenter; dur:200"
             animation__mouseleave="property:position; to: 16.874 0.089 -21.018; startEvents:mouseleave; dur:200">
         </a-entity>
-
-
-        <!--Physics Plane-->
-        <!--<a-plane
-            id="plane"
-            static-body
-            position="0 -0.04 -4"
-            rotation="-90 0 0"
-            scale="2 2 2"
-            width="30"
-            height="15"
-            color="#b3edff"
-            visible="false"
-            shadow="cast:false; receive:true;"> 
-        </a-plane>-->
 
 
     </a-scene>
