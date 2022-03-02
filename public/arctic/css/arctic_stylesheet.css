@@ -209,10 +209,11 @@
         position: relative;
         height: 15%;
         top: 10%;
-        max-width: 300px;
         z-index: 999999;
+        max-width: 300px;
         margin-left: auto;
         margin-right: auto;
+        padding-top: 0rem;
         
     }
 
