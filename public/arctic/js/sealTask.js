@@ -5,8 +5,10 @@ function checkSeals() {
 
 
       playerDetails.setAttribute('raycaster', 'far', 10);
-      sealInfoButton.style.display ="inline-flex";
+
       factExitButton.style.display  = "none";
+    
+      sealInfoButton.style.display ="inline-flex";
       factUI.style.display = "inline-flex";
       Screen_Overlay_ID.style.display = "block";
 
@@ -708,6 +710,9 @@ AFRAME.registerComponent('seal-task',{
             Round_Title_ID.style.display = "block";
             Round_Text_ID.style.display = "block";
             progressCircle.style.display = "block";
+            document.getElementById("Voice_Popup_ID").style.display="none";
+
+            
           }
 
       
