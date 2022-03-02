@@ -80,12 +80,14 @@ function factPopup(){
     polarBear1.addEventListener('click', ()=>{
 
         if (present == true){
+            click.play();
             factUI.style.display = "flex";
             Screen_Overlay_ID.style.display = "block";
             factTitle.innerHTML = "Marine Animals";
             factText.innerHTML ="The polar bear is the only bear classified as a marine animal. This is because they spend most of their time on sea ice, and depend on the ocean for food.";
         
         } else if(past == true){
+            click.play();
             factUI.style.display = "flex";
             Screen_Overlay_ID.style.display = "block";
             factTitle.innerHTML = "Cubs";
@@ -98,12 +100,14 @@ function factPopup(){
     polarBear2.addEventListener('click', ()=>{
 
         if (present == true){
+            click.play();
             factUI.style.display = "flex";
             Screen_Overlay_ID.style.display = "block";
             factTitle.innerHTML = "Really Big!";
             factText.innerHTML ="The polar bear is the largest living carnivor on land. Adult males can weight more than 800 pounds and stand over 2.5 meters long.";
         
         } else if(future == true){
+            click.play();
             factUI.style.display = "flex";
             Screen_Overlay_ID.style.display = "block";
             factTitle.innerHTML = "Threats";
@@ -115,6 +119,7 @@ function factPopup(){
     polarBear3.addEventListener('click', ()=>{
 
         if (present == true){
+            click.play();
             factUI.style.display = "flex";
             Screen_Overlay_ID.style.display = "block";
             factTitle.innerHTML = "Great Swimmers";
@@ -128,6 +133,7 @@ function factPopup(){
     polarBear7.addEventListener('click', ()=>{
 
         if (past == true){
+            click.play();
             factUI.style.display = "flex";
             Screen_Overlay_ID.style.display = "block";
             factTitle.innerHTML = "Sense of Smell";
@@ -138,6 +144,7 @@ function factPopup(){
     seal5.addEventListener('click', ()=>{
 
         if (present == true && bool_sealtask == false){
+            click.play();
             factUI.style.display = "flex";
             Screen_Overlay_ID.style.display = "block";
             factTitle.innerHTML = "Hunting";
@@ -148,6 +155,7 @@ function factPopup(){
     seal6.addEventListener('click', ()=>{
 
         if (present == true && bool_sealtask == false){
+        click.play(); 
         factUI.style.display = "flex";
         Screen_Overlay_ID.style.display = "block";
         factTitle.innerHTML = "Favourite Food";

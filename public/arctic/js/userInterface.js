@@ -104,6 +104,7 @@ AFRAME.registerComponent('user-interface',{
 
             Screen_Overlay_ID.style.display = "block";
             Help_Popup_ID.style.display = "flex";
+            click.play();
             
         });
 
@@ -111,6 +112,7 @@ AFRAME.registerComponent('user-interface',{
 
             Screen_Overlay_ID.style.display = "none";
             Help_Popup_ID.style.display = "none";
+            click.play();
             
         });
 
@@ -118,6 +120,7 @@ AFRAME.registerComponent('user-interface',{
 
             Screen_Overlay_ID.style.display = "block";
             Settings_Popup_ID.style.display = "flex";
+            click.play();
 
         });
 
