@@ -104,7 +104,7 @@ function factPopup(){
             factUI.style.display = "flex";
             Screen_Overlay_ID.style.display = "block";
             factTitle.innerHTML = "Really Big!";
-            factText.innerHTML ="The polar bear is the largest living carnivor on land. Adult males can weight more than 800 pounds and stand over 2.5 meters long.";
+            factText.innerHTML ="The polar bear is the largest living carnivore on land. Adult males can weight more than 800 pounds and stand over 2.5 meters long.";
         
         } else if(future == true){
             click.play();

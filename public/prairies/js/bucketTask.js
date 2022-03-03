@@ -196,6 +196,10 @@
     bucketFull_Bool = false;
 
     checkDistance_Bool = true;
+
+
+    Round_Title_ID.style.display = "none";
+    Round_Text_ID.style.display = "none";
   }
 
   function resetBucketTask(){
@@ -240,6 +244,9 @@ AFRAME.registerComponent('bucket-task',{
     progressCircle = document.getElementById('Progress_Circle_ID');
     playerDetails = document.querySelector('#player-details');
 
+    bucketTooltip = document.querySelector('#tooltip3');
+    cropTooltip = document.querySelector('#tooltip4');
+
 
     waterCounter = 0;
 
@@ -282,6 +289,7 @@ AFRAME.registerComponent('bucket-task',{
                  water.setAttribute('position', {x:1.471, y:-0.611, z: -14.118});
                  lily.setAttribute('position', {x: 0.442, y:-0.349, z: -4.969});
                  craneGroup.setAttribute('position', {x: 0.442, y:-0.249, z: -4.969});
+                 cropTooltip.setAttribute("visible",true);
                 }
                 else if(waterCounter === 2){
                  water.setAttribute('position', {x:1.471, y:-1.386, z: -14.118});
@@ -301,7 +309,8 @@ AFRAME.registerComponent('bucket-task',{
                }
      
                if (waterCounter > 4){
-     
+
+                                
                    Screen_Overlay_ID.style.display = "block";
                    infoUI.style.display = "flex";
                    clickSound.play();
@@ -369,6 +378,7 @@ AFRAME.registerComponent('bucket-task',{
                 document.getElementById("Voice_Popup_ID").style.display="none";
                 bucketPopup.style.display = "flex";
                 Screen_Overlay_ID.style.display = "block";
+                waterCounter = 0;
                 subs_completed = 0;
                 $('.number').html(subs_completed + '/' + total_subs)
 
@@ -379,21 +389,27 @@ AFRAME.registerComponent('bucket-task',{
                 total = reload.data('total')
 
                 updateSubtaskProgressBar(subs_completed, total, bar_transition, toggle, modulo, reload)
+
+
+                if (bucketTooltipCounter == 0){
+                  bucketTooltip.setAttribute("visible",true);
+                }
     
              }
         }
 
         if(bucketTask){
             
-
             bucket.classList.add('interactive');
 
             resetButton.style.display = "block";
             exitButton.style.display = "block";
             progressCircle.style.display = "block";
 
+            Round_Title_ID.style.display = "block";
+            Round_Text_ID.style.display = "block";
 
-            
+ 
             
         }
 

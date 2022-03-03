@@ -137,6 +137,12 @@ AFRAME.registerComponent('user-interface',{
 
             Screen_Overlay_ID.style.display = "none";
             infoUI.style.display = "none";
+
+            Round_Title_ID.style.display = "none";
+            Round_Text_ID.style.display = "none";
+
+            cropTooltip.setAttribute("visible",false);
+
             exitBucket();
             clickSound.play();
     

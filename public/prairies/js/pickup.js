@@ -10,6 +10,7 @@ AFRAME.registerComponent('pickup', {
         context.selected = false;
         scene = document.querySelector('a-scene');
         var increment = 0;
+        bucketTooltipCounter = 0;
 
         context.el.addEventListener('click', () => {
             increment++;
@@ -27,6 +28,14 @@ AFRAME.registerComponent('pickup', {
                 context.el.removeAttribute('dynamic-body');
 
                 pickupSound.play();
+
+
+
+                if (objectSelectedID === "bucket"){
+                    bucketTooltip.setAttribute("visible",false);
+                    bucketTooltipCounter ++;
+                }
+
 
 
             }

@@ -32,7 +32,7 @@ AFRAME.registerComponent('control-panel',{
 
 
                 infoTitle.innerHTML ="Human Settlements";
-                infoText.innerHTML = "Human settlements, including houses and apartments, have impacted the grasslands evironment where elephants live. As a result, about 70% of Asian elephants are now living outside of protected areas.";
+                infoText.innerHTML = "Human settlements, including houses and apartments, have impacted the grasslands environment where elephants live. As a result, about 70% of Asian elephants are now living outside of protected areas.";
           
                 infoUI.style.display = "flex";
                 Screen_Overlay_ID.style.display = "block";

@@ -771,7 +771,8 @@
         display: none;
         align-items: center;
         justify-content: center;
-        min-height: 100vh;
+        min-height: 70vh;
+        min-width: 100vw;
         z-index: 99999999;
 
     }
@@ -810,6 +811,95 @@
         
         
     }
+
+
+    
+    #Round_Title_Center{
+        background-size: cover;
+        position: relative;
+        height: 15%;
+        top: 10%;
+        z-index: 99999;
+        max-width: 570px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 0rem;
+        
+    }
+
+    #Round_Text_Center{
+        background-size: cover;
+        position: relative;
+        height: 15%;
+        top: 25%;
+        z-index: 99999;
+        max-width: 420px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 6rem;
+
+        
+    }
+      
+   #Round_Title_ID{
+        display: none;
+        color: #F8F8F8;
+        font-size: 36px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        text-align: center;
+        z-index: 999999;
+        text-shadow: 5px 3px 6px rgba(0, 0, 0, 0.2),
+        -1.5px -1.5px 0 #2f6673,
+        0   -1.5px 0 #2f6673,
+        1.5px -1.5px 0 #2f6673,
+        1.5px  0   0 #2f6673,
+        1.5px  1.5px 0 #2f6673,
+        0    1.5px 0 #2f6673,
+       -1.5px  1.5px 0 #2f6673,
+       -1.5px  0   0 #2f6673;
+        position: absolute;
+        left:0;
+        right:0;
+        margin:0px auto;
+        padding-top: 2.5rem;
+
+        
+        
+
+    }
+
+    
+      
+   #Round_Text_ID{
+        display: none;
+        color: #F8F8F8;
+        font-size: 24px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        text-align: center;
+        z-index: 999999;
+        text-shadow: 5px 3px 6px rgba(0, 0, 0, 0.2),
+        -1.5px -1.5px 0 #2f6673,
+        0   -1.5px 0 #2f6673,
+        1.5px -1.5px 0 #2f6673,
+        1.5px  0   0 #2f6673,
+        1.5px  1.5px 0 #2f6673,
+        0    1.5px 0 #2f6673,
+       -1.5px  1.5px 0 #2f6673,
+       -1.5px  0   0 #2f6673;
+        position: absolute;
+        left:0;
+        right:0;
+        margin:0px auto;
+
+
+    }
+
+
+    
+
+
 
 
     
@@ -1495,6 +1585,84 @@
         margin-top: 0.75rem;
         margin-bottom: 0.75rem;
     }
+
+    #Round_Title_Center{
+        background-size: cover;
+        position: relative;
+        height: 15%;
+        top: 10%;
+        max-width: 570px;
+        z-index: 99999;
+        margin-left: auto;
+        margin-right: auto;
+        
+    }
+
+    #Round_Text_Center{
+        background-size: cover;
+        position: relative;
+        height: 15%;
+        top: 25%;
+        z-index: 99999;
+        max-width: 420px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 4rem;
+
+        
+    }
+
+    #Round_Title_ID{
+        display: none;
+        color: #F8F8F8;
+        font-size: 24px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        text-align: center;
+        z-index: 999999;
+        text-shadow: 5px 3px 6px rgba(0, 0, 0, 0.2),
+        -1px -1px 0 #2f6673,
+         0   -1px 0 #2f6673,
+         1px -1px 0 #2f6673,
+         1px  0   0 #2f6673,
+         1px  1px 0 #2f6673,
+         0    1px 0 #2f6673,
+        -1px  1px 0 #2f6673,
+        -1px  0   0 #2f6673;
+        position: absolute;
+        left:0;
+        right:0;
+        margin:0px auto;
+        padding-top: 2rem;
+
+
+    }
+      
+   #Round_Text_ID{
+        display: none;
+        color: #F8F8F8;
+        font-size: 18px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        text-align: center;
+        z-index: 999999;
+        text-shadow: 5px 3px 6px rgba(0, 0, 0, 0.2),
+        -1px -1px 0 #2f6673,
+         0   -1px 0 #2f6673,
+         1px -1px 0 #2f6673,
+         1px  0   0 #2f6673,
+         1px  1px 0 #2f6673,
+         0    1px 0 #2f6673,
+        -1px  1px 0 #2f6673,
+        -1px  0   0 #2f6673;
+        position: absolute;
+        left:0;
+        right:0;
+        margin:0px auto;
+
+
+    }
+
 
 
 
