@@ -189,8 +189,12 @@ AFRAME.registerComponent('control-panel',{
     startText1 = document.querySelector('#start_text1');
     startText2 = document.querySelector('#start_text2');
 
-   tooltip1 = document.querySelector('#tooltip1');
+    tooltip1 = document.querySelector('#tooltip1');
     tooltip2 = document.querySelector('#tooltip2');
+    tooltip3 = document.querySelector('#tooltip3');
+    tooltip4 = document.querySelector('#tooltip4');
+    tooltip5 = document.querySelector('#tooltip5');
+
 
 
     seal1 = document.querySelector('#seal1');
