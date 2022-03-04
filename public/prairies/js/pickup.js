@@ -10,12 +10,13 @@ AFRAME.registerComponent('pickup', {
         context.selected = false;
         scene = document.querySelector('a-scene');
         var increment = 0;
+        var bodyincrement = 0;
         bucketTooltipCounter = 0;
 
         context.el.addEventListener('click', () => {
             increment++;
-            //console.log(increment);
-           // console.log("body",bodyincrement);
+            console.log(increment);
+            console.log("body",bodyincrement);
 
             if(context.data.pickedup === false){  //pickup
 
@@ -25,16 +26,29 @@ AFRAME.registerComponent('pickup', {
 
                 context.player.object3D.attach(context.el.object3D);//attach object to the player/camera
                 context.el.setAttribute('position', {x:0.5, y:-0.3, z:-0.75});
-                context.el.removeAttribute('dynamic-body');
+                //context.el.removeAttribute('dynamic-body');
+
+                if(objectSelectedID === 'gun'){
+                    context.el.removeAttribute('body');
+                    bodyincrement++;
+                }else{
+                    context.el.removeAttribute('dynamic-body');
+                }
 
                 pickupSound.play();
+
 
 
 
                 if (objectSelectedID === "bucket"){
                     bucketTooltip.setAttribute("visible",false);
                     bucketTooltipCounter ++;
+                }  else if (objectSelectedID === "gun"){
+                    gunTooltip.setAttribute("visible",false);
+                    targetTooltip.setAttribute("visible",true);
                 }
+
+                
 
 
 
@@ -43,7 +57,14 @@ AFRAME.registerComponent('pickup', {
                 
                 context.el.sceneEl.object3D.attach(context.el.object3D);
                 context.data.pickedup = false;
-                context.el.setAttribute('dynamic-body', 'mass:5;');
+
+                if(objectSelectedID === 'gun'){
+                    context.el.setAttribute('body', 'type:dynamic; shape:none;')
+                    context.el.setAttribute('shape__newBox' + bodyincrement, 'shape: box; halfExtents: 0.58 0.1 0.06; offset: 0 0 0; orientation: 0 0 0 1')
+                }else{
+                    context.el.setAttribute('dynamic-body', 'mass:5;');
+                }
+
                 increment = 0;
                 objectSelectedID = null;
                 pickupSound.play();

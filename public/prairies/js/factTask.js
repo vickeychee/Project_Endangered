@@ -11,8 +11,6 @@ AFRAME.registerComponent('fact-task',{
         crane2 = document.querySelector('#crane2');
         crane3 = document.querySelector('#crane3');
 
-        gun = document.querySelector('#gun');
-
 
         factExitButton.addEventListener('click', ()=>{
         
@@ -56,18 +54,6 @@ AFRAME.registerComponent('fact-task',{
             factText.innerHTML = "The last natural population of whooping cranes migrates from western Canada to Texas. All other whooping crane populations have been reintroduced through conservation efforts.";
       
             clickSound.play();
-        });
-
-        gun.addEventListener('click', ()=>{
-        
-            Screen_Overlay_ID.style.display = "block";
-            factUI.style.display = "flex";
-
-            factTitle.innerHTML ="Hunting Dangers";
-            factText.innerHTML = "One of the major threats to whooping cranes is hunting. In the past, the whooping crane was hunted for its meat and feathers, which were used as decorations on hats and clothing. Now that the whooping crane is protected, they can no longer be hunted. However, accidental shootings are still a huge issue.";
-      
-            clickSound.play();
-            gunSound.play();
         });
 
 

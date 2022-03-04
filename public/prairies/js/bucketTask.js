@@ -197,9 +197,14 @@
 
     checkDistance_Bool = true;
 
+    bucketTooltip.setAttribute("visible",false);
+    cropTooltip.setAttribute("visible",false);
+
 
     Round_Title_ID.style.display = "none";
     Round_Text_ID.style.display = "none";
+
+    
   }
 
   function resetBucketTask(){
@@ -218,6 +223,10 @@
     bucketFull_Bool = false;
 
     player.setAttribute('position', {x: -0.804, y:1.3, z: 1.57});
+
+    
+    bucketTooltip.setAttribute("visible",false);
+    cropTooltip.setAttribute("visible",false);
       
     $('.number').html(subs_completed + '/' + total_subs)
 
@@ -246,6 +255,7 @@ AFRAME.registerComponent('bucket-task',{
 
     bucketTooltip = document.querySelector('#tooltip3');
     cropTooltip = document.querySelector('#tooltip4');
+    gunTooltip = document.querySelector('#tooltip2');
 
 
     waterCounter = 0;

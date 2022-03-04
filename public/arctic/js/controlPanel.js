@@ -91,7 +91,7 @@ function factPopup(){
             factUI.style.display = "flex";
             Screen_Overlay_ID.style.display = "block";
             factTitle.innerHTML = "Cubs";
-            factText.innerHTML ="Polar bears cubs are usually born in December. When they are born, they are blind, toothless, and covered in soft white fur. Because of this, they complete depend on their mothers.";
+            factText.innerHTML ="Polar bears cubs are usually born in December. When they are born, they are blind, toothless, and covered in soft white fur. Because of this, they completely depend on their mothers.";
 
         }
         
