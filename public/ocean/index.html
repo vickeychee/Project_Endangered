@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Project Endangered</title>
+    <meta name="description" content="Project Endagered WebVR">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" viewport-fit=cover>
+
+
+    <!--External Components-->
+
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="https://unpkg.com/aframe-physics-extras@0.1.2/dist/aframe-physics-extras.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.2.0/dist/aframe-environment-component.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+
+
+</head>
+<body>
+
+    <a-scene start-experience renderer="gammaOutput: true;" shadow="type: pcfsoft" vr-mode-ui="enabled: false" id="scene" shadow="autoUpdate: false" >
+
+        <a-assets timeout = "10000">
+        
+            <!--Envrionment Assets-->
+            <a-asset-item id="environment-obj" crossorigin="anonymous" src="/assets/ocean_environment.glb"></a-asset-item> 
+            <a-asset-item id="umbrella-obj" crossorigin="anonymous" src="/assets/umbrella.glb"></a-asset-item> 
+            <a-asset-item id="apartment-obj" crossorigin="anonymous" src="/assets/apartment.glb"></a-asset-item> 
+            <a-asset-item id="babyTurtle-obj" crossorigin="anonymous" src="/assets/baby_turtle.glb"></a-asset-item> 
+            <a-asset-item id="eggs-obj" crossorigin="anonymous" src="/assets/eggs.glb"></a-asset-item> 
+            <a-asset-item id="boardwalk-obj" crossorigin="anonymous" src="/assets/boardwalk.glb"></a-asset-item> 
+            <a-asset-item id="turtleNet-obj" crossorigin="anonymous" src="/assets/turtle_net.glb"></a-asset-item> 
+            <a-asset-item id="net-obj" crossorigin="anonymous" src="/assets/net.glb"></a-asset-item>
+            <a-asset-item id="turtle-obj" crossorigin="anonymous" src="/assets/turtle.glb"></a-asset-item>
+     
+     
+
+
+        </a-assets>
+
+
+        <!--check-->
+
+
+    <!--Lighting-->
+
+    <a-entity light="type: ambient; color: #c7f0cf; intensity: 0.71"></a-entity>
+    <a-entity id="light_spot" light="type: point; color: #ffffff; intensity: 0.35; castShadow: true; shadowRadius: 2.52; shadowCameraFov: 92.68" position="-9.93726 46.834 4.16324">
+    </a-entity>
+
+
+    <!--Player Controls-->
+    <a-entity id="player" movement-controls="speed:0.2; constrainToNavMesh: true;" position="0 1.3 0">
+        <a-entity
+            id = "player2"
+            camera="fov:70"
+            wasd-controls='acceleration: 10'
+            look-controls>
+            <a-entity
+                id = "player-details"
+                collision-filter="group: mouse"
+                cursor="rayOrigin:mouse;"
+                raycaster="far:10; interval:200; objects:.interactive"
+            ></a-entity> 
+        </a-entity>
+    </a-entity>
+
+
+
+        <!--Environment Models-->
+    <a-entity
+            id ="environment"
+            environment="preset: default; groundColor: #445; grid:none; ground:none; lighting:none; skyType:gradient; skyColor:#2dc7fb; horizonColor:#c6fbf5; fog:0">
+        </a-entity>
+
+        <a-entity
+            id="environment_model"
+            position="-2.921 0.009 -5.520"
+            rotation="0 180 0"
+            scale= " 1 1 1"
+            gltf-model="#environment-obj"
+            shadow="cast:true; receive:true;">
+        </a-entity>
+
+        <a-entity
+            id="umbrella"
+            position="-2.921 0.009 -5.520"
+            rotation="0 180 0"
+            scale= " 1 1 1"
+            gltf-model="#umbrella-obj"
+            shadow="cast:true; receive:false;">
+        </a-entity>
+
+        <a-entity
+            id="apartment1"
+            position="-9.258 0.009 5.485"
+            rotation="0 180 0"
+            scale= " 0.7 0.7 0.7"
+            gltf-model="#apartment-obj"
+            shadow="cast:true; receive:false;">
+        </a-entity>
+
+        <a-entity
+        id="apartment2"
+        position="-1.885 0.009 5.485"
+        rotation="0 180 0"
+        scale= " 0.7 0.7 0.7"
+        gltf-model="#apartment-obj"
+        shadow="cast:true; receive:false;">
+    </a-entity>
+
+        <a-entity
+        id="apartment3"
+        position="5.622 0.009 5.485"
+        rotation="0 180 0"
+        scale= " 0.7 0.7 0.7"
+        gltf-model="#apartment-obj"
+        shadow="cast:true; receive:false;">
+    </a-entity>
+
+
+
+
+        <a-entity
+            id="babyTurtle"
+            class="interactive"
+            position="-2.921 0.009 -5.520"
+            rotation="0 180 0"
+            scale= " 1 1 1"
+            gltf-model="#babyTurtle-obj"
+            shadow="cast:true; receive:false;"
+            animation__mouseenter="property:scale; to: 1.1 1.1 1.1; startEvents:mouseenter; dur:200"
+            animation__mouseleave="property:scale; to: 1 1 1; startEvents:mouseleave; dur:200">
+        </a-entity>
+
+        <a-entity
+            id="trutle1"
+            class="interactive"
+            position="-4.337 -0.222 -10.980"
+            rotation="-12.000 -44.080 0"
+            scale= " 1 1 1"
+            gltf-model="#turtle-obj"
+            shadow="cast:true; receive:false;"
+            animation__mouseenter="property:scale; to: 1.1 1.1 1.1; startEvents:mouseenter; dur:200"
+            animation__mouseleave="property:scale; to: 1 1 1; startEvents:mouseleave; dur:200">
+        </a-entity>
+
+        <a-entity
+        id="trutle2"
+        class="interactive"
+        position="-6.554 -0.406 -13.632"
+        rotation="-3.650 162.560 0"
+        scale= " 1 1 1"
+        gltf-model="#turtle-obj"
+        shadow="cast:true; receive:false;"
+        animation__mouseenter="property:scale; to: 1.1 1.1 1.1; startEvents:mouseenter; dur:200"
+        animation__mouseleave="property:scale; to: 1 1 1; startEvents:mouseleave; dur:200">
+    </a-entity>
+
+
+        
+        <a-entity
+            id="turtle_net"
+            class="interactive"
+            position="-11.219 0.171 -17.374"
+            rotation="0 180 0"
+            scale= " 1 1 1"
+            gltf-model="#turtleNet-obj"
+            shadow="cast:true; receive:false;">
+        </a-entity>
+
+        <a-entity
+            id="net"
+            class="interactive"
+            position="-11.219 0.171 -17.374"
+            rotation="0 180 0"
+            scale= " 1 1 1"
+            gltf-model="#net-obj"
+            shadow="cast:true; receive:false;">
+        </a-entity>
+
+
+        
+        <a-entity
+            id="eggs"
+            class="interactive"
+            position="3.582 -0.115 -8.654"
+            rotation="0 180 0"
+            scale= " 1 1 1"
+            gltf-model="#eggs-obj"
+            shadow="cast:true; receive:false;">
+        </a-entity>
+
+        <a-entity
+            id="boardwalk"
+            class="interactive"
+            position="-3.211 0 -4.323"
+            rotation="0 180 0"
+            scale= " 1 1 1"
+            gltf-model="#boardwalk-obj"
+            shadow="cast:true; receive:false;">
+        </a-entity>
+
+        <a-ocean id="river" class="interactive" position="-1.25958 -0.91937 -4.80379" scale="5.72 51.6 11.81" color="#074b54" ocean="opacity: 0.9; depth: 1.1; amplitude: 0; amplitudeVariance: 0.003">
+        </a-ocean>
+
+        
+    </a-scene>
+</body>
+</html>
