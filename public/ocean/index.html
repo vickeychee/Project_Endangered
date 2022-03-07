@@ -35,8 +35,8 @@
             <a-asset-item id="turtleNet-obj" crossorigin="anonymous" src="/assets/turtle_net.glb"></a-asset-item> 
             <a-asset-item id="net-obj" crossorigin="anonymous" src="/assets/net.glb"></a-asset-item>
             <a-asset-item id="turtle-obj" crossorigin="anonymous" src="/assets/turtle.glb"></a-asset-item>
-     
-     
+            <a-asset-item id="sign-obj" crossorigin="anonymous" src="/assets/sign.glb"></a-asset-item>
+            <a-asset-item id="tourism-obj" crossorigin="anonymous" src="/assets/tourism.glb"></a-asset-item>
 
 
         </a-assets>
@@ -53,7 +53,7 @@
 
 
     <!--Player Controls-->
-    <a-entity id="player" movement-controls="speed:0.2; constrainToNavMesh: true;" position="0 1.3 0">
+    <a-entity id="player" movement-controls="speed:0.2; constrainToNavMesh: true;" position="0 1.5 0">
         <a-entity
             id = "player2"
             camera="fov:70"
@@ -73,7 +73,7 @@
         <!--Environment Models-->
     <a-entity
             id ="environment"
-            environment="preset: default; groundColor: #445; grid:none; ground:none; lighting:none; skyType:gradient; skyColor:#2dc7fb; horizonColor:#c6fbf5; fog:0">
+            environment="preset: default; groundColor: #445; grid:none; ground:none; lighting:none; skyType:gradient; skyColor:#16cffe; horizonColor:#c0e8f2; fog:0">
         </a-entity>
 
         <a-entity
@@ -93,10 +93,29 @@
             gltf-model="#umbrella-obj"
             shadow="cast:true; receive:false;">
         </a-entity>
+        
+        <a-entity
+            id="ferris_wheel"
+            position="-2.921 0.009 -5.520"
+            rotation="0 180 0"
+            scale= " 1 1 1"
+            gltf-model="#tourism-obj"
+            shadow="cast:true; receive:false;">
+        </a-entity>
+
 
         <a-entity
-            id="apartment1"
-            position="-9.258 0.009 5.485"
+        id="sign1"
+        position="-0.494 0.009 -4.995"
+        rotation="0 180 0"
+        scale= " 1 1 1"
+        gltf-model="#sign-obj"
+        shadow="cast:true; receive:false;">
+    </a-entity>
+
+        <a-entity
+            id="apartment"
+            position="-2.921 0.009 -5.520"
             rotation="0 180 0"
             scale= " 0.7 0.7 0.7"
             gltf-model="#apartment-obj"
@@ -104,42 +123,21 @@
         </a-entity>
 
         <a-entity
-        id="apartment2"
-        position="-1.885 0.009 5.485"
-        rotation="0 180 0"
-        scale= " 0.7 0.7 0.7"
-        gltf-model="#apartment-obj"
-        shadow="cast:true; receive:false;">
-    </a-entity>
-
-        <a-entity
-        id="apartment3"
-        position="5.622 0.009 5.485"
-        rotation="0 180 0"
-        scale= " 0.7 0.7 0.7"
-        gltf-model="#apartment-obj"
-        shadow="cast:true; receive:false;">
-    </a-entity>
-
-
-
-
-        <a-entity
             id="babyTurtle"
             class="interactive"
-            position="-2.921 0.009 -5.520"
+            position="3.543 -0.372 -10.697"
             rotation="0 180 0"
             scale= " 1 1 1"
             gltf-model="#babyTurtle-obj"
             shadow="cast:true; receive:false;"
-            animation__mouseenter="property:scale; to: 1.1 1.1 1.1; startEvents:mouseenter; dur:200"
+            animation__mouseenter="property:scale; to: 1.05 1.05 1.05; startEvents:mouseenter; dur:200"
             animation__mouseleave="property:scale; to: 1 1 1; startEvents:mouseleave; dur:200">
         </a-entity>
 
         <a-entity
             id="trutle1"
             class="interactive"
-            position="-4.337 -0.222 -10.980"
+            position="-5.959 -0.222 -11.530"
             rotation="-12.000 -44.080 0"
             scale= " 1 1 1"
             gltf-model="#turtle-obj"
