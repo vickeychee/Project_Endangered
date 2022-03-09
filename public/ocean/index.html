@@ -73,16 +73,30 @@
             <a-asset-item id="tooltip-obj" crossorigin="anonymous" src="/assets/tooltip.glb"></a-asset-item>
             <a-asset-item id="nav-mesh-obj" crossorigin="anonymous" src="/assets/nav-mesh/nav_mesh.gltf"></a-asset-item>
 
+            <audio id="water_sound" src="/assets/audio/water.mp3" preload="auto"></audio>
+            <audio id="bird_sound" src="/assets/audio/seagull.mp3" preload="auto"></audio>
+            <audio id="music_sound" src="/assets/audio/music.mp3" preload="auto"></audio>
+            
+
+            <audio id="apartment_sound" src="/assets/audio/apartment.mp3" preload="auto"></audio>
+            <audio id="boardwalk_sound" src="/assets/audio/boardwalk.mp3" preload="auto"></audio>
+            <audio id="tourism_sound" src="/assets/audio/tourism.mp3" preload="auto"></audio>
+            <audio id="click_sound" src="/assets/audio/click.mp3" preload="auto"></audio>
+            <audio id="pickup_sound" src="/assets/audio/pickup.mp3" preload="auto"></audio>
+
 
         </a-assets>
 
-
-        <!--check-->
+            <!--Ambient Sounds-->
+    
+        <a-entity class="ambient-music" id ="music" sound="src:#music_sound; autoplay:false; loop:true; volume:8;" position="0 10 -6.490"></a-entity>
+        <a-entity class="ambient-music" id ="bird" sound="src:#bird_sound; autoplay:false; loop:true; volume:8;" position="0 10 -6.490"></a-entity>
+        <a-entity class="ambient-music" id ="water" sound="src:#water_sound; autoplay:false; loop:true; volume:8;" position="0 10 -6.490"></a-entity>
 
 
     <!--Lighting-->
 
-    <a-entity light="type: ambient; color: #c7f0cf; intensity: 0.71"></a-entity>
+    <a-entity light="type: ambient; color: #c7f0cf; intensity: 0.7"></a-entity>
     <a-entity id="light_spot" light="type: point; color: #ffffff; intensity: 0.35; castShadow: true; shadowRadius: 2.52; shadowCameraFov: 92.68" position="3.07992 46.834 -24.65419">
     </a-entity>
 
@@ -365,7 +379,13 @@
 
     
 
-        <a-ocean id="river" class="interactive" position="-1.25958 -0.91937 -4.80379" scale="5.72 51.6 11.81" color="#2f8e8c" ocean="opacity: 0.97; speed:1.3; depth: 1.1; amplitude: 0; amplitudeVariance: 0.005">
+        <a-ocean
+            id="river"
+            class="interactive"
+            position="-1.25958 -0.91937 -4.80379"
+            scale="5.72 51.6 11.81"
+            color="#2f8e8c"
+            ocean="opacity: 0.97; speed:1.3; depth: 1.1; amplitude: 0; amplitudeVariance: 0.005">
         </a-ocean>
 
 

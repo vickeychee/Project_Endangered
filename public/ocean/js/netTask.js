@@ -21,6 +21,8 @@ AFRAME.registerComponent('net-task',{
             
                 infoUI.style.display = "flex";
                 Screen_Overlay_ID.style.display = "block";
+
+                clickSound.play();
             }
 
 

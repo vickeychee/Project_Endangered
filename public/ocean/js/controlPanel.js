@@ -20,7 +20,8 @@ AFRAME.registerComponent('control-panel',{
 
 
         button1.addEventListener('click', ()=>{
-
+            
+            clickSound.play();
 
             button1Counter ++;
 
@@ -28,6 +29,8 @@ AFRAME.registerComponent('control-panel',{
                 voiceUI.style.display = "none";
                 apartment.setAttribute("visible",true);
                 button1.setAttribute("material", "color:#ff8880");
+
+                apartmentSound.play();
 
                 infoTitle.innerHTML ="Human Settlements";
                 infoText.innerHTML = "Human settlements, including beachfront houses and apartments, have impacted the ocean coast environment where green sea turtles live. This is because these buildings destroy the nesting beaches green sea turtles use. When these areas are ruined, it makes it more difficult for green sea turtles to find places to lay their eggs.";
@@ -46,9 +49,14 @@ AFRAME.registerComponent('control-panel',{
 
         button2.addEventListener('click', ()=>{
 
+            clickSound.play();
+
             button2Counter ++;
 
             if (button2Counter === 1){
+
+                boardwalkSound.play();
+
                 voiceUI.style.display = "none";
                 boardwalk.setAttribute("visible",true);
                 button2.setAttribute("material", "color:#ff8880");
@@ -71,9 +79,14 @@ AFRAME.registerComponent('control-panel',{
 
         button3.addEventListener('click', ()=>{
 
+            clickSound.play();
+
             button3Counter ++;
 
             if (button3Counter === 1){
+
+                tourismSound.play();
+
                 voiceUI.style.display = "none";
                 ferris.setAttribute("visible",true);
                 umbrella.setAttribute("visible",true);

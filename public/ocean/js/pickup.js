@@ -36,6 +36,8 @@ AFRAME.registerComponent('pickup', {
                     context.el.removeAttribute('dynamic-body');
                 }
 
+                pickupSound.play();
+
 
                 if (objectSelectedID === "net"){
                     netTooltip.setAttribute("visible",false);
@@ -67,6 +69,7 @@ AFRAME.registerComponent('pickup', {
 
                 increment = 0;
                 objectSelectedID = null;
+                pickupSound.play();
                 
     
             }

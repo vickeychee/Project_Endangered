@@ -129,6 +129,7 @@ AFRAME.registerComponent('user-interface',{
             apartmentSound.volume = 0;
             factorySound.volume = 0;
             clickSound.volume = 0;
+            
 
 
         }else{
