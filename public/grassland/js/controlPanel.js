@@ -18,6 +18,11 @@ AFRAME.registerComponent('control-panel',{
         button3Counter = 0;
 
 
+        settlementSound = document.querySelector('#panel_settlements');
+        linearSound = document.querySelector('#panel_linear');
+        industrySound = document.querySelector('#panel_industry');
+
+
         button1.addEventListener('click', ()=>{
 
             voiceUI.style.display = "none";
@@ -37,12 +42,22 @@ AFRAME.registerComponent('control-panel',{
                 infoUI.style.display = "flex";
                 Screen_Overlay_ID.style.display = "block";
                 button1.setAttribute("material", "color:#af64a4");
+
+                    
+                if(voiceToggle.checked == true){
+
+                    settlementSound.currentTime = 0;
+                    settlementSound.play();
+        
+                }
+        
             }
 
             else if (button1Counter === 2){
                 apartment.setAttribute("visible",false);
                 button1Counter = 0;
                 button1.setAttribute("material", "color:#f750e0");
+
             }
     
         });
@@ -64,6 +79,13 @@ AFRAME.registerComponent('control-panel',{
                 infoUI.style.display = "flex";
                 Screen_Overlay_ID.style.display = "block";
                 button2.setAttribute("material", "color:#af64a4");
+
+                if(voiceToggle.checked == true){
+
+                    linearSound.currentTime = 0;
+                    linearSound.play();
+        
+                }
             }
 
             else if (button2Counter === 2){
@@ -91,6 +113,13 @@ AFRAME.registerComponent('control-panel',{
                 infoUI.style.display = "flex";
                 Screen_Overlay_ID.style.display = "block";
                 button3.setAttribute("material", "color:#af64a4");
+
+                if(voiceToggle.checked == true){
+
+                    industrySound.currentTime = 0;
+                    industrySound.play();
+        
+                }
                 
             }
 

@@ -13,7 +13,11 @@ AFRAME.registerComponent('fact-task',{
         elephant4 = document.querySelector('#elephant4');
 
 
-        console.log("working");
+        communicationSound = document.querySelector('#fact_communication');
+        herbivoreSound = document.querySelector('#fact_herbivores');
+        lookSound = document.querySelector('#fact_look');
+        tuskSound = document.querySelector('#fact_tusk');
+       
 
 
         factExitButton.addEventListener('click', ()=>{
@@ -22,6 +26,16 @@ AFRAME.registerComponent('fact-task',{
             Screen_Overlay_ID.style.display = "none";
             factUI.style.display = "none";
             clickSound.play();
+
+
+            if(voiceToggle.checked == true){
+
+                communicationSound.pause();
+                herbivoreSound.pause();
+                lookSound.pause();
+                tuskSound.pause();
+    
+            }
       
         });
 
@@ -38,6 +52,13 @@ AFRAME.registerComponent('fact-task',{
             factText.innerHTML = "Asian elephants use their ivory tusks for many purposes. This includes digging, pulling trees out of the ground, and displaying.";
       
             clickSound.play();
+
+            if(voiceToggle.checked == true){
+
+                tuskSound.currentTime = 0;
+                tuskSound.play();
+    
+            }
         });
 
         elephant2.addEventListener('click', ()=>{
@@ -50,6 +71,14 @@ AFRAME.registerComponent('fact-task',{
             factText.innerHTML = "The Asian elephant communicates with other elephants using a low-frequency sound. They do this to communicate with other elephants in their herd or others outside of the herd. This sound is very strong and can travel up to 16 kilometers.";
       
             clickSound.play();
+
+            
+            if(voiceToggle.checked == true){
+
+                communicationSound.currentTime = 0;
+                communicationSound.play();
+    
+            }
         });
 
         elephant3.addEventListener('click', ()=>{
@@ -62,6 +91,13 @@ AFRAME.registerComponent('fact-task',{
             factText.innerHTML = "There are two species of elephants that exist on Earth, the African elephant and the Asian elephant. It is easy to tell them apart due to the Asian elephant’s unique look. Asian elephants have much smaller ears, compared to African elephants. The Asian elephant also has one more toenail on each foot, compared to the African elephant.";
       
             clickSound.play();
+
+            if(voiceToggle.checked == true){
+
+                lookSound.currentTime = 0;
+                lookSound.play();
+    
+            }
         });
 
         elephant4.addEventListener('click', ()=>{
@@ -74,6 +110,13 @@ AFRAME.registerComponent('fact-task',{
             factText.innerHTML = "The Asian elephant is a herbivore, meaning it only eats plants. They eat plants such as grass, fruits, vegetables, leaves, and bark. To collect their food, they use their trunks!";
       
             clickSound.play();
+
+            if(voiceToggle.checked == true){
+
+                herbivoreSound.currentTime = 0;
+                herbivoreSound.play();
+    
+            }
         });
 
 

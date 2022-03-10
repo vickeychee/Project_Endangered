@@ -26,6 +26,7 @@ AFRAME.registerComponent('user-interface',{
 
        musicToggle =  document.getElementById('Music-Toggle');
        soundToggle = document.getElementById('Sound-Toggle');
+       voiceToggle =document.getElementById('Voice-Toggle'); 
 
        musicSound = document.querySelector('#music');
        windSound = document.querySelector('#wind');
@@ -36,16 +37,34 @@ AFRAME.registerComponent('user-interface',{
        apartmentSound = document.querySelector('#apartment_sound');
        carSound = document.querySelector('#car_sound');
        factorySound = document.querySelector('#factory_sound');
+
+       helpDesktopTextSound = document.querySelector('#menu_instruction_desktop');
+       helpMobileTextSound = document.querySelector('#menu_instruction_mobile');
+       settingTextSound = document.querySelector('#menu_settings');
        
 
 
        helpButton.addEventListener('click', ()=>{
 
-        Screen_Overlay_ID.style.display = "block";
-        Help_Popup_ID.style.display = "flex";
-        clickSound.play();
+            Screen_Overlay_ID.style.display = "block";
+            Help_Popup_ID.style.display = "flex";
+            clickSound.play();
 
+            if(voiceToggle.checked == true){
 
+                if(deviceChoice == 1){
+
+                    helpDesktopTextSound.currentTime = 0;
+                    helpDesktopTextSound.play();
+
+                }else if(deviceChoice == 2){
+
+                    helpMobileTextSound.currentTime = 0;
+                    helpMobileTextSound.play();
+
+                }
+
+            }
         
         });
 
@@ -54,6 +73,12 @@ AFRAME.registerComponent('user-interface',{
             Screen_Overlay_ID.style.display = "none";
             Help_Popup_ID.style.display = "none";
             clickSound.play();
+
+            if(voiceToggle.checked == true){
+
+                helpTextSound.pause();
+    
+            }
 
             
         });
@@ -64,6 +89,13 @@ AFRAME.registerComponent('user-interface',{
             Screen_Overlay_ID.style.display = "block";
             Settings_Popup_ID.style.display = "flex";
             clickSound.play();
+
+            if(voiceToggle.checked == true){
+
+                settingTextSound.currentTime = 0;
+                settingTextSound.play();
+    
+            }
 
 
         });
@@ -76,6 +108,14 @@ AFRAME.registerComponent('user-interface',{
             clickSound.play();
 
             
+            if(voiceToggle.checked == true){
+
+                settingTextSound.currentTime = 0;
+                settingTextSound.pause();
+    
+            }
+
+            
         });
 
 
@@ -84,6 +124,14 @@ AFRAME.registerComponent('user-interface',{
             Screen_Overlay_ID.style.display = "none";
             infoUI.style.display = "none";
             clickSound.play();
+
+            if(voiceToggle.checked == true){
+
+                settlementSound.pause();
+                linearSound.pause();
+                industrySound.pause();
+    
+            }
 
     
             
@@ -131,7 +179,6 @@ AFRAME.registerComponent('user-interface',{
             clickSound.volume = 0;
             
 
-
         }else{
 
             windSound.setAttribute('sound', 'volume', 6)
@@ -143,6 +190,44 @@ AFRAME.registerComponent('user-interface',{
             clickSound.volume = 1;
 
         }
+
+        
+        if(voiceToggle.checked == false){
+
+
+            helpDesktopTextSound.volume = 0;
+            helpMobileTextSound.volume = 0;
+            settingTextSound.volume = 0;
+
+            communicationSound.volume = 0;
+            herbivoreSound.volume = 0;
+            lookSound.volume = 0;
+            tuskSound.volume = 0;
+
+            settlementSound.volume = 0;
+            linearSound.volume = 0;
+            industrySound.volume = 0;
+            
+
+        }else{
+
+            helpDesktopTextSound.volume = 0.3;
+            helpMobileTextSound.volume = 0.3;
+            settingTextSound.volume = 0.3;
+
+            communicationSound.volume = 0.3;
+            herbivoreSound.volume = 0.3;
+            lookSound.volume = 0.3;
+            tuskSound.volume = 0.3;
+
+            settlementSound.volume = 0.3;
+            linearSound.volume = 0.3;
+            industrySound.volume = 0.3;
+    
+
+        }
+
+
 
 
     }
