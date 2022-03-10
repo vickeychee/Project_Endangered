@@ -688,3 +688,524 @@
         margin-right: -6rem;
         background-size: 2rem;
     }
+
+
+
+ /*laptop size*/
+ @media only screen and (max-width: 1733px)
+ {
+     .Help-parent{
+
+         display: flex;
+         position: relative;
+         z-index: 9999999;
+         color: #fff;
+         width: 70%;
+         top:30%;
+         left:0;
+         margin: 0;
+         background: #F8F8F8;
+         flex-direction: column;
+         border-radius: 50px;
+         box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+         padding-left:4.5rem;
+         padding-right:4.5rem;
+         padding-bottom: 2rem;
+         padding-top: 2rem;
+         overflow: auto;
+ 
+     }  
+ }
+
+ @media only screen and (max-width: 1312px)
+ {
+     .Help-parent{
+
+         display: flex;
+         position: relative;
+         z-index: 9999999;
+         color: #fff;
+         width: 70%;
+         top:30%;
+         left:0;
+         margin: 0;
+         background: #F8F8F8;
+         flex-direction: column;
+         border-radius: 50px;
+         box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+         padding-left:4.5rem;
+         padding-right:4.5rem;
+         padding-bottom: 2rem;
+         padding-top: 2rem;
+         overflow: auto;
+ 
+     }  
+
+     #Help_Keys_Image{
+         padding-top: 0rem;
+         padding-bottom: 1.5rem;
+     
+     }
+
+     #Keys_ID{
+         padding-right: 0rem;
+     }
+     
+     #Mouse_ID{
+         padding-left: 0rem;
+     }
+     
+     #Mouse2_ID{
+         margin-top: -0.6rem;
+     }
+
+
+     .Settings-parent{
+
+         display: flex;
+         position: relative;
+         z-index: 9999999;
+         color: #fff;
+         width: 45%;
+         top:50%;
+         left:0;
+         margin: 0;
+         background: #F8F8F8;
+         flex-direction: column;
+         border-radius: 50px;
+         box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+         padding-left:6rem;
+         padding-right:6rem;
+         padding-bottom: 2rem;
+         padding-top: 2rem;
+         
+     }
+
+
+
+  /*mobile*/
+  /* @media only screen 
+    and (min-device-width: 320px) 
+    and (max-device-width: 480px)
+    and (-webkit-min-device-pixel-ratio: 2)
+    and (orientation: landscape)*/
+    @media only screen and (max-height: 480px)
+    {
+
+        div{
+            -webkit-overflow-scrolling:touch;
+        }
+
+
+        #Info_Title_ID{
+            margin-top: 4rem;
+        }
+
+        #Info_Text_ID{
+            margin-top: -3rem;
+        }
+
+        .Info-container{
+        
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999999;
+            width: 100%;
+            height: 100%;
+            position: fixed; 
+            top: 0; bottom: 0; left: 0; right: 0;
+    
+        }
+        .Info-parent{
+
+            display: flex;
+            position: relative;
+            z-index: 9999999;
+            color: #fff;
+            width: 100%;
+            height: 100%;
+            top:0;
+            left:0;
+            margin: 0;
+            background: #F8F8F8;
+            flex-direction: column;
+            border-radius: 0;
+            box-shadow: 0;
+            padding-bottom: 5rem;
+            overflow-x: scroll;
+            overflow-y: scroll;
+    
+        }
+
+        .Info-child{
+            flex: 1 1 100%;
+            color: #013440;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            justify-content: center;
+            align-items: center;
+            margin-top: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            z-index: 999999;
+    
+            
+            
+        }
+
+        
+    .Info-Button{
+        margin-top: 0.8rem;
+        font-size: 18px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        background-color:  #FFCCB0;
+        color: #013440;
+        border: 0.25rem solid  #FFCCB0;
+        padding-left: 3rem;
+        padding-right: 3rem;
+        padding-top: 0.5rem;
+        padding-bottom:0.5rem;
+        border-radius: 2rem;
+        text-align: center;
+        box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+        
+
+    }
+
+        .Popup-title{
+            font-size: 36px;
+            font-weight: 700;
+            padding-top: 0;
+            padding-bottom: 0;
+            margin-top: -1rem;
+        }
+    
+        .Popup-text2{
+            font-size: 10px;
+            font-weight: 400;
+            color: #013440;
+            padding-bottom: 0.25rem;
+            font-family: 'Poppins', sans-serif;
+        }
+    
+        .Popup-subtitle{
+            font-size: 24px;
+            font-weight: 600;
+            color: #013440;
+            padding-bottom: 0.25rem;
+        }
+
+        .Popup-Button{
+            background-color: #F8F8F8;
+            border: 0.25rem solid #F8F8F8;
+            margin-right: -1.5rem;
+        }
+
+        #Title_ID{
+            width:13.38rem;
+            height:5rem;
+        }
+
+        .flex-parent {
+            display: inline-flex;
+            position: absolute;
+            z-index: 999999;
+            color: #fff;
+            width: 100%;
+            justify-content: center;
+            margin-top: 1.5rem;
+            align-items: flex-start;
+        
+          }
+
+          .flex-child {
+            flex: 1 1 100%;
+            margin-left: 1.5rem;
+        
+          }
+          
+          
+          .flex-grandchild {
+            margin-top: 0.5rem;
+            display: flex;
+            flex-grow: 1;
+            flex-shrink: 0;
+            flex-basis: auto;
+            margin-right: 1rem;
+
+        
+          }
+        
+          .flex-grandchild1, .flex-grandchild2,.flex-grandchild3,.flex-grandchild4 {
+            margin-right: 0.9rem;
+            align-items: center;
+
+      
+          }
+
+
+          
+        .Settings-container{
+            
+            display: none;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            position: absolute; 
+            top: 0; bottom: 0; left: 0; right: 0;
+            overflow: hidden;
+
+        }
+          
+          .Settings-parent{
+
+            display: flex;
+            position: relative;
+            z-index: 9999999;
+            color: #fff;
+            width: 100%;
+            height: 100%;
+            top:0;
+            left:0;
+            margin: 0;
+            background: #F8F8F8;
+            flex-direction: column;
+            border-radius: 0px;
+            box-shadow: 0;
+            padding-left:6rem;
+            padding-right:6rem;
+            padding-bottom: 0rem;
+            padding-top: 0rem;
+            overflow-x: scroll;
+            overflow-y: scroll;
+
+    
+        }
+
+        #Settings_Exit_Button_ID{
+            background-image: url("/imgs/button_exit.png");
+            background-repeat: no-repeat;
+            background-position:center;
+            border-radius: 50%;
+            margin-top: 0.5rem;
+            margin-right: -9rem;
+    
+        }
+
+        #Settings-Text{
+            margin-bottom:0rem;
+        
+        }
+
+        .Help-container{
+        
+            display: none;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            position: absolute; 
+            top: 0; bottom: 0; left: 0; right: 0;
+
+
+        }
+
+
+        .Help-parent{
+
+            display: flex;
+            z-index: 9999999;
+            color: #fff;
+            width: 100%;
+            height: 100%;
+            top:0;
+            left:0;
+            margin: 0;
+            background: #F8F8F8;
+            flex-direction: column;
+            border-radius: 0px;
+            box-shadow: 0;
+            padding-left:2rem;
+            padding-right:2rem;
+            padding-bottom: 6.5rem;
+            padding-top: 0;
+            overflow: scroll;
+
+        }
+
+        .Help-child{
+            color: #013440;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            justify-content: center;
+            align-items: center;
+            
+            
+        }
+
+        #Help_Exit_Button_ID{
+            background-image: url("/imgs/button_exit.png");
+            background-repeat: no-repeat;
+            background-position:center;
+            border-radius: 50%;
+            margin-top: 3.5rem;
+    
+        }
+
+        hr{
+            margin:0;
+        }
+
+        .Fact-container{
+        
+            display: none;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            z-index: 99999999;
+            position: absolute; 
+            top: 0; bottom: 0; left: 0; right: 0;
+    
+        }
+
+        .Fact-parent{
+            display: flex;
+            position: relative;
+            z-index: 9999999;
+            color: #fff;
+            width: 100%;
+            height: 100%;
+            top:0;
+            left:0;
+            margin: 0;
+            background: #F8F8F8;
+            flex-direction: column;
+            border-radius: 0px;
+            box-shadow: 0;
+            padding-left:6rem;
+            padding-right:6rem;
+            padding-bottom: 7rem;
+            padding-top: 0rem;
+            overflow-x: scroll;
+            overflow-y: scroll;
+    
+        }
+
+        #Fact_Exit_Button_ID{
+            margin-top: 4rem;
+        }
+
+        #Fact_Text_ID{
+            margin-top: -4rem;
+        }
+
+
+    .Button {
+        background-color: #F8F8F8;
+        border: none;
+        color: white;
+        padding-left: 4px;
+        padding-right: 4px;
+        padding-top: 9px;
+        padding-bottom: 9px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        margin: 0;
+        cursor: pointer;
+        border: 0.25rem solid;
+        border-color:#F8F8F8;
+      }
+
+
+      #Button_Instructions_ID,#Button_Settings_ID #Voice_Exit_Button_ID,
+      #Fact_Exit_Button_ID,#Help_Exit_Button_ID,#Settings_Exit_Button_ID{
+          background-size: 1.5rem;
+      }
+
+      #Button_Instructions_ID,#Button_Settings_ID{
+
+        padding-left: 28px;
+      }
+
+
+      .Voice-container{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        z-index: 99999999;
+        margin-top: 0rem;
+        margin-right: 0rem;
+        padding-top: 5rem;
+
+    }
+
+
+    .Voice-parent{
+        background-image:url("/imgs/tooltip_mobile.png");
+        background-repeat: no-repeat;
+        background-size: 214.5px, 93.5px;
+        background-position: center;
+        display: flex;
+        position: relative;
+        z-index: 9999;
+        width:214.5px;
+        height:93.5px;
+        left:0;
+        margin: 0;
+        flex-direction: column;
+        padding-left:1.5rem;
+        padding-right:0rem;
+        padding-bottom: 1rem;
+
+    }
+
+
+    .Voice-text{
+        font-size: 16px;
+        font-weight: 400;
+        color: #013440;
+    }
+
+    .Voice-title{
+        font-size: 16px;
+        font-weight: 600;
+        color: #013440;
+        margin-top: -0.25rem;
+    }
+
+    #Voice_Exit_Button_ID{
+
+        display:inline-flex;
+        background-image: url("/imgs/button_exit.png");
+        background-repeat: no-repeat;
+        background-position:center;
+        border-radius: 50%;
+        margin-top: 0.8rem;
+        margin-right: 1.5rem;
+        background-size: 2rem;
+    }
+
+    .Voice-Exit{
+        align-items: flex-end;
+        justify-content: flex-end;
+        margin-left: auto;
+        padding-top: 0.5rem;
+    }
+
+
+    #line{
+        border-style:solid;
+        border-width: 1px;  
+        border-color: #013440;
+        margin-top: 0.75rem;
+        margin-bottom: 0.75rem;
+    }
+
+    }
+     
+ }

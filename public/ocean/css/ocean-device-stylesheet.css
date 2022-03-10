@@ -1,0 +1,215 @@
+.container{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 50vh;
+
+
+}
+
+.parent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #F8F8F8;
+    width: 30%;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    padding-bottom: 3.5rem;
+    border-radius: 50px;
+}
+
+.child{
+    margin-top: 2.9rem;
+
+}
+
+#logo{
+    margin:2.75rem;
+    width: 16.875rem;
+    height:1.8125rem;
+}
+
+
+#copyright{  
+    color: #F8F8F8;
+    font-size: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    margin-top: auto;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    align-self: flex-end;
+    margin-right:2rem;
+
+}
+
+
+a{
+    text-decoration: none;
+}
+
+
+  body {
+    background-image: url("/imgs/ocean_background_blur.png");
+    background-repeat: no-repeat;
+    background-color: #c0e1e0;
+    background-position: 50%;
+    background-position-x: center;
+    background-size: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-position: bottom 0px right 50%;
+    overflow: hidden;
+  }
+
+
+
+h1 {
+    margin:0;
+    color: #013440;
+    font-size: 36px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    padding-bottom: 0.35rem;
+    text-align: center;
+}
+
+p {
+
+    color: #013440;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    margin-top: -0.5rem;
+
+}
+
+
+
+.orange-button1{
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    background-color: #FFCCB0;
+    color: #013440;
+    border: 0.25rem solid #FFCCB0;
+    padding-left: 2.75rem;
+    padding-right: 2.75rem;
+    padding-top: 0.45rem;
+    padding-bottom:0.45rem;
+    border-radius: 2rem;
+    text-align: center;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+
+}
+
+.orange-button2{
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    background-color: #FFCCB0;
+    color: #013440;
+    border: 0.25rem solid #FFCCB0;
+    padding-left: 3.2rem;
+    padding-right: 3.2rem;
+    padding-top: 0.45rem;
+    padding-bottom:0.45rem;
+    border-radius: 2rem;
+    text-align: center;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+
+}
+
+.orange-button3{
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    background-color: #FFCCB0;
+    color: #013440;
+    border: 0.25rem solid #FFCCB0;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0.45rem;
+    padding-bottom:0.45rem;
+    border-radius: 2rem;
+    text-align: center;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+
+}
+.orange-button1:hover, .orange-button2:hover, .orange-button3:hover{
+    background-color: #ffd6c0;
+    border-color: #ffd6c0;
+}
+
+
+
+@media only screen and (max-width: 600px)
+{
+    h1 {
+        margin:0;
+        color: #013440;
+        font-size: 24px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        padding-bottom: 0.35rem;
+        text-align: center;
+    }
+
+    .parent{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #F8F8F8;
+        width: 70%;
+        box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+        padding: 2rem;
+        padding-bottom: 3.5rem;
+        border-radius: 50px;
+    }
+
+    #logo{
+        margin-top:2.75rem;
+        margin-bottom:2.75rem;
+        margin-left:0rem;
+        margin-right:0rem;
+        padding-bottom: 1.5rem;
+        width: 12.5rem;
+        height:1.3125rem;
+        align-self: center;
+    
+    }
+
+    #logo-pos{
+        align-self: center;
+    }
+    body {
+        background-image: url("/imgs/ocean_background_blur.png");
+        background-repeat: no-repeat;
+        background-color: #c0e1e0;
+        background-position: 50%;
+        background-position-x: center;
+        background-size: 325%;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background-position: bottom 0px right 50%;
+      }
+    
+      #copyright{  
+        color: #F8F8F8;
+        font-size: 12px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        margin-top: auto;
+        padding-top: 1rem;
+        padding-bottom: 9rem;
+        align-self: center;
+        margin-right:0rem;
+    }
+}

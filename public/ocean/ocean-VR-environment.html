@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Project Endangered</title>
+    <meta name="description" content="Project Endagered WebVR">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" viewport-fit=cover>
+
+
+    <!--External Components-->
+
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="https://unpkg.com/aframe-physics-extras@0.1.2/dist/aframe-physics-extras.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.2.0/dist/aframe-environment-component.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/ocean-stylesheet.css">
+    <link rel="stylesheet" href="/css/ocean_loading_animation.css">
+
+    <script src="js/startExperience.js"></script>
+
+
+    <div id="user-gesture-overlay">
+        <div class= "center">
+            <img id="loading-animation" src="/imgs/turtle_loading.gif">
+        </div>
+    
+    
+        <div id="continue-container">
+            <div class ="continue-parent">
+                <div class="continue-child"><img id="continue-bear" src="imgs/ocean_turtlehead.png"></div>
+                <div class="continue-child continue-text">The ocean coast is ready for you to explore!</div>
+                <div class="continue-child"><button id="user-gesture-button" onclick="startExperience();">BEGIN</button></div>
+            </div>
+        </div>
+    </div>
+    
+    
+
+
+
+</head>
+<body>
+    <a-scene start-experience renderer="gammaOutput: true;" shadow="type: pcfsoft" vr-mode-ui="enabled: true" id="scene" shadow="autoUpdate: false">
+
+        <a-assets timeout = "10000">
+        
+            <!--Envrionment Assets-->
+            <a-asset-item id="environment-obj" crossorigin="anonymous" src="/assets/ocean_environment.glb"></a-asset-item> 
+            <a-asset-item id="babyTurtle-obj" crossorigin="anonymous" src="/assets/baby_turtle.glb"></a-asset-item> 
+            <a-asset-item id="eggs-obj" crossorigin="anonymous" src="/assets/eggs.glb"></a-asset-item> 
+            <a-asset-item id="net-obj" crossorigin="anonymous" src="/assets/net.glb"></a-asset-item>
+            <a-asset-item id="turtle-obj" crossorigin="anonymous" src="/assets/turtle.glb"></a-asset-item>
+            <a-asset-item id="nav-mesh-obj" crossorigin="anonymous" src="/assets/nav-mesh/nav_mesh.gltf"></a-asset-item>
+
+
+            <audio id="water_sound" src="/assets/audio/water.mp3" preload="auto"></audio>
+            <audio id="bird_sound" src="/assets/audio/seagull.mp3" preload="auto"></audio>
+            <audio id="music_sound" src="/assets/audio/music.mp3" preload="auto"></audio>
+            
+
+            <audio id="apartment_sound" src="/assets/audio/apartment.mp3" preload="auto"></audio>
+            <audio id="boardwalk_sound" src="/assets/audio/boardwalk.mp3" preload="auto"></audio>
+            <audio id="tourism_sound" src="/assets/audio/tourism.mp3" preload="auto"></audio>
+            <audio id="click_sound" src="/assets/audio/click.mp3" preload="auto"></audio>
+            <audio id="pickup_sound" src="/assets/audio/pickup.mp3" preload="auto"></audio>
+
+
+        </a-assets>
+
+            <!--Ambient Sounds-->
+    
+        <a-entity class="ambient-music" id ="music" sound="src:#music_sound; autoplay:false; loop:true; volume:8;" position="0 10 -6.490"></a-entity>
+        <a-entity class="ambient-music" id ="bird" sound="src:#bird_sound; autoplay:false; loop:true; volume:8;" position="0 10 -6.490"></a-entity>
+        <a-entity class="ambient-music" id ="water" sound="src:#water_sound; autoplay:false; loop:true; volume:8;" position="0 10 -6.490"></a-entity>
+
+
+    <!--Lighting-->
+
+    <a-entity light="type: ambient; color: #c7f0cf; intensity: 0.7"></a-entity>
+    <a-entity id="light_spot" light="type: point; color: #ffffff; intensity: 0.35; castShadow: true; shadowRadius: 2.52; shadowCameraFov: 92.68" position="3.07992 46.834 -24.65419">
+    </a-entity>
+
+    <!--Player Controls-->
+    <a-entity id="player" movement-controls="speed:0.2; constrainToNavMesh: true;" position="-0.89 1.3 0.94">
+        <a-entity
+            id = "player2"
+            camera="fov:70"
+            wasd-controls='acceleration: 10'
+            look-controls>
+            <a-entity
+                id = "player-details"
+                collision-filter="group: mouse"
+                cursor="rayOrigin:mouse;"
+                raycaster="far:10; interval:200; objects:.interactive"
+            ></a-entity> 
+        </a-entity>
+    </a-entity>
+
+
+    <a-entity>
+        <a-entity
+            id ="nav_mesh"
+            scale='1 1 1'
+            position="0 1.3 -6.976"
+            rotation="0 0 0"
+            gltf-model='#nav-mesh-obj'
+            nav-mesh
+            visible='false'
+        ></a-entity>
+    </a-entity>
+
+
+
+        <!--Environment Models-->
+    <a-entity
+            id ="environment"
+            environment="preset: default; groundColor: #445; grid:none; ground:none; lighting:none; skyType:gradient; skyColor:#a3f9ff; horizonColor:#d8fdfc; fog:0">
+        </a-entity>
+
+        <a-entity
+            id="environment_model"
+            position="0 0.009 -6.976"
+            rotation="0 0 0"
+            scale= " 1 1 1"
+            gltf-model="#environment-obj"
+            shadow="cast:true; receive:true;">
+        </a-entity>
+
+
+        <a-entity
+            id="babyTurtle"
+            class="interactive"
+            position="-6.489 -0.372 -1.765"
+            rotation="0 0 0"
+            scale= " 1 1 1"
+            gltf-model="#babyTurtle-obj"
+            shadow="cast:true; receive:false;">
+        </a-entity>
+
+        <a-entity
+            id="eggs"
+            class="interactive"
+            position="-6.427 -0.115 -4.001"
+            rotation="0 0 0"
+            scale= " 1 1 1"
+            gltf-model="#eggs-obj"
+            shadow="cast:true; receive:false;">
+        </a-entity>
+
+    
+        <a-entity
+            id="turtle1"
+            class="interactive"
+            position="-2.930 -0.222 -3.299"
+            rotation="6.550 -42.850 -5.260"
+            scale= " 1 1 1"
+            gltf-model="#turtle-obj"
+            shadow="cast:true; receive:false;">
+        </a-entity>
+
+        <a-entity
+            id="turtle2"
+            class="interactive"
+            position="3.892 -0.443 1.226"
+            rotation="8.290 17.610 -0.790"
+            scale= " 1 1 1"
+            gltf-model="#turtle-obj"
+            shadow="cast:true; receive:false;">
+    </a-entity>
+
+        <a-entity
+            id="turtle3"
+            class="interactive"
+            position="0.984 -0.027 -3.361"
+            rotation="5.310 72.370 7.210"
+            scale= " 0.7 0.7 0.7 "
+            gltf-model="#turtle-obj"
+            shadow="cast:true; receive:false;">
+    </a-entity>
+
+        <a-ocean
+            id="river"
+            class="interactive"
+            position="-1.25958 -0.91937 -4.80379"
+            scale="5.72 51.6 11.81"
+            color="#2f8e8c"
+            ocean="opacity: 1; speed:1.3; depth: 1.1; amplitude: 0; amplitudeVariance: 0.005">
+        </a-ocean>
+
+
+
+        
+    </a-scene>
+</body>
+</html>

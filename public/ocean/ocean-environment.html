@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Project Endangered</title>
+    <meta name="description" content="Project Endagered WebVR">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" viewport-fit=cover>
+
+
+    <!--External Components-->
+
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="https://unpkg.com/aframe-physics-extras@0.1.2/dist/aframe-physics-extras.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.2.0/dist/aframe-environment-component.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/ocean-stylesheet.css">
+    <link rel="stylesheet" href="/css/ocean_loading_animation.css">
+
+    <script src="js/controlPanel.js"></script>
+    <script src="js/pickup.js"></script>
+    <script src="js/netTask.js"></script>
+    <script src="js/userInterface.js"></script>
+    <script src="js/factTask.js"></script>
+    <script src="js/startExperience.js"></script>
+
+
+    <script> 
+        function load_page(){
+    
+            deviceChoice = 0;
+            deviceChoice= (localStorage.getItem("device"));
+            console.log(deviceChoice);
+    
+    
+            qr=new XMLHttpRequest();
+    
+            if (deviceChoice == 1){
+                qr.open('get','ocean-UI-desktop.html');
+            } else if(deviceChoice == 2){
+                qr.open('get','ocean-UI-mobile.html');
+            }
+            qr.send();
+            qr.onload=function(){includedContent.innerHTML=qr.responseText}
+            };load_page();
+    
+        </script> 
+
+
+
+</head>
+<body>
+    <div id="includedContent"></div>
+    <a-scene start-experience renderer="gammaOutput: true;" shadow="type: pcfsoft" vr-mode-ui="enabled: false" id="scene" shadow="autoUpdate: false" physics="restitution: 0; debug:false; shadow=autoUpdate: false">
+
+        <a-assets timeout = "10000">
+        
+            <!--Envrionment Assets-->
+            <a-asset-item id="environment-obj" crossorigin="anonymous" src="/assets/ocean_environment.glb"></a-asset-item> 
+            <a-asset-item id="umbrella-obj" crossorigin="anonymous" src="/assets/umbrella.glb"></a-asset-item> 
+            <a-asset-item id="apartment-obj" crossorigin="anonymous" src="/assets/apartment.glb"></a-asset-item> 
+            <a-asset-item id="babyTurtle-obj" crossorigin="anonymous" src="/assets/baby_turtle.glb"></a-asset-item> 
+            <a-asset-item id="eggs-obj" crossorigin="anonymous" src="/assets/eggs.glb"></a-asset-item> 
+            <a-asset-item id="boardwalk-obj" crossorigin="anonymous" src="/assets/boardwalk.glb"></a-asset-item> 
+            <a-asset-item id="turtleNet-obj" crossorigin="anonymous" src="/assets/turtle_net.glb"></a-asset-item> 
+            <a-asset-item id="net-obj" crossorigin="anonymous" src="/assets/net.glb"></a-asset-item>
+            <a-asset-item id="turtle-obj" crossorigin="anonymous" src="/assets/turtle.glb"></a-asset-item>
+            <a-asset-item id="sign-obj" crossorigin="anonymous" src="/assets/sign.glb"></a-asset-item>
+            <a-asset-item id="tourism-obj" crossorigin="anonymous" src="/assets/tourism.glb"></a-asset-item>
+            <a-asset-item id="controlPanel-obj" crossorigin="anonymous" src="/assets/control-panel.glb"></a-asset-item>
+            <a-asset-item id="tooltip-obj" crossorigin="anonymous" src="/assets/tooltip.glb"></a-asset-item>
+            <a-asset-item id="nav-mesh-obj" crossorigin="anonymous" src="/assets/nav-mesh/nav_mesh.gltf"></a-asset-item>
+
+            <audio id="water_sound" src="/assets/audio/water.mp3" preload="auto"></audio>
+            <audio id="bird_sound" src="/assets/audio/seagull.mp3" preload="auto"></audio>
+            <audio id="music_sound" src="/assets/audio/music.mp3" preload="auto"></audio>
+            
+
+            <audio id="apartment_sound" src="/assets/audio/apartment.mp3" preload="auto"></audio>
+            <audio id="boardwalk_sound" src="/assets/audio/boardwalk.mp3" preload="auto"></audio>
+            <audio id="tourism_sound" src="/assets/audio/tourism.mp3" preload="auto"></audio>
+            <audio id="click_sound" src="/assets/audio/click.mp3" preload="auto"></audio>
+            <audio id="pickup_sound" src="/assets/audio/pickup.mp3" preload="auto"></audio>
+
+
+        </a-assets>
+
+            <!--Ambient Sounds-->
+    
+        <a-entity class="ambient-music" id ="music" sound="src:#music_sound; autoplay:false; loop:true; volume:8;" position="0 10 -6.490"></a-entity>
+        <a-entity class="ambient-music" id ="bird" sound="src:#bird_sound; autoplay:false; loop:true; volume:8;" position="0 10 -6.490"></a-entity>
+        <a-entity class="ambient-music" id ="water" sound="src:#water_sound; autoplay:false; loop:true; volume:8;" position="0 10 -6.490"></a-entity>
+
+
+    <!--Lighting-->
+
+    <a-entity light="type: ambient; color: #c7f0cf; intensity: 0.7"></a-entity>
+    <a-entity id="light_spot" light="type: point; color: #ffffff; intensity: 0.35; castShadow: true; shadowRadius: 2.52; shadowCameraFov: 92.68" position="3.07992 46.834 -24.65419">
+    </a-entity>
+
+    <!--Player Controls-->
+    <a-entity id="player" movement-controls="speed:0.2; constrainToNavMesh: true;" position="-0.89 1.3 0.94">
+        <a-entity
+            id = "player2"
+            camera="fov:70"
+            wasd-controls='acceleration: 10'
+            look-controls>
+            <a-entity
+                id = "player-details"
+                collision-filter="group: mouse"
+                cursor="rayOrigin:mouse;"
+                raycaster="far:10; interval:200; objects:.interactive"
+            ></a-entity> 
+        </a-entity>
+    </a-entity>
+
+
+    <a-entity>
+        <a-entity
+            id ="nav_mesh"
+            scale='1 1 1'
+            position="0 1.3 -6.976"
+            rotation="0 0 0"
+            gltf-model='#nav-mesh-obj'
+            nav-mesh
+            visible='false'
+        ></a-entity>
+    </a-entity>
+
+
+    <a-entity user-interface></a-entity>
+
+
+
+
+        <!--Environment Models-->
+    <a-entity
+            id ="environment"
+            environment="preset: default; groundColor: #445; grid:none; ground:none; lighting:none; skyType:gradient; skyColor:#a3f9ff; horizonColor:#d8fdfc; fog:0">
+        </a-entity>
+
+        <a-entity
+            id="environment_model"
+            position="0 0.009 -6.976"
+            rotation="0 0 0"
+            scale= " 1 1 1"
+            gltf-model="#environment-obj"
+            shadow="cast:true; receive:true;">
+        </a-entity>
+
+
+        
+
+        <a-entity id="panel" position="-1.006 0.603 -6.302" rotation="-30.000 0 0" scale="">
+            <a-entity text="value: See the effects of habitat loss by clicking the buttons on the control panel; align: center; color: #013440; lineHeight: 62.04; font: /assets/fonts/Poppins-SemiBold-msdf.json; negate: false; width: 1.87; baseline: top; wrapCount: 35.56" position="-0.00251 0.37443 -0.03452"></a-entity>
+            <a-entity text="value: Human Settlements; align: center; color: #013440; lineHeight: 55; font: /assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.61; wrapCount: 13.82" position="-0.59701 -0.01668 -0.03388"></a-entity>
+            <a-entity text="value: Coastal Developments; align: center; color: #013440; lineHeight: 55; font: /assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.61; baseline: top; wrapCount: 13.82" position="0.037 0.04464 -0.03149"></a-entity>
+            <a-entity text="value: Tourism Industry; align: center; color: #013440; lineHeight: 55; font: /assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.61; wrapCount: 13.82" position="0.65039 -0.00785 -0.0308"></a-entity>
+            
+            <a-entity id="box" position="0 -0.863 0.36" rotation="-30.25 0 0" scale="1.25 1.25 1.25" gltf-model="#controlPanel-obj" visible="" shadow="receive: false">
+            </a-entity>
+            <a-entity
+                id="button1" 
+                class="interactive"
+                position="-0.59 -0.358 0.010"
+                rotation="-90 0 0"
+                geometry="primitive: cylinder; radius: 0.12; height: 0.1"
+                material="color: #fd5a4e"
+                animation__click="property: position; from: -0.59 -0.358 -0.044; to: -0.59 -0.358 0.010;
+                startEvents: click; dur: 100">
+            </a-entity>    
+    
+            <a-entity
+                id="button2"
+                class="interactive"
+                position="0.023 -0.358 0.010"
+                rotation="-90 0 0"
+                geometry="primitive: cylinder; radius: 0.12; height: 0.1"
+                material="color: #fd5a4e"
+                animation__click="property: position; from: 0.023 -0.358 -0.044; to: 0.023 -0.358 0.010; startEvents: click; dur: 100">
+            </a-entity>
+    
+            <a-entity
+                id="button3"
+                class="interactive"
+                position="0.643 -0.358 0.010" 
+                rotation="-90 0 0"
+                geometry="primitive: cylinder; radius: 0.12; height: 0.1"
+                material="color: #fd5a4e"
+                animation__click="property: position; from:0.643 -0.358 -0.044; to: 0.643 -0.358 0.010; startEvents: click; dur: 100">
+            </a-entity> 
+        </a-entity>
+
+        <a-entity
+            id="boardwalk"
+            class="interactive"
+            position="0 0.009 -6.976"
+            rotation="0 0 0"
+            scale= " 1 1 1"
+            gltf-model="#boardwalk-obj"
+            shadow="cast:true; receive:false;"
+            visible='false'>
+     </a-entity>
+
+
+        <a-entity
+            control-panel
+            id="umbrella"
+            position="0 0.009 -6.976"
+            rotation="0 0 0"
+            scale= " 1 1 1"
+            gltf-model="#umbrella-obj"
+            shadow="cast:true; receive:false;"
+            visible='false'>
+        </a-entity>
+        
+        <a-entity
+            id="ferris_wheel"
+            position="0 0.009 -6.976"
+            rotation="0 0 0"
+            scale= " 1 1 1"
+            gltf-model="#tourism-obj"
+            shadow="cast:true; receive:false;"
+            visible='false'>
+        </a-entity>
+
+
+        <a-entity
+            id="sign1"
+            position="-2.474 0.009 -6.185"
+            rotation="0 0 0"
+            scale= " 1 1 1"
+            gltf-model="#sign-obj"
+            shadow="cast:true; receive:false;">
+        </a-entity>
+
+
+        <a-entity
+            id="sign2"
+            position="6.892 0.244 0.995"
+            rotation="0 0 0"
+            scale= " 1 1 1"
+            gltf-model="#sign-obj"
+            shadow="cast:true; receive:false;">
+        </a-entity>
+
+        <a-entity
+            id="apartment"
+            position="0 0.009 -6.976"
+            rotation="0 0 0"
+            scale= " 1 1 1"
+            gltf-model="#apartment-obj"
+            shadow="cast:true; receive:false;"
+            visible='false'>
+        </a-entity>
+
+
+      <a-entity
+            pickup
+            net-task
+            id="net"
+            body="type: dynamic; mass: 5; shape: none;"
+            shape__box="shape: box;
+                            halfExtents: 0.9 0.1 0.7;
+                            offset: 0 0.2 0;"
+            class="interactive"
+            position="8.288 0.2 4.825"
+            rotation="0 180 0"
+            scale= " 0.8 0.8 0.8"
+            gltf-model="#net-obj"
+            shadow="cast:true; receive:false;"
+            animation__mouseenter="property:scale; to: 0.9 0.9 0.9; startEvents:mouseenter; dur:200"
+            animation__mouseleave="property:scale; to: 0.8 0.8 0.8; startEvents:mouseleave; dur:200">
+     </a-entity>
+
+
+        <a-entity
+            fact-task
+            id="babyTurtle"
+            class="interactive"
+            position="-6.489 -0.372 -1.765"
+            rotation="0 0 0"
+            scale= " 1 1 1"
+            gltf-model="#babyTurtle-obj"
+            shadow="cast:true; receive:false;"
+            animation__mouseenter="property:scale; to: 1.05 1.05 1.05; startEvents:mouseenter; dur:200"
+            animation__mouseleave="property:scale; to: 1 1 1; startEvents:mouseleave; dur:200">
+        </a-entity>
+
+        <a-entity
+            id="eggs"
+            class="interactive"
+            position="-6.427 -0.115 -4.001"
+            rotation="0 0 0"
+            scale= " 1 1 1"
+            gltf-model="#eggs-obj"
+            shadow="cast:true; receive:false;"
+            animation__mouseenter="property:scale; to: 1.5 1.5 1.5; startEvents:mouseenter; dur:200"
+            animation__mouseleave="property:scale; to: 1 1 1; startEvents:mouseleave; dur:200">
+        </a-entity>
+
+    
+        <a-entity
+            id="turtle1"
+            class="interactive"
+            position="-2.930 -0.222 -3.299"
+            rotation="6.550 -42.850 -5.260"
+            scale= " 1 1 1"
+            gltf-model="#turtle-obj"
+            shadow="cast:true; receive:false;"
+            animation__mouseenter="property:scale; to: 1.1 1.1 1.1; startEvents:mouseenter; dur:200"
+            animation__mouseleave="property:scale; to: 1 1 1; startEvents:mouseleave; dur:200">
+        </a-entity>
+
+        <a-entity
+            id="turtle2"
+            class="interactive"
+            position="3.892 -0.443 1.226"
+            rotation="8.290 17.610 -0.790"
+            scale= " 1 1 1"
+            gltf-model="#turtle-obj"
+            shadow="cast:true; receive:false;"
+            animation__mouseenter="property:scale; to: 1.1 1.1 1.1; startEvents:mouseenter; dur:200"
+            animation__mouseleave="property:scale; to: 1 1 1; startEvents:mouseleave; dur:200">
+    </a-entity>
+
+        <a-entity
+            id="turtle3"
+            class="interactive"
+            position="0.984 -0.027 -3.361"
+            rotation="5.310 72.370 7.210"
+            scale= " 0.7 0.7 0.7 "
+            gltf-model="#turtle-obj"
+            shadow="cast:true; receive:false;"
+            animation__mouseenter="property:scale; to: 0.8 0.8 0.8; startEvents:mouseenter; dur:200"
+            animation__mouseleave="property:scale; to: 0.7 0.7 0.7; startEvents:mouseleave; dur:200">
+    </a-entity>
+
+
+
+        <a-entity id="tooltip1" position="8.588 1.048 4.800" rotation="0 -90 0" scale="0.7 0.7 0.7" shadow="cast:true; receive:false;">
+
+            <a-entity id="tooltup-text1" text="value: Click me to pickup; align: center; color: #001d24; lineHeight: 54.49; font: /assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.42; baseline: top; wrapCount: 7.41; side: double" rotation="" position="-0.00023 0.19395 0.02442">
+            </a-entity>
+    
+            <a-entity id="tooltip-box1" position="0 -0.63939 0" rotation="" scale="0.5 0.5 0.5" gltf-model="/assets/tooltip.glb">
+            </a-entity>
+    </a-entity>
+
+        <a-entity id="tooltip2" position="0.94747 0.65372 -3.340" rotation="0 -17.91 0" scale="0.7 0.7 0.7" shadow="receive: false">
+
+            <a-entity id="tooltup-text2" text="value: Click me to learn a fact; align: center; color: #001d24; lineHeight: 54.49; font: /assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.42; baseline: top; wrapCount: 7.41; side: double" rotation="" position="-0.00023 0.19395 0.02442">
+            </a-entity>
+
+            <a-entity id="tooltip-box2" position="0 -0.63939 0" rotation="" scale="0.5 0.5 0.5" gltf-model="/assets/tooltip.glb">
+            </a-entity>
+    </a-entity>
+
+    <a-entity id="tooltip3" position="-6.46927 0.395 -4.03919" rotation="0 32.25 0" scale="0.7 0.7 0.7" shadow="receive: false">
+
+        <a-entity id="tooltup-text3" text="value: Click me to learn a fact; align: center; color: #001d24; lineHeight: 54.49; font: /assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.42; baseline: top; wrapCount: 7.41; side: double" rotation="" position="-0.00023 0.19395 0.02442">
+        </a-entity>
+
+        <a-entity id="tooltip-box3" position="0 -0.63939 0" rotation="" scale="0.5 0.5 0.5" gltf-model="/assets/tooltip.glb">
+        </a-entity>
+    </a-entity>
+
+
+    <a-entity id="tooltip4" position="10.058 1.048 4.800" rotation="0 -90 0" scale="0.7 0.7 0.7" shadow="cast:true; receive:false;" visible='false'>
+
+        <a-entity id="tooltup-text4" text="value: Click the water to fish; align: center; color: #001d24; lineHeight: 54.49; font: /assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.42; baseline: top; wrapCount: 7.41; side: double" rotation="" position="-0.00023 0.19395 0.02442">
+        </a-entity>
+
+        <a-entity id="tooltip-box4" position="0 -0.63939 0" rotation="" scale="0.5 0.5 0.5" gltf-model="/assets/tooltip.glb">
+        </a-entity>
+    </a-entity>
+
+    
+
+        <a-ocean
+            id="river"
+            class="interactive"
+            position="-1.25958 -0.91937 -4.80379"
+            scale="5.72 51.6 11.81"
+            color="#2f8e8c"
+            ocean="opacity: 1; speed:1.3; depth: 1.1; amplitude: 0; amplitudeVariance: 0.005">
+        </a-ocean>
+
+
+        <a-plane
+        id="plane"
+        static-body
+        position="0 0.196 -9.035"
+        rotation="-90 0 0"
+        scale="1.5 1.5 1.5"
+        width="19"
+        height="22"
+        color="#2f8e8c"
+        visible="false"> 
+    </a-plane>
+
+
+        
+    </a-scene>
+</body>
+</html>
