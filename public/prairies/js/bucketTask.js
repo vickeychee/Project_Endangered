@@ -257,6 +257,10 @@ AFRAME.registerComponent('bucket-task',{
     cropTooltip = document.querySelector('#tooltip4');
     gunTooltip = document.querySelector('#tooltip2');
 
+    bucketDesktopSound = document.querySelector('#bucket_desktop');
+    bucketMobileSound = document.querySelector('#bucket_mobile');
+    bucketEndSound = document.querySelector('#bucket_end');
+
 
     waterCounter = 0;
 
@@ -319,15 +323,20 @@ AFRAME.registerComponent('bucket-task',{
                }
      
                if (waterCounter > 4){
-
-                                
+                
                    Screen_Overlay_ID.style.display = "block";
                    infoUI.style.display = "flex";
                    clickSound.play();
+
+                   if(voiceToggle.checked == true){
+
+                    bucketEndSound.currentTime = 0;
+                    bucketEndSound.play();
+        
+                }
+
                }
-               
-     
-                 
+                     
              }
         }
     
@@ -388,6 +397,23 @@ AFRAME.registerComponent('bucket-task',{
                 document.getElementById("Voice_Popup_ID").style.display="none";
                 bucketPopup.style.display = "flex";
                 Screen_Overlay_ID.style.display = "block";
+
+                if(voiceToggle.checked == true){
+
+                  if(deviceChoice == 1){
+  
+                      bucketDesktopSound.currentTime = 0;
+                      bucketDesktopSound.play();
+  
+                  }else if(deviceChoice == 2){
+  
+                      bucketMobileSound.currentTime = 0;
+                      bucketMobileSound.play();
+  
+                  }
+  
+                }
+
                 waterCounter = 0;
                 subs_completed = 0;
                 $('.number').html(subs_completed + '/' + total_subs)

@@ -76,7 +76,15 @@ AFRAME.registerComponent('user-interface',{
 
             if(voiceToggle.checked == true){
 
-                helpTextSound.pause();
+                if(deviceChoice == 1){
+
+                    helpDesktopTextSound.pause();
+
+                }else if(deviceChoice == 2){
+
+
+                    helpMobileTextSound.pause();
+                }
     
             }
 
@@ -110,7 +118,6 @@ AFRAME.registerComponent('user-interface',{
             
             if(voiceToggle.checked == true){
 
-                settingTextSound.currentTime = 0;
                 settingTextSound.pause();
     
             }

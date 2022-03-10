@@ -9,6 +9,8 @@ AFRAME.registerComponent('gun-task',{
 
 
 
+
+
         target.addEventListener('click', ()=>{
 
             if (objectSelectedID === "gun"){
@@ -25,6 +27,13 @@ AFRAME.registerComponent('gun-task',{
           
                 clickSound.play();
                 gunSound.play();
+
+                if(voiceToggle.checked == true){
+
+                    gunFactSound.currentTime = 0;
+                    gunFactSound.play();
+        
+                }
             }
         
 
