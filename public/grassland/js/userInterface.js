@@ -188,8 +188,8 @@ AFRAME.registerComponent('user-interface',{
 
         }else{
 
-            windSound.setAttribute('sound', 'volume', 6)
-            birdSound.setAttribute('sound', 'volume', 2)
+            windSound.setAttribute('sound', 'volume', 2)
+            birdSound.setAttribute('sound', 'volume', 0.1)
 
             carSound.volume = 1;
             apartmentSound.volume = 1;
