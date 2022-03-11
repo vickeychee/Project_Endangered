@@ -18,6 +18,10 @@ AFRAME.registerComponent('control-panel',{
         button2Counter = 0;
         button3Counter = 0;
 
+        coastalSound = document.querySelector('#panel_coastal');
+        settlementSound = document.querySelector('#panel_settlement');
+        tourismTextSound = document.querySelector('#panel_tourism');
+
 
         button1.addEventListener('click', ()=>{
             
@@ -37,6 +41,13 @@ AFRAME.registerComponent('control-panel',{
             
                 infoUI.style.display = "flex";
                 Screen_Overlay_ID.style.display = "block";
+
+                if(voiceToggle.checked == true){
+
+                    settlementSound.currentTime = 0;
+                    settlementSound.play();
+        
+                }
             }
 
             else if (button1Counter === 2){
@@ -66,6 +77,14 @@ AFRAME.registerComponent('control-panel',{
             
                 infoUI.style.display = "flex";
                 Screen_Overlay_ID.style.display = "block";
+
+                
+                if(voiceToggle.checked == true){
+
+                    coastalSound.currentTime = 0;
+                    coastalSound.play();
+        
+                }
             }
 
             else if (button2Counter === 2){
@@ -99,6 +118,14 @@ AFRAME.registerComponent('control-panel',{
             
                 infoUI.style.display = "flex";
                 Screen_Overlay_ID.style.display = "block";
+
+                
+                if(voiceToggle.checked == true){
+
+                    tourismTextSound.currentTime = 0;
+                    tourismTextSound.play();
+        
+                }
                 
             }
 

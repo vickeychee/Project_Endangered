@@ -27,6 +27,7 @@ AFRAME.registerComponent('user-interface',{
 
        musicToggle =  document.getElementById('Music-Toggle');
        soundToggle = document.getElementById('Sound-Toggle');
+       voiceToggle =document.getElementById('Voice-Toggle');
 
        musicSound = document.querySelector('#music');
        waterSound = document.querySelector('#water');
@@ -38,6 +39,12 @@ AFRAME.registerComponent('user-interface',{
        clickSound = document.querySelector('#click_sound');
        pickupSound = document.querySelector('#pickup_sound');
 
+       
+       helpDesktopTextSound = document.querySelector('#menu_instruction_desktop');
+       helpMobileTextSound = document.querySelector('#menu_instruction_mobile');
+       settingTextSound = document.querySelector('#menu_settings');
+       
+
 
 
 
@@ -47,6 +54,23 @@ AFRAME.registerComponent('user-interface',{
             Help_Popup_ID.style.display = "flex"
             clickSound.play();
 
+
+            if(voiceToggle.checked == true){
+
+                if(deviceChoice == 1){
+
+                    helpDesktopTextSound.currentTime = 0;
+                    helpDesktopTextSound.play();
+
+                }else if(deviceChoice == 2){
+
+                    helpMobileTextSound.currentTime = 0;
+                    helpMobileTextSound.play();
+
+                }
+
+            }
+
         
         });
 
@@ -55,6 +79,20 @@ AFRAME.registerComponent('user-interface',{
             Screen_Overlay_ID.style.display = "none";
             Help_Popup_ID.style.display = "none";
             clickSound.play();
+
+            if(voiceToggle.checked == true){
+
+                if(deviceChoice == 1){
+
+                    helpDesktopTextSound.pause();
+
+                }else if(deviceChoice == 2){
+
+
+                    helpMobileTextSound.pause();
+                }
+    
+            }
 
             
         });
@@ -66,6 +104,13 @@ AFRAME.registerComponent('user-interface',{
             Settings_Popup_ID.style.display = "flex";
             clickSound.play();
 
+            if(voiceToggle.checked == true){
+
+                settingTextSound.currentTime = 0;
+                settingTextSound.play();
+    
+            }
+
 
         });
 
@@ -76,6 +121,13 @@ AFRAME.registerComponent('user-interface',{
             Settings_Popup_ID.style.display = "none";
             clickSound.play();
 
+                        
+            if(voiceToggle.checked == true){
+
+                settingTextSound.pause();
+    
+            }
+
             
         });
 
@@ -84,6 +136,16 @@ AFRAME.registerComponent('user-interface',{
             Screen_Overlay_ID.style.display = "none";
             infoUI.style.display = "none";
             clickSound.play();
+
+
+            if(voiceToggle.checked == true){
+
+                coastalSound.pause();
+                settlementSound.pause();
+                tourismTextSound.pause();
+    
+            }
+
     
             
         });
@@ -148,6 +210,46 @@ AFRAME.registerComponent('user-interface',{
             tourismSound.volume = 1;
             clickSound.volume = 1;
             pickupSound.volume = 1;
+
+        }
+
+
+        if(voiceToggle.checked == false){
+
+
+            helpDesktopTextSound.volume = 0;
+            helpMobileTextSound.volume = 0;
+            settingTextSound.volume = 0;
+
+            babySound.volume = 0;
+            bigSound.volume = 0;
+            eggSound.volume = 0;
+            greenSound.volume = 0;
+            homeSound.volume = 0;
+            harvestSound.volume = 0;
+
+            coastalSound.volume = 0;
+            settlementSound.volume = 0;
+            tourismTextSound.volume = 0;
+            
+
+        }else{
+
+            helpDesktopTextSound.volume = 0.4;
+            helpMobileTextSound.volume = 0.4;
+            settingTextSound.volume = 0.4;
+
+            babySound.volume = 0.4;
+            bigSound.volume = 0.4;
+            eggSound.volume = 0.4;
+            greenSound.volume = 0.4;
+            homeSound.volume = 0.4;
+            harvestSound.volume = 0.4;
+
+            coastalSound.volume = 0.4;
+            settlementSound.volume = 0.4;
+            tourismTextSound.volume = 0.4;
+    
 
         }
 
