@@ -278,6 +278,10 @@ AFRAME.registerComponent('control-panel',{
     threatSound = document.querySelector('#fact_threat');
     marineSound = document.querySelector('#fact_marine');
 
+    pastSound = document.querySelector('#past_voice');
+    presentSound = document.querySelector('#present_voice');
+    futureSound = document.querySelector('#future_voice');
+
 
 
     past = false;
@@ -397,6 +401,13 @@ AFRAME.registerComponent('control-panel',{
         infoText.innerHTML ="In the past, the Arctic environment was thriving, with a large number of polar bears and Arctic seals living there. Because of the large number of seals, polar bears were able to easily get their food, making them strong and healthy!";
         infoButton.innerHTML ="EXPLORE";
 
+        if(voiceToggle.checked == true){
+
+            pastSound.currentTime = 0;
+            pastSound.play();
+
+        }
+
 
 
 
@@ -497,7 +508,12 @@ AFRAME.registerComponent('control-panel',{
         infoText.innerHTML ="The present-day Arctic environment is at risk. Climate change has caused the Arctic to heat up at twice the spead, causing the ice to melt. This makes it harder for polar bears and other animals to get food, because they rely on the ice to move around. Because of this, the Arctic has begun changing. There are less polar bears, arctic seals, and ice in the Arctic now.";
         infoButton.innerHTML ="EXPLORE";
         
+        if(voiceToggle.checked == true){
 
+            presentSound.currentTime = 0;
+            presentSound.play();
+
+        }
 
 
     
@@ -572,6 +588,14 @@ AFRAME.registerComponent('control-panel',{
         infoTitle.innerHTML ="The Future";
         infoText.innerHTML ="The future Arctic environment will be very different than it is today. If climate change continues, the ice will continue to melt and polar bears and other animals will not be able to get food. This would mean an empty, iceless land. Unless we change our ways and save the polar bear population, the polar bear will become extinct in the future.";
         infoButton.innerHTML ="EXPLORE";
+
+
+        if(voiceToggle.checked == true){
+
+            futureSound.currentTime = 0;
+            futureSound.play();
+
+        }
 
     
     });

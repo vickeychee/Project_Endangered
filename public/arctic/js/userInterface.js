@@ -111,6 +111,14 @@ AFRAME.registerComponent('user-interface',{
         Screen_Overlay_ID.style.display = "none";
         infoUI.style.display = "none";
 
+        if(voiceToggle.checked == true){
+
+            pastSound.pause();
+            presentSound.pause();
+            futureSound.pause();
+
+        }
+
         
 
         
