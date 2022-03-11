@@ -25,6 +25,7 @@ AFRAME.registerComponent('user-interface',{
 
        musicToggle =  document.getElementById('Music-Toggle');
        soundToggle = document.getElementById('Sound-Toggle');
+       voiceToggle =document.getElementById('Voice-Toggle'); 
 
        pianoSound = document.querySelector('#piano_music');
        windSound = document.querySelector('#wind_sound');
@@ -36,7 +37,7 @@ AFRAME.registerComponent('user-interface',{
        infoButton = document.getElementById('Info_Button_ID');
        infoUI = document.getElementById('Info_Popup_ID');
 
-      sealInfoButton = document.getElementById('Info_Seal_Button_ID');
+       sealInfoButton = document.getElementById('Info_Seal_Button_ID');
     
 
        factTitle = document.getElementById('Fact_Title_ID');
@@ -46,6 +47,10 @@ AFRAME.registerComponent('user-interface',{
 
        voiceUI = document.getElementById('Voice_Popup_ID');
        voiceExitButton = document.getElementById('Voice_Exit_Button_ID');
+
+       helpDesktopTextSound = document.querySelector('#menu_instruction_desktop');
+       helpMobileTextSound = document.querySelector('#menu_instruction_mobile');
+       settingTextSound = document.querySelector('#menu_settings');
 
 
 
@@ -105,6 +110,22 @@ AFRAME.registerComponent('user-interface',{
             Screen_Overlay_ID.style.display = "block";
             Help_Popup_ID.style.display = "flex";
             click.play();
+
+            if(voiceToggle.checked == true){
+
+                if(deviceChoice == 1){
+
+                    helpDesktopTextSound.currentTime = 0;
+                    helpDesktopTextSound.play();
+
+                }else if(deviceChoice == 2){
+
+                    helpMobileTextSound.currentTime = 0;
+                    helpMobileTextSound.play();
+
+                }
+
+            }
             
         });
 
@@ -113,6 +134,21 @@ AFRAME.registerComponent('user-interface',{
             Screen_Overlay_ID.style.display = "none";
             Help_Popup_ID.style.display = "none";
             click.play();
+
+            if(voiceToggle.checked == true){
+
+                if(deviceChoice == 1){
+
+                    helpDesktopTextSound.pause();
+
+                }else if(deviceChoice == 2){
+
+
+                    helpMobileTextSound.pause();
+                }
+    
+            }
+
             
         });
 
@@ -122,6 +158,13 @@ AFRAME.registerComponent('user-interface',{
             Settings_Popup_ID.style.display = "flex";
             click.play();
 
+            if(voiceToggle.checked == true){
+
+                settingTextSound.currentTime = 0;
+                settingTextSound.play();
+    
+            }
+
         });
 
         
@@ -129,6 +172,12 @@ AFRAME.registerComponent('user-interface',{
 
             Screen_Overlay_ID.style.display = "none";
             Settings_Popup_ID.style.display = "none";
+
+            if(voiceToggle.checked == true){
+
+                settingTextSound.pause();
+    
+            }
             
         });
 
@@ -160,6 +209,22 @@ AFRAME.registerComponent('user-interface',{
 
             windSound.setAttribute('sound', 'volume', 2)
             river.setAttribute('sound', 'volume', 2)
+        }
+
+
+        if(voiceToggle.checked == false){
+
+            helpDesktopTextSound.volume = 0;
+            helpMobileTextSound.volume = 0;
+            settingTextSound.volume = 0;
+            
+
+        }else{
+
+            helpDesktopTextSound.volume = 0.3;
+            helpMobileTextSound.volume = 0.3;
+            settingTextSound.volume = 0.3;
+
         }
 
 
