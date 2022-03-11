@@ -420,7 +420,8 @@ AFRAME.registerComponent('control-panel',{
         future = false;
         past = false;
         
-        title.src=".css//imgs/arctic_title_present.png";
+        title.src=".css/imgs/arctic_title_present.png";
+
         sign1.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
         sign2.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
 
