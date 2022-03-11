@@ -3,6 +3,18 @@ function checkSeals() {
     if (sealCounter == 60){
 
 
+      if(voiceToggle.checked == true){
+
+        if(deviceChoice == 1){
+
+          sealDesktopSound.pause();
+
+        }else if(deviceChoice == 2){
+
+          sealMobileSound.pause();
+        }
+
+    }
 
       playerDetails.setAttribute('raycaster', 'far', 10);
 
