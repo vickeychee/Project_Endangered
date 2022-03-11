@@ -16,6 +16,14 @@ function checkSeals() {
       factText.innerHTML = "You were able to collect all of the seals! Did you notice how easy it was to move around because of all the icebergs? This is how easy it used to be for polar bears to get food in the past.";
       sealInfoButton.innerHTML ="CONTINUE";
 
+
+      if(voiceToggle.checked == true){
+
+        round1Sound.currentTime = 0;
+        round1Sound.play();
+
+    }
+
       
       sealInfoButton.addEventListener('click', ()=>{
         checkProgressBar();
@@ -47,6 +55,13 @@ function checkSeals() {
       factText.innerHTML = "You were able to collect all of the seals again! But did you notice how it was a bit harder this time because there were less icebergs? This is how it is for polars today. It has become much more difficult for them to get food.";
       sealInfoButton.innerHTML ="CONTINUE";
 
+      if(voiceToggle.checked == true){
+
+        round2Sound.currentTime = 0;
+        round2Sound.play();
+
+    }
+
       sealInfoButton.addEventListener('click', ()=>{
         checkProgressBar();
         roundTitle.innerHTML = "Round 3";
@@ -77,6 +92,13 @@ function checkSeals() {
         factTitle.innerHTML = "Oh No!";
         factText.innerHTML = "You weren’t able to collect all of the seals this time! Did you notice how it was impossible this time because there was no icebergs? This is how hard it will be for polar bears to get food in the future. If the polar bears cannot get food, they will eventually become extinct.";
         sealInfoButton.innerHTML ="END ACTIVITY";
+
+        if(voiceToggle.checked == true){
+
+          round3Sound.currentTime = 0;
+          round3Sound.play();
+  
+      }
         
 
         sealInfoButton.addEventListener('click', ()=>{
@@ -706,6 +728,21 @@ AFRAME.registerComponent('seal-task',{
           if (begin == false && exit == false){
             sealsPopup.style.display = "flex";
             Screen_Overlay_ID.style.display = "block";
+
+            if(voiceToggle.checked == true){
+
+              if(deviceChoice == 1){
+
+                sealDesktopSound.currentTime = 0;
+                sealDesktopSound.play();
+
+              }else if(deviceChoice == 2){
+
+                sealMobileSound.currentTime = 0;
+                sealMobileSound.play();
+              }
+  
+          }
 
           }else if (begin == true && sealCounter < 60 ){
             sealsPopup.style.display = "none";

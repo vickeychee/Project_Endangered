@@ -88,6 +88,14 @@ AFRAME.registerComponent('user-interface',{
 
         Screen_Overlay_ID.style.display = "none";
         factUI.style.display = "none";
+
+        if(voiceToggle.checked == true){
+
+            round1Sound.pause();
+            round2Sound.pause();
+            round3Sound.pause();
+    
+        }
  
         });
 
@@ -98,11 +106,37 @@ AFRAME.registerComponent('user-interface',{
         exit = true;
         exitSealTask();
 
+        if(voiceToggle.checked == true){
+
+            if(deviceChoice == 1){
+
+              sealDesktopSoundSound.pause();
+
+            }else if(deviceChoice == 2){
+
+              sealMobileSoundSound.pause();
+            }
+
+        }
+
         });
 
         sealsButton.addEventListener('click', ()=>{
 
             begin = true;
+
+            if(voiceToggle.checked == true){
+
+                if(deviceChoice == 1){
+  
+                  sealDesktopSoundSound.pause();
+  
+                }else if(deviceChoice == 2){
+  
+                  sealMobileSoundSound.pause();
+                }
+    
+            }
     
         });
        
@@ -249,6 +283,12 @@ AFRAME.registerComponent('user-interface',{
             presentSound.volume = 0;
             futureSound.volume = 0;
                     
+            round1Sound.volume = 0;
+            round2Sound.volume = 0;
+            round3Sound.volume = 0;
+        
+            sealDesktopSound.volume = 0;
+            sealMobileSound.volume = 0;
 
         }else{
 
@@ -269,6 +309,13 @@ AFRAME.registerComponent('user-interface',{
             pastSound.volume = 0.3;
             presentSound.volume = 0.3;
             futureSound.volume = 0.3;
+
+            round1Sound.volume = 0.3;
+            round2Sound.volume = 0.3;
+            round3Sound.volume = 0.3;
+        
+            sealDesktopSound.volume = 0.3;
+            sealMobileSound.volume = 0.3;
 
         }
 
