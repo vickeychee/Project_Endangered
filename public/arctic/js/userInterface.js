@@ -99,7 +99,6 @@ AFRAME.registerComponent('user-interface',{
         infoUI.style.display = "none";
 
         
-        present_sound.pause();
 
         
         });

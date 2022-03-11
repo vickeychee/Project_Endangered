@@ -179,8 +179,6 @@ AFRAME.registerComponent('control-panel',{
     player = document.querySelector('#player'); 
     light = document.querySelector('#light_spot'); 
 
-    present_sound = document.querySelector('#present_sound');
-
     scene = document.querySelector('#scene'); 
     controlPanel = document.querySelector('#control_panel'); 
     circle = document.querySelector('#cylinder_red');
@@ -435,7 +433,6 @@ AFRAME.registerComponent('control-panel',{
         infoButton.innerHTML ="EXPLORE";
         
 
-        present_sound.play();
 
 
     
