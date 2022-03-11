@@ -481,8 +481,6 @@ AFRAME.registerComponent('seal-task',{
     playerDetails = document.querySelector('#player-details');
 
 
- 
-
 
   $(document).ready(function () {
   
@@ -526,6 +524,13 @@ AFRAME.registerComponent('seal-task',{
     progressCircle = document.getElementById('Progress_Circle_ID');
     resetButton = document.getElementById('Button_Arctic_Reset_ID');
     exitButton = document.getElementById('Button_Arctic_Exit_ID');
+
+    round1Sound = document.querySelector('#seal_round1');
+    round2Sound = document.querySelector('#seal_round2');
+    round3Sound = document.querySelector('#seal_round3');
+
+    sealDesktopSound = document.querySelector('#seal_instruction_desktop');
+    sealMobileSound = document.querySelector('#seal_instruction_mobile');
 
 
     sealCounter = 0;

@@ -120,8 +120,6 @@ AFRAME.registerComponent('user-interface',{
         }
 
         
-
-        
         });
 
 
