@@ -110,11 +110,11 @@ AFRAME.registerComponent('user-interface',{
 
             if(deviceChoice == 1){
 
-              sealDesktopSoundSound.pause();
+              sealDesktopSound.pause();
 
             }else if(deviceChoice == 2){
 
-              sealMobileSoundSound.pause();
+              sealMobileSound.pause();
             }
 
         }
@@ -129,11 +129,13 @@ AFRAME.registerComponent('user-interface',{
 
                 if(deviceChoice == 1){
   
-                  sealDesktopSoundSound.pause();
+                  sealDesktopSound.currentTime = 0;
+                  sealDesktopSound.play();
   
                 }else if(deviceChoice == 2){
   
-                  sealMobileSoundSound.pause();
+                  sealMobileSound.currentTime = 0;
+                  sealMobileSound.play();
                 }
     
             }
@@ -232,6 +234,8 @@ AFRAME.registerComponent('user-interface',{
             }
             
         });
+
+        
 
         setInterval(PopupTimer, 30000);
 

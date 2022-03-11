@@ -729,20 +729,6 @@ AFRAME.registerComponent('seal-task',{
             sealsPopup.style.display = "flex";
             Screen_Overlay_ID.style.display = "block";
 
-            if(voiceToggle.checked == true){
-
-              if(deviceChoice == 1){
-
-                sealDesktopSound.currentTime = 0;
-                sealDesktopSound.play();
-
-              }else if(deviceChoice == 2){
-
-                sealMobileSound.currentTime = 0;
-                sealMobileSound.play();
-              }
-  
-          }
 
           }else if (begin == true && sealCounter < 60 ){
             sealsPopup.style.display = "none";
