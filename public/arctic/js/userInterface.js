@@ -244,6 +244,10 @@ AFRAME.registerComponent('user-interface',{
             swimSound.volume = 0;
             threatSound.volume = 0;
             marineSound.volume = 0;
+
+            pastSound.volume = 0;
+            presentSound.volume = 0;
+            futureSound.volume = 0;
                     
 
         }else{
@@ -260,6 +264,11 @@ AFRAME.registerComponent('user-interface',{
             swimSound.volume = 0.3;
             threatSound.volume = 0.3;
             marineSound.volume = 0.3;
+
+            
+            pastSound.volume = 0.3;
+            presentSound.volume = 0.3;
+            futureSound.volume = 0.3;
 
         }
 
