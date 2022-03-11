@@ -85,6 +85,14 @@ function factPopup(){
             Screen_Overlay_ID.style.display = "block";
             factTitle.innerHTML = "Marine Animals";
             factText.innerHTML ="The polar bear is the only bear classified as a marine animal. This is because they spend most of their time on sea ice, and depend on the ocean for food.";
+
+            if(voiceToggle.checked == true){
+
+                marineSound.currentTime = 0;
+                marineSound.play();
+    
+            }
+
         
         } else if(past == true){
             click.play();
@@ -93,6 +101,12 @@ function factPopup(){
             factTitle.innerHTML = "Cubs";
             factText.innerHTML ="Polar bears cubs are usually born in December. When they are born, they are blind, toothless, and covered in soft white fur. Because of this, they completely depend on their mothers.";
 
+            if(voiceToggle.checked == true){
+
+                cubSound.currentTime = 0;
+                cubSound.play();
+    
+            }
         }
         
     });   
@@ -105,6 +119,13 @@ function factPopup(){
             Screen_Overlay_ID.style.display = "block";
             factTitle.innerHTML = "Really Big!";
             factText.innerHTML ="The polar bear is the largest living carnivore on land. Adult males can weight more than 800 pounds and stand over 2.5 meters long.";
+
+            if(voiceToggle.checked == true){
+
+                bigSound.currentTime = 0;
+                bigSound.play();
+    
+            }
         
         } else if(future == true){
             click.play();
@@ -113,6 +134,12 @@ function factPopup(){
             factTitle.innerHTML = "Threats";
             factText.innerHTML ="The loss of sea ice due to climate change is the biggest threat to the polar bear population. Other threats to polar bears include human violence, pollution, and industrial development.";
           
+            if(voiceToggle.checked == true){
+
+                threatSound.currentTime = 0;
+                threatSound.play();
+    
+            }
         }
     }); 
 
@@ -125,6 +152,12 @@ function factPopup(){
             factTitle.innerHTML = "Great Swimmers";
             factText.innerHTML ="Polar bears can swim non-stop for many days. They need to do this to travel between pieces of sea ice. They can also swim up to 10 kilometers an hour.";
        
+            if(voiceToggle.checked == true){
+
+                swimSound.currentTime = 0;
+                swimSound.play();
+    
+            }
         }
         
     }); 
@@ -138,6 +171,13 @@ function factPopup(){
             Screen_Overlay_ID.style.display = "block";
             factTitle.innerHTML = "Sense of Smell";
             factText.innerHTML ="Polar bears have a great sense of smell. They use smell to find their favourite foods, like seals. Their noses are so strong that they can smell food up to 16 kilometers away.";
+        
+            if(voiceToggle.checked == true){
+
+                smellSound.currentTime = 0;
+                smellSound.play();
+    
+            }
         }
     }); 
 
@@ -149,6 +189,13 @@ function factPopup(){
             Screen_Overlay_ID.style.display = "block";
             factTitle.innerHTML = "Hunting";
             factText.innerHTML ="Although polar bears are strong swimmers, they are not quick enough to catch seals in the water. Instead, polar bears catch seals from sea ice platform.";
+       
+            if(voiceToggle.checked == true){
+
+                huntSound.currentTime = 0;
+                huntSound.play();
+    
+            }
         }
     }); 
 
@@ -161,6 +208,13 @@ function factPopup(){
         factTitle.innerHTML = "Favourite Food";
         factText.innerHTML ="Seals are the polar bear’s favourite food. This is because polar bears rely on the high-fat content that seals have.";
       
+            if(voiceToggle.checked == true){
+
+                foodSound.currentTime = 0;
+                foodSound.play();
+
+            }
+
          }
     }); 
 
@@ -213,6 +267,17 @@ AFRAME.registerComponent('control-panel',{
     polarBear6 = document.querySelector('#polarBear6');
     polarBear7 = document.querySelector('#polarBear7');
     polarBear8 = document.querySelector('#polarBear8');
+
+
+    bigSound = document.querySelector('#fact_big');
+    cubSound = document.querySelector('#fact_cubs');
+    foodSound = document.querySelector('#fact_food');
+    huntSound = document.querySelector('#fact_hunting');
+    smellSound = document.querySelector('#fact_smell');
+    swimSound = document.querySelector('#fact_swim');
+    threatSound = document.querySelector('#fact_threat');
+    marineSound = document.querySelector('#fact_marine');
+
 
 
     past = false;

@@ -69,6 +69,19 @@ AFRAME.registerComponent('user-interface',{
         Screen_Overlay_ID.style.display = "none";
         factUI.style.display = "none";
 
+            if(voiceToggle.checked == true){
+
+                bigSound.pause();
+                cubSound.pause();
+                foodSound.pause();
+                huntSound.pause();
+                smellSound.pause();
+                swimSound.pause();
+                threatSound.pause();
+                marineSound.pause();
+
+            }
+
         });
        
        sealInfoButton.addEventListener('click', ()=>{
@@ -216,13 +229,31 @@ AFRAME.registerComponent('user-interface',{
             helpDesktopTextSound.volume = 0;
             helpMobileTextSound.volume = 0;
             settingTextSound.volume = 0;
-            
+
+            bigSound.volume = 0;
+            cubSound.volume = 0;
+            foodSound.volume = 0;
+            huntSound.volume = 0;
+            smellSound.volume = 0;
+            swimSound.volume = 0;
+            threatSound.volume = 0;
+            marineSound.volume = 0;
+                    
 
         }else{
 
             helpDesktopTextSound.volume = 0.3;
             helpMobileTextSound.volume = 0.3;
             settingTextSound.volume = 0.3;
+
+            bigSound.volume = 0.3;
+            cubSound.volume = 0.3;
+            foodSound.volume = 0.3;
+            huntSound.volume = 0.3;
+            smellSound.volume = 0.3;
+            swimSound.volume = 0.3;
+            threatSound.volume = 0.3;
+            marineSound.volume = 0.3;
 
         }
 
