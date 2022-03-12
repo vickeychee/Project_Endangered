@@ -781,6 +781,28 @@
          
      }
 
+     @media (orientation: portrait)
+     {
+
+        #rotationOverlay {
+            display: absolute;
+            position: fixed; 
+            top: 0; bottom: 0; left: 0; right: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #f8f8f8;
+            opacity: 1;
+            z-index: 999999999999;
+            text-align: center;
+          }
+
+          #rotateImg {
+            width:85%;
+            height: auto;
+        
+          } 
+     }
+
 
 
   /*mobile*/
@@ -789,7 +811,7 @@
     and (max-device-width: 480px)
     and (-webkit-min-device-pixel-ratio: 2)
     and (orientation: landscape)*/
-    @media only screen and (max-height: 480px)
+    @media only screen and (max-height: 480px) and (orientation: landscape)
     {
 
         div{
