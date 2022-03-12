@@ -89,7 +89,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 1rem;
+    padding-top: 0rem;
 
 }
 
@@ -209,7 +209,7 @@ p {
         display: flex;
         align-items: center;
         justify-content: center;
-        padding-top: 0rem;
+        margin-top: -1.5rem;
     
     }
     .Help-parent{
@@ -234,7 +234,7 @@ p {
 
     #logo{
         padding-bottom: 0rem;
-        margin-bottom: 2rem1;
+        margin-bottom: 2rem;
         width: 12.5rem;
         height:1.3125rem;
     }
@@ -244,4 +244,52 @@ p {
     
 
     
+}
+
+@media (orientation: portrait){
+
+    #rotationOverlay {
+        display: none;
+
+      }
+
+}
+
+
+@media (orientation: landscape)
+{
+
+    body {
+        background-color: #f8f8f8;
+      }
+      
+   #rotationOverlay {
+       display: absolute;
+       position: fixed; 
+       top: 0; bottom: 0; left: 0; right: 0;
+       width: 100%;
+       height: 100%;
+       background-color: #f8f8f8;
+       opacity: 1;
+       z-index: 999999999999;
+       text-align: center;
+     }
+
+     #rotateImg {
+       width:85%;
+       height: auto;
+   
+     } 
+
+     .center {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+
+
 }
