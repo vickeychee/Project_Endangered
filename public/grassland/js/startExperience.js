@@ -23,8 +23,11 @@ AFRAME.registerComponent('start-experience',{
 
       });
 
-      document.querySelector('a-scene').enterVR();
+      deviceChoice = (localStorage.getItem("device"));
 
-    
+      if (deviceChoice == 3 ){
+        document.querySelector('a-scene').enterVR();
+
+      }
 
   }
