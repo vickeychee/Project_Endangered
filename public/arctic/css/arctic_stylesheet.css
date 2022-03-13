@@ -1101,8 +1101,6 @@ a:hover, a:active { text-decoration: none; color:#013440; }
     {
 
        #rotationOverlay {
-
-           display:block;
            position: absolute; 
            top: 0; bottom: 0; left: 0; right: 0;
            width: 100%;
@@ -1114,7 +1112,6 @@ a:hover, a:active { text-decoration: none; color:#013440; }
          }
 
          #rotateImg {
-           display:block;
            width:85%;
            height: auto;
        
@@ -1135,15 +1132,6 @@ a:hover, a:active { text-decoration: none; color:#013440; }
     {
 
 
-        #rotationOverlay {
-            display:none ;
-          }
-
-
-          #rotateImg {
-            display:none ;
-        
-          } 
 
 
         .Info-container{
