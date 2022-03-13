@@ -1,3 +1,9 @@
+a { text-decoration: none; color:#013440;  }
+a:visited { text-decoration: none; color:#013440; }
+a:hover { text-decoration: none; color:#013440; }
+a:focus { text-decoration: none; color:#013440; }
+a:hover, a:active { text-decoration: none; color:#013440; }
+
 #Title_ID{
     width:16.9375rem;
     height:6rem;
