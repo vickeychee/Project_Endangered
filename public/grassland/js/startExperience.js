@@ -23,6 +23,8 @@ AFRAME.registerComponent('start-experience',{
 
       });
 
+      document.querySelector('a-scene').enterVR();
+
     
 
   }
