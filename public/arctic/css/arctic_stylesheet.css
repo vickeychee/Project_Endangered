@@ -5,12 +5,6 @@
 
 }*/
 
-a { text-decoration: none; color:#013440;  }
-a:visited { text-decoration: none; color:#013440; }
-a:hover { text-decoration: none; color:#013440; }
-a:focus { text-decoration: none; color:#013440; }
-a:hover, a:active { text-decoration: none; color:#013440; }
-
 #Title_Arctic_ID{
     width:16.125rem;
     height:6rem;
@@ -1000,6 +994,12 @@ a:hover, a:active { text-decoration: none; color:#013440; }
     .button{
         display:none;
     }
+
+a { text-decoration: none; color:#013440;  }
+a:visited { text-decoration: none; color:#013440; }
+a:hover { text-decoration: none; color:#013440; }
+a:focus { text-decoration: none; color:#013440; }
+a:hover, a:active { text-decoration: none; color:#013440; }
 
 
 
