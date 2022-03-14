@@ -890,9 +890,9 @@ a:hover, a:active { text-decoration: none; color:#013440; }
         font-size: 18px;
         font-family: 'Poppins', sans-serif;
         font-weight: 600;
-        background-color:  #CBEBB2;
+        background-color:  #F1BEDC;
         color: #013440;
-        border: 0.25rem solid  #CBEBB2;
+        border: 0.25rem solid  #F1BEDC;
         padding-left: 3rem;
         padding-right: 3rem;
         padding-top: 0.5rem;
@@ -1236,6 +1236,9 @@ a:hover, a:active { text-decoration: none; color:#013440; }
         margin-bottom: 0.75rem;
     }
 
+    
+
+
 
 
 
@@ -1243,6 +1246,36 @@ a:hover, a:active { text-decoration: none; color:#013440; }
         
         
 }
+
+
+/*@media (hover:hover),(hover:none),(hover:on-demand), (pointer: fine) and (max-height: 480px) and (orientation: landscape) {
+
+    .Button:hover{
+        background-color: #F8F8F8;
+        border-color:#F8F8F8;
+
+      }
+
+    .Popup-Button:hover{
+
+        background-color: #F8F8F8;
+        border-color:#F8F8F8;
+
+    }
+
+    .Info-Button:hover{
+        background-color: #F1BEDC;
+        border-color: #F1BEDC;
+    }
+
+    .Voice-Button:hover{
+
+        background-color: #F8F8F8;
+        border-color:#F8F8F8;
+
+
+    }
+  }*/
 
 
     
