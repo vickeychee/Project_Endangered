@@ -56,7 +56,12 @@ function checkSeals() {
         player.setAttribute('rotation', {x:-2.635, y:40.42, z:0});
 
 
+        seal1.classList.add('interactive');
+        seal2.classList.add('interactive');
+        seal3.classList.add('interactive');
+        seal4.classList.add('interactive');
 
+        
 
     } else if (sealCounter == 100){
 
@@ -94,6 +99,9 @@ function checkSeals() {
 
         player.setAttribute('movement-controls', {enabled:true});
         player2.setAttribute('wasd-controls', {enabled:true});
+
+        seal1.classList.add('interactive');
+        seal2.classList.add('interactive');
     
 
 
@@ -147,6 +155,15 @@ function checkSeals() {
             seal5.setAttribute('rotation', {x:0, y:234.000, z:0});
             seal6.setAttribute('position', {x:1, y:-0.228, z:-10.400});
             seal6.setAttribute('rotation', {x:0, y:53.820, z:0});
+
+            seal1.classList.add('interactive');
+            seal2.classList.add('interactive');
+            seal3.classList.add('interactive');
+            seal4.classList.add('interactive');
+            seal5.classList.add('interactive');
+            seal6.classList.add('interactive');
+
+            tooltip2.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
 
       
           });
@@ -388,6 +405,14 @@ function resetSealTask(){
 
   playerDetails.setAttribute('raycaster', 'far', 12);
 
+  seal1.classList.add('interactive');
+  seal2.classList.add('interactive');
+  seal3.classList.add('interactive');
+  seal4.classList.add('interactive');
+  seal5.classList.add('interactive');
+  seal6.classList.add('interactive');
+
+
 
 }
 
@@ -421,6 +446,8 @@ function exitSealTask(){
   seal6.setAttribute('position', {x:1, y:-0.228, z:-10.400});
   seal6.setAttribute('rotation', {x:0, y:53.820, z:0});
 
+  tooltip2.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
+
   player.setAttribute('movement-controls', {enabled:true});
   player2.setAttribute('wasd-controls', {enabled:true});
 
@@ -440,6 +467,14 @@ function exitSealTask(){
   factExitButton.style.display  = "inline-flex";
 
   playerDetails.setAttribute('raycaster', 'far', 20);
+
+  seal1.classList.add('interactive');
+  seal2.classList.add('interactive');
+  seal3.classList.add('interactive');
+  seal4.classList.add('interactive');
+  seal5.classList.add('interactive');
+  seal6.classList.add('interactive');
+
 
 }
 /*
@@ -636,6 +671,8 @@ AFRAME.registerComponent('seal-task',{
             } 
             sealCounter+=1;
             checkSeals();
+
+            seal1.classList.remove('interactive');
     
         }
 
@@ -654,6 +691,7 @@ AFRAME.registerComponent('seal-task',{
             } 
             sealCounter+=1;
             checkSeals();
+            seal2.classList.remove('interactive');
         }
 
     });
@@ -666,6 +704,7 @@ AFRAME.registerComponent('seal-task',{
             sealCounter+=1;
             checkSeals();
             click.play();
+            seal3.classList.remove('interactive');
         }
     });
 
@@ -678,6 +717,7 @@ AFRAME.registerComponent('seal-task',{
             sealCounter+=1;
             checkSeals();
             click.play();
+            seal4.classList.remove('interactive');
         }
     });
 
@@ -690,6 +730,7 @@ AFRAME.registerComponent('seal-task',{
             sealCounter+=1;
             checkSeals();
             click.play();
+            seal5.classList.remove('interactive');
         }
     });
 
@@ -702,6 +743,7 @@ AFRAME.registerComponent('seal-task',{
             sealCounter+=1;
             checkSeals();
             click.play();
+            seal6.classList.remove('interactive');
         }
     });
 
@@ -765,6 +807,8 @@ AFRAME.registerComponent('seal-task',{
                 player2.setAttribute('wasd-controls', {enabled:false});
 
                 title.src="./css/imgs/arctic_title_past.png";
+
+                tooltip2.setAttribute('animation', {property:'visible', from: true, to: false, dur: 100, enabled:true});
 
                 ice1.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
                 ice2.setAttribute('animation', {property:'visible', from: false, to: true, dur: 100, enabled:true});
