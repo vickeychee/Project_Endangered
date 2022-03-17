@@ -209,25 +209,5 @@ body {
 
 }
 
-@media screen and (max-width:1800px) and (max-height: 1300px) and (orientation: landscape){
-
-
-    body {
-        background-image: url("./imgs/arctic_background.png");
-        background-repeat: no-repeat;
-        background-color: #ADCEE5;
-        background-position: 50%;
-        background-position-x: center;
-        background-size: 100%;
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-        background-position: bottom -10.5rem right 50%;
-      }
-    
-
-
-
-}
 
 
