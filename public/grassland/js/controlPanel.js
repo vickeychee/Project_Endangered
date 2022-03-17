@@ -41,7 +41,9 @@ AFRAME.registerComponent('control-panel',{
           
                 infoUI.style.display = "flex";
                 Screen_Overlay_ID.style.display = "block";
-                button1.setAttribute("material", "color:#af64a4");
+                button1.setAttribute("material", "color:#f750e0");
+
+                
 
                     
                 if(voiceToggle.checked == true){
@@ -56,7 +58,7 @@ AFRAME.registerComponent('control-panel',{
             else if (button1Counter === 2){
                 apartment.setAttribute("visible",false);
                 button1Counter = 0;
-                button1.setAttribute("material", "color:#f750e0");
+                button1.setAttribute("material", "color:#af64a4");
 
             }
     
@@ -78,7 +80,8 @@ AFRAME.registerComponent('control-panel',{
           
                 infoUI.style.display = "flex";
                 Screen_Overlay_ID.style.display = "block";
-                button2.setAttribute("material", "color:#af64a4");
+                button2.setAttribute("material", "color:#f750e0");
+
 
                 if(voiceToggle.checked == true){
 
@@ -91,7 +94,7 @@ AFRAME.registerComponent('control-panel',{
             else if (button2Counter === 2){
                 road.setAttribute("visible",false);
                 button2Counter = 0;
-                button2.setAttribute("material", "color:#f750e0");
+                button2.setAttribute("material", "color:#af64a4");
             }
     
 
@@ -112,7 +115,8 @@ AFRAME.registerComponent('control-panel',{
           
                 infoUI.style.display = "flex";
                 Screen_Overlay_ID.style.display = "block";
-                button3.setAttribute("material", "color:#af64a4");
+                button3.setAttribute("material", "color:#f750e0");
+
 
                 if(voiceToggle.checked == true){
 
@@ -126,7 +130,7 @@ AFRAME.registerComponent('control-panel',{
             else if (button3Counter === 2){
                 factory.setAttribute("visible",false);
                 button3Counter = 0;
-                button3.setAttribute("material", "color:#f750e0");
+                button3.setAttribute("material", "color:#af64a4");
             }
     
     

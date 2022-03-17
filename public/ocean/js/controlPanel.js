@@ -32,7 +32,7 @@ AFRAME.registerComponent('control-panel',{
             if (button1Counter === 1){
                 voiceUI.style.display = "none";
                 apartment.setAttribute("visible",true);
-                button1.setAttribute("material", "color:#ff8880");
+                button1.setAttribute("material", "color:#fd5a4e");
 
                 apartmentSound.play();
 
@@ -53,7 +53,7 @@ AFRAME.registerComponent('control-panel',{
             else if (button1Counter === 2){
                 apartment.setAttribute("visible",false);
                 button1Counter = 0;
-                button1.setAttribute("material", "color:#fd5a4e");
+                button1.setAttribute("material", "color:#ff8880");
             }
     
         });
@@ -70,7 +70,7 @@ AFRAME.registerComponent('control-panel',{
 
                 voiceUI.style.display = "none";
                 boardwalk.setAttribute("visible",true);
-                button2.setAttribute("material", "color:#ff8880");
+                button2.setAttribute("material", "color:#fd5a4e");
 
                 infoTitle.innerHTML ="Coastal Developments";
                 infoText.innerHTML = "Coastal developments, including beachfront factories, roads, and seawalls, are one of the greatest threats to green sea turtles. Not only do they cause habitat loss on the beaches where the turtles lay their eggs, but developments such as factories also pollute the ocean’s seagrass beds, where turtles live.";
@@ -90,7 +90,7 @@ AFRAME.registerComponent('control-panel',{
             else if (button2Counter === 2){
                 boardwalk.setAttribute("visible",false);
                 button2Counter = 0;
-                button2.setAttribute("material", "color:#fd5a4e");
+                button2.setAttribute("material", "color:#ff8880");
             }
     
 
@@ -110,7 +110,7 @@ AFRAME.registerComponent('control-panel',{
                 ferris.setAttribute("visible",true);
                 umbrella.setAttribute("visible",true);
 
-                button3.setAttribute("material", "color:#ff8880");
+                button3.setAttribute("material", "color:#fd5a4e");
 
 
                 infoTitle.innerHTML ="Tourism Industry";
@@ -135,7 +135,7 @@ AFRAME.registerComponent('control-panel',{
 
 
                 button3Counter = 0;
-                button3.setAttribute("material", "color:#fd5a4e");
+                button3.setAttribute("material", "color:#ff8880");
             }
     
     

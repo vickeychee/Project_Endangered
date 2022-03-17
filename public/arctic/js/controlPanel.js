@@ -295,6 +295,11 @@ AFRAME.registerComponent('control-panel',{
    
     buttonPast.addEventListener('click', ()=>{
 
+
+        buttonPast.setAttribute("material", "color:#ff8b52");
+        buttonPresent.setAttribute("material", "color:#e29f7e");
+        buttonFuture.setAttribute("material", "color:#e29f7e");
+
         
         click.play();
 
@@ -414,6 +419,12 @@ AFRAME.registerComponent('control-panel',{
     });
 
     buttonPresent.addEventListener('click', ()=>{
+
+        buttonPast.setAttribute("material", "color:#e29f7e");
+        buttonPresent.setAttribute("material", "color:#ff8b52");
+        buttonFuture.setAttribute("material", "color:#e29f7e");
+
+        
         click.play();
 
         present = true;
@@ -522,6 +533,10 @@ AFRAME.registerComponent('control-panel',{
     });
 
     buttonFuture.addEventListener('click', ()=>{
+
+        buttonPast.setAttribute("material", "color:#e29f7e");
+        buttonPresent.setAttribute("material", "color:#e29f7e");
+        buttonFuture.setAttribute("material", "color:#ff8b52");
         
         click.play();
 
