@@ -3,7 +3,8 @@
     padding-bottom: 1rem;
     width: 16.875rem;
     height:1.8125rem;
-    margin: 2.75rem;
+    margin: 2rem;
+    position: absolute;
 
 }
 
@@ -34,7 +35,8 @@ body {
     flex-direction: column;
     min-height: 100vh;
     background-position: bottom 0px right 50%;
-    overflow: hidden;
+    overflow-y:auto;
+    margin: 0;
   }
 
 
@@ -87,9 +89,13 @@ p {
 .Help-container{
         
     display: flex;
+    position: absolute;
     align-items: center;
     justify-content: center;
+    min-height: 100vh;
+    min-width: 100vw;
     padding-top: 0rem;
+    padding-bottom: 0rem;
 
 }
 
@@ -234,7 +240,7 @@ p {
 
     #logo{
         padding-bottom: 0rem;
-        margin-bottom: 2rem1;
+        margin-bottom: 2rem;
         width: 12.5rem;
         height:1.3125rem;
     }
