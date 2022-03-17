@@ -158,6 +158,10 @@ p {
 
 @media only screen and (max-width: 600px)
 {
+    #enter-btn{
+        padding-top: 1rem;
+    }
+    
 
 
     body {
