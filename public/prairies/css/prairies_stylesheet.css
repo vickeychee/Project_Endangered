@@ -57,8 +57,8 @@ a:hover, a:active { text-decoration: none; color:#013440; }
     color: white;
     padding-left: 10px;
     padding-right: 10px;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 16px;
+    padding-bottom: 13px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -913,14 +913,15 @@ a:hover, a:active { text-decoration: none; color:#013440; }
     /*   https://stackoverflow.com/questions/68256289/round-progress-bar-css-js */
     .subtask-circular-progress {
         position: absolute;
-        left: 48%;
-        top: 85%;
         height: 100px;
         width: 100px;
         border-radius: 100%;
         box-shadow: 3px 8px 15px rgba(0, 0, 0, 0.2);
         z-index: 99999;
         display:none;
+        bottom:0px;
+        margin-bottom: 3rem;
+        left:47%;
     }
 
         
@@ -1503,14 +1504,17 @@ a:hover, a:active { text-decoration: none; color:#013440; }
 
     .subtask-circular-progress {
         position: absolute;
-        left: 3%;
-        top: 65%;
+        left: 0;
         height: 100px;
         width: 100px;
         border-radius: 100%;
         box-shadow: 3px 8px 15px rgba(0, 0, 0, 0.2);
         z-index: 999999;
         display:none;
+        bottom:0px;
+        margin-bottom: 1.5rem;
+        margin-left: 1.5rem;
+
     }
 
     .Button {

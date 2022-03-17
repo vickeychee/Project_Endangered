@@ -1,14 +1,14 @@
 
 #logo{
-    padding-bottom: 1rem;
+    margin: 2rem;
+    padding-bottom: 0.75rem;
     width: 16.875rem;
     height:1.8125rem;
-    margin: 2.75rem;
 
 }
 
 #copyright{  
-    color: #F8F8F8;
+    color: #013440;
     font-size: 12px;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
@@ -17,6 +17,7 @@
     padding-bottom: 2rem;
     align-self: flex-end;
     margin-right:2rem;
+
 
 }
 
@@ -35,6 +36,7 @@ body {
     min-height: 100vh;
     background-position: bottom 0px right 50%;
     overflow: hidden;
+    margin: 0;
   }
 
 
@@ -57,7 +59,6 @@ p {
     margin-top: -0.5rem;
 
 }
-
 
 
 .orange-button{
@@ -89,7 +90,9 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 0rem;
+    min-width: 100vw;
+    margin-top: 0rem;
+    
 
 }
 
@@ -157,30 +160,37 @@ p {
 @media only screen and (max-width: 600px)
 {
 
+    #enter-btn{
+        padding-top: 1rem;
+    }
+    
+
 
     body {
         background-image: url("/imgs/grassland_background_blur.png");
         background-repeat: no-repeat;
-        background-color: #a9d6d5;
+        background-color: #a9d6d4;
         background-position: 50%;
         background-position-x: center;
-        background-size: 325%;
+        background-size: 230%;
         display: flex;
         flex-direction: column;
         min-height: 100vh;
-        background-position: bottom 0px right 50%;
+        background-position: bottom 0rem right 35%;
       }
     
       #copyright{  
-        color: #F8F8F8;
+        color: #013440;
         font-size: 12px;
         font-family: 'Poppins', sans-serif;
         font-weight: 400;
-        margin-top: auto;
+        margin-top: 0;
         padding-top: 1rem;
-        padding-bottom: 9rem;
+        padding-bottom: 0rem;
         align-self: center;
         margin-right:0rem;
+
+
     }
 
     .Popup-title{
@@ -204,12 +214,14 @@ p {
         padding-top: 0.75rem;
     }
 
+
+    
     .Help-container{
         
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-top: -1.5rem;
+        margin-top: -0.5rem;
     
     }
     .Help-parent{
@@ -227,14 +239,17 @@ p {
         box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
         padding-left:1.5rem;
         padding-right:1.5rem;
-        padding-bottom: 3rem;
+        padding-bottom: 2.5rem;
         padding-top: 2rem;
+
     
     }
 
     #logo{
+        
         padding-bottom: 0rem;
-        margin-bottom: 2rem1;
+        margin-top: 2.75rem;
+        margin-bottom: 2rem;
         width: 12.5rem;
         height:1.3125rem;
     }

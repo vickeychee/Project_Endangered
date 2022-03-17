@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     margin:2rem;
+    margin-bottom: 0;
 }
 
 #logo{
@@ -25,8 +26,9 @@ body {
     background-size: 100%;
     flex-direction: column;
     min-height: 100vh;
-    background-position: bottom 0px right 50%;
+    background-position: bottom -5rem right 50%;
     overflow: hidden;
+    margin: 0;
   }
 
 h2 {
@@ -59,7 +61,7 @@ p {
 
 
 .orange-button{
-    margin-top: 1.5rem;
+    margin-top: 0rem;
     font-size: 18px;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
@@ -73,6 +75,7 @@ p {
     border-radius: 2rem;
     text-align: center;
     box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+    margin-left: 2rem;
 
 }
 
@@ -95,7 +98,7 @@ p {
 
 }
 
-@media only screen and (max-width: 600px)
+@media only screen and (max-width: 600px) and (orientation: portrait)
 {
 
 
@@ -141,6 +144,8 @@ p {
 
 
 .orange-button{
+
+    position: none;
     margin-top: 0;
     font-size: 18px;
     font-family: 'Poppins', sans-serif;
@@ -148,13 +153,23 @@ p {
     background-color: #CBEBB2;
     color: #013440;
     border: 0.25rem solid #CBEBB2;
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
     padding-top: 0.5rem;
     padding-bottom:0.5rem;
     border-radius: 2rem;
     text-align: center;
-    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2); 
+    margin: 0;
+
+}
+
+#enter-btn{
+    position: absolute;
+    align-self: center;
+    margin: 0;
+    margin-bottom: 6rem;
+    bottom: 0px;
 
 }
 
@@ -173,24 +188,49 @@ body {
     background-color: #F0C3B7;
     background-position: 50%;
     background-position-x: center;
-    background-size: 325%;
+    background-size: 300%;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-position: bottom 0px right 50%;
+    background-position: bottom 0rem right 78%;
   }
 
   #copyright{  
     color: #F8F8F8;
+    position: absolute;
     font-size: 12px;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
-    margin-top: auto;
-    padding-top: 1rem;
-    padding-bottom: 9rem;
     align-self: center;
+    padding-top: 1rem;
+    padding-bottom: 0rem;
+    margin-top: auto;
     margin-right:0rem;
+    margin-bottom: 2.5rem;
+    bottom: 0px;
 }
+
+}
+
+
+@media screen and (max-width:1800px) and (max-height: 1300px) and (orientation: landscape){
+
+
+    body {
+        background-image: url("/imgs/prairies_background.png");
+        background-repeat: no-repeat;
+        background-color: #F0C3B7;
+        background-position: 50%;
+        background-position-x: center;
+        background-size: 130%;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background-position: bottom -20rem right 100%;
+      }
+    
+
+
 
 }
 

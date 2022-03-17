@@ -4,7 +4,9 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    min-height: 50vh;
+    min-height: 100vh;
+    min-width: 100vw;
+    position: absolute;
 
 
 }
@@ -28,14 +30,15 @@
 }
 
 #logo{
-    margin:2.75rem;
+    position: absolute;
+    margin:2rem;
     width: 16.875rem;
     height:1.8125rem;
 }
 
 
 #copyright{  
-    color: #F8F8F8;
+    color: #013440;
     font-size: 12px;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
@@ -65,6 +68,8 @@ a{
     min-height: 100vh;
     background-position: bottom 0px right 50%;
     overflow: hidden;
+    margin: 0;
+    
   }
 
 
@@ -148,7 +153,7 @@ p {
 
 
 
-@media only screen and (max-width: 600px)
+@media only screen and (max-width: 600px) and (orientation: portrait)
 {
     h1 {
         margin:0;
@@ -186,30 +191,66 @@ p {
     }
 
     #logo-pos{
-        align-self: center;
+
+        display: flex;
+        flex-direction: column;
+        margin:0rem;
+
     }
+    body {
+        background-image: url("/imgs/grassland_background_blur.png");
+        background-repeat: no-repeat;
+        background-color: #a9d6d4;
+        background-position: 50%;
+        background-position-x: center;
+        background-size: 230%;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background-position: bottom 0rem right 35%;
+      }
+    
+      #copyright{  
+        color: #013440;
+        position: absolute;
+        font-size: 12px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        align-self: center;
+        padding-top: 1rem;
+        padding-bottom: 0rem;
+        margin-top: auto;
+        margin-right:0rem;
+        margin-bottom: 2.5rem;
+        bottom: 0px;
+    }
+
+
+    .container{
+
+        min-height: 85vh;
+        min-width: 100vw;
+    
+    }
+}
+
+@media screen and (max-width:1800px) and (max-height: 1300px) and (orientation: landscape){
+
+
     body {
         background-image: url("/imgs/grassland_background_blur.png");
         background-repeat: no-repeat;
         background-color: #a9d6d5;
         background-position: 50%;
         background-position-x: center;
-        background-size: 325%;
+        background-size: 100%;
         display: flex;
         flex-direction: column;
         min-height: 100vh;
-        background-position: bottom 0px right 50%;
+        background-position: bottom -10.5rem right 50%;
       }
     
-      #copyright{  
-        color: #F8F8F8;
-        font-size: 12px;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 400;
-        margin-top: auto;
-        padding-top: 1rem;
-        padding-bottom: 9rem;
-        align-self: center;
-        margin-right:0rem;
-    }
+
+
+
 }

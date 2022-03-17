@@ -8,15 +8,15 @@
 }
 
 #logo{
-    margin-top:2.75rem;
-    margin-left:2.75rem;
+    position: absolute;
+    margin:2rem;
     width: 16.875rem;
     height:1.8125rem;
 }
 
 
 #copyright{  
-    color: #F8F8F8;
+    color: #013440;
     font-size: 12px;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
@@ -44,7 +44,8 @@ body {
     flex-direction: column;
     min-height: 100vh;
     background-position: bottom 0px right 50%;
-    overflow: hidden;
+    overflow-y:auto;
+    margin: 0;
   }
 
 
@@ -98,7 +99,9 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 3.5rem;
+    margin-top: 9rem;
+    padding-bottom: 2rem;
+    
 
 }
 
