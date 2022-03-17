@@ -4,8 +4,9 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    min-height: 50vh;
-
+    min-height: 100vh;
+    min-width: 100vw;
+    position: absolute;
 
 }
 
@@ -28,7 +29,8 @@
 }
 
 #logo{
-    margin:2.75rem;
+    position: absolute;
+    margin:2rem;
     width: 16.875rem;
     height:1.8125rem;
 }
@@ -65,6 +67,7 @@ a{
     min-height: 100vh;
     background-position: bottom 0px right 50%;
     overflow: hidden;
+    margin: 0;
   }
 
 
@@ -148,7 +151,7 @@ p {
 
 
 
-@media only screen and (max-width: 600px)
+@media only screen and (max-width: 600px) 
 {
     h1 {
         margin:0;
@@ -186,7 +189,9 @@ p {
     }
 
     #logo-pos{
-        align-self: center;
+        display: flex;
+        flex-direction: column;
+        margin:0rem;
     }
     body {
         background-image: url("./imgs/arctic_background_blur.png");
@@ -203,13 +208,23 @@ p {
     
       #copyright{  
         color: #013440;
+        position: absolute;
         font-size: 12px;
         font-family: 'Poppins', sans-serif;
         font-weight: 400;
-        margin-top: auto;
-        padding-top: 1rem;
-        padding-bottom: 9rem;
         align-self: center;
+        padding-top: 1rem;
+        padding-bottom: 0rem;
+        margin-top: auto;
         margin-right:0rem;
+        margin-bottom: 2.5rem;
+        bottom: 0px;
+    }
+
+    .container{
+
+        min-height: 85vh;
+        min-width: 100vw;
+    
     }
 }
