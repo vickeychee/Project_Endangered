@@ -1139,7 +1139,7 @@ a:hover, a:active { text-decoration: none; color:#013440; }
       }
 
 
-      #Button_Instructions_ID,#Button_Settings_ID #Voice_Exit_Button_ID,
+      #Button_Instructions_ID,#Button_Settings_ID, #Voice_Exit_Button_ID,
       #Fact_Exit_Button_ID,#Help_Exit_Button_ID,#Settings_Exit_Button_ID{
           background-size: 1.5rem;
       }
