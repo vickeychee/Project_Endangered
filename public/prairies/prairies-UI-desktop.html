@@ -35,47 +35,47 @@
     <!--User Interface-->
 
         <div class="flex-parent">
-            <div class="flex-child"><img id="Title_ID" src="/imgs/prairies_title.png"></div>
+            <div class="flex-child"><img id="Title_ID" src="/imgs/prairies_title.png" alt="Wet Prairies Title"></div>
                 <div class="flex-grandchild">
-                    <div class="flex-grandchild1"><button class="Button" id= "Button_Instructions_ID"><img><div class="tooltiptext_help">Help</div></button></div>
-                    <div class="flex-grandchild2"><button class="Button" id= "Button_Settings_ID"><img><div class="tooltiptext_settings">Settings</div></button></div>
-                    <div class="flex-grandchild3"><button class="Button" id= "Button_Reset_ID"><img><div class="tooltiptext_reset">Reset</div></button></div>
-                    <div class="flex-grandchild4"><button class="Button" id= "Button_Exit_ID"><img><div class="tooltiptext_exit">Exit</div></button></div>
+                    <div class="flex-grandchild1"><button class="Button" id= "Button_Instructions_ID" aria-label="Help"><img><div class="tooltiptext_help">Help</div></button></div>
+                    <div class="flex-grandchild2"><button class="Button" id= "Button_Settings_ID" aria-label="Settings"><img><div class="tooltiptext_settings">Settings</div></button></div>
+                    <div class="flex-grandchild3"><button class="Button" id= "Button_Reset_ID" aria-label="Reset"><img><div class="tooltiptext_reset">Reset</div></button></div>
+                    <div class="flex-grandchild4"><button class="Button" id= "Button_Exit_ID" aria-label="Exit"><img><div class="tooltiptext_exit">Exit</div></button></div>
                 </div>
             </div>
     
     <div class="Help-container" id="Help_Popup_ID">
         <div class="Help-parent">
-          <div class="Help-child Popup-Exit"><button class="Popup-Button" id= "Help_Exit_Button_ID"></button></div>
+          <div class="Help-child Popup-Exit"><button class="Popup-Button" id= "Help_Exit_Button_ID" aria-label="Exit"></button></div>
           <div class="Help-child Popup-title">Help</div>
           <div class="Help-child Popup-text">Explore the Wet Prairies, home to the whooping crane. Interact with the animals, and complete the activities to learn more about whooping cranes and how they have become endangered.</div>
           <div class="Help-child "><hr id="line"></div>
           <div class="Help-child Popup-subtitle">Controls</div>
               <div class="Help-parent2">
               <div class="Help-child2 Popup-text" id="Keys_ID"><p>Use the <b>arrow</b> or <b>WASD</b> keys to move around.</p>
-                  <div class="Help-image"><img id="Help_Keys_Image" src="imgs/help_keys.png"></div>
+                  <div class="Help-image"><img id="Help_Keys_Image" src="imgs/help_keys.png" alt="Image of arrow keys"></div>
               </div>
               <div class="Help-child2 Popup-text" id="Mouse_ID"><p><b>Left click</b> and <b>hold</b> to look around.</p>
                   <div class="Help-child2 Popup-text" id="Mouse2_ID"> <p><b>Left click</b> on objects to interact with them.</p>
-                  <div class="Help-image"><img id="Help_Mouse_Image" src="imgs/help_mouse.png"></div>
+                  <div class="Help-image"><img id="Help_Mouse_Image" src="imgs/help_mouse.png" alt="Image of computer mouse"></div>
               </div>
               </div>
           </div>
-          <div class="Help-child"><a href="learn.html" target="_blank"><b><u>Learn More</u></b></a></div>
-          <div class="Help-child"><a href="credits.html" target="_blank"><b><u>Credits</u></b></a></div>
+          <div class="Help-child"><a href="learn.html" target="_blank" aria-label="Learn More"><b><u>Learn More</u></b></a></div>
+          <div class="Help-child"><a href="credits.html" target="_blank" aria-label="Credits"><b><u>Credits</u></b></a></div>
           </div>
       </div>
 
       <div class="Settings-container" id="Settings_Popup_ID">
         <div class="Settings-parent">
-            <div class="Settings-child Popup-Exit"><button class="Popup-Button" id= "Settings_Exit_Button_ID"></button></div>
+            <div class="Settings-child Popup-Exit"><button class="Popup-Button" id= "Settings_Exit_Button_ID" aria-label="Exit"></button></div>
             <div class="Settings-child Popup-title" id="Settings-Text">Settings</div>
             <div class="Settings-parent2">
                   <div class="Settings-child2">
                       <div class="Settings-child3 Popup-text">Music</div>
                       <div class="Settings-child4 Popup-text">
                           <label class="switch">
-                          <input type="checkbox" checked id="Music-Toggle">
+                          <input type="checkbox" checked id="Music-Toggle" aria-label="Music Toggle" aria-pressed="true">
                           <span class="slider round"></span>
                           </label></div>
                   </div>
@@ -83,7 +83,7 @@
                       <div class="Settings-child3 Popup-text">Sound Effects</div>
                       <div class="Settings-child4 Popup-text">
                           <label class="switch">
-                          <input type="checkbox" checked id="Sound-Toggle">
+                          <input type="checkbox" checked id="Sound-Toggle"  aria-label="Sound Effects Toggle" aria-pressed="true">
                           <span class="slider round"></span>
                         </label></div>
                   </div>
@@ -91,7 +91,7 @@
                       <div class="Settings-child3 Popup-text">Voice Over</div>
                       <div class="Settings-child4 Popup-text">
                           <label class="switch">
-                          <input type="checkbox" id="Voice-Toggle">
+                          <input type="checkbox" id="Voice-Toggle" aria-label="Voice Over Toggle" aria-pressed="false">
                           <span class="slider round"></span>
                         </label></div>
                   </div>
@@ -101,7 +101,7 @@
 
   <div class="Fact-container" id="Fact_Popup_ID">
         <div class="Fact-parent">
-            <div class="Fact-child Popup-Exit"><button class="Popup-Button" id="Fact_Exit_Button_ID"></button></div>
+            <div class="Fact-child Popup-Exit"><button class="Popup-Button" id="Fact_Exit_Button_ID" aria-label="Exit"></button></div>
             <div class="Fact-child Popup-title" id="Fact_Title_ID">Big Bird!</div>
             <div class="Fact-child Popup-text" id="Fact_Text_ID">The whooping crane is the tallest bird in North America. This bird can be up to 5 feet tall, with a wingspan of 7 feet.</div>
         </div>
@@ -110,7 +110,7 @@
 
     <div class="Voice-container" id="Voice_Popup_ID">
         <div class="Voice-parent">
-            <div class="Voice-child Voice-Exit"><button class="Voice-Button" id= "Voice_Exit_Button_ID"></button></div>
+            <div class="Voice-child Voice-Exit"><button class="Voice-Button" id= "Voice_Exit_Button_ID" aria-label="Exit"></button></div>
             <div class="Voice-child Voice-title" id="Info_Title_ID">Voice Over</div>
             <div class="Voice-child Voice-text" id="Info_Text_ID">Turn on in settings.</div>
         </div>
@@ -121,7 +121,7 @@
 
     <div class="Bucket-container" id="Bucket_Popup_ID">
         <div class="Bucket-parent">
-          <div class="Bucket-child Popup-Exit"><button class="Popup-Button" id= "Bucket_Exit_Button_ID"></button></div>
+          <div class="Bucket-child Popup-Exit"><button class="Popup-Button" id= "Bucket_Exit_Button_ID" aria-label="Exit"></button></div>
           <div class="Bucket-child Popup-title">Water the Crops</div>
           <div class="Bucket-child Popup-text">Ponds and marshes are an important part of the whooping crane’s habitat. As humans build more buildings and farms these marshes become drained. Water the yellow wheat plants on the farm to see how it effects the environment!</div>
           <div class="Bucket-child "><hr id="line"></div>
@@ -129,7 +129,7 @@
           <div class="Bucket-child Popup-text">Click on the bucket to pick it up. </div>
           <div class="Bucket-child Popup-text">Click on the pond to fill the bucket with water.</div>
           <div class="Bucket-child Popup-text">Find the yellow wheat plants and click on them to water them.</div>
-          <div class="Bucket-child"><button class="Info-Button" id="Bucket_Button_ID">BEGIN</button></div>
+          <div class="Bucket-child"><button class="Info-Button" id="Bucket_Button_ID" aria-label="Begin">BEGIN</button></div>
           </div>
       </div>
 
@@ -170,22 +170,22 @@
         <div class="Info-parent">
             <div class="Info-child Popup-title" id="Info_Title_ID">Oh No!</div>
             <div class="Info-child Popup-text" id="Info_Text_ID">You weren’t able to water all of the crops because the pond ran out of water! Did you notice how the pond became more drained every time? This is what happens in the wet prairies as more buildings and farms are built there. This destroys the whooping cranes home, leaving them with no where to live. If whooping cranes do not have a home, they will eventually become extinct.</div>
-            <div class="Info-child"><button class="Info-Button" id="Info_Button_ID">END ACTIVITY</button></div>
+            <div class="Info-child"><button class="Info-Button" id="Info_Button_ID" aria-label="End activity">END ACTIVITY</button></div>
         </div>
     </div>
 
     
     <div id="user-gesture-overlay">
         <div class= "center">
-            <img id="loading-animation" src="/imgs/prairies_loading.gif">
+            <img id="loading-animation" src="/imgs/prairies_loading.gif" alt="Crane Loading Gif">
         </div>
 
 
         <div id="continue-container">
             <div class ="continue-parent">
-                <div class="continue-child"><img id="continue-bear" src="imgs/prairies_cranehead.png"></div>
+                <div class="continue-child"><img id="continue-bear" src="imgs/prairies_cranehead.png" alt="Crane Head"></div>
                 <div class="continue-child continue-text">The wet prairies is ready for you to explore!</div>
-                <div class="continue-child"><button id="user-gesture-button" onclick="startExperience();">BEGIN</button></div>
+                <div class="continue-child"><button id="user-gesture-button" onclick="startExperience();" aria-label="Begin">BEGIN</button></div>
             </div>
         </div>
     </div>
