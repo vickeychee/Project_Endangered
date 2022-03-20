@@ -3,40 +3,40 @@
     {
       "bufferView": 2,
       "componentType": 5126,
-      "count": 121,
+      "count": 181,
       "max": [
-        50.0,
-        0.0,
-        50.0
+        122.78438568115234,
+        0.6666830778121948,
+        141.2093505859375
       ],
       "min": [
-        -50.0,
-        0.0,
-        -50.0
+        -130.15354919433594,
+        -1.2793596982955933,
+        -63.97080612182617
       ],
       "type": "VEC3"
     },
     {
       "bufferView": 2,
-      "byteOffset": 1452,
+      "byteOffset": 2172,
       "componentType": 5126,
-      "count": 121,
+      "count": 181,
       "max": [
-        0.0,
+        0.01141942385584116,
         1.0,
-        0.0
+        0.054519038647413254
       ],
       "min": [
-        0.0,
-        1.0,
-        0.0
+        -0.05466384440660477,
+        0.9983038306236267,
+        -0.014719587750732899
       ],
       "type": "VEC3"
     },
     {
       "bufferView": 1,
       "componentType": 5126,
-      "count": 121,
+      "count": 181,
       "max": [
         1.0,
         1.0
@@ -50,7 +50,7 @@
     {
       "bufferView": 0,
       "componentType": 5125,
-      "count": 600,
+      "count": 927,
       "type": "SCALAR"
     }
   ],
@@ -58,31 +58,31 @@
     "extras": {
       "author": "vickeychee99 (https://sketchfab.com/vickeychee99)",
       "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
-      "source": "https://sketchfab.com/3d-models/grassland-navmesh-bbfcf505d568404ea943adb49544977c",
-      "title": "Grassland Navmesh"
+      "source": "https://sketchfab.com/3d-models/grassland-navmesh4-567bf7b6e874403390adad0ecccbe4dd",
+      "title": "Grassland Navmesh4"
     },
-    "generator": "Sketchfab-12.58.1",
+    "generator": "Sketchfab-12.74.0",
     "version": "2.0"
   },
   "bufferViews": [
     {
       "buffer": 0,
-      "byteLength": 2400,
+      "byteLength": 3708,
       "name": "floatBufferViews",
       "target": 34963
     },
     {
       "buffer": 0,
-      "byteLength": 968,
-      "byteOffset": 2400,
+      "byteLength": 1448,
+      "byteOffset": 3708,
       "byteStride": 8,
       "name": "floatBufferViews",
       "target": 34962
     },
     {
       "buffer": 0,
-      "byteLength": 2904,
-      "byteOffset": 3368,
+      "byteLength": 4344,
+      "byteOffset": 5156,
       "byteStride": 12,
       "name": "floatBufferViews",
       "target": 34962
@@ -90,7 +90,7 @@
   ],
   "buffers": [
     {
-      "byteLength": 6272,
+      "byteLength": 9500,
       "uri": "scene.bin"
     }
   ],
@@ -174,7 +174,7 @@
         0.0,
         1.0
       ],
-      "name": "57636f6387a844e8b61a2b2c14105b81.fbx"
+      "name": "8ef421df8dce4d1fa3f4c06eccdb73ea.fbx"
     },
     {
       "children": [
@@ -187,17 +187,17 @@
         4
       ],
       "matrix": [
-        0.40314629673957825,
+        0.15025334060192108,
         0.0,
         0.0,
         0.0,
         0.0,
-        0.40314629673957825,
+        0.15025334060192108,
         0.0,
         0.0,
         0.0,
         0.0,
-        0.40314629673957825,
+        0.14597013592720032,
         0.0,
         0.0,
         0.0,
