@@ -15,3 +15,8 @@ mobileBtn.onclick= function(){
     localStorage.setItem("device", deviceChoice);
 }
 
+headsetBtn.onclick= function(){
+
+    deviceChoice = 3;
+    localStorage.setItem("device", deviceChoice);
+}
