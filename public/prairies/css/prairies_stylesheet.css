@@ -1002,154 +1002,154 @@ a:hover, a:active { text-decoration: none; color:#013440; }
     }
 
 
+    /*laptop size*/
+    @media only screen and (max-width: 1733px)
+    {
+        .Help-parent{
+
+            display: flex;
+            position: relative;
+            z-index: 9999999;
+            color: #fff;
+            width: 1000px;
+            top:0;
+            left:0;
+            margin: 0;
+            background: #F8F8F8;
+            flex-direction: column;
+            border-radius: 50px;
+            box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+            padding-left:4.5rem;
+            padding-right:4.5rem;
+            padding-bottom: 2rem;
+            padding-top: 2rem;
+            overflow-y: scroll;
     
+        }  
+    }
 
-   /*laptop size*/
-   @media only screen and (max-width: 1733px)
-   {
-       .Help-parent{
+    @media only screen and (max-width: 1312px)
+    {
+        .Help-parent{
 
-           display: flex;
-           position: relative;
-           z-index: 9999999;
-           color: #fff;
-           width: 1000px;
-           top:0;
-           left:0;
-           margin: 0;
-           background: #F8F8F8;
-           flex-direction: column;
-           border-radius: 50px;
-           box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
-           padding-left:4.5rem;
-           padding-right:4.5rem;
-           padding-bottom: 2rem;
-           padding-top: 2rem;
-           overflow-y: scroll;
-   
-       }  
-   }
+            display: flex;
+            position: relative;
+            z-index: 9999999;
+            color: #fff;
+            width: 1000px;
+            top:0;
+            left:0;
+            margin: 0;
+            background: #F8F8F8;
+            flex-direction: column;
+            border-radius: 50px;
+            box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+            padding-left:4.5rem;
+            padding-right:4.5rem;
+            padding-bottom: 2rem;
+            padding-top: 2rem;
+            overflow-y: scroll;
+    
+        }  
 
-   @media only screen and (max-width: 1312px)
-   {
-       .Help-parent{
+        #Help_Keys_Image{
+            padding-top: 0rem;
+            padding-bottom: 1.5rem;
+        
+        }
 
-           display: flex;
-           position: relative;
-           z-index: 9999999;
-           color: #fff;
-           width: 1000px;
-           top:0;
-           left:0;
-           margin: 0;
-           background: #F8F8F8;
-           flex-direction: column;
-           border-radius: 50px;
-           box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
-           padding-left:4.5rem;
-           padding-right:4.5rem;
-           padding-bottom: 2rem;
-           padding-top: 2rem;
-           overflow-y: scroll;
-   
-       }  
-
-       #Help_Keys_Image{
-           padding-top: 0rem;
-           padding-bottom: 1.5rem;
-       
-       }
-
-       #Keys_ID{
-           padding-right: 0rem;
-       }
-       
-       #Mouse_ID{
-           padding-left: 0rem;
-       }
-       
-       #Mouse2_ID{
-           margin-top: -0.6rem;
-       }
+        #Keys_ID{
+            padding-right: 0rem;
+        }
+        
+        #Mouse_ID{
+            padding-left: 0rem;
+        }
+        
+        #Mouse2_ID{
+            margin-top: -0.6rem;
+        }
 
 
-       .Settings-parent{
+        .Settings-parent{
 
-           display: flex;
-           position: relative;
-           z-index: 9999999;
-           color: #fff;
-           width: 45%;
-           top:50%;
-           left:0;
-           margin: 0;
-           background: #F8F8F8;
-           flex-direction: column;
-           border-radius: 50px;
-           box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
-           padding-left:6rem;
-           padding-right:6rem;
-           padding-bottom: 2rem;
-           padding-top: 2rem;
-           
-       }
-       
-   }
-
-
-   @media only screen and (max-width: 1280px)
-   {
-       #Mouse2_ID{
-           margin-top: -2.5rem;
-       }
-
-       #Keys_ID{
-           padding-right: 4rem;
-       }
-
-       #Mouse_ID{
-           padding-left: 2rem;
-
-       }
-
-       .Help-parent{
-
-           display: flex;
-           position: relative;
-           z-index: 9999999;
-           color: #fff;
-           width: 1000px;
-           top:0;
-           left:0;
-           margin: 0;
-           background: #F8F8F8;
-           flex-direction: column;
-           border-radius: 50px;
-           box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
-           padding-left:4.5rem;
-           padding-right:4.5rem;
-           padding-bottom: 1rem;
-           padding-top: 1rem;
-           overflow-y: scroll;
-   
-       }  
+            display: flex;
+            position: relative;
+            z-index: 9999999;
+            color: #fff;
+            width: 45%;
+            top:50%;
+            left:0;
+            margin: 0;
+            background: #F8F8F8;
+            flex-direction: column;
+            border-radius: 50px;
+            box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+            padding-left:6rem;
+            padding-right:6rem;
+            padding-bottom: 2rem;
+            padding-top: 2rem;
+            
+        }
+        
+    }
 
 
-       .Help-parent2{
-           display: flex;
-           position: relative;
-           z-index: 9999999;
-           flex-direction: row;
-           text-align: center;
-           margin: 0;
-           flex-wrap: wrap;
-           justify-content: center;
-           padding-bottom: 0rem;
+    @media only screen and (max-width: 1280px)
+    {
+        #Mouse2_ID{
+            margin-top: -2.5rem;
+        }
 
-       }
+        #Keys_ID{
+            padding-right: 4rem;
+        }
+
+        #Mouse_ID{
+            padding-left: 2rem;
+
+        }
+
+        .Help-parent{
+
+            display: flex;
+            position: relative;
+            z-index: 9999999;
+            color: #fff;
+            width: 1000px;
+            top:0;
+            left:0;
+            margin: 0;
+            background: #F8F8F8;
+            flex-direction: column;
+            border-radius: 50px;
+            box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+            padding-left:4.5rem;
+            padding-right:4.5rem;
+            padding-bottom: 1rem;
+            padding-top: 1rem;
+            overflow-y: scroll;
+    
+        }  
 
 
-   }
+        .Help-parent2{
+            display: flex;
+            position: relative;
+            z-index: 9999999;
+            flex-direction: row;
+            text-align: center;
+            margin: 0;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding-bottom: 0rem;
+
+        }
+
+
+    }
+
+
 
 
 
@@ -1175,6 +1175,8 @@ a:hover, a:active { text-decoration: none; color:#013440; }
          } 
     }
 
+    
+
 
   /*mobile*/
   /* @media only screen 
@@ -1190,13 +1192,18 @@ a:hover, a:active { text-decoration: none; color:#013440; }
         }
 
 
-
         #Info_Title_ID{
-            margin-top: 4rem;
+            margin-top: 0rem;
+            margin-bottom: 0rem;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
         }
 
         #Info_Text_ID{
-            margin-top: -3rem;
+            margin-top: 0rem;
+            margin-bottom: 0rem;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
         }
 
         .Info-container{
@@ -1212,7 +1219,6 @@ a:hover, a:active { text-decoration: none; color:#013440; }
     
         }
         .Info-parent{
-
             display: flex;
             position: relative;
             z-index: 9999999;
@@ -1226,9 +1232,11 @@ a:hover, a:active { text-decoration: none; color:#013440; }
             flex-direction: column;
             border-radius: 0;
             box-shadow: 0;
-            padding-bottom: 5rem;
             overflow-x: scroll;
             overflow-y: scroll;
+            padding-top: 6rem;
+            padding-bottom: 3rem;
+            align-items: center;
     
         }
 
@@ -1250,7 +1258,7 @@ a:hover, a:active { text-decoration: none; color:#013440; }
 
         
     .Info-Button{
-        margin-top: 0.8rem;
+        margin: 0rem;
         font-size: 18px;
         font-family: 'Poppins', sans-serif;
         font-weight: 600;
@@ -1264,7 +1272,7 @@ a:hover, a:active { text-decoration: none; color:#013440; }
         border-radius: 2rem;
         text-align: center;
         box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
-        
+        margin-bottom:6rem;
 
     }
 
@@ -1273,15 +1281,31 @@ a:hover, a:active { text-decoration: none; color:#013440; }
             font-weight: 700;
             padding-top: 0;
             padding-bottom: 0;
-            margin-top: -1rem;
+            margin-top: -1.5rem;
         }
-    
-        .Popup-text2{
-            font-size: 10px;
+
+        .Popup-text{
+            font-size: 16px;
             font-weight: 400;
             color: #013440;
             padding-bottom: 0.25rem;
-            font-family: 'Poppins', sans-serif;
+        }
+    
+    
+        .Popup-text2{
+            font-size: 9.5px;
+            font-weight: 400;
+            color: #013440;
+            padding-bottom: 0.25rem;
+            margin: 0;
+        }
+
+        .Popup-text3{
+            font-size: 9.5px;
+            font-weight: 400;
+            color: #013440;
+            padding-bottom: 0rem;
+            margin: 0;
         }
     
         .Popup-subtitle{
@@ -1393,63 +1417,11 @@ a:hover, a:active { text-decoration: none; color:#013440; }
         
         }
 
-        .Help-container{
-        
-            display: none;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            height: 100%;
-            position: absolute; 
-            top: 0; bottom: 0; left: 0; right: 0;
-
-
-        }
-
-
-        .Help-parent{
-
-            display: flex;
-            z-index: 9999999;
-            color: #fff;
-            width: 100%;
-            height: 100%;
-            top:0;
-            left:0;
-            margin: 0;
-            background: #F8F8F8;
-            flex-direction: column;
-            border-radius: 0px;
-            box-shadow: 0;
-            padding-left:2rem;
-            padding-right:2rem;
-            padding-bottom: 6.5rem;
-            padding-top: 0;
-            overflow: scroll;
-
-        }
-
-        .Help-child{
-            color: #013440;
-            text-align: center;
-            font-family: 'Poppins', sans-serif;
-            justify-content: center;
-            align-items: center;
-            
-            
-        }
-
-        #Help_Exit_Button_ID{
-            background-image: url("/imgs/button_exit.png");
-            background-repeat: no-repeat;
-            background-position:center;
-            border-radius: 50%;
-            margin-top: 3.5rem;
     
-        }
 
         hr{
-            margin:0;
+            margin:0.25rem;
+            
         }
 
         .Fact-container{
@@ -1481,19 +1453,26 @@ a:hover, a:active { text-decoration: none; color:#013440; }
             box-shadow: 0;
             padding-left:6rem;
             padding-right:6rem;
-            padding-bottom: 7rem;
-            padding-top: 0rem;
+            padding-bottom: 16rem;
+            padding-top: 4rem;
             overflow-x: scroll;
             overflow-y: scroll;
     
         }
 
+        #Fact_Title_ID{
+            padding-top:2rem;
+        }
+
         #Fact_Exit_Button_ID{
-            margin-top: 4rem;
+            padding-top: 0rem;
+            margin-top: 7rem;
         }
 
         #Fact_Text_ID{
-            margin-top: -4rem;
+            margin:0rem;
+            padding: 0rem;
+            padding-bottom: 3rem;
         }
 
         
@@ -1554,6 +1533,10 @@ a:hover, a:active { text-decoration: none; color:#013440; }
         padding-right: 1rem;
         margin-top: 3.75rem;
 
+    }
+
+    #Bucket_Button_ID{
+        margin-top:0.75rem;
     }
 
 
@@ -1670,13 +1653,23 @@ a:hover, a:active { text-decoration: none; color:#013440; }
     }
 
 
+
+
     #line{
+        border-style:solid;
+        border-width: 1px;  
+        border-color: #013440;
+    }
+
+        
+    #line_bucket{
         border-style:solid;
         border-width: 1px;  
         border-color: #013440;
         margin-top: 0.75rem;
         margin-bottom: 0.75rem;
     }
+
 
     #Round_Title_Center{
         background-size: cover;
@@ -1756,33 +1749,49 @@ a:hover, a:active { text-decoration: none; color:#013440; }
 
     }
 
+    .Help-parent{
 
-    /*.Button:hover{
-        background-color: #F8F8F8;
-        border-color:#F8F8F8;
-      }
-
-
-      .Popup-Button:hover{
-
-        background-color: #F8F8F8;
-        border-color:#F8F8F8;
+        display: flex;
+        z-index: 9999999;
+        color: #fff;
+        width: 100%;
+        height: 100%;
+        top:0;
+        left:0;
+        margin: 0;
+        background: #F8F8F8;
+        flex-direction: column;
+        border-radius: 0px;
+        box-shadow: 0;
+        padding-left:2rem;
+        padding-right:2rem;
+        padding-bottom: 20rem;
+        padding-top: 0;
+        overflow-y: scroll;
 
     }
 
-    .Info-Button:hover{
-        background-color: #CBEBB2;
-        border-color: #CBEBB2;
+    .Help-child{
+        flex: 1 1 100%;
+        color: #013440;
+        text-align: center;
+        font-family: 'Poppins', sans-serif;
+        justify-content: center;
+        align-items: center;
+        
+        
     }
 
-    .Voice-Button:hover{
+    #Help_Exit_Button_ID{
+        background-image: url("/imgs/button_exit.png");
+        background-repeat: no-repeat;
+        background-position:center;
+        border-radius: 50%;
 
-        background-color: #F8F8F8;
-        border-color:#F8F8F8;
+    }
 
-    }*/
 
- 
+
         
 }
 
