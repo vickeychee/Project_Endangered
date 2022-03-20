@@ -34,10 +34,10 @@
     <!--User Interface-->
 
     <div class="flex-parent">
-        <div class="flex-child"><img id="Title_ID" src="/imgs/ocean_title.png"></div>
+        <div class="flex-child"><img id="Title_ID" src="/imgs/ocean_title.png" alt="Ocean Coast Title"></div>
             <div class="flex-grandchild">
-                <div class="flex-grandchild1"><button class="Button" id= "Button_Instructions_ID"><img></button></div>
-                <div class="flex-grandchild2"><button class="Button" id= "Button_Settings_ID"><img></button></div>
+                <div class="flex-grandchild1"><button class="Button" id= "Button_Instructions_ID" aria-label="Help"><img></button></div>
+                <div class="flex-grandchild2"><button class="Button" id= "Button_Settings_ID" aria-label="Settings"><img></button></div>
             </div>
         </div>
 
@@ -53,8 +53,8 @@
               <div class="Help-child Popup-text2"><b>Press</b> and <b>hold</b> one finger to move forward.</div>
               <div class="Help-child Popup-text2"><b>Press</b> and <b>hold</b> two fingers to move backwards.</div>
               <div class="Help-child Popup-text2"><b>Tap</b> on objects to interact with them.</div>
-              <div class="Help-child Popup-text3"><a href="learn.html" target="_blank"><b><u>Learn More</u></b></a></div>
-              <div class="Help-child Popup-text3"><a href="credits.html" target="_blank"><b><u>Credits</u></b></a></div>
+              <div class="Help-child Popup-text3"><a href="learn.html" target="_blank" aria-label="Learn More"><b><u>Learn More</u></b></a></div>
+              <div class="Help-child Popup-text3"><a href="credits.html" target="_blank" aria-label="Credits"><b><u>Credits</u></b></a></div>
       
       
               </div>
@@ -63,14 +63,14 @@
 
       <div class="Settings-container" id="Settings_Popup_ID">
         <div class="Settings-parent">
-            <div class="Settings-child Popup-Exit"><button class="Popup-Button" id= "Settings_Exit_Button_ID"></button></div>
+            <div class="Settings-child Popup-Exit"><button class="Popup-Button" id= "Settings_Exit_Button_ID" aria-label="Exit"></button></div>
             <div class="Settings-child Popup-title" id="Settings-Text">Settings</div>
             <div class="Settings-parent2">
                   <div class="Settings-child2">
                       <div class="Settings-child3 Popup-text">Music</div>
                       <div class="Settings-child4 Popup-text">
                           <label class="switch">
-                          <input type="checkbox" checked id="Music-Toggle">
+                          <input type="checkbox" checked id="Music-Toggle" aria-label="Music Toggle" aria-pressed="true">
                           <span class="slider round"></span>
                           </label></div>
                   </div>
@@ -78,7 +78,7 @@
                       <div class="Settings-child3 Popup-text">Sound Effects</div>
                       <div class="Settings-child4 Popup-text">
                           <label class="switch">
-                          <input type="checkbox" checked id="Sound-Toggle">
+                          <input type="checkbox" checked id="Sound-Toggle" aria-label="Sound Effects Toggle" aria-pressed="true">
                           <span class="slider round"></span>
                         </label></div>
                   </div>
@@ -86,7 +86,7 @@
                       <div class="Settings-child3 Popup-text">Voice Over</div>
                       <div class="Settings-child4 Popup-text">
                           <label class="switch">
-                          <input type="checkbox" id="Voice-Toggle">
+                          <input type="checkbox" id="Voice-Toggle" aria-label="Voice Over Toggle" aria-pressed="false">
                           <span class="slider round"></span>
                         </label></div>
                   </div>
@@ -97,7 +97,7 @@
 
   <div class="Voice-container" id="Voice_Popup_ID">
     <div class="Voice-parent">
-        <div class="Voice-child Voice-Exit"><button class="Voice-Button" id= "Voice_Exit_Button_ID"></button></div>
+        <div class="Voice-child Voice-Exit"><button class="Voice-Button" id= "Voice_Exit_Button_ID"  aria-label="Exit"></button></div>
         <div class="Voice-child Voice-title" >Voice Over</div>
         <div class="Voice-child Voice-text">Turn on in settings.</div>
     </div>
@@ -108,7 +108,7 @@
   
 <div class="Fact-container" id="Fact_Popup_ID">
     <div class="Fact-parent">
-        <div class="Fact-child Popup-Exit"><button class="Popup-Button" id="Fact_Exit_Button_ID"></button></div>
+        <div class="Fact-child Popup-Exit"><button class="Popup-Button" id="Fact_Exit_Button_ID"  aria-label="Exit"></button></div>
         <div class="Fact-child Popup-title" id="Fact_Title_ID">Really Big!</div>
         <div class="Fact-child Popup-text" id="Fact_Text_ID">The green sea turtle is the second largest sea turtle. They can grow to be about one meter long and can weigh 300 to 350 pounds.</div>
     </div>
@@ -118,7 +118,7 @@
     <div class="Info-parent">
         <div class="Info-child Popup-title" id="Info_Title_ID">Human Settlements</div>
         <div class="Info-child Popup-text" id="Info_Text_ID">Human settlements, including houses and apartments, have impacted the grasslands evironment where elephants live. As a result, about 70% of Asian elephants are now living outside of protected areas.</div>
-        <div class="Info-child"><button class="Info-Button" id="Info_Button_ID">CONTINUE</button></div>
+        <div class="Info-child"><button class="Info-Button" id="Info_Button_ID" aria-label="Continue">CONTINUE</button></div>
     </div>
 </div>
 
@@ -127,15 +127,15 @@
 
   <div id="user-gesture-overlay">
     <div class= "center">
-        <img id="loading-animation" src="/imgs/turtle_loading.gif">
+        <img id="loading-animation" src="/imgs/turtle_loading.gif" alt="Turtle Loading Gif">
     </div>
 
 
     <div id="continue-container">
         <div class ="continue-parent">
-            <div class="continue-child"><img id="continue-bear" src="imgs/ocean_turtlehead.png"></div>
+            <div class="continue-child"><img id="continue-bear" src="imgs/ocean_turtlehead.png" alt="Turtle Head"></div>
             <div class="continue-child continue-text">The ocean coast is ready for you to explore!</div>
-            <div class="continue-child"><button id="user-gesture-button" onclick="startExperience();">BEGIN</button></div>
+            <div class="continue-child"><button id="user-gesture-button" onclick="startExperience();" aria-label="Begin">BEGIN</button></div>
         </div>
     </div>
 </div>
@@ -143,7 +143,7 @@
 
 <div id="rotationOverlay">
     <div class= "center">
-        <img id="rotateImg" src="/imgs/rotate_portrait.png">
+        <img id="rotateImg" src="/imgs/rotate_portrait.png" alt="Rotate mobile to landscape">
     </div>
 
 
