@@ -268,6 +268,9 @@ AFRAME.registerComponent('bucket-task',{
     checkDistance_Bool = true;
     bucketThreeTimes = false;
     bucketTask = false;
+
+
+    bucketEndActivity = false;
     
 
 
@@ -327,6 +330,8 @@ AFRAME.registerComponent('bucket-task',{
                    Screen_Overlay_ID.style.display = "block";
                    infoUI.style.display = "flex";
                    clickSound.play();
+
+                   bucketEndActivity = true;
 
                    if(voiceToggle.checked == true){
 

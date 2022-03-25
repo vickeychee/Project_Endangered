@@ -9,9 +9,28 @@ AFRAME.registerComponent('pickup', {
         context.player = document.querySelector('#player2');
         context.selected = false;
         scene = document.querySelector('a-scene');
-        var increment = 0;
-        var bodyincrement = 0;
+        increment = 0;
+        bodyincrement = 0;
         bucketTooltipCounter = 0;
+
+
+        infoButton.addEventListener('click', ()=>{
+
+            if (bucketEndActivity === true){
+
+                context.el.sceneEl.object3D.attach(context.el.object3D);
+                context.data.pickedup = false;
+
+                context.el.setAttribute('dynamic-body', 'mass:5;');
+                increment = 0;
+                objectSelectedID = null;
+                pickupSound.play();
+                bucketEndActivity = false;
+
+            }
+
+
+        });
 
         context.el.addEventListener('click', () => {
             increment++;

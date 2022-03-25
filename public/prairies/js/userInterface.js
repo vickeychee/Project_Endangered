@@ -219,6 +219,7 @@ AFRAME.registerComponent('user-interface',{
             exitBucket();
             clickSound.play();
 
+
             if(voiceToggle.checked == true){
 
                 bucketEndSound.pause();
