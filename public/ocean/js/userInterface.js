@@ -146,6 +146,21 @@ AFRAME.registerComponent('user-interface',{
     
             }
 
+            if (turtleFished === true){
+
+                context.el.sceneEl.object3D.attach(context.el.object3D);
+                context.data.pickedup = false;
+
+                context.el.setAttribute('body', 'type:dynamic; shape:none;')
+                context.el.setAttribute('shape__newBox' + bodyincrement, 'shape: box; halfExtents: 0.9 0.1 0.7; offset: 0 0.2 0; orientation: 0 0 0 1')
+           
+                increment = 0;
+                objectSelectedID = null;
+                pickupSound.play();
+
+                turtleFished = false;
+            }
+
     
             
         });

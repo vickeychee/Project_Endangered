@@ -6,12 +6,15 @@ AFRAME.registerComponent('net-task',{
         netTooltip = document.querySelector('#tooltip1');
         waterTooltip = document.querySelector('#tooltip4');
 
+        turtleFished = false;
+
 
         water.addEventListener('click', ()=>{
 
 
-
             if(objectSelectedID === "net"){
+
+                voiceUI.style.display = "none";
                 net.setAttribute('gltf-model', "/assets/turtle_net.glb");
                 waterTooltip.setAttribute("visible",false);
 
@@ -23,6 +26,8 @@ AFRAME.registerComponent('net-task',{
                 Screen_Overlay_ID.style.display = "block";
 
                 clickSound.play();
+                turtleFished = true;
+
             }
 
 

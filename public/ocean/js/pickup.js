@@ -5,12 +5,12 @@ AFRAME.registerComponent('pickup', {
     
     init: function() {
 
-        var context = this;
+        context = this;
         context.player = document.querySelector('#player2');
         context.selected = false;
         scene = document.querySelector('a-scene');
-        var increment = 0;
-        var bodyincrement = 0;
+        increment = 0;
+        bodyincrement = 0;
         waterTooltipCounter = 0;
 
 
@@ -70,6 +70,8 @@ AFRAME.registerComponent('pickup', {
                 increment = 0;
                 objectSelectedID = null;
                 pickupSound.play();
+
+                console.log("context",context.el);
                 
     
             }
