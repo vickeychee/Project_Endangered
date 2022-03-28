@@ -68,7 +68,7 @@ a:hover, a:active { text-decoration: none; color:#013440; }
 
 
   #Button_Instructions_ID {
-      background-image: url("/imgs/button_instructions.png");
+      background-image: url("./imgs/button_instructions.png");
       background-repeat: no-repeat;
       background-position:center;
       padding-left: 33px;
@@ -80,7 +80,7 @@ a:hover, a:active { text-decoration: none; color:#013440; }
 
 
     #Button_Settings_ID {
-        background-image: url("/imgs/button_settings.png");
+        background-image: url("./imgs/button_settings.png");
         background-repeat: no-repeat;
         background-position:center;
         padding-left: 33px;
@@ -282,7 +282,7 @@ a:hover, a:active { text-decoration: none; color:#013440; }
 
     
     #Help_Exit_Button_ID{
-        background-image: url("/imgs/button_exit.png");
+        background-image: url("./imgs/button_exit.png");
         background-repeat: no-repeat;
         background-position:center;
         border-radius: 50%;
@@ -464,7 +464,7 @@ a:hover, a:active { text-decoration: none; color:#013440; }
       }
 
       #Settings_Exit_Button_ID{
-        background-image: url("/imgs/button_exit.png");
+        background-image: url("./imgs/button_exit.png");
         background-repeat: no-repeat;
         background-position:center;
         border-radius: 50%;
@@ -556,7 +556,7 @@ a:hover, a:active { text-decoration: none; color:#013440; }
 
     .Voice-parent{
         display: flex;
-        background-image:url("/imgs/tooltip.png");
+        background-image:url("./imgs/tooltip.png");
         background-repeat: no-repeat;
         background-size: 233.5px, 111.5px;
         background-position: center;
@@ -614,7 +614,7 @@ a:hover, a:active { text-decoration: none; color:#013440; }
     #Voice_Exit_Button_ID{
 
         display:inline-flex;
-        background-image: url("/imgs/button_exit.png");
+        background-image: url("./imgs/button_exit.png");
         background-repeat: no-repeat;
         background-position:center;
         border-radius: 50%;
@@ -687,7 +687,7 @@ a:hover, a:active { text-decoration: none; color:#013440; }
     #Fact_Exit_Button_ID{
 
         display:inline-flex;
-        background-image: url("/imgs/button_exit.png");
+        background-image: url("./imgs/button_exit.png");
         background-repeat: no-repeat;
         background-position:center;
         border-radius: 50%;
@@ -1054,7 +1054,7 @@ a:hover, a:active { text-decoration: none; color:#013440; }
     }
 
     #Settings_Exit_Button_ID{
-        background-image: url("/imgs/button_exit.png");
+        background-image: url("./imgs/button_exit.png");
         background-repeat: no-repeat;
         background-position:center;
         border-radius: 50%;
@@ -1163,7 +1163,7 @@ a:hover, a:active { text-decoration: none; color:#013440; }
 
 
     .Voice-parent{
-        background-image:url("/imgs/tooltip_mobile.png");
+        background-image:url("./imgs/tooltip_mobile.png");
         background-repeat: no-repeat;
         background-size: 214.5px, 93.5px;
         background-position: center;
@@ -1198,7 +1198,7 @@ a:hover, a:active { text-decoration: none; color:#013440; }
     #Voice_Exit_Button_ID{
 
         display:inline-flex;
-        background-image: url("/imgs/button_exit.png");
+        background-image: url("./imgs/button_exit.png");
         background-repeat: no-repeat;
         background-position:center;
         border-radius: 50%;
@@ -1249,7 +1249,7 @@ a:hover, a:active { text-decoration: none; color:#013440; }
     }
 
     #Help_Exit_Button_ID{
-        background-image: url("/imgs/button_exit.png");
+        background-image: url("./imgs/button_exit.png");
         background-repeat: no-repeat;
         background-position:center;
         border-radius: 50%;
