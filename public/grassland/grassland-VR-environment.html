@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
 
+    
+    <base href="https://project-endangered-experience.com/public/grassland/">
     <title>Project Endangered</title>
     <link rel="icon" href="https://i.ibb.co/bmMvc5p/Project-Endangered-Logo-Colored-1.png"/>
     <meta name="description" content="Project Endagered WebVR">
@@ -17,7 +19,7 @@
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="/css/grassland_loading_animation.css">
+    <link rel="stylesheet" href="./css/grassland_loading_animation.css">
 
 
 
@@ -25,13 +27,13 @@
 
     <div id="user-gesture-overlay">
         <div class= "center">
-            <img id="loading-animation" src="/imgs/elephant_loading.gif">
+            <img id="loading-animation" src="css/imgs/elephant_loading.gif">
         </div>
     
     
         <div id="continue-container">
             <div class ="continue-parent">
-                <div class="continue-child"><img id="continue-bear" src="imgs/grassland_elephanthead.png"></div>
+                <div class="continue-child"><img id="continue-bear" src="css/imgs/grassland_elephanthead.png"></div>
                 <div class="continue-child continue-text">The grasslands are ready for you to explore!</div>
                 <div class="continue-child"><button id="user-gesture-button" onclick="startExperience();">BEGIN</button></div>
             </div>
@@ -50,12 +52,12 @@
         <a-assets timeout = "10000">
         
             <!--Envrionment Assets-->
-            <a-asset-item id="environment-obj" crossorigin="anonymous" src="/assets/grassland_environment.glb"></a-asset-item> 
-            <a-asset-item id="elephant-obj" crossorigin="anonymous" src="/assets/elephant.glb"></a-asset-item>
-            <a-asset-item id="nav-mesh-obj" crossorigin="anonymous" src="/assets/nav-mesh/nav_mesh.gltf"></a-asset-item>
-            <audio id="wind_sound" src="/assets/audio/wind.mp3" preload="auto"></audio>
-            <audio id="music_sound" src="/assets/audio/music.mp3" preload="auto"></audio>
-            <audio id="bird_sound" src="/assets/audio/birds.mp3" preload="auto"></audio>
+            <a-asset-item id="environment-obj" crossorigin="anonymous" src="./assets/grassland_environment.glb"></a-asset-item> 
+            <a-asset-item id="elephant-obj" crossorigin="anonymous" src="./assets/elephant.glb"></a-asset-item>
+            <a-asset-item id="nav-mesh-obj" crossorigin="anonymous" src="./assets/nav-mesh/nav_mesh.gltf"></a-asset-item>
+            <audio id="wind_sound" src="./assets/audio/wind.mp3" preload="auto"></audio>
+            <audio id="music_sound" src="./assets/audio/music.mp3" preload="auto"></audio>
+            <audio id="bird_sound" src="./assets/audio/birds.mp3" preload="auto"></audio>
 
             
         </a-assets>
@@ -125,7 +127,7 @@
         class="interactive"
         position="-0.10575 0.15339 -6.074"
         rotation="0 140.07 0"
-        gltf-model="/assets/elephant.glb"
+        gltf-model="./assets/elephant.glb"
         shadow="receive: false"
         scale="0.6 0.6 0.6">
     </a-entity>
@@ -135,7 +137,7 @@
         class="interactive"
         position="1.81135 0.12853 -3.23238"
         rotation="0 42.03 0"
-        gltf-model="/assets/elephant.glb"
+        gltf-model="./assets/elephant.glb"
         shadow="receive: false"
         scale="0.4 0.4 0.4">
     </a-entity>
@@ -145,7 +147,7 @@
         class="interactive"
         position="-15.13995 0.167 -3.35672"
         rotation="0 159.35 0"
-        gltf-model="/assets/elephant.glb"
+        gltf-model="./assets/elephant.glb"
         shadow="receive: false"
         scale="0.8 0.8 0.8">
     </a-entity>
@@ -155,7 +157,7 @@
         class="interactive"
         position="-13.83427 0.167 -2.10703"
         rotation="0 -123.59 0"
-        gltf-model="/assets/elephant.glb"
+        gltf-model="./assets/elephant.glb"
         shadow="receive: false"
         scale="0.4 0.4 0.4">
     </a-entity>
