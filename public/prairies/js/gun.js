@@ -7,6 +7,8 @@ AFRAME.registerComponent('gun-task',{
         
         target = document.querySelector('#target');
 
+        gunBool = false;
+
 
 
 

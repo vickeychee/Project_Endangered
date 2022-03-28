@@ -30,7 +30,7 @@ AFRAME.registerComponent('fact-task',{
                 bigSound.pause();
                 populationSound.pause();
                 rareSound.pause();
-                gunFactSound .pause();
+                gunFactSound.pause();
     
             }
       
