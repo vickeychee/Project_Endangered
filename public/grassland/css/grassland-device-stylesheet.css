@@ -57,7 +57,7 @@ a{
 
 
   body {
-    background-image: url("/imgs/grassland_background_blur.png");
+    background-image: url("./imgs/grassland_background_blur.png");
     background-repeat: no-repeat;
     background-color: #a9d6d5;
     background-position: 50%;
@@ -198,7 +198,7 @@ p {
 
     }
     body {
-        background-image: url("/imgs/grassland_background_blur.png");
+        background-image: url("./imgs/grassland_background_blur.png");
         background-repeat: no-repeat;
         background-color: #a9d6d4;
         background-position: 50%;
@@ -238,7 +238,7 @@ p {
 
 
     body {
-        background-image: url("/imgs/grassland_background_blur.png");
+        background-image: url("./imgs/grassland_background_blur.png");
         background-repeat: no-repeat;
         background-color: #a9d6d5;
         background-position: 50%;
