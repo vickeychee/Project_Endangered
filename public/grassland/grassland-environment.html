@@ -18,8 +18,8 @@
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="/css/grassland_stylesheet.css">
-    <link rel="stylesheet" href="/css/grassland_loading_animation.css">
+    <link rel="stylesheet" href="./css/grassland_stylesheet.css">
+    <link rel="stylesheet" href="./css/grassland_loading_animation.css">
 
 
 
@@ -197,20 +197,20 @@
 
     <a-entity id="tooltip1" position="1.89149 1.39562 -3.18076" rotation="0 -3.57 0" scale="0.7 0.7 0.7" shadow="cast:true; receive:false;">
 
-        <a-entity id="tooltup-text1" text="value: Click me to learn a fact; align: center; color: #001d24; lineHeight: 54.49; font: /assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.42; baseline: top; wrapCount: 7.41; side: double" rotation="" position="-0.00023 0.19395 0.02442">
+        <a-entity id="tooltup-text1" text="value: Click me to learn a fact; align: center; color: #001d24; lineHeight: 54.49; font: ./assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.42; baseline: top; wrapCount: 7.41; side: double" rotation="" position="-0.00023 0.19395 0.02442">
         </a-entity>
 
-        <a-entity id="tooltip-box1" position="0 -0.63939 0" rotation="" scale="0.5 0.5 0.5" gltf-model="/assets/tooltip.glb">
+        <a-entity id="tooltip-box1" position="0 -0.63939 0" rotation="" scale="0.5 0.5 0.5" gltf-model="./assets/tooltip.glb">
         </a-entity>
 </a-entity>
 
 
 <a-entity id="tooltip2" position="-13.95456 1.53136 -2.07267" rotation="0 107.39 0" scale="0.7 0.7 0.7"  shadow="cast:true; receive:false;">
 
-    <a-entity id="tooltup-text2" text="value: Click me to learn a fact; align: center; color: #001d24; lineHeight: 54.49; font: /assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.42; baseline: top; wrapCount: 7.41; side: double" rotation="" position="-0.00023 0.19395 0.02442">
+    <a-entity id="tooltup-text2" text="value: Click me to learn a fact; align: center; color: #001d24; lineHeight: 54.49; font: ./assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.42; baseline: top; wrapCount: 7.41; side: double" rotation="" position="-0.00023 0.19395 0.02442">
     </a-entity>
 
-    <a-entity id="tooltip-box2" position="0 -0.63939 0" rotation="" scale="0.5 0.5 0.5" gltf-model="/assets/tooltip.glb">
+    <a-entity id="tooltip-box2" position="0 -0.63939 0" rotation="" scale="0.5 0.5 0.5" gltf-model="./assets/tooltip.glb">
     </a-entity>
 </a-entity>
 
@@ -220,7 +220,7 @@
         class="interactive"
         position="-0.10575 0.15339 -6.074"
         rotation="0 140.07 0"
-        gltf-model="/assets/elephant.glb"
+        gltf-model="./assets/elephant.glb"
         shadow="receive: false"
         scale="0.6 0.6 0.6"
         animation__mouseenter="property:scale; to: 0.65 0.65 0.65; startEvents:mouseenter; dur:200"
@@ -232,7 +232,7 @@
         class="interactive"
         position="1.81135 0.12853 -3.23238"
         rotation="0 42.03 0"
-        gltf-model="/assets/elephant.glb"
+        gltf-model="./assets/elephant.glb"
         shadow="receive: false"
         scale="0.4 0.4 0.4"
         animation__mouseenter="property:scale; to: 0.45 0.45 0.45; startEvents:mouseenter; dur:200"
@@ -244,7 +244,7 @@
         class="interactive"
         position="-15.13995 0.167 -3.35672"
         rotation="0 159.35 0"
-        gltf-model="/assets/elephant.glb"
+        gltf-model="./assets/elephant.glb"
         shadow="receive: false"
         scale="0.8 0.8 0.8"
         animation__mouseenter="property:scale; to: 0.85 0.85 0.85; startEvents:mouseenter; dur:200"
@@ -256,7 +256,7 @@
         class="interactive"
         position="-13.83427 0.167 -2.10703"
         rotation="0 -123.59 0"
-        gltf-model="/assets/elephant.glb"
+        gltf-model="./assets/elephant.glb"
         shadow="receive: false"
         scale="0.4 0.4 0.4"
         animation__mouseenter="property:scale; to: 0.45 0.45 0.45; startEvents:mouseenter; dur:200"
@@ -267,18 +267,18 @@
         id="sign"
         position="-2.97364 0 -2.12991"
         rotation="0 44.55 0"
-        gltf-model="/assets/sign.glb"
+        gltf-model="./assets/sign.glb"
         shadow="receive: false">
     </a-entity>
 
 
     <a-entity id="panel" position="-1.707 0.649 -2.939" rotation="-30.000 37.670 0" scale="">
         <a-entity text="value: See the effects of habitat loss by clicking the buttons on the control panel; align: center; color: #013440; lineHeight: 62.04; font: /assets/fonts/Poppins-SemiBold-msdf.json; negate: false; width: 1.87; baseline: top; wrapCount: 35.56" position="-0.00251 0.37443 -0.03452"></a-entity>
-        <a-entity text="value: Human Settlements; align: center; color: #013440; lineHeight: 55; font: /assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.61; wrapCount: 13.82" position="-0.59701 -0.01668 -0.03388"></a-entity>
-        <a-entity text="value: Linear Infrastructure; align: center; color: #013440; lineHeight: 55; font: /assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.61; baseline: top; wrapCount: 13.82" position="0.009 0.04464 -0.03149"></a-entity>
-        <a-entity text="value: Industry Developments; align: center; color: #013440; lineHeight: 55; font: /assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.61; wrapCount: 13.82" position="0.65039 -0.00785 -0.0308"></a-entity>
+        <a-entity text="value: Human Settlements; align: center; color: #013440; lineHeight: 55; font: ./assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.61; wrapCount: 13.82" position="-0.59701 -0.01668 -0.03388"></a-entity>
+        <a-entity text="value: Linear Infrastructure; align: center; color: #013440; lineHeight: 55; font: ./assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.61; baseline: top; wrapCount: 13.82" position="0.009 0.04464 -0.03149"></a-entity>
+        <a-entity text="value: Industry Developments; align: center; color: #013440; lineHeight: 55; font: ./assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.61; wrapCount: 13.82" position="0.65039 -0.00785 -0.0308"></a-entity>
         
-        <a-entity id="box" position="0 -0.863 0.36" rotation="-30.25 0 0" scale="1.25 1.25 1.25" gltf-model="/assets/control_panel.glb" visible="" shadow="receive: false">
+        <a-entity id="box" position="0 -0.863 0.36" rotation="-30.25 0 0" scale="1.25 1.25 1.25" gltf-model="./assets/control_panel.glb" visible="" shadow="receive: false">
         </a-entity>
         <a-entity
             id="button1" 
