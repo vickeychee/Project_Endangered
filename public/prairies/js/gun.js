@@ -20,7 +20,7 @@ AFRAME.registerComponent('gun-task',{
 
                 targetTooltip.setAttribute("visible",false);
 
-                target.setAttribute('gltf-model', "/assets/target_shot.glb");
+                target.setAttribute('gltf-model', "./assets/target_shot.glb");
           
                 clickSound.play();
                 gunSound.play();

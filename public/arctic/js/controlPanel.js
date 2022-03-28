@@ -508,7 +508,7 @@ AFRAME.registerComponent('control-panel',{
         Screen_Overlay_ID.style.display = "block";
 
         infoTitle.innerHTML ="The Present";
-        infoText.innerHTML ="The present-day Arctic environment is at risk. Climate change has caused the Arctic to heat up at twice the spead, causing the ice to melt. This makes it harder for polar bears and other animals to get food, because they rely on the ice to move around. Because of this, the Arctic has begun changing. There are less polar bears, arctic seals, and ice in the Arctic now.";
+        infoText.innerHTML ="The present-day Arctic environment is at risk. Climate change has caused the Arctic to heat up at twice the speed, causing the ice to melt. This makes it harder for polar bears and other animals to get food, because they rely on the ice to move around. Because of this, the Arctic has begun changing. There are less polar bears, arctic seals, and ice in the Arctic now.";
         infoButton.innerHTML ="EXPLORE";
         
         if(voiceToggle.checked == true){

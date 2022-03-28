@@ -18,7 +18,7 @@ a{
 
 body {
     display: flex;
-    background-image: url("/imgs/prairies_background.png");
+    background-image: url("./imgs/prairies_background.png");
     background-repeat: no-repeat;
     background-color: #F0C3B7;
     background-position: 50%;
@@ -183,7 +183,7 @@ p {
 }
 
 body {
-    background-image: url("/imgs/prairies_background.png");
+    background-image: url("./imgs/prairies_background.png");
     background-repeat: no-repeat;
     background-color: #F0C3B7;
     background-position: 50%;
@@ -217,7 +217,7 @@ body {
 
 
     body {
-        background-image: url("/imgs/prairies_background.png");
+        background-image: url("./imgs/prairies_background.png");
         background-repeat: no-repeat;
         background-color: #F0C3B7;
         background-position: 50%;

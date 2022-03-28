@@ -17,8 +17,8 @@
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
     
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/prairies_stylesheet.css">
-    <link rel="stylesheet" href="/css/prairies_loading_animation.css">
+    <link rel="stylesheet" href="./css/prairies_stylesheet.css">
+    <link rel="stylesheet" href="./css/prairies_loading_animation.css">
 
     <script src="js/pickup.js"></script>
     <script src="js/startExperience.js"></script>
@@ -35,7 +35,7 @@
     <!--User Interface-->
 
         <div class="flex-parent">
-            <div class="flex-child"><img id="Title_ID" src="/imgs/prairies_title.png" alt="Wet Prairies Title"></div>
+            <div class="flex-child"><img id="Title_ID" src="css/imgs/prairies_title.png" alt="Wet Prairies Title"></div>
                 <div class="flex-grandchild">
                     <div class="flex-grandchild1"><button class="Button" id= "Button_Instructions_ID" aria-label="Help"><img><div class="tooltiptext_help" aria-label="Tooltip">Help</div></button></div>
                     <div class="flex-grandchild2"><button class="Button" id= "Button_Settings_ID" aria-label="Settings"><img><div class="tooltiptext_settings" aria-label="Tooltip">Settings</div></button></div>
@@ -53,11 +53,11 @@
           <div class="Help-child Popup-subtitle">Controls</div>
               <div class="Help-parent2">
               <div class="Help-child2 Popup-text" id="Keys_ID"><p>Use the <b>arrow</b> or <b>WASD</b> keys to move around.</p>
-                  <div class="Help-image"><img id="Help_Keys_Image" src="imgs/help_keys.png" alt="Image of arrow keys"></div>
+                  <div class="Help-image"><img id="Help_Keys_Image" src="css/imgs/help_keys.png" alt="Image of arrow keys"></div>
               </div>
               <div class="Help-child2 Popup-text" id="Mouse_ID"><p><b>Left click</b> and <b>hold</b> to look around.</p>
                   <div class="Help-child2 Popup-text" id="Mouse2_ID"> <p><b>Left click</b> on objects to interact with them.</p>
-                  <div class="Help-image"><img id="Help_Mouse_Image" src="imgs/help_mouse.png" alt="Image of computer mouse"></div>
+                  <div class="Help-image"><img id="Help_Mouse_Image" src="css/imgs/help_mouse.png" alt="Image of computer mouse"></div>
               </div>
               </div>
           </div>
@@ -177,13 +177,13 @@
     
     <div id="user-gesture-overlay">
         <div class= "center">
-            <img id="loading-animation" src="/imgs/prairies_loading.gif" alt="Crane Loading Gif">
+            <img id="loading-animation" src="css/imgs/prairies_loading.gif" alt="Crane Loading Gif">
         </div>
 
 
         <div id="continue-container">
             <div class ="continue-parent">
-                <div class="continue-child"><img id="continue-bear" src="imgs/prairies_cranehead.png" alt="Crane Head"></div>
+                <div class="continue-child"><img id="continue-bear" src="css/imgs/prairies_cranehead.png" alt="Crane Head"></div>
                 <div class="continue-child continue-text">The wet prairies is ready for you to explore!</div>
                 <div class="continue-child"><button id="user-gesture-button" onclick="startExperience();" aria-label="Begin">BEGIN</button></div>
             </div>

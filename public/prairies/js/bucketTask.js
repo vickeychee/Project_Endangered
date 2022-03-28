@@ -191,7 +191,7 @@
 
     playerDetails.setAttribute('raycaster', 'far', 8);
 
-    bucket.setAttribute('gltf-model', "/assets/bucket_empty.glb");
+    bucket.setAttribute('gltf-model', "./assets/bucket_empty.glb");
     
     bucketFull_Bool = false;
 
@@ -216,7 +216,7 @@
     lily.setAttribute('position', {x: 0.442, y:0.009, z: -4.969});
     craneGroup.setAttribute('position', {x: 0.442, y:0.009, z: -4.969});
 
-    bucket.setAttribute('gltf-model', "/assets/bucket_empty.glb");
+    bucket.setAttribute('gltf-model', "./assets/bucket_empty.glb");
 
     playerDetails.setAttribute('raycaster', 'far', 8);
 
@@ -296,7 +296,7 @@ AFRAME.registerComponent('bucket-task',{
 
                 if(bucketFull_Bool === false && bucketThreeTimes === false){
                      waterCounter +=1;
-                     bucket.setAttribute('gltf-model', "/assets/bucket_full.glb");
+                     bucket.setAttribute('gltf-model', "./assets/bucket_full.glb");
                      splashSound.play();
                 }
      
@@ -357,7 +357,7 @@ AFRAME.registerComponent('bucket-task',{
 
     
             if(objectSelectedID === "bucket" && bucketFull_Bool === true){
-                bucket.setAttribute('gltf-model', "/assets/bucket_empty.glb");
+                bucket.setAttribute('gltf-model', "./assets/bucket_empty.glb");
 
 
                 

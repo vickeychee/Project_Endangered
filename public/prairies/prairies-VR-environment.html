@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 
+    <base href="https://project-endangered-experience.com/public/prairies/">
     <title>Project Endangered</title>
     <link rel="icon" href="https://i.ibb.co/bmMvc5p/Project-Endangered-Logo-Colored-1.png"/>
     <meta name="description" content="Project Endagered WebVR">
@@ -19,18 +20,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
     <script src="js/startExperience.js"></script>
-    <link rel="stylesheet" href="/css/prairies_loading_animation.css">
+    <link rel="stylesheet" href="./css/prairies_loading_animation.css">
 
         
     <div id="user-gesture-overlay">
         <div class= "center">
-            <img id="loading-animation" src="/imgs/prairies_loading.gif">
+            <img id="loading-animation" src="css/imgs/prairies_loading.gif">
         </div>
 
 
         <div id="continue-container">
             <div class ="continue-parent">
-                <div class="continue-child"><img id="continue-bear" src="imgs/prairies_cranehead.png"></div>
+                <div class="continue-child"><img id="continue-bear" src="css/imgs/prairies_cranehead.png"></div>
                 <div class="continue-child continue-text">The wet prairies is ready for you to explore!</div>
                 <div class="continue-child"><button id="user-gesture-button" onclick="startExperience();">BEGIN</button></div>
             </div>
@@ -45,22 +46,22 @@
         <a-assets timeout = "10000">
         
             <!--Envrionment Assets-->
-            <a-asset-item id="environment-obj" crossorigin="anonymous" src="/assets/prairies_environment.glb"></a-asset-item> 
-            <a-asset-item id="lily-obj" crossorigin="anonymous" src="/assets/lily_pad.glb"></a-asset-item> 
-            <a-asset-item id="crop-obj" crossorigin="anonymous" src="/assets/crop.glb"></a-asset-item> 
-            <a-asset-item id="bucket-obj" crossorigin="anonymous" src="/assets/bucket_empty.glb"></a-asset-item> 
-            <a-asset-item id="target-obj" crossorigin="anonymous" src="/assets/target.glb"></a-asset-item> 
-            <a-asset-item id="gun-obj" crossorigin="anonymous" src="/assets/gun.glb"></a-asset-item> 
-            <a-asset-item id="sign-obj" crossorigin="anonymous" src="/assets/sign.glb"></a-asset-item> 
-            <a-asset-item id="crane-obj" crossorigin="anonymous" src="/assets/crane.glb"></a-asset-item> 
-            <a-asset-item id="craneGroup-obj" crossorigin="anonymous" src="/assets/crane_group.glb"></a-asset-item>
-            <a-asset-item id="nav-mesh-obj" crossorigin="anonymous" src="/assets/nav-mesh/nav_mesh.gltf"></a-asset-item>
+            <a-asset-item id="environment-obj" crossorigin="anonymous" src="./assets/prairies_environment.glb"></a-asset-item> 
+            <a-asset-item id="lily-obj" crossorigin="anonymous" src="./assets/lily_pad.glb"></a-asset-item> 
+            <a-asset-item id="crop-obj" crossorigin="anonymous" src="./assets/crop.glb"></a-asset-item> 
+            <a-asset-item id="bucket-obj" crossorigin="anonymous" src="./assets/bucket_empty.glb"></a-asset-item> 
+            <a-asset-item id="target-obj" crossorigin="anonymous" src="./assets/target.glb"></a-asset-item> 
+            <a-asset-item id="gun-obj" crossorigin="anonymous" src="./assets/gun.glb"></a-asset-item> 
+            <a-asset-item id="sign-obj" crossorigin="anonymous" src="./assets/sign.glb"></a-asset-item> 
+            <a-asset-item id="crane-obj" crossorigin="anonymous" src="./assets/crane.glb"></a-asset-item> 
+            <a-asset-item id="craneGroup-obj" crossorigin="anonymous" src="./assets/crane_group.glb"></a-asset-item>
+            <a-asset-item id="nav-mesh-obj" crossorigin="anonymous" src="./assets/nav-mesh/nav_mesh.gltf"></a-asset-item>
 
 
             <!--Audio Assets-->
-            <audio id="water_sound" src="/assets/audio/water.mp3" preload="auto"></audio>
-            <audio id="music_sound" src="/assets/audio/music.mp3" preload="auto"></audio>
-            <audio id="marsh_sound" src="/assets/audio/marsh.mp3" preload="auto"></audio>
+            <audio id="water_sound" src="./assets/audio/water.mp3" preload="auto"></audio>
+            <audio id="music_sound" src="./assets/audio/music.mp3" preload="auto"></audio>
+            <audio id="marsh_sound" src="./assets/audio/marsh.mp3" preload="auto"></audio>
  
 
         </a-assets>
@@ -158,7 +159,7 @@
                 position="-1.34072 0 -3.88052"
                 rotation="0 21.7 0"
                 scale=""
-                gltf-model="/assets/crane.glb"
+                gltf-model="./assets/crane.glb"
                 shadow="receive: false">
         </a-entity>
 
@@ -167,7 +168,7 @@
                 position="-1.80301 0 -3.26395"
                 rotation="0 9.53 0"
                 scale="0.5 0.5 0.5"
-                gltf-model="/assets/crane.glb"
+                gltf-model="./assets/crane.glb"
                 shadow="receive: false">
         </a-entity>
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+    <base href="https://project-endangered-experience.com/public/prairies/">
     <title>Project Endangered</title>
     <link rel="icon" href="https://i.ibb.co/bmMvc5p/Project-Endangered-Logo-Colored-1.png"/>
     <meta name="description" content="Project Endagered WebVR">
@@ -20,8 +20,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 
-    <link rel="stylesheet" href="/css/prairies_stylesheet.css">
-    <link rel="stylesheet" href="/css/prairies_loading_animation.css">
+    <link rel="stylesheet" href="./css/prairies_stylesheet.css">
+    <link rel="stylesheet" href="./css/prairies_loading_animation.css">
 
 
     <script src="js/pickup.js"></script>
@@ -64,40 +64,40 @@
         <a-assets timeout = "10000">
         
             <!--Envrionment Assets-->
-            <a-asset-item id="environment-obj" crossorigin="anonymous" src="/assets/prairies_environment.glb"></a-asset-item> 
-            <a-asset-item id="lily-obj" crossorigin="anonymous" src="/assets/lily_pad.glb"></a-asset-item> 
-            <a-asset-item id="crop-obj" crossorigin="anonymous" src="/assets/crop.glb"></a-asset-item> 
-            <a-asset-item id="bucket-obj" crossorigin="anonymous" src="/assets/bucket_empty.glb"></a-asset-item> 
-            <a-asset-item id="target-obj" crossorigin="anonymous" src="/assets/target.glb"></a-asset-item> 
-            <a-asset-item id="gun-obj" crossorigin="anonymous" src="/assets/gun.glb"></a-asset-item> 
-            <a-asset-item id="sign-obj" crossorigin="anonymous" src="/assets/sign.glb"></a-asset-item> 
-            <a-asset-item id="crane-obj" crossorigin="anonymous" src="/assets/crane.glb"></a-asset-item> 
-            <a-asset-item id="craneGroup-obj" crossorigin="anonymous" src="/assets/crane_group.glb"></a-asset-item>
-            <a-asset-item id="nav-mesh-obj" crossorigin="anonymous" src="/assets/nav-mesh/nav_mesh.gltf"></a-asset-item>
+            <a-asset-item id="environment-obj" crossorigin="anonymous" src="./assets/prairies_environment.glb"></a-asset-item> 
+            <a-asset-item id="lily-obj" crossorigin="anonymous" src="./assets/lily_pad.glb"></a-asset-item> 
+            <a-asset-item id="crop-obj" crossorigin="anonymous" src="./assets/crop.glb"></a-asset-item> 
+            <a-asset-item id="bucket-obj" crossorigin="anonymous" src="./assets/bucket_empty.glb"></a-asset-item> 
+            <a-asset-item id="target-obj" crossorigin="anonymous" src="./assets/target.glb"></a-asset-item> 
+            <a-asset-item id="gun-obj" crossorigin="anonymous" src="./assets/gun.glb"></a-asset-item> 
+            <a-asset-item id="sign-obj" crossorigin="anonymous" src="./assets/sign.glb"></a-asset-item> 
+            <a-asset-item id="crane-obj" crossorigin="anonymous" src="./assets/crane.glb"></a-asset-item> 
+            <a-asset-item id="craneGroup-obj" crossorigin="anonymous" src="./assets/crane_group.glb"></a-asset-item>
+            <a-asset-item id="nav-mesh-obj" crossorigin="anonymous" src="./assets/nav-mesh/nav_mesh.gltf"></a-asset-item>
 
-            <a-asset-item id="tooltip-obj" crossorigin="anonymous" src="/assets/tooltip.glb"></a-asset-item>
-            <a-asset-item id="crop1-obj" crossorigin="anonymous" src="/assets/crop_group.glb"></a-asset-item> 
+            <a-asset-item id="tooltip-obj" crossorigin="anonymous" src="./assets/tooltip.glb"></a-asset-item>
+            <a-asset-item id="crop1-obj" crossorigin="anonymous" src="./assets/crop_group.glb"></a-asset-item> 
 
             <!--Audio Assets-->
-            <audio id="water_sound" src="/assets/audio/water.mp3" preload="auto"></audio>
-            <audio id="music_sound" src="/assets/audio/music.mp3" preload="auto"></audio>
-            <audio id="marsh_sound" src="/assets/audio/marsh.mp3" preload="auto"></audio>
-            <audio id="click_sound" src="/assets/audio/click.mp3" preload="auto"></audio>
-            <audio id="splash_sound" src="/assets/audio/splash.mp3" preload="auto"></audio>
-            <audio id="gun_sound" src="/assets/audio/gun.mp3" preload="auto"></audio>
-            <audio id="pickup_sound" src="/assets/audio/pickup.mp3" preload="auto"></audio>
+            <audio id="water_sound" src="./assets/audio/water.mp3" preload="auto"></audio>
+            <audio id="music_sound" src="./assets/audio/music.mp3" preload="auto"></audio>
+            <audio id="marsh_sound" src="./assets/audio/marsh.mp3" preload="auto"></audio>
+            <audio id="click_sound" src="./assets/audio/click.mp3" preload="auto"></audio>
+            <audio id="splash_sound" src="./assets/audio/splash.mp3" preload="auto"></audio>
+            <audio id="gun_sound" src="./assets/audio/gun.mp3" preload="auto"></audio>
+            <audio id="pickup_sound" src="./assets/audio/pickup.mp3" preload="auto"></audio>
             
             <!--Text to Speech Assets-->
-            <audio id="menu_instruction_desktop" src="/assets/audio/text/menu_desktop.mp3" preload="auto"></audio>
-            <audio id="menu_instruction_mobile" src="/assets/audio/text/menu_mobile.mp3" preload="auto"></audio>
-            <audio id="menu_settings" src="/assets/audio/text/menu_settings.mp3" preload="auto"></audio>
-            <audio id="fact_big" src="/assets/audio/text/fact_big.mp3" preload="auto"></audio>
-            <audio id="fact_gun" src="/assets/audio/text/fact_gun.mp3" preload="auto"></audio>
-            <audio id="fact_population" src="/assets/audio/text/fact_population.mp3" preload="auto"></audio>
-            <audio id="fact_rare" src="/assets/audio/text/fact_rare.mp3" preload="auto"></audio>
-            <audio id="bucket_desktop" src="/assets/audio/text/bucket_desktop.mp3" preload="auto"></audio>
-            <audio id="bucket_mobile" src="/assets/audio/text/bucket_mobile.mp3" preload="auto"></audio>
-            <audio id="bucket_end" src="/assets/audio/text/bucket_end.mp3" preload="auto"></audio>
+            <audio id="menu_instruction_desktop" src="./assets/audio/text/menu_desktop.mp3" preload="auto"></audio>
+            <audio id="menu_instruction_mobile" src="./assets/audio/text/menu_mobile.mp3" preload="auto"></audio>
+            <audio id="menu_settings" src="./assets/audio/text/menu_settings.mp3" preload="auto"></audio>
+            <audio id="fact_big" src="./assets/audio/text/fact_big.mp3" preload="auto"></audio>
+            <audio id="fact_gun" src="./assets/audio/text/fact_gun.mp3" preload="auto"></audio>
+            <audio id="fact_population" src="./assets/audio/text/fact_population.mp3" preload="auto"></audio>
+            <audio id="fact_rare" src="./assets/audio/text/fact_rare.mp3" preload="auto"></audio>
+            <audio id="bucket_desktop" src="./assets/audio/text/bucket_desktop.mp3" preload="auto"></audio>
+            <audio id="bucket_mobile" src="./assets/audio/text/bucket_mobile.mp3" preload="auto"></audio>
+            <audio id="bucket_end" src="./assets/audio/text/bucket_end.mp3" preload="auto"></audio>
 
             
         </a-assets>
@@ -166,57 +166,57 @@
 
         <a-entity id="tooltip1" position="-1.80348 0.96498 -3.3985" rotation="0 28.84 0" scale="0.7 0.7 0.7" shadow="cast:true; receive:false;">
 
-            <a-entity id="tooltup-text1" text="value: Click me to learn a fact; align: center; color: #001d24; lineHeight: 54.49; font: /assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.42; baseline: top; wrapCount: 7.41; side: double" rotation="" position="-0.00023 0.19395 0.02442">
+            <a-entity id="tooltup-text1" text="value: Click me to learn a fact; align: center; color: #001d24; lineHeight: 54.49; font: ./assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.42; baseline: top; wrapCount: 7.41; side: double" rotation="" position="-0.00023 0.19395 0.02442">
             </a-entity>
     
-            <a-entity id="tooltip-box1" position="0 -0.63939 0" rotation="" scale="0.5 0.5 0.5" gltf-model="/assets/tooltip.glb">
+            <a-entity id="tooltip-box1" position="0 -0.63939 0" rotation="" scale="0.5 0.5 0.5" gltf-model="./assets/tooltip.glb">
             </a-entity>
     </a-entity>
 
     <a-entity id="tooltip2" position="12.39163 0.653 -14.78472" rotation="0 -29.04 0" scale="0.7 0.7 0.7" shadow="receive: false">
 
-        <a-entity id="tooltup-text2" text="value: Click me to pickup; align: center; color: #001d24; lineHeight: 54.49; font: /assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.42; baseline: top; wrapCount: 7.41; side: double" rotation="" position="-0.00023 0.19395 0.02442">
+        <a-entity id="tooltup-text2" text="value: Click me to pickup; align: center; color: #001d24; lineHeight: 54.49; font: ./assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.42; baseline: top; wrapCount: 7.41; side: double" rotation="" position="-0.00023 0.19395 0.02442">
         </a-entity>
     
-        <a-entity id="tooltip-box2" position="0 -0.63939 0" rotation="" scale="0.5 0.5 0.5" gltf-model="/assets/tooltip.glb">
+        <a-entity id="tooltip-box2" position="0 -0.63939 0" rotation="" scale="0.5 0.5 0.5" gltf-model="./assets/tooltip.glb">
         </a-entity>
     </a-entity>
 
 
     <a-entity id="tooltip3" position="-3.099 0.886 -1.987" rotation="0 21.88 0" scale="0.7 0.7 0.7" shadow="receive: false" visible='false'>
 
-        <a-entity id="tooltup-text3" text="value: Click me to pickup; align: center; color: #001d24; lineHeight: 54.49; font: /assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.42; baseline: top; wrapCount: 7.41; side: double" rotation="" position="-0.00023 0.19395 0.02442">
+        <a-entity id="tooltup-text3" text="value: Click me to pickup; align: center; color: #001d24; lineHeight: 54.49; font: ./assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.42; baseline: top; wrapCount: 7.41; side: double" rotation="" position="-0.00023 0.19395 0.02442">
         </a-entity>
     
-        <a-entity id="tooltip-box3" position="0 -0.63939 0" rotation="" scale="0.5 0.5 0.5" gltf-model="/assets/tooltip.glb">
+        <a-entity id="tooltip-box3" position="0 -0.63939 0" rotation="" scale="0.5 0.5 0.5" gltf-model="./assets/tooltip.glb">
         </a-entity>
     </a-entity>
 
 
     <a-entity id="tooltip4" position="7.550 1.670 2.076" rotation="0 -100.75 0" scale="0.7 0.7 0.7" shadow="receive: false" visible='false'>
 
-        <a-entity id="tooltup-text4" text="value: Click to water; align: center; color: #001d24; lineHeight: 54.49; font: /assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.42; baseline: top; wrapCount: 7.41; side: double" rotation="" position="-0.00023 0.12713 0.02442">
+        <a-entity id="tooltup-text4" text="value: Click to water; align: center; color: #001d24; lineHeight: 54.49; font: ./assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.42; baseline: top; wrapCount: 7.41; side: double" rotation="" position="-0.00023 0.12713 0.02442">
         </a-entity>
     
-        <a-entity id="tooltip-box4" position="0 -0.63939 0" rotation="" scale="0.5 0.5 0.5" gltf-model="/assets/tooltip.glb">
+        <a-entity id="tooltip-box4" position="0 -0.63939 0" rotation="" scale="0.5 0.5 0.5" gltf-model="./assets/tooltip.glb">
         </a-entity>
     </a-entity>
 
 
     <a-entity id="tooltip5" position="11.59766 1.33583 -16.41219" rotation="0 -6.91 0" scale="0.7 0.7 0.7" shadow="receive: false" visible="false">
 
-        <a-entity id="tooltup-text5" text="value: Click me to shoot; align: center; color: #001d24; lineHeight: 54.49; font: /assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.42; baseline: top; wrapCount: 7.41; side: double" rotation="" position="-0.00023 0.12713 0.02442">
+        <a-entity id="tooltup-text5" text="value: Click me to shoot; align: center; color: #001d24; lineHeight: 54.49; font: ./assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.42; baseline: top; wrapCount: 7.41; side: double" rotation="" position="-0.00023 0.12713 0.02442">
         </a-entity>
     
-        <a-entity id="tooltip-box5" position="0 -0.63939 0" rotation="" scale="0.5 0.5 0.5" gltf-model="/assets/tooltip.glb">
+        <a-entity id="tooltip-box5" position="0 -0.63939 0" rotation="" scale="0.5 0.5 0.5" gltf-model="./assets/tooltip.glb">
         </a-entity>
     </a-entity>
 
 
-         <a-entity id="start_text1" text="value: STEP TO; align: center; color: #013440; lineHeight: 54.46; font: /assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 2.39; baseline: top; wrapCount: 29.62; side: double" rotation="-90 -32.808 73.37297524445322" position="-2.635 0.17592 -0.573">
+         <a-entity id="start_text1" text="value: STEP TO; align: center; color: #013440; lineHeight: 54.46; font: ./assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 2.39; baseline: top; wrapCount: 29.62; side: double" rotation="-90 -32.808 73.37297524445322" position="-2.635 0.17592 -0.573">
         </a-entity>
 
-        <a-entity id="start_text2" text="value: START; align: center; color: #013440; lineHeight: 54.46; font: /assets/fonts/Poppins-SemiBold-msdf.json; negate: false; width: 4.63; baseline: top; wrapCount: 29.62; side: double" rotation="-90 -32.808 73.37297524445322" position="-2.489 0.17592 -0.423">
+        <a-entity id="start_text2" text="value: START; align: center; color: #013440; lineHeight: 54.46; font: ./assets/fonts/Poppins-SemiBold-msdf.json; negate: false; width: 4.63; baseline: top; wrapCount: 29.62; side: double" rotation="-90 -32.808 73.37297524445322" position="-2.489 0.17592 -0.423">
         </a-entity>
 
         
@@ -252,7 +252,7 @@
             position="-1.34072 0 -3.88052"
             rotation="0 21.7 0"
             scale=""
-            gltf-model="/assets/crane.glb"
+            gltf-model="./assets/crane.glb"
             shadow="receive: false"
             animation__mouseenter="property: scale; to: 1.05 1.05 1.05; startEvents: mouseenter; dur: 200"
             animation__mouseleave="property: scale; to: 1 1 1; startEvents: mouseleave; dur: 200">
@@ -265,7 +265,7 @@
             position="-1.80301 0 -3.26395"
             rotation="0 9.53 0"
             scale="0.5 0.5 0.5"
-            gltf-model="/assets/crane.glb"
+            gltf-model="./assets/crane.glb"
             shadow="receive: false"
             animation__mouseenter="property: scale; to: 0.55 0.55 0.55; startEvents: mouseenter; dur: 200"
             animation__mouseleave="property: scale; to: 0.5 0.5 0.5; startEvents: mouseleave; dur: 200">
@@ -289,7 +289,7 @@
         </a-entity>
 
 
-        <a-entity id="crop_group2" class="interactive crop" position="7.67266 0.009 9.3335" rotation="0 171.22 0" scale="" gltf-model="/assets/crop_group.glb" shadow="" animation__mouseenter="property: scale; to: 1.02 1.02 1.02; startEvents: mouseenter; dur: 200" animation__mouseleave="property: scale; to: 1 1 1; startEvents: mouseleave; dur: 200">
+        <a-entity id="crop_group2" class="interactive crop" position="7.67266 0.009 9.3335" rotation="0 171.22 0" scale="" gltf-model="./assets/crop_group.glb" shadow="" animation__mouseenter="property: scale; to: 1.02 1.02 1.02; startEvents: mouseenter; dur: 200" animation__mouseleave="property: scale; to: 1 1 1; startEvents: mouseleave; dur: 200">
         </a-entity>
 
 
@@ -348,7 +348,7 @@
         position="12.33582 0.06 -14.83141"
         rotation="350 104.45 -7.29"
         scale="1 1 1"
-        gltf-model="/assets/gun.glb"
+        gltf-model="./assets/gun.glb"
         shadow="cast:true; receive:false;"
         animation__mouseenter="property:scale; to: 1.1 1.1 1.1; startEvents:mouseenter; dur:200"
         animation__mouseleave="property:scale; to: 1 1 1; startEvents:mouseleave; dur:200">
