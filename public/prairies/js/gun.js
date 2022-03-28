@@ -7,11 +7,6 @@ AFRAME.registerComponent('gun-task',{
         
         target = document.querySelector('#target');
 
-        gunBool = false;
-
-
-
-
 
         target.addEventListener('click', ()=>{
 
@@ -29,6 +24,7 @@ AFRAME.registerComponent('gun-task',{
           
                 clickSound.play();
                 gunSound.play();
+
 
                 if(voiceToggle.checked == true){
 

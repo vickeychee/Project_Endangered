@@ -13,20 +13,6 @@ AFRAME.registerComponent('pickup', {
         bodyincrement = 0;
         bucketTooltipCounter = 0;
 
-        factExitButton.addEventListener('click', ()=>{
-            context.el.sceneEl.object3D.attach(context.el.object3D);
-            context.data.pickedup = false;
-
-            context.el.setAttribute('body', 'type:dynamic; shape:none;')
-            context.el.setAttribute('shape__newBox' + bodyincrement, 'shape: box; halfExtents: 0.58 0.1 0.06; offset: 0 0 0; orientation: 0 0 0 1')
-            gunBool = false;
-        
-            increment = 0;
-            objectSelectedID = null;
-            pickupSound.play();
-
-        });
-
 
         infoButton.addEventListener('click', ()=>{
 
@@ -95,7 +81,6 @@ AFRAME.registerComponent('pickup', {
                 if(objectSelectedID === 'gun'){
                     context.el.setAttribute('body', 'type:dynamic; shape:none;')
                     context.el.setAttribute('shape__newBox' + bodyincrement, 'shape: box; halfExtents: 0.58 0.1 0.06; offset: 0 0 0; orientation: 0 0 0 1')
-                    gunBool = false;
                 }else{
                     context.el.setAttribute('dynamic-body', 'mass:5;');
                 }
@@ -108,6 +93,7 @@ AFRAME.registerComponent('pickup', {
             }
                    
         });
+
     
     }
 });
