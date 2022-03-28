@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+    <base href="https://project-endangered-experience.com/public/ocean/">
     <title>Project Endangered</title>
     <link rel="icon" href="https://i.ibb.co/bmMvc5p/Project-Endangered-Logo-Colored-1.png"/>
     <meta name="description" content="Project Endagered WebVR">
@@ -17,8 +17,8 @@
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="/css/ocean-stylesheet.css">
-    <link rel="stylesheet" href="/css/ocean_loading_animation.css">
+    <link rel="stylesheet" href="./css/ocean-stylesheet.css">
+    <link rel="stylesheet" href="./css/ocean_loading_animation.css">
 
     <script src="js/controlPanel.js"></script>
     <script src="js/pickup.js"></script>
@@ -59,48 +59,48 @@
         <a-assets timeout = "10000">
         
             <!--Envrionment Assets-->
-            <a-asset-item id="environment-obj" crossorigin="anonymous" src="/assets/ocean_environment.glb"></a-asset-item> 
-            <a-asset-item id="umbrella-obj" crossorigin="anonymous" src="/assets/umbrella.glb"></a-asset-item> 
-            <a-asset-item id="apartment-obj" crossorigin="anonymous" src="/assets/apartment.glb"></a-asset-item> 
-            <a-asset-item id="babyTurtle-obj" crossorigin="anonymous" src="/assets/baby_turtle.glb"></a-asset-item> 
-            <a-asset-item id="eggs-obj" crossorigin="anonymous" src="/assets/eggs.glb"></a-asset-item> 
-            <a-asset-item id="boardwalk-obj" crossorigin="anonymous" src="/assets/boardwalk.glb"></a-asset-item> 
-            <a-asset-item id="turtleNet-obj" crossorigin="anonymous" src="/assets/turtle_net.glb"></a-asset-item> 
-            <a-asset-item id="net-obj" crossorigin="anonymous" src="/assets/net.glb"></a-asset-item>
-            <a-asset-item id="turtle-obj" crossorigin="anonymous" src="/assets/turtle.glb"></a-asset-item>
-            <a-asset-item id="sign-obj" crossorigin="anonymous" src="/assets/sign.glb"></a-asset-item>
-            <a-asset-item id="tourism-obj" crossorigin="anonymous" src="/assets/tourism.glb"></a-asset-item>
-            <a-asset-item id="controlPanel-obj" crossorigin="anonymous" src="/assets/control-panel.glb"></a-asset-item>
-            <a-asset-item id="tooltip-obj" crossorigin="anonymous" src="/assets/tooltip.glb"></a-asset-item>
-            <a-asset-item id="nav-mesh-obj" crossorigin="anonymous" src="/assets/nav-mesh/nav_mesh.gltf"></a-asset-item>
+            <a-asset-item id="environment-obj" crossorigin="anonymous" src="./assets/ocean_environment.glb"></a-asset-item> 
+            <a-asset-item id="umbrella-obj" crossorigin="anonymous" src="./assets/umbrella.glb"></a-asset-item> 
+            <a-asset-item id="apartment-obj" crossorigin="anonymous" src="./assets/apartment.glb"></a-asset-item> 
+            <a-asset-item id="babyTurtle-obj" crossorigin="anonymous" src="./assets/baby_turtle.glb"></a-asset-item> 
+            <a-asset-item id="eggs-obj" crossorigin="anonymous" src="./assets/eggs.glb"></a-asset-item> 
+            <a-asset-item id="boardwalk-obj" crossorigin="anonymous" src="./assets/boardwalk.glb"></a-asset-item> 
+            <a-asset-item id="turtleNet-obj" crossorigin="anonymous" src="./assets/turtle_net.glb"></a-asset-item> 
+            <a-asset-item id="net-obj" crossorigin="anonymous" src="./assets/net.glb"></a-asset-item>
+            <a-asset-item id="turtle-obj" crossorigin="anonymous" src="./assets/turtle.glb"></a-asset-item>
+            <a-asset-item id="sign-obj" crossorigin="anonymous" src="./assets/sign.glb"></a-asset-item>
+            <a-asset-item id="tourism-obj" crossorigin="anonymous" src="./assets/tourism.glb"></a-asset-item>
+            <a-asset-item id="controlPanel-obj" crossorigin="anonymous" src="./assets/control-panel.glb"></a-asset-item>
+            <a-asset-item id="tooltip-obj" crossorigin="anonymous" src="./assets/tooltip.glb"></a-asset-item>
+            <a-asset-item id="nav-mesh-obj" crossorigin="anonymous" src="./assets/nav-mesh/nav_mesh.gltf"></a-asset-item>
 
-            <audio id="water_sound" src="/assets/audio/water.mp3" preload="auto"></audio>
-            <audio id="bird_sound" src="/assets/audio/seagull.mp3" preload="auto"></audio>
-            <audio id="music_sound" src="/assets/audio/music.mp3" preload="auto"></audio>
+            <audio id="water_sound" src="./assets/audio/water.mp3" preload="auto"></audio>
+            <audio id="bird_sound" src="./assets/audio/seagull.mp3" preload="auto"></audio>
+            <audio id="music_sound" src="./assets/audio/music.mp3" preload="auto"></audio>
             
 
-            <audio id="apartment_sound" src="/assets/audio/apartment.mp3" preload="auto"></audio>
-            <audio id="boardwalk_sound" src="/assets/audio/boardwalk.mp3" preload="auto"></audio>
-            <audio id="tourism_sound" src="/assets/audio/tourism.mp3" preload="auto"></audio>
-            <audio id="click_sound" src="/assets/audio/click.mp3" preload="auto"></audio>
-            <audio id="pickup_sound" src="/assets/audio/pickup.mp3" preload="auto"></audio>
+            <audio id="apartment_sound" src="./assets/audio/apartment.mp3" preload="auto"></audio>
+            <audio id="boardwalk_sound" src="./assets/audio/boardwalk.mp3" preload="auto"></audio>
+            <audio id="tourism_sound" src="./assets/audio/tourism.mp3" preload="auto"></audio>
+            <audio id="click_sound" src="./assets/audio/click.mp3" preload="auto"></audio>
+            <audio id="pickup_sound" src="./assets/audio/pickup.mp3" preload="auto"></audio>
 
 
             <!--Text to Speech Assets-->
-            <audio id="fact_baby" src="/assets/audio/text/fact_baby.mp3" preload="auto"></audio>
-            <audio id="fact_big" src="/assets/audio/text/fact_big.mp3" preload="auto"></audio>
-            <audio id="fact_eggs" src="/assets/audio/text/fact_eggs.mp3" preload="auto"></audio>
-            <audio id="fact_green" src="/assets/audio/text/fact_green.mp3" preload="auto"></audio>
-            <audio id="fact_home" src="/assets/audio/text/fact_home.mp3" preload="auto"></audio>
-            <audio id="fact_overharvest" src="/assets/audio/text/fact_overharvest.mp3" preload="auto"></audio>
+            <audio id="fact_baby" src="./assets/audio/text/fact_baby.mp3" preload="auto"></audio>
+            <audio id="fact_big" src="./assets/audio/text/fact_big.mp3" preload="auto"></audio>
+            <audio id="fact_eggs" src="./assets/audio/text/fact_eggs.mp3" preload="auto"></audio>
+            <audio id="fact_green" src="./assets/audio/text/fact_green.mp3" preload="auto"></audio>
+            <audio id="fact_home" src="./assets/audio/text/fact_home.mp3" preload="auto"></audio>
+            <audio id="fact_overharvest" src="./assets/audio/text/fact_overharvest.mp3" preload="auto"></audio>
             
-            <audio id="menu_instruction_desktop" src="/assets/audio/text/menu_desktop.mp3" preload="auto"></audio>
-            <audio id="menu_instruction_mobile" src="/assets/audio/text/menu_mobile.mp3" preload="auto"></audio>
-            <audio id="menu_settings" src="/assets/audio/text/menu_settings.mp3" preload="auto"></audio>
+            <audio id="menu_instruction_desktop" src="./assets/audio/text/menu_desktop.mp3" preload="auto"></audio>
+            <audio id="menu_instruction_mobile" src="./assets/audio/text/menu_mobile.mp3" preload="auto"></audio>
+            <audio id="menu_settings" src="./assets/audio/text/menu_settings.mp3" preload="auto"></audio>
 
-            <audio id="panel_coastal" src="/assets/audio/text/panel_coastal.mp3" preload="auto"></audio>
-            <audio id="panel_settlement" src="/assets/audio/text/panel_settlement.mp3" preload="auto"></audio>
-            <audio id="panel_tourism" src="/assets/audio/text/panel_tourism.mp3" preload="auto"></audio>
+            <audio id="panel_coastal" src="./assets/audio/text/panel_coastal.mp3" preload="auto"></audio>
+            <audio id="panel_settlement" src="./assets/audio/text/panel_settlement.mp3" preload="auto"></audio>
+            <audio id="panel_tourism" src="./assets/audio/text/panel_tourism.mp3" preload="auto"></audio>
 
 
         </a-assets>
@@ -171,10 +171,10 @@
         
 
         <a-entity id="panel" position="-1.006 0.603 -6.302" rotation="-30.000 0 0" scale="">
-            <a-entity text="value: See the effects of habitat loss by clicking the buttons on the control panel; align: center; color: #013440; lineHeight: 62.04; font: /assets/fonts/Poppins-SemiBold-msdf.json; negate: false; width: 1.87; baseline: top; wrapCount: 35.56" position="-0.00251 0.37443 -0.03452"></a-entity>
-            <a-entity text="value: Human Settlements; align: center; color: #013440; lineHeight: 55; font: /assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.61; wrapCount: 13.82" position="-0.59701 -0.01668 -0.03388"></a-entity>
-            <a-entity text="value: Coastal Developments; align: center; color: #013440; lineHeight: 55; font: /assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.61; baseline: top; wrapCount: 13.82" position="0.037 0.04464 -0.03149"></a-entity>
-            <a-entity text="value: Tourism Industry; align: center; color: #013440; lineHeight: 55; font: /assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.61; wrapCount: 13.82" position="0.65039 -0.00785 -0.0308"></a-entity>
+            <a-entity text="value: See the effects of habitat loss by clicking the buttons on the control panel; align: center; color: #013440; lineHeight: 62.04; font: ./assets/fonts/Poppins-SemiBold-msdf.json; negate: false; width: 1.87; baseline: top; wrapCount: 35.56" position="-0.00251 0.37443 -0.03452"></a-entity>
+            <a-entity text="value: Human Settlements; align: center; color: #013440; lineHeight: 55; font: ./assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.61; wrapCount: 13.82" position="-0.59701 -0.01668 -0.03388"></a-entity>
+            <a-entity text="value: Coastal Developments; align: center; color: #013440; lineHeight: 55; font: ./assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.61; baseline: top; wrapCount: 13.82" position="0.037 0.04464 -0.03149"></a-entity>
+            <a-entity text="value: Tourism Industry; align: center; color: #013440; lineHeight: 55; font: ./assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.61; wrapCount: 13.82" position="0.65039 -0.00785 -0.0308"></a-entity>
             
             <a-entity id="box" position="0 -0.863 0.36" rotation="-30.25 0 0" scale="1.25 1.25 1.25" gltf-model="#controlPanel-obj" visible="" shadow="receive: false">
             </a-entity>
@@ -359,38 +359,38 @@
 
         <a-entity id="tooltip1" position="8.588 1.048 4.800" rotation="0 -90 0" scale="0.7 0.7 0.7" shadow="cast:true; receive:false;">
 
-            <a-entity id="tooltup-text1" text="value: Click me to pickup; align: center; color: #001d24; lineHeight: 54.49; font: /assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.42; baseline: top; wrapCount: 7.41; side: double" rotation="" position="-0.00023 0.19395 0.02442">
+            <a-entity id="tooltup-text1" text="value: Click me to pickup; align: center; color: #001d24; lineHeight: 54.49; font: ./assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.42; baseline: top; wrapCount: 7.41; side: double" rotation="" position="-0.00023 0.19395 0.02442">
             </a-entity>
     
-            <a-entity id="tooltip-box1" position="0 -0.63939 0" rotation="" scale="0.5 0.5 0.5" gltf-model="/assets/tooltip.glb">
+            <a-entity id="tooltip-box1" position="0 -0.63939 0" rotation="" scale="0.5 0.5 0.5" gltf-model="./assets/tooltip.glb">
             </a-entity>
     </a-entity>
 
         <a-entity id="tooltip2" position="0.94747 0.65372 -3.340" rotation="0 -17.91 0" scale="0.7 0.7 0.7" shadow="receive: false">
 
-            <a-entity id="tooltup-text2" text="value: Click me to learn a fact; align: center; color: #001d24; lineHeight: 54.49; font: /assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.42; baseline: top; wrapCount: 7.41; side: double" rotation="" position="-0.00023 0.19395 0.02442">
+            <a-entity id="tooltup-text2" text="value: Click me to learn a fact; align: center; color: #001d24; lineHeight: 54.49; font: ./assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.42; baseline: top; wrapCount: 7.41; side: double" rotation="" position="-0.00023 0.19395 0.02442">
             </a-entity>
 
-            <a-entity id="tooltip-box2" position="0 -0.63939 0" rotation="" scale="0.5 0.5 0.5" gltf-model="/assets/tooltip.glb">
+            <a-entity id="tooltip-box2" position="0 -0.63939 0" rotation="" scale="0.5 0.5 0.5" gltf-model="./assets/tooltip.glb">
             </a-entity>
     </a-entity>
 
     <a-entity id="tooltip3" position="-6.46927 0.395 -4.03919" rotation="0 32.25 0" scale="0.7 0.7 0.7" shadow="receive: false">
 
-        <a-entity id="tooltup-text3" text="value: Click me to learn a fact; align: center; color: #001d24; lineHeight: 54.49; font: /assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.42; baseline: top; wrapCount: 7.41; side: double" rotation="" position="-0.00023 0.19395 0.02442">
+        <a-entity id="tooltup-text3" text="value: Click me to learn a fact; align: center; color: #001d24; lineHeight: 54.49; font: ./assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.42; baseline: top; wrapCount: 7.41; side: double" rotation="" position="-0.00023 0.19395 0.02442">
         </a-entity>
 
-        <a-entity id="tooltip-box3" position="0 -0.63939 0" rotation="" scale="0.5 0.5 0.5" gltf-model="/assets/tooltip.glb">
+        <a-entity id="tooltip-box3" position="0 -0.63939 0" rotation="" scale="0.5 0.5 0.5" gltf-model="./assets/tooltip.glb">
         </a-entity>
     </a-entity>
 
 
     <a-entity id="tooltip4" position="10.058 1.048 4.800" rotation="0 -90 0" scale="0.7 0.7 0.7" shadow="cast:true; receive:false;" visible='false'>
 
-        <a-entity id="tooltup-text4" text="value: Click the water to fish; align: center; color: #001d24; lineHeight: 54.49; font: /assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.42; baseline: top; wrapCount: 7.41; side: double" rotation="" position="-0.00023 0.19395 0.02442">
+        <a-entity id="tooltup-text4" text="value: Click the water to fish; align: center; color: #001d24; lineHeight: 54.49; font: ./assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.42; baseline: top; wrapCount: 7.41; side: double" rotation="" position="-0.00023 0.19395 0.02442">
         </a-entity>
 
-        <a-entity id="tooltip-box4" position="0 -0.63939 0" rotation="" scale="0.5 0.5 0.5" gltf-model="/assets/tooltip.glb">
+        <a-entity id="tooltip-box4" position="0 -0.63939 0" rotation="" scale="0.5 0.5 0.5" gltf-model="./assets/tooltip.glb">
         </a-entity>
     </a-entity>
 

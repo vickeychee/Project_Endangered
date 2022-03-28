@@ -25,7 +25,7 @@ a{
     text-decoration: none;
 }
 body {
-    background-image: url("/imgs/ocean_background_blur.png");
+    background-image: url("./imgs/ocean_background_blur.png");
     background-repeat: no-repeat;
     background-color: #c0e1e0;
     background-position: 50%;
@@ -165,7 +165,7 @@ p {
 
 
     body {
-        background-image: url("/imgs/ocean_background_blur.png");
+        background-image: url("./imgs/ocean_background_blur.png");
         background-repeat: no-repeat;
         background-color: #c0e1e0;
         background-position: 50%;
@@ -256,7 +256,7 @@ p {
 
 
     body {
-        background-image: url("/imgs/ocean_background_blur.png");
+        background-image: url("./imgs/ocean_background_blur.png");
         background-repeat: no-repeat;
         background-color: #c0e1e0;
         background-position: 50%;

@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 
+    <base href="https://project-endangered-experience.com/public/ocean/">
     <title>Project Endangered</title>
     <link rel="icon" href="https://i.ibb.co/bmMvc5p/Project-Endangered-Logo-Colored-1.png"/>
     <meta name="description" content="Project Endagered WebVR">
@@ -17,21 +18,21 @@
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="/css/ocean-stylesheet.css">
-    <link rel="stylesheet" href="/css/ocean_loading_animation.css">
+    <link rel="stylesheet" href="./css/ocean-stylesheet.css">
+    <link rel="stylesheet" href="./css/ocean_loading_animation.css">
 
     <script src="js/startExperience.js"></script>
 
 
     <div id="user-gesture-overlay">
         <div class= "center">
-            <img id="loading-animation" src="/imgs/turtle_loading.gif">
+            <img id="loading-animation" src="css/imgs/turtle_loading.gif">
         </div>
     
     
         <div id="continue-container">
             <div class ="continue-parent">
-                <div class="continue-child"><img id="continue-bear" src="imgs/ocean_turtlehead.png"></div>
+                <div class="continue-child"><img id="continue-bear" src="css/imgs/ocean_turtlehead.png"></div>
                 <div class="continue-child continue-text">The ocean coast is ready for you to explore!</div>
                 <div class="continue-child"><button id="user-gesture-button" onclick="startExperience();">BEGIN</button></div>
             </div>
@@ -49,24 +50,24 @@
         <a-assets timeout = "10000">
         
             <!--Envrionment Assets-->
-            <a-asset-item id="environment-obj" crossorigin="anonymous" src="/assets/ocean_environment.glb"></a-asset-item> 
-            <a-asset-item id="babyTurtle-obj" crossorigin="anonymous" src="/assets/baby_turtle.glb"></a-asset-item> 
-            <a-asset-item id="eggs-obj" crossorigin="anonymous" src="/assets/eggs.glb"></a-asset-item> 
-            <a-asset-item id="net-obj" crossorigin="anonymous" src="/assets/net.glb"></a-asset-item>
-            <a-asset-item id="turtle-obj" crossorigin="anonymous" src="/assets/turtle.glb"></a-asset-item>
-            <a-asset-item id="nav-mesh-obj" crossorigin="anonymous" src="/assets/nav-mesh/nav_mesh.gltf"></a-asset-item>
+            <a-asset-item id="environment-obj" crossorigin="anonymous" src="./assets/ocean_environment.glb"></a-asset-item> 
+            <a-asset-item id="babyTurtle-obj" crossorigin="anonymous" src="./assets/baby_turtle.glb"></a-asset-item> 
+            <a-asset-item id="eggs-obj" crossorigin="anonymous" src="./assets/eggs.glb"></a-asset-item> 
+            <a-asset-item id="net-obj" crossorigin="anonymous" src="./assets/net.glb"></a-asset-item>
+            <a-asset-item id="turtle-obj" crossorigin="anonymous" src="./assets/turtle.glb"></a-asset-item>
+            <a-asset-item id="nav-mesh-obj" crossorigin="anonymous" src="./assets/nav-mesh/nav_mesh.gltf"></a-asset-item>
 
 
-            <audio id="water_sound" src="/assets/audio/water.mp3" preload="auto"></audio>
-            <audio id="bird_sound" src="/assets/audio/seagull.mp3" preload="auto"></audio>
-            <audio id="music_sound" src="/assets/audio/music.mp3" preload="auto"></audio>
+            <audio id="water_sound" src="./assets/audio/water.mp3" preload="auto"></audio>
+            <audio id="bird_sound" src="./assets/audio/seagull.mp3" preload="auto"></audio>
+            <audio id="music_sound" src="./assets/audio/music.mp3" preload="auto"></audio>
             
 
-            <audio id="apartment_sound" src="/assets/audio/apartment.mp3" preload="auto"></audio>
-            <audio id="boardwalk_sound" src="/assets/audio/boardwalk.mp3" preload="auto"></audio>
-            <audio id="tourism_sound" src="/assets/audio/tourism.mp3" preload="auto"></audio>
-            <audio id="click_sound" src="/assets/audio/click.mp3" preload="auto"></audio>
-            <audio id="pickup_sound" src="/assets/audio/pickup.mp3" preload="auto"></audio>
+            <audio id="apartment_sound" src="./assets/audio/apartment.mp3" preload="auto"></audio>
+            <audio id="boardwalk_sound" src="./assets/audio/boardwalk.mp3" preload="auto"></audio>
+            <audio id="tourism_sound" src="./assets/audio/tourism.mp3" preload="auto"></audio>
+            <audio id="click_sound" src="./assets/audio/click.mp3" preload="auto"></audio>
+            <audio id="pickup_sound" src="./assets/audio/pickup.mp3" preload="auto"></audio>
 
 
         </a-assets>
