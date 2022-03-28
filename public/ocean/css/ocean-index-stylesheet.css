@@ -20,7 +20,7 @@ a{
 
 body {
     display: flex;
-    background-image: url("/imgs/ocean_background.png");
+    background-image: url("./imgs/ocean_background.png");
     background-color: #c0e1e0;
     background-repeat: no-repeat;
     background-position: 50%;
@@ -185,7 +185,7 @@ p {
 }
 
 body {
-    background-image: url("/imgs/ocean_background.png");
+    background-image: url("./imgs/ocean_background.png");
     background-repeat: no-repeat;
     background-color: #c0e1e0;
     background-position: 50%;
@@ -219,7 +219,7 @@ body {
 
 
     body {
-        background-image: url("/imgs/ocean_background.png");
+        background-image: url("./imgs/ocean_background.png");
         background-repeat: no-repeat;
         background-color: #c0e1e0;
         background-position: 50%;
