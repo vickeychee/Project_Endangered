@@ -15,7 +15,7 @@ AFRAME.registerComponent('net-task',{
             if(objectSelectedID === "net"){
 
                 voiceUI.style.display = "none";
-                net.setAttribute('gltf-model', "/assets/turtle_net.glb");
+                net.setAttribute('gltf-model', "./assets/turtle_net.glb");
                 waterTooltip.setAttribute("visible",false);
 
 
