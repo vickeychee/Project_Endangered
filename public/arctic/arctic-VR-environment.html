@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
 
-    <!--<base href="https://vickeychee.github.io/Project_Endangered/public/arctic/">-->
+    <!--Title-->
     <title>Project Endangered</title>
     <link rel="icon" href="https://i.ibb.co/bmMvc5p/Project-Endangered-Logo-Colored-1.png"/>
     <title>Project Endangered</title>
     <meta name="description" content="Project Endagered WebVR">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" viewport-fit=cover>
     
-
     <!--External Components-->
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
@@ -19,12 +18,9 @@
     <script src="https://rawgit.com/takahirox/aframe-rain/master/build/aframe-rain.min.js"></script>
 
     <!--Custom Components-->
-
     <script src="js/startExperience.js"></script>
 
-
-
-    <!--Styles-->
+    <!--Stylesheets-->
     <link rel="stylesheet" href="./css/arctic_loading_animation.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,13 +28,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-
-    
+    <!--User gesture overlay-->
     <div id="user-gesture-overlay">
         <div class= "center">
+            <!--Animal gif-->            
             <img id="loading-animation" src="css/imgs/arctic_loading.gif">
         </div>
 
+        <!--User gesture popup-->
         <div id="continue-container">
             <div class ="continue-parent">
                 <div class="continue-child"><img id="continue-bear" src="css/imgs/arctic_polarhead.png"></div>
@@ -47,13 +44,10 @@
             </div>
         </div>
     </div>
-
-    
-
     
 </head>
 <body>
-
+    <!--A-frame scene-->
     <a-scene  vr-mode-ui="enabled: true" start-experience id="scene" physics="restitution: 0; debug:false; shadow=autoUpdate: false" rain="count:0; splashBounce:0.5; splashGravity: 9.8*0.5; dropHeight:0.25; opacity:1; dropRadius:0.1; height: 100; color: white; splash: false; width:50">
 
         <a-assets timeout = "10000">
@@ -107,7 +101,6 @@
             </a-entity>
         </a-entity>
 
-
         <!--Nav Mesh-->
         <a-entity>
             <a-entity
@@ -121,12 +114,8 @@
             ></a-entity>
         </a-entity>
 
-
-
-
-    
         <!--Environment Models-->
-    <a-entity
+        <a-entity
             id ="environment"
             environment="preset: default; groundColor: #445; grid:none; ground:none; lighting:none; skyType:gradient; skyColor:#006f85; horizonColor:#fff">
         </a-entity>
@@ -140,10 +129,12 @@
             gltf-model="#environment-obj"
             shadow="cast:false; receive:true;">
         </a-entity>
-
-    <a-sky src="#sky" scale="0.3 0.3 0.3" color="#fffff" opacity ="0.5" blending="additive" material = "alphaTest: 0.48;"></a-sky>
-
-    <a-ocean
+        
+        <!--Sky-->
+        <a-sky src="#sky" scale="0.3 0.3 0.3" color="#fffff" opacity ="0.5" blending="additive" material = "alphaTest: 0.48;"></a-sky>
+        
+        <!--Water Asset-->
+        <a-ocean
             id = 'river'
             position='-9.2 -0.534 -15'
             rotation = '-90.000 0 0'
@@ -154,7 +145,7 @@
             ocean="opacity:0.9;  depth:1;  density: 10;  amplitude:0.000005;  amplitudeVariance:0.01;  speed:2.1;  speedVariance:1.070">
         </a-ocean> 
 
-        <!--Seals-->
+        <!--Seal Models-->
         <a-entity
             id="seal1"
             class="interactive"
@@ -225,10 +216,7 @@
         </a-entity>
 
 
-
-
-
-        <!--Polar Bears-->
+        <!--Polar Bear Models-->
         <a-entity
             id="polarBear1"
             class="interactive"
@@ -258,7 +246,6 @@
             gltf-model="#polarBear-obj"
             shadow="cast:true; receive:false;">
         </a-entity>
-
 
     </a-scene>
 </body>

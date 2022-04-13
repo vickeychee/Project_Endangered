@@ -1,14 +1,15 @@
 AFRAME.registerComponent('start-experience',{
     init: function() {
-        console.log('scene loaded');
 
+        // show continue message
         document.querySelector('#continue-container').style.display = 'flex';
         document.querySelector('#loading-animation').style.display = 'none';
     }
   });
 
   const startExperience = function(){
-      //hide user gesture overlay
+
+      // hide user gesture overlay
       document.querySelector('#user-gesture-overlay').style.display = 'none';
 
     
@@ -19,10 +20,10 @@ AFRAME.registerComponent('start-experience',{
 
       });
 
-
+      // get device choice from arctic-device.html
       deviceChoice = (localStorage.getItem("device"));
 
-      if (deviceChoice == 3 ){
+      if (deviceChoice == 3 ){  // if device is headset, immediately enter VR fullscreen mode
         document.querySelector('a-scene').enterVR();
 
       }
