@@ -2,15 +2,16 @@
 <html lang="en">
 <head>
 
+    <!--Hosting Base Link-->
     <base href="https://project-endangered-experience.com/public/grassland/">
+
+    <!--Title-->
     <title>Project Endangered</title>
     <link rel="icon" href="https://i.ibb.co/bmMvc5p/Project-Endangered-Logo-Colored-1.png"/>
     <meta name="description" content="Project Endagered WebVR">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" viewport-fit=cover>
 
-
     <!--External Components-->
-
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
     <script src="https://unpkg.com/aframe-physics-extras@0.1.2/dist/aframe-physics-extras.min.js"></script>
@@ -18,45 +19,42 @@
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
+    <!--Stylesheets-->
     <link rel="stylesheet" href="./css/grassland_stylesheet.css">
     <link rel="stylesheet" href="./css/grassland_loading_animation.css">
 
-
-
+    <!--Custom Components-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/controlPanel.js"></script>
     <script src="js/userInterface.js"></script>
     <script src="js/startExperience.js"></script>
     <script src="js/factTask.js"></script>
 
-
-
-
-
-   <script> 
-        function load_page(){
+    <script> 
+        function load_page(){ // function to load correpsonding device html UI files 
     
             deviceChoice = 0;
-            deviceChoice= (localStorage.getItem("device"));
-            console.log(deviceChoice);
-    
+            deviceChoice= (localStorage.getItem("device")); // get device variable grassland-device.html
     
             qr=new XMLHttpRequest();
     
-            if (deviceChoice == 1){
+            if (deviceChoice == 1){ // load desktop UI file
                 qr.open('get','grassland-UI-desktop.html');
-            } else if(deviceChoice == 2){
+            } else if(deviceChoice == 2){ // load mobile UI file
                 qr.open('get','grassland-UI-mobile.html');
             }
             qr.send();
             qr.onload=function(){includedContent.innerHTML=qr.responseText}
             };load_page();
-    
-        </script> 
+    </script> 
     
 </head>
 <body>
+
+    <!--Load UI file here-->
     <div id="includedContent"></div>
+
+    <!--A-frame scene-->
     <a-scene start-experience renderer="gammaOutput: true;" shadow="type: pcfsoft" vr-mode-ui="enabled: false" id="scene" shadow="autoUpdate: false" >
 
         <a-assets timeout = "10000">
@@ -82,7 +80,7 @@
             <audio id="car_sound" src="./assets/audio/car.mp3" preload="auto"></audio>
             <audio id="factory_sound" src="./assets/audio/factory.mp3" preload="auto"></audio>
 
-            <!--Text to Speech Assets-->
+            <!--Voice Over Assets-->
             <audio id="fact_communication" src="./assets/audio/text/fact_communication.mp3" preload="auto"></audio>
             <audio id="fact_herbivores" src="./assets/audio/text/fact_herbivores.mp3" preload="auto"></audio>
             <audio id="fact_look" src="./assets/audio/text/fact_look.mp3" preload="auto"></audio>
@@ -94,12 +92,9 @@
             <audio id="panel_linear" src="./assets/audio/text/panel_linear.mp3" preload="auto"></audio>
             <audio id="panel_settlements" src="./assets/audio/text/panel_settlements.mp3" preload="auto"></audio>
             
-
-
         </a-assets>
 
 
-        <!--check-->
 
     <!--Ambient Sounds-->
     <a-entity class="ambient-music" id ="wind" sound="src:#wind_sound; autoplay:false; loop:true; volume:4;" position="0 10 -2.751"></a-entity>
@@ -107,9 +102,11 @@
     <a-entity class="ambient-music" id ="bird" sound="src:#bird_sound; autoplay:false; loop:true; volume:1;" position="0 10 -2.751"></a-entity>
 
     <!--Lighting-->
-
     <a-entity light="type: ambient; color: #c7f0cf; intensity: 0.71"></a-entity>
-    <a-entity id="light_spot" light="type: point; color: #ffffff; intensity: 0.35; castShadow: true; shadowRadius: 2.52; shadowCameraFov: 92.68" position="2.35795 46.834 -21.19545">
+    <a-entity
+        id="light_spot"
+        light="type: point; color: #ffffff; intensity: 0.35; castShadow: true; shadowRadius: 2.52; shadowCameraFov: 92.68"
+        position="2.35795 46.834 -21.19545">
     </a-entity>
 
 
@@ -130,6 +127,7 @@
     </a-entity>
 
 
+    <!--Nav Mesh-->
     <a-entity>
         <a-entity
             id ="nav_mesh"
@@ -142,78 +140,110 @@
         ></a-entity>
     </a-entity>
 
+    <!--Adding User Interface Script-->
     <a-entity user-interface></a-entity>
-    <a-entity mobile-touch></a-entity>
 
 
-
-        <!--Environment Models-->
+    <!--Environment Models-->
     <a-entity
             id ="environment"
             environment="preset: default; groundColor: #445; grid:none; ground:none; lighting:none; skyType:gradient; skyColor:#61d0ff; horizonColor:#edfcfd; fog:0">
-        </a-entity>
+    </a-entity>
 
-        <a-entity
-            id="environment_model"
-            position="-8.189 0.009 -3.842"
-            rotation="0 101.580 0"
-            scale= " 1 1 1"
-            gltf-model="#environment-obj"
-            shadow="cast:true; receive:true;">
-        </a-entity>
-
-        <a-entity
-            control-panel
-            id="apartment"
-            position="-8.189 0.009 -3.842"
-            rotation="0 101.580 0"
-            scale= " 1 1 1"
-            gltf-model="#apartment-obj"
-            shadow="cast:true; receive:false;"
-            visible='false'>
-        </a-entity>
-
-        <a-entity
-            id="road"
-            position="-8.189 0.009 -3.842"
-            rotation="0 101.580 0"
-            scale= " 1 1 1"
-            gltf-model="#road-obj"
-            shadow="cast:true; receive:false;"
-            visible='false'>
-        </a-entity>
-
-
-       <a-entity
-            id="factory"
-            position="-8.189 0.009 -3.842"
-            rotation="0 101.580 0"
-            scale= " 1 1 1"
-            gltf-model="#factory-obj"
-            shadow="cast:true; receive:false;"
-            visible='false'>
+    <a-entity
+        id="environment_model"
+        position="-8.189 0.009 -3.842"
+        rotation="0 101.580 0"
+        scale= " 1 1 1"
+        gltf-model="#environment-obj"
+        shadow="cast:true; receive:true;">
     </a-entity>
 
 
-    <a-entity id="tooltip1" position="1.89149 1.39562 -3.18076" rotation="0 -3.57 0" scale="0.7 0.7 0.7" shadow="cast:true; receive:false;">
-
-        <a-entity id="tooltup-text1" text="value: Click me to learn a fact; align: center; color: #001d24; lineHeight: 54.49; font: ./assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.42; baseline: top; wrapCount: 7.41; side: double" rotation="" position="-0.00023 0.19395 0.02442">
-        </a-entity>
-
-        <a-entity id="tooltip-box1" position="0 -0.63939 0" rotation="" scale="0.5 0.5 0.5" gltf-model="./assets/tooltip.glb">
-        </a-entity>
-</a-entity>
-
-
-<a-entity id="tooltip2" position="-13.95456 1.53136 -2.07267" rotation="0 107.39 0" scale="0.7 0.7 0.7"  shadow="cast:true; receive:false;">
-
-    <a-entity id="tooltup-text2" text="value: Click me to learn a fact; align: center; color: #001d24; lineHeight: 54.49; font: ./assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.42; baseline: top; wrapCount: 7.41; side: double" rotation="" position="-0.00023 0.19395 0.02442">
+    <!--Apartment Model-->
+    <a-entity
+        control-panel
+        id="apartment"
+        position="-8.189 0.009 -3.842"
+        rotation="0 101.580 0"
+        scale= " 1 1 1"
+        gltf-model="#apartment-obj"
+        shadow="cast:true; receive:false;"
+        visible='false'>
     </a-entity>
 
-    <a-entity id="tooltip-box2" position="0 -0.63939 0" rotation="" scale="0.5 0.5 0.5" gltf-model="./assets/tooltip.glb">
+    <!--Road Model-->
+    <a-entity
+        id="road"
+        position="-8.189 0.009 -3.842"
+        rotation="0 101.580 0"
+        scale= " 1 1 1"
+        gltf-model="#road-obj"
+        shadow="cast:true; receive:false;"
+        visible='false'>
     </a-entity>
-</a-entity>
 
+    <!--Factory Model-->
+    <a-entity
+        id="factory"
+        position="-8.189 0.009 -3.842"
+        rotation="0 101.580 0"
+        scale= " 1 1 1"
+        gltf-model="#factory-obj"
+        shadow="cast:true; receive:false;"
+        visible='false'>
+    </a-entity>
+
+
+    <!--Tooltips-->
+    <a-entity
+        id="tooltip1"
+        position="1.89149 1.39562 -3.18076"
+        rotation="0 -3.57 0"
+        scale="0.7 0.7 0.7"
+        shadow="cast:true; receive:false;">
+
+        <a-entity
+            id="tooltup-text1"
+            text="value: Click me to learn a fact; align: center; color: #001d24; lineHeight: 54.49; font: ./assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.42; baseline: top; wrapCount: 7.41; side: double"
+            rotation=""
+            position="-0.00023 0.19395 0.02442">
+        </a-entity>
+
+        <a-entity
+            id="tooltip-box1"
+            position="0 -0.63939 0"
+            rotation=""
+            scale="0.5 0.5 0.5"
+            gltf-model="./assets/tooltip.glb">
+        </a-entity>
+    </a-entity>
+
+
+    <a-entity
+        id="tooltip2"
+        position="-13.95456 1.53136 -2.07267"
+        rotation="0 107.39 0"
+        scale="0.7 0.7 0.7" 
+        shadow="cast:true; receive:false;">
+
+        <a-entity
+            id="tooltup-text2"
+            text="value: Click me to learn a fact; align: center; color: #001d24; lineHeight: 54.49; font: ./assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.42; baseline: top; wrapCount: 7.41; side: double"
+            rotation=""
+            position="-0.00023 0.19395 0.02442">
+        </a-entity>
+
+        <a-entity
+            id="tooltip-box2"
+            position="0 -0.63939 0"
+            rotation=""
+            scale="0.5 0.5 0.5"
+            gltf-model="./assets/tooltip.glb">
+        </a-entity>
+    </a-entity>
+
+    <!--Elephant Models-->
     <a-entity
         fact-task
         id="elephant1"
@@ -263,6 +293,8 @@
         animation__mouseleave="property:scale; to: 0.4 0.4 0.4; startEvents:mouseleave; dur:200">
     </a-entity>
 
+
+    <!--Activity Sign-->
     <a-entity
         id="sign"
         position="-2.97364 0 -2.12991"
@@ -271,15 +303,35 @@
         shadow="receive: false">
     </a-entity>
 
-
+    <!--Control Panel-->
     <a-entity id="panel" position="-1.707 0.649 -2.939" rotation="-30.000 37.670 0" scale="">
-        <a-entity text="value: See the effects of habitat loss by clicking the buttons on the control panel; align: center; color: #013440; lineHeight: 62.04; font: ./assets/fonts/Poppins-SemiBold-msdf.json; negate: false; width: 1.87; baseline: top; wrapCount: 35.56" position="-0.00251 0.37443 -0.03452"></a-entity>
-        <a-entity text="value: Human Settlements; align: center; color: #013440; lineHeight: 55; font: ./assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.61; wrapCount: 13.82" position="-0.59701 -0.01668 -0.03388"></a-entity>
-        <a-entity text="value: Linear Infrastructure; align: center; color: #013440; lineHeight: 55; font: ./assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.61; baseline: top; wrapCount: 13.82" position="0.009 0.04464 -0.03149"></a-entity>
-        <a-entity text="value: Industry Developments; align: center; color: #013440; lineHeight: 55; font: ./assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.61; wrapCount: 13.82" position="0.65039 -0.00785 -0.0308"></a-entity>
-        
-        <a-entity id="box" position="0 -0.863 0.36" rotation="-30.25 0 0" scale="1.25 1.25 1.25" gltf-model="./assets/control_panel.glb" visible="" shadow="receive: false">
+
+        <!--Control Panel Text-->
+        <a-entity text="value: See the effects of habitat loss by clicking the buttons on the control panel; align: center; color: #013440; lineHeight: 62.04; font: ./assets/fonts/Poppins-SemiBold-msdf.json; negate: false; width: 1.87; baseline: top; wrapCount: 35.56"
+                  position="-0.00251 0.37443 -0.03452">
         </a-entity>
+        <a-entity text="value: Human Settlements; align: center; color: #013440; lineHeight: 55; font: ./assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.61; wrapCount: 13.82"
+                  position="-0.59701 -0.01668 -0.03388">
+        </a-entity>
+        <a-entity text="value: Linear Infrastructure; align: center; color: #013440; lineHeight: 55; font: ./assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.61; baseline: top; wrapCount: 13.82"
+                  position="0.009 0.04464 -0.03149">
+        </a-entity>
+        <a-entity text="value: Industry Developments; align: center; color: #013440; lineHeight: 55; font: ./assets/fonts/Poppins-Regular-msdf.json; negate: false; width: 0.61; wrapCount: 13.82"
+                  position="0.65039 -0.00785 -0.0308">
+        </a-entity>
+        
+        <!--Control Panel Box Model-->
+        <a-entity
+            id="box"
+            position="0 -0.863 0.36"
+            rotation="-30.25 0 0"
+            scale="1.25 1.25 1.25"
+            gltf-model="./assets/control_panel.glb"
+            visible=""
+            shadow="receive: false">
+        </a-entity>
+
+        <!--Control Panel Button1-->
         <a-entity
             id="button1" 
             class="interactive"
@@ -287,10 +339,10 @@
             rotation="-90 0 0"
             geometry="primitive: cylinder; radius: 0.12; height: 0.1"
             material="color: #af64a4"
-            animation__click="property: position; from: -0.59 -0.358 -0.044; to: -0.59 -0.358 0.010;
-            startEvents: click; dur: 100">
+            animation__click="property: position; from: -0.59 -0.358 -0.044; to: -0.59 -0.358 0.010; startEvents: click; dur: 100">
         </a-entity>    
 
+        <!--Control Panel Button2-->
         <a-entity
             id="button2"
             class="interactive"
@@ -301,6 +353,7 @@
             animation__click="property: position; from: -0.010 -0.358 -0.044; to: -0.010 -0.358 0.010; startEvents: click; dur: 100">
         </a-entity>
 
+        <!--Control Panel Button3--> 
         <a-entity
             id="button3"
             class="interactive"
@@ -312,6 +365,7 @@
         </a-entity> 
     </a-entity>
 
+    <!--Water Asset-->
     <a-ocean
         id = 'river'
         class="interactive"
@@ -322,8 +376,6 @@
         ocean="opacity:0.9;  depth:1.1dw;  density: 10;  amplitude:0.000004;  amplitudeVariance:0.003;  speed:1;  speedVariance:0.9">
     </a-ocean> 
 
-
-        
     </a-scene>
 </body>
 </html>

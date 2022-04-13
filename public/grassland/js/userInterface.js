@@ -1,6 +1,7 @@
 function PopupTimer() {
+    // timer function to hide voice over popup
     document.getElementById("Voice_Popup_ID").style.display="none";
-    console.log("voice popup timer ended");
+    
   }
 
 AFRAME.registerComponent('user-interface',{
@@ -9,177 +10,169 @@ AFRAME.registerComponent('user-interface',{
 
     this.tick = AFRAME.utils.throttleTick(this.tick, 1000, this);
 
-       helpButton = document.getElementById('Button_Instructions_ID');
-       helpExitButton =document.getElementById('Help_Exit_Button_ID');
+        // initialize help buttons
+        helpButton = document.getElementById('Button_Instructions_ID');
+        helpExitButton =document.getElementById('Help_Exit_Button_ID');
 
-       settingsButton =document.getElementById('Button_Settings_ID'); 
-       settingsExitButton =  document.getElementById('Settings_Exit_Button_ID');
+        // initialize settings buttons
+        settingsButton =document.getElementById('Button_Settings_ID'); 
+        settingsExitButton =  document.getElementById('Settings_Exit_Button_ID');
 
-       infoButton = document.getElementById('Info_Button_ID');
-       infoUI = document.getElementById('Info_Popup_ID');
+        // initialize info buttons
+        infoButton = document.getElementById('Info_Button_ID');
+        infoUI = document.getElementById('Info_Popup_ID');
 
-       infoTitle = document.getElementById('Info_Title_ID');
-       infoText = document.getElementById('Info_Text_ID');
+        // initialize round text
+        infoTitle = document.getElementById('Info_Title_ID');
+        infoText = document.getElementById('Info_Text_ID');
 
-       voiceUI = document.getElementById('Voice_Popup_ID');
-       voiceExitButton = document.getElementById('Voice_Exit_Button_ID');
+        // initialize voice over buttons
+        voiceUI = document.getElementById('Voice_Popup_ID');
+        voiceExitButton = document.getElementById('Voice_Exit_Button_ID');
 
-       musicToggle =  document.getElementById('Music-Toggle');
-       soundToggle = document.getElementById('Sound-Toggle');
-       voiceToggle =document.getElementById('Voice-Toggle'); 
+        // initialize settings toggle
+        musicToggle =  document.getElementById('Music-Toggle');
+        soundToggle = document.getElementById('Sound-Toggle');
+        voiceToggle =document.getElementById('Voice-Toggle'); 
 
-       musicSound = document.querySelector('#music');
-       windSound = document.querySelector('#wind');
-       birdSound = document.querySelector('#bird');
+        // initialize ambient sounds
+        musicSound = document.querySelector('#music');
+        windSound = document.querySelector('#wind');
+        birdSound = document.querySelector('#bird');
 
+        // initialize sound effects 
+        clickSound = document.querySelector('#click_sound');
+        apartmentSound = document.querySelector('#apartment_sound');
+        carSound = document.querySelector('#car_sound');
+        factorySound = document.querySelector('#factory_sound');
 
-       clickSound = document.querySelector('#click_sound');
-       apartmentSound = document.querySelector('#apartment_sound');
-       carSound = document.querySelector('#car_sound');
-       factorySound = document.querySelector('#factory_sound');
-
-       helpDesktopTextSound = document.querySelector('#menu_instruction_desktop');
-       helpMobileTextSound = document.querySelector('#menu_instruction_mobile');
-       settingTextSound = document.querySelector('#menu_settings');
+        // initialize menu voice over sounds
+        helpDesktopTextSound = document.querySelector('#menu_instruction_desktop');
+        helpMobileTextSound = document.querySelector('#menu_instruction_mobile');
+        settingTextSound = document.querySelector('#menu_settings');
        
 
+        helpButton.addEventListener('click', ()=>{           // if help button is clicked
 
-       helpButton.addEventListener('click', ()=>{
-
-            Screen_Overlay_ID.style.display = "block";
+            Screen_Overlay_ID.style.display = "block";          // display help popup
             Help_Popup_ID.style.display = "flex";
-            clickSound.play();
+            clickSound.play();                              // play click sound effect
 
-            if(voiceToggle.checked == true){
+            if(voiceToggle.checked == true){                // if voice over is toggled
 
-                if(deviceChoice == 1){
+                if(deviceChoice == 1){                      // if device is desktop
 
-                    helpDesktopTextSound.currentTime = 0;
-                    helpDesktopTextSound.play();
+                    helpDesktopTextSound.currentTime = 0;       // restart desktop voice over
+                    helpDesktopTextSound.play();                // play desktop voice over
 
-                }else if(deviceChoice == 2){
+                }else if(deviceChoice == 2){                 // if device is mobile
 
-                    helpMobileTextSound.currentTime = 0;
-                    helpMobileTextSound.play();
+                    helpMobileTextSound.currentTime = 0;    // restart mobile voice over
+                    helpMobileTextSound.play();             // play mobile voice over
 
                 }
-
             }
-        
         });
 
-        helpExitButton.addEventListener('click', ()=>{
+        helpExitButton.addEventListener('click', ()=>{      // if help button is exited 
 
-            Screen_Overlay_ID.style.display = "none";
+            Screen_Overlay_ID.style.display = "none";       // hide help popup
             Help_Popup_ID.style.display = "none";
-            clickSound.play();
+            clickSound.play();                              // play click sound effect
 
-            if(voiceToggle.checked == true){
+            if(voiceToggle.checked == true){                // if voice over is toggled
 
-                if(deviceChoice == 1){
+                if(deviceChoice == 1){                      // if device is desktop
 
-                    helpDesktopTextSound.pause();
+                    helpDesktopTextSound.pause();           // pause desktop voice over
 
-                }else if(deviceChoice == 2){
+                }else if(deviceChoice == 2){                // if device is mobile
 
-
-                    helpMobileTextSound.pause();
+                    helpMobileTextSound.pause();            // play mobile voice over
                 }
-    
-            }
-
-            
+            }      
         });
 
 
-        settingsButton.addEventListener('click', ()=>{
+        settingsButton.addEventListener('click', ()=>{      // if settings button is clicked
 
             Screen_Overlay_ID.style.display = "block";
-            Settings_Popup_ID.style.display = "flex";
-            clickSound.play();
+            Settings_Popup_ID.style.display = "flex";       // show settings popup
+            clickSound.play();                              // play click sound effect
 
-            if(voiceToggle.checked == true){
+            if(voiceToggle.checked == true){                // if voice over is toggled
 
-                settingTextSound.currentTime = 0;
-                settingTextSound.play();
-    
+                settingTextSound.currentTime = 0;           // restart voice over
+                settingTextSound.play();                    // play voice over
+                
             }
-
 
         });
 
         
-        settingsExitButton.addEventListener('click', ()=>{
+        settingsExitButton.addEventListener('click', ()=>{       // if settings exit button is clicked 
 
-            Screen_Overlay_ID.style.display = "none";
+            Screen_Overlay_ID.style.display = "none";           // hide settings popup
             Settings_Popup_ID.style.display = "none";
             clickSound.play();
 
-            
-            if(voiceToggle.checked == true){
+            if(voiceToggle.checked == true){            // if voice over is toggled
 
-                settingTextSound.pause();
+                settingTextSound.pause();               // pause voice over text
     
             }
-
-            
+   
         });
 
 
-        infoButton.addEventListener('click', ()=>{
+        infoButton.addEventListener('click', ()=>{      // if info button continnue is clicked
 
-            Screen_Overlay_ID.style.display = "none";
+            Screen_Overlay_ID.style.display = "none";   // hide popup
             infoUI.style.display = "none";
             clickSound.play();
 
-            if(voiceToggle.checked == true){
+            if(voiceToggle.checked == true){        // if voice overs is toggled
 
-                settlementSound.pause();
+                settlementSound.pause();             // pause voice overs
                 linearSound.pause();
                 industrySound.pause();
     
             }
-
-    
             
         });
 
 
-        voiceExitButton.addEventListener('click', ()=>{
+        voiceExitButton.addEventListener('click', ()=>{     // if voice exit button is clicked
 
-            voiceUI.style.display = "none";
-            clickSound.play();
-
-
+            voiceUI.style.display = "none";                 // hide voice popup
+            clickSound.play();                              // play click sound effect
 
         });
 
                 
-        setInterval(PopupTimer, 30000);
+        setInterval(PopupTimer, 30000);   // call function to show voice over text with a timer of 30 seconds
 
 
     },
 
     tick: function(){
 
+        // tuck function to keep checking if settings toggles are on or off
 
-        if(musicToggle.checked == false){
+        if(musicToggle.checked == false){    // if music toggle is off
 
-            musicSound.setAttribute('sound', 'volume', 0)
-
-
+            musicSound.setAttribute('sound', 'volume', 0)   // turn music off
 
         }else{
 
-            musicSound.setAttribute('sound', 'volume', 3)
+            musicSound.setAttribute('sound', 'volume', 3)   // turn music on
         }
 
-        if(soundToggle.checked == false){
+        if(soundToggle.checked == false){                   // if sound effect toggle is on
 
-            windSound.setAttribute('sound', 'volume', 0)
+            windSound.setAttribute('sound', 'volume', 0)    // turn sound effects off
             birdSound.setAttribute('sound', 'volume', 0)
 
-                    
             carSound.volume = 0;
             apartmentSound.volume = 0;
             factorySound.volume = 0;
@@ -188,7 +181,7 @@ AFRAME.registerComponent('user-interface',{
 
         }else{
 
-            windSound.setAttribute('sound', 'volume', 2)
+            windSound.setAttribute('sound', 'volume', 2)          // turn sound effects on
             birdSound.setAttribute('sound', 'volume', 0.1)
 
             carSound.volume = 1;
@@ -199,10 +192,9 @@ AFRAME.registerComponent('user-interface',{
         }
 
         
-        if(voiceToggle.checked == false){
+        if(voiceToggle.checked == false){       // if voice over is off
 
-
-            helpDesktopTextSound.volume = 0;
+            helpDesktopTextSound.volume = 0;    // turn off all voice overs
             helpMobileTextSound.volume = 0;
             settingTextSound.volume = 0;
 
@@ -218,7 +210,7 @@ AFRAME.registerComponent('user-interface',{
 
         }else{
 
-            helpDesktopTextSound.volume = 0.3;
+            helpDesktopTextSound.volume = 0.3;      // turn on all voice overs
             helpMobileTextSound.volume = 0.3;
             settingTextSound.volume = 0.3;
 
@@ -233,10 +225,5 @@ AFRAME.registerComponent('user-interface',{
     
 
         }
-
-
-
-
     }
-
 });

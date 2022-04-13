@@ -24,7 +24,6 @@ AFRAME.registerComponent('user-interface',{
        sealsExit = document.getElementById('Seals_Exit_Button_ID');
        sealInfoButton = document.getElementById('Info_Seal_Button_ID');
 
-
        // initialize settings toggle
        musicToggle =  document.getElementById('Music-Toggle');
        soundToggle = document.getElementById('Sound-Toggle');
@@ -42,7 +41,6 @@ AFRAME.registerComponent('user-interface',{
        // initialize info buttons
        infoButton = document.getElementById('Info_Button_ID');
        infoUI = document.getElementById('Info_Popup_ID');
-       infoButton = document.getElementById('Info_Button_ID'); 
         
        // initialize fact buttons 
        factTitle = document.getElementById('Fact_Title_ID');
@@ -201,7 +199,6 @@ AFRAME.registerComponent('user-interface',{
 
                 }else if(deviceChoice == 2){        // if device is mobile
 
-
                     helpMobileTextSound.pause();        // play mobile voice over
                 }
     
@@ -249,8 +246,6 @@ AFRAME.registerComponent('user-interface',{
         if(musicToggle.checked == false){   // if music toggle is off
 
             pianoSound.setAttribute('sound', 'volume', 0)   // turn music off
-
-
 
         }else{
 
