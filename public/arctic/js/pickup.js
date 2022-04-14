@@ -21,7 +21,7 @@ AFRAME.registerComponent('pickup', {
 
                 context.data.pickedup = true;
 
-                context.player.object3D.attach(context.el.object3D); //attach object to the player/camera
+                context.player.object3D.attach(context.el.object3D); // attach object to the player/camera
                 context.el.setAttribute('position', {x:0.5, y:-0.16, z:-2});
                 context.el.removeAttribute('body');
                 context.el.removeAttribute('dynamic-body'); // removing physics properties

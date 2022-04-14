@@ -241,7 +241,7 @@ AFRAME.registerComponent('user-interface',{
     },
 
     tick: function(){
-        // tuck function to keep checking if settings toggles are on or off
+        // tick function to keep checking if settings toggles are on or off
 
         if(musicToggle.checked == false){   // if music toggle is off
 
