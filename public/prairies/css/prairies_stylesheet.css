@@ -1,10 +1,3 @@
-
-/*.a-enter-vr-button{
-    bottom:50vmin;
-    z-index: 99999999;
-
-}*/
-
 a { text-decoration: none; color:#013440;  }
 a:visited { text-decoration: none; color:#013440; }
 a:hover { text-decoration: none; color:#013440; }
@@ -520,7 +513,6 @@ a:hover, a:active { text-decoration: none; color:#013440; }
         background-color: #013440;
       }
       
-      /* Rounded sliders */
       .slider.round {
         border-radius: 34px;
 
@@ -903,14 +895,6 @@ a:hover, a:active { text-decoration: none; color:#013440; }
     }
 
 
-
-    
-
-
-
-    
-
-    /*   https://stackoverflow.com/questions/68256289/round-progress-bar-css-js */
     .subtask-circular-progress {
         position: absolute;
         height: 100px;
@@ -1179,11 +1163,6 @@ a:hover, a:active { text-decoration: none; color:#013440; }
 
 
   /*mobile*/
-  /* @media only screen 
-    and (min-device-width: 320px) 
-    and (max-device-width: 480px)
-    and (-webkit-min-device-pixel-ratio: 2)
-    and (orientation: landscape)*/
     @media only screen and (max-height: 480px) and (orientation: landscape)
     {
 

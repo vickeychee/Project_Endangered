@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+    <!--Hosting Base Link-->
     <base href="https://project-endangered-experience.com/public/prairies/">
+
+    <!--Title-->
     <title>Project Endangered</title>
     <link rel="icon" href="https://i.ibb.co/bmMvc5p/Project-Endangered-Logo-Colored-1.png"/>
     <meta name="description" content="Project Endagered WebVR">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" viewport-fit=cover>
-    
-
-    <!--New environment setup-->
 
     <!--External Components-->
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
@@ -19,16 +18,18 @@
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
+    <!--Custom Components-->
     <script src="js/startExperience.js"></script>
     <link rel="stylesheet" href="./css/prairies_loading_animation.css">
 
-        
+    <!--User gesture overlay-->    
     <div id="user-gesture-overlay">
         <div class= "center">
+            <!--Animal gif--> 
             <img id="loading-animation" src="css/imgs/prairies_loading.gif">
         </div>
 
-
+        <!--User gesture popup-->
         <div id="continue-container">
             <div class ="continue-parent">
                 <div class="continue-child"><img id="continue-bear" src="css/imgs/prairies_cranehead.png"></div>
@@ -41,6 +42,7 @@
     
 </head>
 <body>
+    <!--A-frame scene-->
     <a-scene start-experience renderer="gammaOutput: true;" shadow="type: pcfsoft" vr-mode-ui="enabled: true" id="scene" physics="restitution: 0; debug:false; shadow=autoUpdate: false">
 
         <a-assets timeout = "10000">
@@ -57,184 +59,186 @@
             <a-asset-item id="craneGroup-obj" crossorigin="anonymous" src="./assets/crane_group.glb"></a-asset-item>
             <a-asset-item id="nav-mesh-obj" crossorigin="anonymous" src="./assets/nav-mesh/nav_mesh.gltf"></a-asset-item>
 
-
             <!--Audio Assets-->
             <audio id="water_sound" src="./assets/audio/water.mp3" preload="auto"></audio>
             <audio id="music_sound" src="./assets/audio/music.mp3" preload="auto"></audio>
             <audio id="marsh_sound" src="./assets/audio/marsh.mp3" preload="auto"></audio>
- 
 
         </a-assets>
 
-  <!--Ambient Sounds-->
-  <a-entity class="ambient-music" id ="marsh" sound="src:#marsh_sound; autoplay:true; loop:true; volume:6;" position="0 10 -2.751"></a-entity>
-  <a-entity class="ambient-music" id ="music" sound="src:#music_sound; autoplay:true; loop:true; volume:3;" position="0 10 -2.751"></a-entity>
+    <!--Ambient Sounds-->
+    <a-entity class="ambient-music" id ="marsh" sound="src:#marsh_sound; autoplay:true; loop:true; volume:6;" position="0 10 -2.751"></a-entity>
+    <a-entity class="ambient-music" id ="music" sound="src:#music_sound; autoplay:true; loop:true; volume:3;" position="0 10 -2.751"></a-entity>
   
 
     <!--Lighting-->
-
     <a-entity light="type: ambient; color: #f4aeae; intensity: 0.47"></a-entity>
-    <a-entity id="light_spot" light="type: point; color: #feb4b4; intensity: 0.28; castShadow: true; shadowRadius: 2.52; shadowCameraFov: 92.15" position="-10.2275 31.31855 7.9395">
-    </a-entity>
-    </a-entity>
-
-
-        <!--Player Controls-->
-        <a-entity id="player" movement-controls="speed:0.2; constrainToNavMesh: true;" position="0 0.4 2.7">
-            <a-entity
-                id = "player2"
-                camera="fov:70"
-                wasd-controls='acceleration: 10'
-                look-controls>
-                <a-entity
-                    id = "player-details"
-                    collision-filter="group: mouse"
-                    cursor="rayOrigin:mouse;"
-                    raycaster="far:20; interval:200; objects:.interactive"
-                ></a-entity> 
-            </a-entity>
-        </a-entity>
-
-
-        <a-entity>
-            <a-entity
-                id ="nav_mesh"
-                scale='1 1 1'
-                position = '0.442 0.4 -4.969'
-                rotation = '0 171.220 0'
-                gltf-model='#nav-mesh-obj'
-                nav-mesh
-                visible='false'
-            ></a-entity>
-        </a-entity>
-
-
-        <!--Environment Models-->
     <a-entity
-            id ="environment"
-            environment="preset: default; groundColor: #445; grid:none; ground:none; lighting:none; skyType:gradient; skyColor:#fd688d; horizonColor:#f5a951; fog:0.91">
-        </a-entity>
+        id="light_spot"
+        light="type: point; color: #feb4b4; intensity: 0.28; castShadow: true; shadowRadius: 2.52; shadowCameraFov: 92.15"
+        position="-10.2275 31.31855 7.9395">
+    </a-entity>
 
+    <!--Player Controls-->
+    <a-entity id="player" movement-controls="speed:0.2; constrainToNavMesh: true;" position="0 0.4 2.7">
         <a-entity
-            id="environment_model"
-            position="0.442 0.009 -4.969"
-            rotation="0 171.220 0"
-            scale= " 1 1 1"
-            gltf-model="#environment-obj"
-            shadow="cast:true; receive:true;">
+            id = "player2"
+            camera="fov:70"
+            wasd-controls='acceleration: 10'
+            look-controls>
+            <a-entity
+                id = "player-details"
+                collision-filter="group: mouse"
+                cursor="rayOrigin:mouse;"
+                raycaster="far:20; interval:200; objects:.interactive"
+            ></a-entity> 
         </a-entity>
+    </a-entity>
+
+    <!--Nav Mesh-->
+    <a-entity>
+        <a-entity
+            id ="nav_mesh"
+            scale='1 1 1'
+            position = '0.442 0.4 -4.969'
+            rotation = '0 171.220 0'
+            gltf-model='#nav-mesh-obj'
+            nav-mesh
+            visible='false'
+        ></a-entity>
+    </a-entity>
+
+
+    <!--Environment Models-->
+    <a-entity
+        id ="environment"
+        environment="preset: default; groundColor: #445; grid:none; ground:none; lighting:none; skyType:gradient; skyColor:#fd688d; horizonColor:#f5a951; fog:0.91">
+    </a-entity>
+
+    <a-entity
+        id="environment_model"
+        position="0.442 0.009 -4.969"
+        rotation="0 171.220 0"
+        scale= " 1 1 1"
+        gltf-model="#environment-obj"
+        shadow="cast:true; receive:true;">
+    </a-entity>
 
         
-        <a-entity
-            id="crane_group"
-            position="0.442 0.009 -4.969"
-            rotation="0 171.220 0"
-            scale= " 1 1 1"
-            gltf-model="#craneGroup-obj"
-            shadow="cast:true; receive:true;">
-        </a-entity>
+    <!--Pond Crane Group Model-->
+    <a-entity
+        id="crane_group"
+        position="0.442 0.009 -4.969"
+        rotation="0 171.220 0"
+        scale= " 1 1 1"
+        gltf-model="#craneGroup-obj"
+        shadow="cast:true; receive:true;">
+    </a-entity>
 
+    <!--Crane Models-->
+    <a-entity
+        id="crane1"
+        class="interactive"
+        position="2.081 0 -4.475"
+        rotation="0 201 0"
+        scale= " 1 1 1"
+        gltf-model="#crane-obj"
+        shadow="cast:true; receive:false;">
+    </a-entity>
 
-        <a-entity
-            id="crane1"
-            class="interactive"
-            position="2.081 0 -4.475"
-            rotation="0 201 0"
-            scale= " 1 1 1"
-            gltf-model="#crane-obj"
-            shadow="cast:true; receive:false;">
-         </a-entity>
-
-         <a-entity id="crane2"
-                    class="interactive"
-                    position="2.4392 0 -3.811"
-                    rotation="0 196.29 0"
-                    scale="0.75 0.75 0.75"
-                    gltf-model="/assets/crane.glb"
-                    shadow="receive: false">
-        </a-entity>
+    <a-entity
+        id="crane2"
+        class="interactive"
+        position="2.4392 0 -3.811"
+        rotation="0 196.29 0"
+        scale="0.75 0.75 0.75"
+        gltf-model="/assets/crane.glb"
+        shadow="receive: false">
+    </a-entity>
         
-        <a-entity id="crane3"
-                class="interactive"
-                position="-1.34072 0 -3.88052"
-                rotation="0 21.7 0"
-                scale=""
-                gltf-model="./assets/crane.glb"
-                shadow="receive: false">
-        </a-entity>
+    <a-entity
+        id="crane3"
+        class="interactive"
+        position="-1.34072 0 -3.88052"
+        rotation="0 21.7 0"
+        scale=""
+        gltf-model="./assets/crane.glb"
+        shadow="receive: false">
+    </a-entity>
 
-        <a-entity id="crane4"
-                class="interactive"
-                position="-1.80301 0 -3.26395"
-                rotation="0 9.53 0"
-                scale="0.5 0.5 0.5"
-                gltf-model="./assets/crane.glb"
-                shadow="receive: false">
-        </a-entity>
-
-
-
-        <a-entity
-            id="crop1"
-            class="interactive crop"
-            position="7.204 0 0.679"
-            rotation="0 0 0"
-            scale= " 1 1 1"
-            gltf-model="#crop-obj"
-            shadow="cast:true; receive:false;">
-        </a-entity>
-
-        <a-entity
-            id="crop2"
-            class="interactive crop"
-            position="6.990 0 2.089"
-            rotation="0 -34.680 0"
-            scale= "1 1 1"
-            gltf-model="#crop-obj"
-            shadow="cast:true; receive:false;">
-         </a-entity>
-
-        <a-entity
-            id="crop3"
-            class="interactive crop"
-            position="6.762 0 3.434"
-            rotation="0 0 0"
-            scale= " 1 1 1"
-            gltf-model="#crop-obj"
-            shadow="cast:true; receive:false;">
-        </a-entity>
-
-        <a-entity
-            id="crop4"
-            class="interactive crop"
-            position="6.164 0 7.700"
-            rotation="0 -31.550 0"
-            scale= " 1 1 1"
-            gltf-model="#crop-obj"
-            shadow="cast:true; receive:false;">
-        </a-entity>
+    <a-entity
+        id="crane4"
+        class="interactive"
+        position="-1.80301 0 -3.26395"
+        rotation="0 9.53 0"
+        scale="0.5 0.5 0.5"
+        gltf-model="./assets/crane.glb"
+        shadow="receive: false">
+    </a-entity>
 
 
-        <a-entity
-            id="crop5"
-            class="interactive crop"
-            position="5.952 0 9.102"
-            rotation="0 22.440 0"
-            scale= " 1 1 1"
-            gltf-model="#crop-obj"
-            shadow="cast:true; receive:false;">
-         </a-entity>
+    <!--Crop Models-->
+    <a-entity
+        id="crop1"
+        class="interactive crop"
+        position="7.204 0 0.679"
+        rotation="0 0 0"
+        scale= " 1 1 1"
+        gltf-model="#crop-obj"
+        shadow="cast:true; receive:false;">
+    </a-entity>
 
-        <a-entity
-            id="crop6"
-            class="interactive crop"
-            position="5.741 0 10.462"
-            rotation="0 -32.240 0"
-            scale= " 1 1 1"
-            gltf-model="#crop-obj"
-            shadow="cast:true; receive:false;">
-        </a-entity>
+    <a-entity
+        id="crop2"
+        class="interactive crop"
+        position="6.990 0 2.089"
+        rotation="0 -34.680 0"
+        scale= "1 1 1"
+        gltf-model="#crop-obj"
+        shadow="cast:true; receive:false;">
+    </a-entity>
 
+    <a-entity
+        id="crop3"
+        class="interactive crop"
+        position="6.762 0 3.434"
+        rotation="0 0 0"
+        scale= " 1 1 1"
+        gltf-model="#crop-obj"
+        shadow="cast:true; receive:false;">
+    </a-entity>
+
+    <a-entity
+        id="crop4"
+        class="interactive crop"
+        position="6.164 0 7.700"
+        rotation="0 -31.550 0"
+        scale= " 1 1 1"
+        gltf-model="#crop-obj"
+        shadow="cast:true; receive:false;">
+    </a-entity>
+
+    <a-entity
+        id="crop5"
+        class="interactive crop"
+        position="5.952 0 9.102"
+        rotation="0 22.440 0"
+        scale= " 1 1 1"
+        gltf-model="#crop-obj"
+        shadow="cast:true; receive:false;">
+    </a-entity>
+
+    <a-entity
+        id="crop6"
+        class="interactive crop"
+        position="5.741 0 10.462"
+        rotation="0 -32.240 0"
+        scale= " 1 1 1"
+        gltf-model="#crop-obj"
+        shadow="cast:true; receive:false;">
+    </a-entity>
+
+    <!--Pond Lily Models-->
     <a-entity
         id="lily"
         class="interactive"
@@ -245,6 +249,7 @@
         shadow="cast:true; receive:true;">
     </a-entity>
 
+    <!--Water Asset-->
     <a-ocean
         id = 'river'
         class="interactive"

@@ -119,7 +119,7 @@ AFRAME.registerComponent('user-interface',{
             }
         });
 
-        infoButton.addEventListener('click', ()=>{              // if info button continnue is clicked
+        infoButton.addEventListener('click', ()=>{              // if info button continue is clicked
 
             Screen_Overlay_ID.style.display = "none";           // hide popup
             infoUI.style.display = "none";
